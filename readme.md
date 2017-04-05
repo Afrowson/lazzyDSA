@@ -9,5 +9,3 @@ Hier wird mal stehen was das Ding kann.
 -Idee Umsetzen.
 
 -DB aufsetzen.
-
-COMMIT AND PUSH TEST
