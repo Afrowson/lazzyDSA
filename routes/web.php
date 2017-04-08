@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/characters', function () {
+
+    $characters = [
+      'baltasar','Alrik', 'uriel', 'maux'
+    ];
+
+    return view('characters',compact('characters'));
+});
+
+
