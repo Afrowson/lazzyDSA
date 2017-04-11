@@ -4,8 +4,10 @@ Hier wird mal stehen was das Ding kann.
 
 ## ToDo
 
--Idee haben. 
+-Charactereigene Werte in der DB anlegen.
 
--Idee Umsetzen.
+-Charactere in der HP anzeigen.
 
--DB aufsetzen.
+-Charactere erstellen können.
+
+

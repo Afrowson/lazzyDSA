@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->integer('value');
-            $table->longText('datajson');
+            $table->longText('datajson')->nullable();
 
 
             $table->timestamps();
