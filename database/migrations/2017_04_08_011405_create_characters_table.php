@@ -33,6 +33,8 @@ class CreateCharactersTable extends Migration
             $table->integer('konstitution');
             $table->integer('körperkraft');
 
+            $table->integer('ap_total');
+            $table->integer('ap_spend');
             $table->timestamps();
 
         });

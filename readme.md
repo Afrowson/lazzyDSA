@@ -4,9 +4,7 @@ Hier wird mal stehen was das Ding kann.
 
 ## ToDo
 
--Charactereigene Werte in der DB anlegen.
-
--Charactere in der HP anzeigen.
+-Character Einzelansicht.
 
 -Charactere erstellen können.
 

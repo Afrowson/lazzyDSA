@@ -5,12 +5,15 @@
 @endsection
 
 @section('content')
-    <div id="charactersbox">
-        <div>
+    <div>
+
             @foreach($characters as $character)
-                <li>{{$character}}</li>
+            <a href="character/{{$character->id}}" class="characterbox">
+                <h1>{{$character->name}}, 1135 AP</h1>
+                <h3>{{$character->race}}, {{$character->profession}}</h3>
+            </a>
             @endforeach
 
-        </div>
+
     </div>
 @endsection
