@@ -8,7 +8,7 @@
     <div class="container">
         <h1>{{($character->name)}}<small>{{$character->ap_total}} AP</small></h1>
 
-        @include('Includes/abillitys.blade.php')
+        @include('includes.abillitys')
     </div>
 
 @section('content')

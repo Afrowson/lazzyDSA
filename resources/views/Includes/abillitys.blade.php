@@ -1,7 +1,7 @@
-
 <div class="container">
-    @foreach($charater->skills)
-    <div class="skill">
+    @foreach($charater->skills as $skill)
+        <div class="skill">
 
-    </div>
+        </div>
+    @endforeach
 </div>
