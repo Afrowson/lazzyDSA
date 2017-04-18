@@ -18,11 +18,11 @@ class CreateCharactersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('race');
-            $table->string('profession')->nullable();;
+            $table->string('profession')->nullable();
             $table->integer('gender');
             $table->integer('size');
             $table->integer('wight');
-            $table->date('date_of_birth')->nullable();;
+            $table->date('date_of_birth')->nullable();
 
             $table->integer('mut');
             $table->integer('klugheit');
@@ -34,7 +34,7 @@ class CreateCharactersTable extends Migration
             $table->integer('körperkraft');
 
             $table->integer('ap_total');
-            $table->integer('ap_spend');
+            $table->integer('ap_spend')->nullable();
             $table->timestamps();
 
         });

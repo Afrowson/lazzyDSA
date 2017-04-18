@@ -5,15 +5,19 @@
 @endsection
 
 @section('content')
-    <div>
-
-            @foreach($characters as $character)
+    <div class="container">
+        <h1> Charaktere</h1>
+        <p>Hier werden alle Charactere angezeigt, die in LazzyPHP gespeichert wurden.</p>
+    </div>
+    <a href="character/new" class="btn btn-success">
+        Neuen Charakter anlegen
+    </a>
+    <div class="container">
+        @foreach($characters as $character)
             <a href="character/{{$character->id}}" class="characterbox">
-                <h1>{{$character->name}}, 1135 AP</h1>
-                <h3>{{$character->race}}, {{$character->profession}}</h3>
+                <h3>{{$character->name}}, {{$character->ap_total}} AP</h3>
+                <p>{{$character->race}}, {{$character->profession}}</p>
             </a>
-            @endforeach
-
-
+        @endforeach
     </div>
 @endsection
