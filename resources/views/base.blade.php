@@ -5,7 +5,11 @@
     <title>LazzyDSA - @yield('title')</title>
 </head>
 <body>
-<div class="container">
+<div>
+    @yield('header')
+
+    @yield('siedebar')
+
     @yield('content')
 </div>
 </body>

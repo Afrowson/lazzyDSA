@@ -4,14 +4,23 @@
     Charaktere
 @endsection
 
-@section('content')
+@section('header')
     <div class="container">
         <h1> Charaktere</h1>
         <p>Hier werden alle Charactere angezeigt, die in LazzyPHP gespeichert wurden.</p>
+
     </div>
-    <a href="character/new" class="btn btn-success">
-        Neuen Charakter anlegen
-    </a>
+
+@endsection
+
+@section('content')
+
+    <div class="container">
+        <a href="character/new" class="btn btn-success">
+            Neuen Charakter anlegen
+        </a>
+    </div>
+
     <div class="container">
         @foreach($characters as $character)
             <a href="character/{{$character->id}}" class="characterbox">
