@@ -19,7 +19,7 @@ class CreateInventorysTable extends Migration
             $table->integer('character_id')->unsigned()->nullable();;
             $table->foreign('character_id')->references('id')->on('characters');
 
-            $table->string('location');
+            $table->string('location')->nullable;
 
             $table->timestamps();
         });

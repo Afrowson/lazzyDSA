@@ -17,24 +17,25 @@ class CreateCharactersTable extends Migration
 
             $table->increments('id');
             $table->string('name');
-            $table->string('race');
+            $table->string('race')->nullable();
             $table->string('profession')->nullable();
-            $table->integer('gender');
-            $table->integer('size');
-            $table->integer('wight');
-            $table->date('date_of_birth')->nullable();
+            $table->integer('gender')->nullable();
+            $table->integer('size')->nullable();
+            $table->integer('wight')->nullable();
+            $table->integer('age')->nullable();
 
-            $table->integer('mut');
-            $table->integer('klugheit');
-            $table->integer('intuition');
-            $table->integer('charisma');
-            $table->integer('finger_fertigkeit');
-            $table->integer('geschicklichkeit');
-            $table->integer('konstitution');
-            $table->integer('körperkraft');
+            $table->integer('MU');
+            $table->integer('KL');
+            $table->integer('IN');
+            $table->integer('CH');
+            $table->integer('FF');
+            $table->integer('GE');
+            $table->integer('KO');
+            $table->integer('KK');
 
             $table->integer('ap_total');
             $table->integer('ap_spend')->nullable();
+
             $table->timestamps();
 
         });

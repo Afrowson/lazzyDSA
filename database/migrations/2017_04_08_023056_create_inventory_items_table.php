@@ -22,7 +22,7 @@ class CreateInventoryItemsTable extends Migration
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
 
-            $table->integer('ammount');
+            $table->integer('ammount')->default('1') ;
 
             $table->timestamps();
         });

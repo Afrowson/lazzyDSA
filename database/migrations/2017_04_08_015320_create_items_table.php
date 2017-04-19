@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id')->primary;
             $table->string('name');
             $table->string('description')->nullable();
-            $table->integer('value');
+            $table->integer('value')->nullable();
             $table->longText('datajson')->nullable();
 
 
