@@ -8,6 +8,14 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+.header-wrapper{
+  background-color: #8eb4cb;
+
+}
+
+.header{
+  margin: 0px 100px
+}
 .characterbox {
   display: inline-block;
   margin: 20px;
@@ -15,4 +23,36 @@
   color: black;
   font-size: 18px;
   padding: 40px 40px 40px 40px;
+}
+
+.skillscontainer{
+ padding: 5px;
+}
+.header-skillbox{
+ margin-top: 5px;
+}
+.skillbox {
+  margin: 5px;
+}
+
+.skill{
+  width: 25px;
+  text-align: center;
+
+}
+.skill-value{
+  color: azure;
+ border: solid 1px #505a56;
+  text-align: center;
+
+}
+.character-base-block{
+  margin: 10px;
+  background-color: #8eb4cb;
+}
+.character-base-name{
+  margin:5px 10px;
+}
+.character-base-value{
+  margin: 5px 10px;
 }

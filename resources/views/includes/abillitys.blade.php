@@ -1,9 +1,10 @@
-<div class="container">
+<div class="skillscontainer clearfix">
+    @foreach($character->skills as $skill)
+        <div class="pull-left skillbox">
 
-    @foreach($skills as list($name,$value))
-        <div class="skill">
-            <p>{{$name}}:{{$value}}</p>
+            <p class="skill">{{$skill}}</p>
 
+            <p class="skill-value">{{$character->$skill}}</p>
 
         </div>
     @endforeach

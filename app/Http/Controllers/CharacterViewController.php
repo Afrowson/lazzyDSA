@@ -15,14 +15,8 @@ class CharacterViewController extends Controller
         return view('characters', compact('characters'));
     }
 
-    public function single(Character $id)
+    public function single(Character $character)
     {
-        {
-            $character = Character::find($id);
-            $skills = $character->skills();
-
-            return view('character', compact('character', 'skills'));
-
-        }
+            return view('character', compact('character'));
     }
 }

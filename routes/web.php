@@ -18,5 +18,5 @@ Route::get('/', function () {
 
 Route::get('/characters', 'CharacterViewController@index');
 
-Route::get('/character/{id}', 'CharacterViewController@single');
+Route::get('/character/{character}', 'CharacterViewController@single');
 

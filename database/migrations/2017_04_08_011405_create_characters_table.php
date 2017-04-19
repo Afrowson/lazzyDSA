@@ -20,8 +20,8 @@ class CreateCharactersTable extends Migration
             $table->string('race')->nullable();
             $table->string('profession')->nullable();
             $table->integer('gender')->nullable();
-            $table->integer('size')->nullable();
-            $table->integer('wight')->nullable();
+            $table->integer('height')->nullable();
+            $table->integer('weight')->nullable();
             $table->integer('age')->nullable();
 
             $table->integer('MU');
