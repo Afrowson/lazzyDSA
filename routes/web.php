@@ -12,23 +12,11 @@
 */
 
 
-use App\Character;
-
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/characters', function () {
+Route::get('/characters', 'CharacterViewController@index');
 
-    $characters =  Character::all();
-
-    return view('characters',compact('characters'));
-});
-
-Route::get('/character/{id}', function($id){
-    $character = Character::find($id);
-    return view('character',compact('character'));
-
-});
-
+Route::get('/character/{id}', 'CharacterViewController@single');
 

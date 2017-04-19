@@ -1,6 +1,9 @@
 <div class="container">
-    @foreach($charater->skills as $skill)
+
+    @foreach($skills as list($name,$value))
         <div class="skill">
+            <p>{{$name}}:{{$value}}</p>
+
 
         </div>
     @endforeach

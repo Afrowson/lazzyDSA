@@ -4,14 +4,17 @@ Hier wird mal stehen was das Ding kann.
 
 ## ToDo
 
--Character Einzelansicht.
-    -Character Model
-    -CharacterViewController
-    -Character Skills Include
-    -Talente Migration
-    -CharacterTalente Migration
-    -TalenteView Include
+- Character Einzelansicht.
 
--Charactere erstellen können.
+   - Header + Skills Styling
+   - Stammdaten anzeigen + Styling
+   - Character Model
+   - CharacterViewController
+   - Character Skills Include
+   - Talente Migration
+   - CharacterTalente Migration
+   - TalenteView Include
+
+- Charactere erstellen können.
 
 
