@@ -10,8 +10,8 @@
             <h1 class="pull-left">{{($character->name)}}
                 <small>{{$character->ap_total}} AP</small>
             </h1>
-            <div class="pull-right header-skillbox">
-                @include('includes.abillitys')
+            <div class="pull-right header-skillbox-wrapper">
+                @include('includes.skills')
 
             </div>
 
@@ -22,6 +22,10 @@
 @section('content')
     <div class="character-bio-wrapper">
         @include('includes.bio')
+    </div>
+
+    <div class="character-talents-wrapper">
+        @include('includes.talents')
     </div>
 
 @endsection

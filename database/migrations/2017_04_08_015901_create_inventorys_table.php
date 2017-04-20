@@ -16,8 +16,7 @@ class CreateInventorysTable extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('character_id')->unsigned()->nullable();;
-            $table->foreign('character_id')->references('id')->on('characters');
+            $table->integer('character_id')->unsigned()->index();
 
             $table->string('location')->nullable;
 

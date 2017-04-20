@@ -23,7 +23,7 @@
 
     <div class="container">
         @foreach($characters as $character)
-            <a href="character/{{$character->id}}" class="characterbox">
+            <a href="character/{{$character->id}}" class="character-box">
                 <h3>{{$character->name}}, {{$character->ap_total}} AP</h3>
                 <p>{{$character->race}}, {{$character->profession}}</p>
             </a>

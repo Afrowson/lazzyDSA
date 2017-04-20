@@ -16,8 +16,8 @@ class CreateCharacterTalentsTable extends Migration
         Schema::create('character_talents', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('character_id');
-            $table->integer('talent_id');
+            $table->integer('character_id')->unsignt()->index();
+            $table->integer('talent_id')->unsignt()->index();
             $table->integer('value');
 
             $table->timestamps();

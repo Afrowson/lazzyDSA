@@ -4,11 +4,11 @@ Hier wird mal stehen was das Ding kann.
 
 ## Tasks:
 ### Character Einzelansicht.
-
+* Talents Routing
+* Talents View
 * TalenteView Include
 
 ## Planned:
-
 
 1. Charakter Talente anzeigen
 

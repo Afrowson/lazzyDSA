@@ -8,15 +8,7 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.header-wrapper{
-  background-color: #8eb4cb;
-
-}
-
-.header{
-  margin: 0px 100px
-}
-.characterbox {
+.character-box {
   display: inline-block;
   margin: 20px;
   background-color: #8c8c8c;
@@ -25,17 +17,43 @@
   padding: 40px 40px 40px 40px;
 }
 
-.skillscontainer{
- padding: 5px;
+// region Character Single View
+.header-wrapper{
+  background-color: #8eb4cb;
+
 }
-.header-skillbox{
- margin-top: 5px;
+
+.header{
+  margin: 0px 100px
 }
-.skillbox {
+
+.header-skillbox-wrapper{
+  margin-top: 5px;
+}
+
+.character-bio-wrapper{
+  margin:0px 100px;
+}
+.character-talents-wrapper{
+
+}
+//endregion
+
+// region Character Talents Include
+
+
+
+//endregion
+
+// region Character Skills Include
+.skills-container{
+  padding: 5px;
+}
+.skill-block {
   margin: 5px;
 }
 
-.skill{
+.skill-name{
   width: 25px;
   text-align: center;
 
@@ -46,17 +64,22 @@
   text-align: center;
 
 }
-.character-bio-wrapper{
-  margin:0px 100px;
+//endregion
+
+// region Character Bio Include
+.bio-container{
+  margin: 5px;
 }
-.character-bio-block{
-  margin: 10px;
+
+.bio-block{
+  margin: 5px;
   background-color: #8eb4cb;
 }
-.character-bio-name{
+.bio-name{
   margin:5px 10px;
 }
-.character-bio-value{
+.bio-value{
   margin: 5px 10px;
   color: azure;
 }
+//endregion
