@@ -46,13 +46,17 @@
   text-align: center;
 
 }
-.character-base-block{
+.character-bio-wrapper{
+  margin:0px 100px;
+}
+.character-bio-block{
   margin: 10px;
   background-color: #8eb4cb;
 }
-.character-base-name{
+.character-bio-name{
   margin:5px 10px;
 }
-.character-base-value{
+.character-bio-value{
   margin: 5px 10px;
+  color: azure;
 }

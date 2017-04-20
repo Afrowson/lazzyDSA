@@ -2,19 +2,30 @@
 
 Hier wird mal stehen was das Ding kann.
 
-## ToDo
+## Tasks:
+### Character Einzelansicht.
 
-- Character Einzelansicht.
+* Stammdaten Styling
+* Talente Migration
+* CharacterTalente Migration
+* TalenteView Include
 
-   - Header + Skills Styling
-   - Stammdaten anzeigen + Styling
-   - Character Model
-   - CharacterViewController
-   - Character Skills Include
-   - Talente Migration
-   - CharacterTalente Migration
-   - TalenteView Include
+## Planned:
 
-- Charactere erstellen können.
 
-Jade Language jadelang
+1. Charakter Fertigkeiten anzeigen
+
+1. Charakter Sprachen/Schriften anzeigen
+
+1. LP/AP/KA/SE/ZH/AS/Ini/GS berechnen
+
+1. Fertigkeitsproben berechnen
+
+1. QS einer Probe berechnen
+
+## Ideas: 
+Tagebuch/Background/Beschreibung
+
+https://github.com/FezVrasta/bootstrap-material-design
+
+jade language
