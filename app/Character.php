@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
-
     public $skills = [
         'MU',
         'KL',
@@ -16,7 +15,6 @@ class Character extends Model
         'GE',
         'KO',
         'KK'
-
     ];
-    
+
 }

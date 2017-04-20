@@ -5,14 +5,12 @@ Hier wird mal stehen was das Ding kann.
 ## Tasks:
 ### Character Einzelansicht.
 
-* Talente Migration
-* CharacterTalente Migration
 * TalenteView Include
 
 ## Planned:
 
 
-1. Charakter Fertigkeiten anzeigen
+1. Charakter Talente anzeigen
 
 1. Charakter Sprachen/Schriften anzeigen
 

@@ -3,7 +3,7 @@
 use App\Character;
 use Illuminate\Database\Seeder;
 
-class CharactersSeeder extends Seeder
+class LeonardoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,31 +12,7 @@ class CharactersSeeder extends Seeder
      */
     public function run()
     {
-        Character::create([
-            'name' => 'Degro',
-            'race' => 'Zwerg',
-            'profession' => 'Warrior',
-            'gender' => '1',
-            'height' => '135',
-            'weight' => '61',
-            'age' => '55',
-            'hair' => 'feuerrot',
-            'eyes' => 'grün',
-            'culture' => 'Ambosszwerg',
-            'social' => 'Frei',
-            'place_of_birth' => '-',
-            'MU' => '14',
-            'KL' => '13',
-            'IN' => '13',
-            'CH' => '8',
-            'FF' => '13',
-            'GE' => '13',
-            'KO' => '14',
-            'KK' => '14',
-            'ap_total' => '1147',
-            'ap_spend' => '1119',
 
-        ]);
         Character::create([
             'name' => 'Leonardo Descartes',
             'race' => 'Mensch',
