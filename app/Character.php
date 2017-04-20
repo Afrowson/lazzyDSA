@@ -20,12 +20,11 @@ class Character extends Model
 
     public function talent($id)
     {
-        $test= DB::table('character_talents')->where('talent_id', $id)->get();
-        dd($test);
+    return $this->character_talents()->where('talent_id', $id)->first()->value;
     }
 
-    public function talents()
+    public function character_talents()
     {
-     return $this->hasMany(CharacterTalents::class);
+     return $this->hasMany(CharacterTalent::class);
     }
 }

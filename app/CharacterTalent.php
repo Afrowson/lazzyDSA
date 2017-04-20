@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CharacterTalents extends Model
+class CharacterTalent extends Model
 {
     public function character()
     {
@@ -13,6 +13,6 @@ class CharacterTalents extends Model
 
     public function talent()
     {
-        return $this->belongsTo(Talents::class);
+        return $this->belongsTo(Talent::class);
     }
 }
