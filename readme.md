@@ -5,7 +5,6 @@ Hier wird mal stehen was das Ding kann.
 ## Tasks:
 ### Character Einzelansicht.
 
-* Stammdaten Styling
 * Talente Migration
 * CharacterTalente Migration
 * TalenteView Include
