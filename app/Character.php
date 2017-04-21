@@ -20,7 +20,7 @@ class Character extends Model
 
     public function talent($id)
     {
-    return $this->character_talents()->where('talent_id', $id)->first()->value;
+    return $this->character_talents()->where('talent_id', $id)->value('value');
     }
 
     public function character_talents()

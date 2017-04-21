@@ -19,8 +19,14 @@ class CharacterViewController extends Controller
 
     public function single(Character $character)
     {
-        $talents = Talent::all();
+        $talents = [
+            $body = Talent::where('id', '<', 14)->get(),
+            $social = Talent::where([['id', '>=', 14], ['id', '<', 14]])->get()->toArray(),
+            $nature = Talent::where([['id', '>=', 14], ['id', '<', 14]])->get(),
+            $knowing = Talent::where([['id', '>=', 14], ['id', '<', 14]])->get(),
+            $craft = Talent::where('id', '>', 40)->get()
+        ];
 
-        return view('character', compact('character','talents'));
+        return view('character', compact('character', 'talents'));
     }
 }

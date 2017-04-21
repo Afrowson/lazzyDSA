@@ -1,20 +1,18 @@
 <div class="talents-container clearfix">
-    {{$i=0, $talentgroup = ['Körpertalente','Gesellscha','Naturtalente','Wissenstalente','Handwerkstalente']}}
-    @foreach($talents as $talent)
+    {{$i=0, $talentgroup = ['Körpertalente','Gesellschaftstalente','Naturtalente','Wissenstalente','Handwerkstalente']}}
 
-        @if(in_array($talent->id,[15,13]) )
-            <p>{{$talentgroup[$i++]}}</p>
-        @endif
-        <div class="talent-block pull-left">
+
+    <div class="talent-block pull-left">
+        @foreach($talents[0] as $talent)
+
             <p>{{$talent->name}}</p>
-
             <p>{{$character->talent($talent->id)}}</p>
             <p>{{$talent->first_skill}}</p>
             <p>{{$talent->second_skill}}</p>
             <p>{{$talent->third_skill}}</p>
 
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 
 
 </div>
