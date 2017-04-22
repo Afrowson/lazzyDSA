@@ -3,7 +3,7 @@
         <div class="talent-block pull-left">
             <h4>{{$talentgroup}}</h4>
             @foreach($talents[$loop->index] as $talent)
-                <div class="clearfix">
+                <div class="talent-single clearfix pull-left">
                     <p class="talent-name">{{$talent->name}}: </p>
                         <p class="talent-value pull-left">{{$character->talent($talent->id)}}</p>
                     <div class="talent-skill pull-right">

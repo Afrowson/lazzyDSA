@@ -32,7 +32,7 @@
 }
 
 .character-bio-wrapper{
-  margin:0px 100px;
+  margin:0px 5px;
 }
 .character-talents-wrapper{
 
@@ -40,15 +40,24 @@
 //endregion
 
 // region Character Talent Include
-
+.talents-container{
+  max-width: 1070px;
+}
 .talent-block{
+  max-width: 525px;
   margin: 5px;
   background-color: #8eb4cb;
+
+}
+.talent-single{
+  border: solid 1px #505a56;
+  margin:1px;
 }
 
 .talent-name{
   margin: 0px!important;
-  margin-right: 2px;
+  text-align: center;
+  width: 167px;
 }
 .talent-value{
   font-size: large;
@@ -59,6 +68,15 @@
   margin-right: 2px;
 }
 
+.talent-block{
+  margin: 3px;
+}
+.talent-name{
+
+}
+.talent-value{
+  display: inline-block;
+}
 
 //endregion
 

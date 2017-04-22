@@ -4,13 +4,16 @@ Hier wird mal stehen was das Ding kann.
 
 ## Tasks:
 ### Character Einzelansicht.
-* Talents Routing
-* Talents View
-* TalenteView Include
+
+* bio include aufräumen
+* CSS aufräumen
+* Character Sprachen/Schriften Migration
+* Character Sprachen/Schriften Model
+* Character Sprachen/Schriften Routing
+* Character Sprachen/Schriften anzeigen
+* Character Sprachen/Schriften stylen
 
 ## Planned:
-
-1. Charakter Talente anzeigen
 
 1. Charakter Sprachen/Schriften anzeigen
 
