@@ -1,6 +1,8 @@
 <?php
 
 use App\Character;
+use App\CharacterLanguages;
+use App\CharacterLettering;
 use App\CharacterTalent;
 use Illuminate\Database\Seeder;
 
@@ -393,6 +395,25 @@ class DegroSeeder extends Seeder
             'value'=>'0'
 
         ]);
+        CharacterLanguages::create([
+             'character_id' => $id,
+            'language_id' => '8',
+            'value' => '3'
+        ]);
+        CharacterLanguages::create([
+            'character_id' => $id,
+            'language_id' => '15',
+            'value' => '4'
+        ]);
+        CharacterLettering::create([
+            'character_id' => $id,
+            'lettering_id' => '8'
+        ]);
+        CharacterLettering::create([
+            'character_id' => $id,
+            'lettering_id' => '10'
+        ]);
+
 
     }
 

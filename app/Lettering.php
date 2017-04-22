@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class lettering extends Model
+class Lettering extends Model
 {
     public function character_letterings()
     {

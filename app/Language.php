@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class languages extends Model
+class Language extends Model
 {
     public function character_languages()
     {

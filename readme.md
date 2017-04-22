@@ -6,10 +6,7 @@ Hier wird mal stehen was das Ding kann.
 ### Character Einzelansicht.
 
 * bio include aufräumen
-* CSS aufräumen
-* Character Sprachen/Schriften Migration
 * Character Sprachen/Schriften Seeds
-* Character Sprachen/Schriften Model
 * Character Sprachen/Schriften Routing
 * Character Sprachen/Schriften anzeigen
 * Character Sprachen/Schriften stylen
