@@ -41,6 +41,23 @@
 
 // region Character Talent Include
 
+.talent-block{
+  margin: 5px;
+  background-color: #8eb4cb;
+}
+
+.talent-name{
+  margin: 0px!important;
+  margin-right: 2px;
+}
+.talent-value{
+  font-size: large;
+  margin: 17px;
+  padding: 0px !important;
+}
+.talent-skill{
+  margin-right: 2px;
+}
 
 
 //endregion
@@ -62,6 +79,7 @@
   color: azure;
  border: solid 1px #505a56;
   text-align: center;
+  margin: 0px!important;
 
 }
 //endregion

@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    <div class="character-bio-wrapper">
+    <div class="pull-right character-bio-wrapper">
         @include('includes.bio')
     </div>
 
