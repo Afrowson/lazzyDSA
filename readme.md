@@ -8,6 +8,7 @@ Hier wird mal stehen was das Ding kann.
 * bio include aufräumen
 * CSS aufräumen
 * Character Sprachen/Schriften Migration
+* Character Sprachen/Schriften Seeds
 * Character Sprachen/Schriften Model
 * Character Sprachen/Schriften Routing
 * Character Sprachen/Schriften anzeigen

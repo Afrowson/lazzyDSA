@@ -27,4 +27,14 @@ class Character extends Model
     {
      return $this->hasMany(CharacterTalent::class);
     }
+
+    public function character_letterings()
+    {
+        return $this->hasMany(@CharacterLettering::class);
+    }
+
+    public function character_languages()
+    {
+        return $this->hasMany(@CharacterLanguages::class);
+    }
 }
