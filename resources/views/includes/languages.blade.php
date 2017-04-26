@@ -1,7 +1,7 @@
 <div class="languages-container">
     <h1>LOOOOOOOL</h1>
-    @foreach($character->character_languages as $character_language)
+    @foreach($character->languages as $language)
 
-        <p> {{dd($character>languages())}}</p>
+        <p> {{dd($language)}}</p>
     @endforeach
 </div>

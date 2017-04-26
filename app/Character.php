@@ -39,13 +39,13 @@ class Character extends Model
 
     }
 
-    public function addLanguage(Language $language)
+    public function addLanguage(Language $language,$value)
     {
-        return $this->languages->save($language, ['value']);
+        return $this->languages()->save($language, ['value' => $value]);
     }
 
     public function addLettering($lettering)
     {
-        return $this->letterings->save($lettering);
+        return $this->letterings()->save($lettering);
     }
 }

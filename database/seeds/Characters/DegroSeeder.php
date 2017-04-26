@@ -1,6 +1,7 @@
 <?php
 
 use App\Character;
+use App\Language;
 use App\Talent;
 use Illuminate\Database\Seeder;
 
@@ -44,6 +45,15 @@ class DegroSeeder extends Seeder
         foreach ($talents as $t => $talent) {
             $character->addTalent($talent, $tvalues[$t]);
         }
+        $languages = [8,17];
+        $lvalues = [3,4];
+        $letterings =[9,11];
+        foreach ($languages as $t=>$l){
+            $lang= Language::find($l);
+            $character->addLanguage ($lang,$lvalues[$t]);
+
+        }
+
     }
 
 }

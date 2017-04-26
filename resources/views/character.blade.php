@@ -29,7 +29,7 @@
     </div>
 
     <div class="character-language-wrapper">
-
+        @include('includes.languages')
     </div>
 
 @endsection
