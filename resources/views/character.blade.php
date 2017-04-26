@@ -23,13 +23,12 @@
     <div class="pull-right character-bio-wrapper">
         @include('includes.bio')
     </div>
-
     <div class="character-talents-wrapper">
         @include('includes.talents')
     </div>
-
-    <div class="character-language-wrapper">
+    <div class=" character-language-wrapper">
         @include('includes.languages')
     </div>
+
 
 @endsection

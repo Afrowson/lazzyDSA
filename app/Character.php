@@ -28,7 +28,7 @@ class Character extends Model
         return $this->belongsToMany(Language::class)->withPivot('value');
     }
 
-    public function lettering()
+    public function letterings()
     {
         return $this->belongsToMany(Lettering::class);
     }
