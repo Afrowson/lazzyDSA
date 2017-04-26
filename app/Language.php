@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    public function character_languages()
+    public function characters()
     {
-        return $this->hasMany(CharacterLanguages::class);
+        return $this->belongsToMany(Character::class);
     }
 }

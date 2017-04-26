@@ -5,9 +5,6 @@ Hier wird mal stehen was das Ding kann.
 ## Tasks:
 ### Character Einzelansicht.
 
-* bio include aufräumen
-* Character Sprachen/Schriften Seeds
-* Character Sprachen/Schriften Routing
 * Character Sprachen/Schriften anzeigen
 * Character Sprachen/Schriften stylen
 

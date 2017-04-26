@@ -13,11 +13,13 @@ class CreateCharacterTalentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_talents', function (Blueprint $table) {
+        Schema::create('character_talent', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('character_id')->unsignt()->index();
-            $table->integer('talent_id')->unsignt()->index();
+            $table->integer('character_id')->unsigned()->index();
+            //$table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
+            $table->integer('talent_id')->unsigned()->index();
+            //$table->foreign('talent_id')->references('id')->on('talents')->onDelete('cascade');
             $table->integer('value');
 
             $table->timestamps();
@@ -31,6 +33,6 @@ class CreateCharacterTalentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character_talents');
+        Schema::dropIfExists('character_talent');
     }
 }

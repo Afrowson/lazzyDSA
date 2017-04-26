@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharacterLanguagesTable extends Migration
+class CreateCharacterLanguageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateCharacterLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_languages', function (Blueprint $table) {
+        Schema::create('character_language', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('character_id')->unsigned()->index();
+            //$table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
             $table->integer('language_id')->unsigned()->index();
+            //$table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
             $table->integer('value');
 
             $table->timestamps();
@@ -30,6 +32,7 @@ class CreateCharacterLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character_languages');
+
+        Schema::dropIfExists('character_language');
     }
 }

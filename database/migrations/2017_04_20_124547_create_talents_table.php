@@ -18,6 +18,7 @@ class CreateTalentsTable extends Migration
 
             $table->string('name');
             $table->string('description')->nullable();
+            $table->string('group');
 
             $table->string('first_skill');
             $table->string('second_skill');

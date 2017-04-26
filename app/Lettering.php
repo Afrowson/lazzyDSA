@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lettering extends Model
 {
-    public function character_letterings()
+    public function characters()
     {
-        return$this->hasMany(CharacterLettering::class);
+        return $this->belongsToMany(Character::class);
     }
 }

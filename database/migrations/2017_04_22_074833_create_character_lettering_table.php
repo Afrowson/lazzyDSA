@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharacterLetteringsTable extends Migration
+class CreateCharacterLetteringTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateCharacterLetteringsTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_letterings', function (Blueprint $table) {
+        Schema::create('character_lettering', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('character_id')->unsigned()->index();
+            //$table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
             $table->integer('lettering_id')->unsigned()->index();
+            //$table->foreign('lettering_id')->references('id')->on('letterings')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateCharacterLetteringsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character_letterings');
+        Schema::dropIfExists('character_lettering');
     }
 }

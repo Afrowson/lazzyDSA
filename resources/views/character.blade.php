@@ -28,4 +28,8 @@
         @include('includes.talents')
     </div>
 
+    <div class="character-language-wrapper">
+
+    </div>
+
 @endsection

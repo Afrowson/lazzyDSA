@@ -18,23 +18,34 @@ class Character extends Model
         'KK'
     ];
 
-    public function talent($id)
+    public function talents()
     {
-    return $this->character_talents()->where('talent_id', $id)->value('value');
+        return $this->belongsToMany(Talent::class)->withPivot('value');
     }
 
-    public function character_talents()
+    public function languages()
     {
-     return $this->hasMany(CharacterTalent::class);
+        return $this->belongsToMany(Language::class)->withPivot('value');
     }
 
-    public function character_letterings()
+    public function lettering()
     {
-        return $this->hasMany(@CharacterLettering::class);
+        return $this->belongsToMany(Lettering::class);
     }
 
-    public function character_languages()
+    public function addTalent(Talent $talent, $value)
     {
-        return $this->hasMany(@CharacterLanguages::class);
+        return $this->talents()->save($talent, ['value' => $value]);
+
+    }
+
+    public function addLanguage(Language $language)
+    {
+        return $this->languages->save($language, ['value']);
+    }
+
+    public function addLettering($lettering)
+    {
+        return $this->letterings->save($lettering);
     }
 }

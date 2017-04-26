@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Talent extends Model
 {
-    public function character_talents()
+    public function character()
     {
-        $this->hasMany(CharacterTalent::class);
+        $this->belongsToMany(Character::class);
     }
 }
