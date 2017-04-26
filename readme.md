@@ -5,7 +5,6 @@ Hier wird mal stehen was das Ding kann.
 ## Tasks:
 ### Character Einzelansicht.
 
-* Character Sprachen/Schriften anzeigen
 * Character Sprachen/Schriften stylen
 
 ## Planned:
