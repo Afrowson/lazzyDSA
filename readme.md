@@ -1,11 +1,17 @@
-## NOTHING TO SEE!
+## Wat kann es denn?
 
-Hier wird mal stehen was das Ding kann.
+* Basic Stats anzeigen.
+* Skills anzeigen
+* Talente anzeigen
 
 ## Tasks:
 ### Character Einzelansicht.
 
 * Character Sprachen/Schriften stylen
+* Character table erweitern
+* LP - GS berechnen 
+* LP - GS anzigen
+* LP - GS stylen
 
 ## Planned:
 
@@ -13,7 +19,12 @@ Hier wird mal stehen was das Ding kann.
 
 1. LP/AP/KA/SE/ZH/AS/Ini/GS berechnen
 
-1. Fertigkeitsproben berechnen
+1. Kampffertigkeiten anzeigen
+
+1. Inventar anzeigen
+
+1. Zustände speichern lassen
+
 
 1. QS einer Probe berechnen
 
