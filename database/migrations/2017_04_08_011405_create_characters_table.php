@@ -41,13 +41,28 @@ class CreateCharactersTable extends Migration
             $table->integer('KO');
             $table->integer('KK');
 
+            $table->integer('lep')->nullable();
+            $table->integer('asp')->nullable();
+            $table->integer('kap')->nullable();
+            $table->integer('lep_max')->nullable();
+            $table->integer('asp_max')->nullable();
+            $table->integer('kap_max')->nullable();
+
+            $table->integer('SK')->nullable();
+            $table->integer('ZK')->nullable();
+            $table->integer('AW')->nullable();
+            $table->integer('IT')->nullable();
+            $table->integer('GW')->nullable();
+
+            $table->integer('SP')->nullable();
+
             $table->integer('ap_total');
             $table->integer('ap_spend')->nullable();
 
             $table->timestamps();
 
         });
-}
+    }
 
     /**
      * Reverse the migrations.

@@ -131,7 +131,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'KL',
             'third_skill' => 'CH',
             'increase_factor' => '1',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Betören',
@@ -139,7 +139,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'CH',
             'third_skill' => 'CH',
             'increase_factor' => '1',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Einschüchtern',
@@ -147,7 +147,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '1',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Etikette',
@@ -155,7 +155,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '1',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Gassenwissen',
@@ -163,7 +163,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '2',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Menschenkenntni',
@@ -171,7 +171,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '2',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Überreden',
@@ -179,7 +179,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '2',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Verkleiden',
@@ -187,7 +187,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'CH',
             'third_skill' => 'GE',
             'increase_factor' => '1',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Willenskrat',
@@ -195,7 +195,7 @@ class TalentsSeeder extends Seeder
             'second_skill' => 'IN',
             'third_skill' => 'CH',
             'increase_factor' => '3',
-            'group' => 'Geselschaft',
+            'group' => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Fährtensuchen',

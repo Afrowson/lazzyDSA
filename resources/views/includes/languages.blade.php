@@ -1,25 +1,26 @@
 <div class="clearfix languages-container">
-    <div class="pull-left">
-    <h3>Sprachen</h3>
+    <div class="pull-left languages-block">
 
-    @foreach($character->languages as $language)
-        <div class="clearfix language-single">
+        <h4>Sprachen</h4>
 
-            <p class="pull-left language-name">{{$language->name}}</p>
-            <p class="language-value">Level: {{$language->pivot->value}}</p>
+        @foreach($character->languages as $language)
+            <div class="clearfix language-single">
 
-        </div>
-    @endforeach
+                <b class="pull-left language-name">{{$language->name}}</b>
+                <p class="pull-right language-value">  {{$language->pivot->value}}</p>
+
+            </div>
+        @endforeach
     </div>
-    <div class="pull-left">
-    <h3>Schriften</h3>
+    <div class="pull-left languages-block">
+        <h4>Schriften</h4>
 
-    @foreach($character->letterings as $lettering)
-        <div class="clearfix lettering-single">
+        @foreach($character->letterings as $lettering)
+            <div class="language-single">
 
-            <p class="pull-left lettering-name">{{$lettering->name}}</p>
+                <b class="language-name">{{$lettering->name}}</b>
 
-        </div>
-    @endforeach
+            </div>
+        @endforeach
     </div>
 </div>

@@ -32,19 +32,93 @@
 }
 
 .character-bio-wrapper{
-  margin:0px 5px;
+
 }
 .character-talents-wrapper{
 
 }
+.character-calculateables-wrapper{
+
+}
+//endregion
+
+// region Character Languages Include
+.languages-container{
+  margin: 5px;
+
+}
+.languages-block{
+  background-color: #8eb4cb;
+  padding: 5px;
+  margin: 1px;
+}
+.languages-block h4{
+  margin: 1px;
+}
+.language-single{
+
+}
+.language-name{
+margin: 0px 3px 0px 0px;
+}
+.language-value{
+  color: azure;
+margin: 0px;
+}
+
+//endregion
+
+//region Character Calculateables Include
+
+.calculateables-container{
+  background-color: #8eb4cb;
+  margin: 5px;
+}
+.calculateable-single{
+  margin: 1px;
+}
+.calculateable-name{
+  margin:0px 3px 0px 0px !important;
+
+}
+.calculatable-value{
+  color: azure;
+  padding: 0px 3px;
+ // border: solid 1px #505a56;
+  text-align: center;
+  margin:0px!important;
+
+}
+
+//endregion
+
+//region Character Energy Include
+.energy-container{
+margin:  10px;
+}
+.energy-block{
+ margin: 30px 0px 0px 10px;
+}
+.energy-name{
+margin: 3px 5px 0px 0px!important;
+}
+.energy-values{
+  color: azure;
+  margin: 0px!important;
+  padding: 2px;
+  border: solid 1px #505a56;
+  text-align: center;
+}
+
+
 //endregion
 
 // region Character Talent Include
 .talents-container{
-  max-width: 1070px;
+  max-width: 517px;
 }
 .talent-block{
-  max-width: 525px;
+  max-width: 511px;
   margin: 5px;
   background-color: #8eb4cb;
 
@@ -89,13 +163,14 @@
 }
 
 .skill-name{
+  margin: 0px!important;
   width: 25px;
   text-align: center;
 
 }
 .skill-value{
   color: azure;
- border: solid 1px #505a56;
+  border: solid 1px #505a56;
   text-align: center;
   margin: 0px!important;
 

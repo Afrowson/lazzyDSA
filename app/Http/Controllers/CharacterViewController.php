@@ -17,7 +17,7 @@ class CharacterViewController extends Controller
 
     public function single(Character $character)
     {
-        $talentgroups = ['Körper','Geselschaft','Natur','Wissen','Handwerk'];
+        $talentgroups = ['Körper', 'Gesellschaft', 'Natur', 'Wissen', 'Handwerk'];
 
         return view('character', compact('character', 'talentgroups'));
     }

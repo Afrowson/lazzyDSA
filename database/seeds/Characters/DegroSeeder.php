@@ -27,7 +27,8 @@ class DegroSeeder extends Seeder
             'eyes' => 'grün',
             'culture' => 'Ambosszwerg',
             'social' => 'Frei',
-            'place_of_birth' => '-',
+            'place_of_birth' => 'Xorlosch',
+
             'MU' => '14',
             'KL' => '13',
             'IN' => '13',
@@ -36,28 +37,45 @@ class DegroSeeder extends Seeder
             'GE' => '13',
             'KO' => '14',
             'KK' => '14',
+
+            'lep' => '31',
+            'asp' => '0',
+            'kap' => '0',
+            'lep_max' => '36',
+            'asp_max' => '0',
+            'kap_max' => '0',
+
+            'SK' => '3',
+            'ZK' => '3',
+            'AW' => '7',
+            'IT' => '15',
+            'GW' => '6',
+
+            'SP' => '3',
+
             'ap_total' => '1147',
             'ap_spend' => '1119',
-
         ]);
 
-        $tvalues = [0, 0, 0, 6, 5, 0, 0, 5, 0, 6, 0, 0, 4, 10, 0, 0, 7, 0, 0, 5, 0, 0, 3, 0, 0, 0, 5, 0, 0, 3, 5, 0, 1, 3, 8, 0, 5, 8, 0, 5, 0, 0, 0, 0, 0, 2, 0, 0, 0, 5, 0, 0, 0, 0, 6, 0, 0, 4, 0];
+        $tvalues = [0, 0, 0, 6, 5, 0, 0, 5, 0, 6, 0, 0, 4, 10, 0, 0, 7, 0, 0, 5,
+            0, 0, 3, 0, 0, 0, 5, 0, 0, 3, 5, 0, 1, 3, 8, 0, 5, 8, 0, 5, 0, 0, 0,
+            0, 0, 2, 0, 0, 0, 5, 0, 0, 0, 0, 6, 0, 0, 4, 0];
         $talents = Talent::all();
         foreach ($talents as $t => $talent) {
             $character->addTalent($talent, $tvalues[$t]);
         }
-        $languages = [8,17];
-        $lvalues = [3,4];
+        $languages = [8, 17];
+        $lvalues = [3, 4];
 
-        foreach ($languages as $t=>$l){
-            $lang= Language::find($l);
-            $character->addLanguage ($lang,$lvalues[$t]);
+        foreach ($languages as $t => $l) {
+            $lang = Language::find($l);
+            $character->addLanguage($lang, $lvalues[$t]);
         }
 
-        $letterings =[9,11];
-        foreach ($letterings as $id){
-            $lett= Lettering::find($id);
-            $character->addLettering ($lett);
+        $letterings = [9, 11];
+        foreach ($letterings as $id) {
+            $lett = Lettering::find($id);
+            $character->addLettering($lett);
         }
 
     }
