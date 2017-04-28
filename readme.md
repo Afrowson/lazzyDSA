@@ -7,10 +7,6 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Kampffertigkeiten Migrations/Models
-
-* Kampffertigkeiten Routing
-
 * Kampffertigkeiten anzeigen
 
 ## Planned:
