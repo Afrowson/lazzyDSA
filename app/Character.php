@@ -33,6 +33,11 @@ class Character extends Model
         return $this->belongsToMany(Lettering::class);
     }
 
+    public function fightingtalents()
+    {
+        return $this->belongsToMany(Fightingtalent::class)->withPivot('value');
+    }
+
     public function addTalent(Talent $talent, $value)
     {
         return $this->talents()->save($talent, ['value' => $value]);
@@ -44,8 +49,13 @@ class Character extends Model
         return $this->languages()->save($language, ['value' => $value]);
     }
 
-    public function addLettering($lettering)
+    public function addLettering(Lettering $lettering)
     {
         return $this->letterings()->save($lettering);
+    }
+
+    public function addFightingtalent(Fightingtalent $fightingtalent,$value)
+    {
+        return $this->fightingtalents()->save($fightingtalent,['value' => $value]);
     }
 }

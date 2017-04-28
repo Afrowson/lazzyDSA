@@ -1,6 +1,7 @@
 <?php
 
 use App\Character;
+use App\Fightingtalent;
 use App\Language;
 use App\Lettering;
 use App\Talent;
@@ -77,6 +78,13 @@ class DegroSeeder extends Seeder
             $lett = Lettering::find($id);
             $character->addLettering($lett);
         }
+        $fvalues = [6,6,13,6,6,10,12,6,6,6,6,13,6,6];
+        $ftalents = Fightingtalent::all();
+        foreach ($ftalents as $t=>$ftalent)
+        {
+            $character->addFightingtalent($ftalent,$fvalues[$t]);
+        }
+
 
     }
 
