@@ -3,15 +3,20 @@
 * Alle Stats anzeigen.
 * Skills anzeigen
 * Talente anzeigen
+* Kampftechniken anzeigen
 
 ## Tasks:
 ### Character Einzelansicht.
 
-* Kampffertigkeiten anzeigen
+* Inventar Regeln anschauen
+
+* Inventar Migrations/Model überarbeiten
+
+* Inventar Routing 
+
+*Inventar Anzeigen
 
 ## Planned:
-
-1. Kampffertigkeiten anzeigen
 
 1. Inventar anzeigen
 

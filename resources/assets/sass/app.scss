@@ -1,10 +1,7 @@
-
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
@@ -18,179 +15,229 @@
 }
 
 // region Character Single View
-.header-wrapper{
+.header-wrapper {
   background-color: #8eb4cb;
 
 }
 
-.header{
+.header {
   margin: 0px 100px
 }
 
-.header-skillbox-wrapper{
+.header-skillbox-wrapper {
   margin-top: 5px;
 }
 
-.character-bio-wrapper{
+.character-bio-wrapper {
 
 }
-.character-talents-wrapper{
+
+.character-talents-wrapper {
 
 }
-.character-calculateables-wrapper{
+
+.character-calculateables-wrapper {
 
 }
+
+//endregion
+
+//region Character Fightingtalents Include
+
+.fightingtalents-container {
+  margin: 5px;
+  padding: 5px;
+  background-color: #8eb4cb;
+}
+
 //endregion
 
 // region Character Languages Include
-.languages-container{
+.languages-container {
   margin: 5px;
 
 }
-.languages-block{
+
+.languages-block {
   background-color: #8eb4cb;
   padding: 5px;
   margin: 1px;
 }
-.languages-block h4{
+
+.languages-block h4 {
   margin: 1px;
 }
-.language-single{
+
+.language-single {
 
 }
-.language-name{
-margin: 0px 3px 0px 0px;
+
+.language-name {
+  margin: 0px 3px 0px 0px;
 }
-.language-value{
+
+.language-value {
   color: azure;
-margin: 0px;
+  margin: 0px;
 }
 
 //endregion
 
 //region Character Calculateables Include
 
-.calculateables-container{
+.calculateables-container {
   background-color: #8eb4cb;
   margin: 5px;
 }
-.calculateable-single{
+
+.calculateable-single {
   margin: 1px;
 }
-.calculateable-name{
-  margin:0px 3px 0px 0px !important;
+
+.calculateable-name {
+  margin: 0px 3px 0px 0px !important;
 
 }
-.calculatable-value{
+
+.calculatable-value {
   color: azure;
   padding: 0px 3px;
- // border: solid 1px #505a56;
+  // border: solid 1px #505a56;
   text-align: center;
-  margin:0px!important;
+  margin: 0px !important;
 
 }
 
 //endregion
 
 //region Character Energy Include
-.energy-container{
-margin:  10px;
+.energy-container {
+  margin: 10px;
 }
-.energy-block{
- margin: 30px 0px 0px 10px;
+
+.energy-block {
+  margin: 30px 0px 0px 10px;
 }
-.energy-name{
-margin: 3px 5px 0px 0px!important;
+
+.energy-name {
+  margin: 3px 5px 0px 0px !important;
 }
-.energy-values{
+
+.energy-values {
   color: azure;
-  margin: 0px!important;
+  margin: 0px !important;
   padding: 2px;
   border: solid 1px #505a56;
   text-align: center;
 }
 
-
 //endregion
 
 // region Character Talent Include
-.talents-container{
+.talents-container {
   max-width: 517px;
 }
-.talent-block{
+
+.talent-block {
   max-width: 511px;
   margin: 5px;
   background-color: #8eb4cb;
 
 }
-.talent-single{
+
+.talent-single {
   border: solid 1px #505a56;
-  margin:1px;
+  margin: 1px;
 }
 
-.talent-name{
-  margin: 0px!important;
+.talent-name {
+  margin: 0px !important;
   text-align: center;
   width: 167px;
 }
-.talent-value{
+
+.talent-value {
   font-size: large;
   margin: 17px;
   padding: 0px !important;
 }
-.talent-skill{
+
+.talent-skill {
   margin-right: 2px;
 }
 
-.talent-block{
+.talent-block {
   margin: 3px;
 }
-.talent-name{
+
+.talent-name {
 
 }
-.talent-value{
+
+.talent-value {
   display: inline-block;
 }
 
 //endregion
 
 // region Character Skills Include
-.skills-container{
+.skills-container {
   padding: 5px;
 }
+
 .skill-block {
   margin: 5px;
 }
 
-.skill-name{
-  margin: 0px!important;
+.skill-name {
+  margin: 0px !important;
   width: 25px;
   text-align: center;
 
 }
-.skill-value{
+
+.skill-value {
+  width: 25px;
+  height: 25px;
   color: azure;
   border: solid 1px #505a56;
   text-align: center;
-  margin: 0px!important;
+  margin: 0px !important;
 
 }
+
+.azure {
+  color: azure;
+}
+
+.value-box {
+  width: 25px;
+  height: 25px;
+  border: solid 1px #505a56;
+  text-align: center;
+  margin: 2px;
+
+}
+
 //endregion
 
 // region Character Bio Include
-.bio-container{
+.bio-container {
   margin: 5px;
 }
 
-.bio-block{
+.bio-block {
   margin: 2px;
   background-color: #8eb4cb;
 }
-.bio-name{
-  margin:5px 10px;
+
+.bio-name {
+  margin: 5px 10px;
 }
-.bio-value{
+
+.bio-value {
   margin: 5px 10px;
   color: azure;
 }
+
 //endregion

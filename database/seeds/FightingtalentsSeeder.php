@@ -56,8 +56,8 @@ class FightingtalentsSeeder extends Seeder
             'name' => 'Raufen',
             'description' => 'Bei der sicher ältesten Methode des Kampfes traktieren sich die unbewaffneten Kontrahenten mit Schlägen und Tritten, versuchen sich gegenseitig zu würgen, zu Fall zu bringen oder festzuhalten.',
             'specials' => 'Unbewaffnete erleiden bei einer erfolgreichen Parade mit Raufen gegen Bewaffnete trotzdem den vollen Schaden (und sollten stattdessen besser ausweichen). Wird eine Raufenattacke mit einer Waffe abgewehrt, erleidet der Angreifer den halben Waffenschaden der Waffe des Gegners. Mittels Raufen richtet ein Kämpfer grundsätzlich einen Schaden von 1W6 TP an, der aber wie üblich über die Leiteigenschaft modifiziert werden kann.',
-            'primary_skill' => 'KK',
-            'primary_skill_2' => 'GE',
+            'primary_skill' => 'GE',
+            'primary_skill_2' => 'KK',
             'increase_factor' => '1',
             'melee' => '1'
         ]);
@@ -73,8 +73,8 @@ class FightingtalentsSeeder extends Seeder
             'name' => 'Schwerter',
             'description' => 'Als treuen Begleiter schätzen Krieger und Ritter das Schwert, und für viele ist es ein Symbol für Kampf und Herrschaft. Unter diese Kampftechnik fallen einhändig geführte Klingenwaffen ab der Länge eines Kurzschwertes, mit Ausnahme von Fechtwaffen, egal ob gerade oder gebogen oder mit einseitig oder beidseitig geschliffener Klinge.',
             'specials' => '-',
-            'primary_skill' => 'KK',
             'primary_skill' => 'GE',
+            'primary_skill_2' => 'KK',
             'increase_factor' => '2',
             'melee' => '1'
         ]);
@@ -82,8 +82,8 @@ class FightingtalentsSeeder extends Seeder
             'name' => 'Stangenwaffen',
             'description' => 'Speere, Stäbe und die verschiedenen Spieße der Landwehr sowie vieler Söldnereinheiten fallen unter diese Kampftechnik. Allen gemein ist ein langer Schaft, mit dem sich Gegner auf Abstand halten lassen.',
             'specials' => '-',
-            'primary_skill' => 'KK',
             'primary_skill' => 'GE',
+            'primary_skill_2' => 'KK',
             'increase_factor' => '2',
             'melee' => '1'
         ]);

@@ -36,6 +36,9 @@
         <div class="pull-right character-language-wrapper">
             @include('includes.languages')
         </div>
+        <div class="pull-right character-fightingtalents-wrapper">
+            @include('includes.fightingtalents')
+        </div>
     </div>
     <div class="pull-left character-talents-wrapper">
         @include('includes.talents',[$t='0', $e='2'])

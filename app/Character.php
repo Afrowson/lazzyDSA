@@ -18,6 +18,33 @@ class Character extends Model
         'KK'
     ];
 
+    public function fightingvalues()
+    {
+        foreach ($this->fightingtalents as $i => $fightingtalent) {
+            $ktw = $fightingtalent->pivot->value;
+            if ($fightingtalent->melee) {
+
+                $p = $this->{$fightingtalent->primary_skill};
+                if ($this->{$fightingtalent->primary_skill} <= $this->{$fightingtalent->primary_skill_2}) {
+                    $p = $this->{$fightingtalent->primary_skill_2};
+                }
+                $fightingvalues[$i] = [
+                    'at' => $ktw + (floor($this->MU - 8) / 3),
+                    'pa' => ceil($ktw / 2) + floor(($p - 8) / 3),
+                ];
+
+            } else {
+
+                $fightingvalues[$i] = [
+                    'at' => $ktw + floor(($this->FF - 8) / 3),
+                    'pa' => '-'
+                ];
+            }
+        }
+        return $fightingvalues;
+    }
+
+
     public function talents()
     {
         return $this->belongsToMany(Talent::class)->withPivot('value');
@@ -44,7 +71,7 @@ class Character extends Model
 
     }
 
-    public function addLanguage(Language $language,$value)
+    public function addLanguage(Language $language, $value)
     {
         return $this->languages()->save($language, ['value' => $value]);
     }
@@ -54,8 +81,8 @@ class Character extends Model
         return $this->letterings()->save($lettering);
     }
 
-    public function addFightingtalent(Fightingtalent $fightingtalent,$value)
+    public function addFightingtalent(Fightingtalent $fightingtalent, $value)
     {
-        return $this->fightingtalents()->save($fightingtalent,['value' => $value]);
+        return $this->fightingtalents()->save($fightingtalent, ['value' => $value]);
     }
 }
