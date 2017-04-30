@@ -8,30 +8,34 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Inventar Regeln anschauen
+* Vorteile/Nachteile Migrations/Models
 
-* Inventar Migrations/Model überarbeiten
+* Vorteile/Nachteile Seeder
 
-* Inventar Routing 
+* Vorteile/Nachteile Routing/anzeigen
 
-*Inventar Anzeigen
+
 
 ## Planned:
 
-1. Inventar anzeigen
-
 1. Vor/Nachteile anzeigen
- 
+
+1. Waffen anzeigen 
+
+1. Rüstungen anzeigen
+
 1. Sonderfertigkeiten anzeigen
+
+1. Inventar anzeigen
 
 1. Zustände speichern lassen
 
 1. LP/AP/KA/SE/ZH/AS/Ini/GS berechnen
 
-1. QS einer Probe berechnen
-
 ## Ideas: 
 Tagebuch/Background/Beschreibung
+QS einer Probe berechnen
+
 
 https://github.com/FezVrasta/bootstrap-material-design
 

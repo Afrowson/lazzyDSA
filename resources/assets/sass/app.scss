@@ -23,9 +23,12 @@
 .header {
   margin: 0px 100px
 }
+.header-name-wrapper{
+  margin: 0px 10px 10px 100px;
+}
 
 .header-skillbox-wrapper {
-  margin-top: 5px;
+  margin: 5px 100px 5px 10px;
 }
 
 .character-bio-wrapper {
@@ -116,7 +119,7 @@
 }
 
 .energy-block {
-  margin: 30px 0px 0px 10px;
+  margin: 22px 0px 0px 10px;
 }
 
 .energy-name {
@@ -171,7 +174,7 @@
 }
 
 .talent-name {
-
+color: azure;
 }
 
 .talent-value {
@@ -205,20 +208,6 @@
   margin: 0px !important;
 
 }
-
-.azure {
-  color: azure;
-}
-
-.value-box {
-  width: 25px;
-  height: 25px;
-  border: solid 1px #505a56;
-  text-align: center;
-  margin: 2px;
-
-}
-
 //endregion
 
 // region Character Bio Include
@@ -241,3 +230,18 @@
 }
 
 //endregion
+.azure {
+  color: azure;
+}
+
+.value-box {
+  width: 25px;
+  height: 25px;
+  border: solid 1px #505a56;
+  text-align: center;
+  margin: 2px;
+
+}
+.pull-left-p{
+  margin: 0px 3px 0px;
+}
