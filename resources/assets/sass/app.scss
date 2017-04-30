@@ -135,11 +135,11 @@
 
 // region Character Talent Include
 .talents-container {
-  max-width: 517px;
+  max-width: 520px;
 }
 
 .talent-block {
-  max-width: 511px;
+  max-width: 525px;
   margin: 5px;
   background-color: #8eb4cb;
 
@@ -157,8 +157,8 @@
 }
 
 .talent-value {
-  font-size: large;
-  margin: 17px;
+  font-size: larger;
+  margin: 15px 0px 0px 15px;
   padding: 0px !important;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .skill-block {
-  margin: 5px;
+  margin: 0px 5px 3px;
 }
 
 .skill-name {

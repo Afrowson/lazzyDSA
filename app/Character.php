@@ -22,19 +22,18 @@ class Character extends Model
     {
         foreach ($this->fightingtalents as $i => $fightingtalent) {
             $ktw = $fightingtalent->pivot->value;
-            if ($fightingtalent->melee) {
 
+            if ($fightingtalent->melee) {
                 $p = $this->{$fightingtalent->primary_skill};
+
                 if ($this->{$fightingtalent->primary_skill} <= $this->{$fightingtalent->primary_skill_2}) {
                     $p = $this->{$fightingtalent->primary_skill_2};
                 }
                 $fightingvalues[$i] = [
-                    'at' => $ktw + (floor($this->MU - 8) / 3),
+                    'at' => $ktw + floor(($this->MU - 8) / 3),
                     'pa' => ceil($ktw / 2) + floor(($p - 8) / 3),
                 ];
-
             } else {
-
                 $fightingvalues[$i] = [
                     'at' => $ktw + floor(($this->FF - 8) / 3),
                     'pa' => '-'

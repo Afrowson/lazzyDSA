@@ -1,6 +1,7 @@
 <?php
 
 use App\Character;
+use App\Fightingtalent;
 use App\Language;
 use App\Lettering;
 use App\Talent;
@@ -76,6 +77,12 @@ class LeonardoSeeder extends Seeder
         foreach ($letterings as $id) {
             $lett = Lettering::find($id);
             $character->addLettering($lett);
+        }
+        $fvalues = [6,6,6,6,6,6,6,6,10,6,6,6,6,6];
+        $ftalents = Fightingtalent::all();
+        foreach ($ftalents as $t=>$ftalent)
+        {
+            $character->addFightingtalent($ftalent,$fvalues[$t]);
         }
     }
 
