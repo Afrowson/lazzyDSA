@@ -43,6 +43,15 @@ class Character extends Model
         return $fightingvalues;
     }
 
+    public function handicaps()
+    {
+        return $this->belongsToMany(Handicap::class)->withPivot('value','type');
+    }
+
+    public function benefices()
+    {
+        return $this->belongsToMany(Benefice::class)->withPivot('value','type');
+    }
 
     public function talents()
     {
@@ -73,6 +82,20 @@ class Character extends Model
     public function addLanguage(Language $language, $value)
     {
         return $this->languages()->save($language, ['value' => $value]);
+    }
+
+    public function addBenefice(Benefice $benefice, $options)
+    {
+        $options = array_replace(['value' => null, 'type' => null], $options);
+
+        return $this->benefices()->save($benefice, ['value' => $options['value'], 'type' => $options['type']]);
+    }
+
+    public function addHandicap(Handicap $handicap, $options)
+    {
+        $options = array_replace(['value' => null, 'type' => null], $options);
+        dump($options);
+        return $this->handicaps()->save($handicap, ['value' => $options['value'], 'type' => $options['type']]);
     }
 
     public function addLettering(Lettering $lettering)

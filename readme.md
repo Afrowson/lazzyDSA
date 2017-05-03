@@ -8,13 +8,7 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Vorteile/Nachteile Migrations/Models
-
-* Vorteile/Nachteile Seeder
-
 * Vorteile/Nachteile Routing/anzeigen
-
-
 
 ## Planned:
 

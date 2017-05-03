@@ -1,7 +1,9 @@
 <?php
 
+use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
+use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Talent;
@@ -83,6 +85,28 @@ class LeonardoSeeder extends Seeder
         foreach ($ftalents as $t=>$ftalent)
         {
             $character->addFightingtalent($ftalent,$fvalues[$t]);
+        }
+
+        $handycaps = [
+            ['name' => 'Angst vor','options' => ['value' => '1', 'type' => 'Höhe']],
+            ['name' => 'Verpflichtungen','options' => ['value' => '2', 'type' => 'gegenüber dem Lehrmeister)']],
+            ['name' => 'Schlechte Angewohnheit','options' => ['type' => 'Raucher']],
+        ];
+        foreach ($handycaps as $handycap) {
+            $handicap = Handicap::where('name', '=', $handycap['name'])->first();
+            dump($handycap['options']);
+            $character->addHandicap($handicap, $handycap['options']);
+        }
+        $beneficees=[
+            ['name' => 'Verbesserte Regeneration der Astralenergie','options' => ['value' => '2']],
+            ['name' => 'Zauberer','options' => []],
+            ['name' => 'Herausragende Fertigkeit','options' => ['type' => 'Fulminictus']],
+        ];
+        foreach ($beneficees as $beneficee) {
+            dump($beneficee);
+            $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
+            dump($benefice);
+            $character->addBenefice($benefice, $beneficee['options']);
         }
     }
 

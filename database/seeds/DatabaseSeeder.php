@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguagesSeeder::class);
         $this->call(LetteringSeeder::class);
         $this->call(FightingtalentsSeeder::class);
-
+        $this->call(BeneficesSeeder::class);
+        $this->call(HandicapsSeeder::class);
         $this->call(DegroSeeder::class);
         $this->call(LeonardoSeeder::class);
 
