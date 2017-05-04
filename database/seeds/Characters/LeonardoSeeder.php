@@ -89,7 +89,7 @@ class LeonardoSeeder extends Seeder
 
         $handycaps = [
             ['name' => 'Angst vor','options' => ['value' => '1', 'type' => 'Höhe']],
-            ['name' => 'Verpflichtungen','options' => ['value' => '2', 'type' => 'gegenüber dem Lehrmeister)']],
+            ['name' => 'Verpflichtungen','options' => ['value' => '2', 'type' => 'gegenüber dem Lehrmeister']],
             ['name' => 'Schlechte Angewohnheit','options' => ['type' => 'Raucher']],
         ];
         foreach ($handycaps as $handycap) {

@@ -94,8 +94,10 @@
 }
 
 .calculateable-single {
-  margin: 1px;
+  margin: 4px 3px 4px 0px !important;
+
 }
+
 
 .calculateable-name {
   margin: 0px 3px 0px 0px !important;
@@ -126,12 +128,8 @@
   margin: 3px 5px 0px 0px !important;
 }
 
-.energy-values {
-  color: azure;
-  margin: 0px !important;
-  padding: 2px;
-  border: solid 1px #505a56;
-  text-align: center;
+.energy-value {
+  width: auto!important;
 }
 
 //endregion
@@ -183,6 +181,40 @@ color: azure;
 
 //endregion
 
+//region Characte Benefices Include
+
+.benefice-box{
+  padding: 3px;
+ background-color: #8eb4cb;
+  margin: 5px;
+}
+.benefice-box h4{
+  display: inline;
+  margin: 5px;
+}
+.benefices-block{
+  display: block;
+}
+
+.benefice-single{
+margin: 0px 5px;
+}
+.benefice-single p{
+  margin: 0px 0px 1px;
+}
+.benefice-name{
+  margin: 0px 3px;
+}
+.benefice-value{
+   margin: 0px 3px;
+  font-size: 16px;
+}
+.benefice-type{
+
+}
+
+//endregion
+
 // region Character Skills Include
 .skills-container {
   padding: 5px;
@@ -205,7 +237,7 @@ color: azure;
   color: azure;
   border: solid 1px #505a56;
   text-align: center;
-  margin: 0px !important;
+  margin: 2px !important;
 
 }
 //endregion
@@ -240,8 +272,11 @@ color: azure;
   border: solid 1px #505a56;
   text-align: center;
   margin: 2px;
+  padding: 2px;
 
 }
+
+
 .pull-left-p{
   margin: 0px 3px 0px;
 }

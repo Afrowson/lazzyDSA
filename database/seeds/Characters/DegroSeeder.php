@@ -90,7 +90,7 @@ class DegroSeeder extends Seeder
         $handycaps = [
             ['name' => 'Angst vor','options' => ['value' => '1', 'type' => 'dem Meer']],
             [ 'name' => 'Unfähig','options' => ['type' => 'Schwimmen']],
-            ['name' => 'Prinzipientreue','options' => ['value' => '2', 'type' => 'Zwergischer Ehrenkodex)']],
+            ['name' => 'Prinzipientreue','options' => ['value' => '2', 'type' => 'Zwergischer Ehrenkodex']],
             ['name' => 'Persönlichkeitsschwäche','options' => ['type' => 'Vorurteil(Elfen)']],
             ['name' => 'Schlechte Eigenschaft','options' => ['type' => 'Geiz']],
         ];

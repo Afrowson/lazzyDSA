@@ -8,11 +8,15 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Vorteile/Nachteile Routing/anzeigen
+* Weapons Model
+* Weapons Migartion
+* Weapons Seeder
+* Weapons Routing
+* Weapons View
+
+
 
 ## Planned:
-
-1. Vor/Nachteile anzeigen
 
 1. Waffen anzeigen 
 

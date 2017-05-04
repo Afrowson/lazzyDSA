@@ -36,9 +36,6 @@
             <p class="pull-right bio-value">{{$character->weight}}</p>
         </div>
     </div>
-    <div class="pull-left bio-block">
 
-
-    </div>
 
 </div>
