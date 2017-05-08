@@ -67,45 +67,41 @@ class LeonardoSeeder extends Seeder
         foreach ($talents as $t => $talent) {
             $character->addTalent($talent, $tvalues[$t]);
         }
-        $languages = [6,8,23];
-        $lvalues = [2,4,1];
+        $languages = [6, 8, 23];
+        $lvalues = [2, 4, 1];
 
         foreach ($languages as $t => $l) {
             $lang = Language::find($l);
             $character->addLanguage($lang, $lvalues[$t]);
         }
 
-        $letterings = [7,9,14 ];
+        $letterings = [7, 9, 14];
         foreach ($letterings as $id) {
             $lett = Lettering::find($id);
             $character->addLettering($lett);
         }
-        $fvalues = [6,6,6,6,6,6,6,6,10,6,6,6,6,6];
+        $fvalues = [6, 6, 6, 6, 6, 6, 6, 6, 10, 6, 6, 6, 6, 6];
         $ftalents = Fightingtalent::all();
-        foreach ($ftalents as $t=>$ftalent)
-        {
-            $character->addFightingtalent($ftalent,$fvalues[$t]);
+        foreach ($ftalents as $t => $ftalent) {
+            $character->addFightingtalent($ftalent, $fvalues[$t]);
         }
 
         $handycaps = [
-            ['name' => 'Angst vor','options' => ['value' => '1', 'type' => 'Höhe']],
-            ['name' => 'Verpflichtungen','options' => ['value' => '2', 'type' => 'gegenüber dem Lehrmeister']],
-            ['name' => 'Schlechte Angewohnheit','options' => ['type' => 'Raucher']],
+            ['name' => 'Angst vor', 'options' => ['value' => '1', 'type' => 'Höhe']],
+            ['name' => 'Verpflichtungen', 'options' => ['value' => '2', 'type' => 'gegenüber dem Lehrmeister']],
+            ['name' => 'Schlechte Angewohnheit', 'options' => ['type' => 'Raucher']],
         ];
         foreach ($handycaps as $handycap) {
             $handicap = Handicap::where('name', '=', $handycap['name'])->first();
-            dump($handycap['options']);
             $character->addHandicap($handicap, $handycap['options']);
         }
-        $beneficees=[
-            ['name' => 'Verbesserte Regeneration der Astralenergie','options' => ['value' => '2']],
-            ['name' => 'Zauberer','options' => []],
-            ['name' => 'Herausragende Fertigkeit','options' => ['type' => 'Fulminictus']],
+        $beneficees = [
+            ['name' => 'Verbesserte Regeneration der Astralenergie', 'options' => ['value' => '2']],
+            ['name' => 'Zauberer', 'options' => []],
+            ['name' => 'Herausragende Fertigkeit', 'options' => ['type' => 'Fulminictus']],
         ];
         foreach ($beneficees as $beneficee) {
-            dump($beneficee);
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
-            dump($benefice);
             $character->addBenefice($benefice, $beneficee['options']);
         }
     }

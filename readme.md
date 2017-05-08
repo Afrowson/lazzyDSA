@@ -8,19 +8,13 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Weapons Model
-* Weapons Migartion
-* Weapons Seeder
-* Weapons Routing
 * Weapons View
-
-
+* Rangeweapons View
+* Armors View
 
 ## Planned:
 
-1. Waffen anzeigen 
-
-1. Rüstungen anzeigen
+1. Waffen/ Rüstungen anzeigen 
 
 1. Sonderfertigkeiten anzeigen
 

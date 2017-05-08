@@ -45,12 +45,12 @@ class Character extends Model
 
     public function handicaps()
     {
-        return $this->belongsToMany(Handicap::class)->withPivot('value','type');
+        return $this->belongsToMany(Handicap::class)->withPivot('value', 'type');
     }
 
     public function benefices()
     {
-        return $this->belongsToMany(Benefice::class)->withPivot('value','type');
+        return $this->belongsToMany(Benefice::class)->withPivot('value', 'type');
     }
 
     public function talents()
@@ -73,10 +73,19 @@ class Character extends Model
         return $this->belongsToMany(Fightingtalent::class)->withPivot('value');
     }
 
+    public function weapons()
+    {
+        return $this->belongsToMany(Weapon::class)->withPivot('modifiers', 'keys');
+    }
+
+    protected function getModifiersAttribute()
+    {
+        return explode(',', $this->pivot->xyz);
+    }
+
     public function addTalent(Talent $talent, $value)
     {
         return $this->talents()->save($talent, ['value' => $value]);
-
     }
 
     public function addLanguage(Language $language, $value)
@@ -94,7 +103,6 @@ class Character extends Model
     public function addHandicap(Handicap $handicap, $options)
     {
         $options = array_replace(['value' => null, 'type' => null], $options);
-        dump($options);
         return $this->handicaps()->save($handicap, ['value' => $options['value'], 'type' => $options['type']]);
     }
 
@@ -107,4 +115,12 @@ class Character extends Model
     {
         return $this->fightingtalents()->save($fightingtalent, ['value' => $value]);
     }
+
+    public function addWeapon(Weapon $weapon, $modifiers)
+    {
+        $keys = implode(',', array_keys($modifiers));
+        $modifiers = implode(',', $modifiers);
+        return $this->weapons()->save($weapon, ['keys' => $keys, 'modifiers' => $modifiers]);
+    }
+
 }
