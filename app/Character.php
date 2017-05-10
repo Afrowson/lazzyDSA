@@ -78,6 +78,21 @@ class Character extends Model
         return $this->belongsToMany(Weapon::class)->withPivot('modifiers', 'keys');
     }
 
+    public function rangeweapons()
+    {
+        return $this->belongsToMany(Rangeweapon::class)->withPivot('modifiers', 'keys');
+    }
+
+    public function armors()
+    {
+        return $this->belongsToMany(Armor::class)->withPivot('modifiers', 'keys');
+    }
+
+    public function shields()
+    {
+        return $this->belongsToMany(Shield::class)->withPivot('modifiers', 'keys');
+    }
+
     protected function getModifiersAttribute()
     {
         return explode(',', $this->pivot->xyz);
@@ -120,7 +135,28 @@ class Character extends Model
     {
         $keys = implode(',', array_keys($modifiers));
         $modifiers = implode(',', $modifiers);
+
         return $this->weapons()->save($weapon, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
 
+    public function addRangeweapon(Rangeweapon $rangeweapon, $modifiers)
+    {
+        $keys = implode(',', array_keys($modifiers));
+        $modifiers = implode(',', $modifiers);
+        return $this->rangeweapons()->save($rangeweapon, ['keys' => $keys, 'modifiers' => $modifiers]);
+    }
+
+    public function addArmor(Armor $armor, $modifiers)
+    {
+        $keys = implode(',', array_keys($modifiers));
+        $modifiers = implode(',', $modifiers);
+        return $this->armors()->save($armor, ['keys' => $keys, 'modifiers' => $modifiers]);
+    }
+
+    public function addShield(Shield $shield, $modifiers)
+    {
+        $keys = implode(',', array_keys($modifiers));
+        $modifiers = implode(',', $modifiers);
+        return $this->shields()->save($shield, ['keys' => $keys, 'modifiers' => $modifiers]);
+    }
 }

@@ -4,6 +4,8 @@
 * Skills anzeigen
 * Talente anzeigen
 * Kampftechniken anzeigen
+* Vor-/Nachteile anzeigen
+
 
 ## Tasks:
 ### Character Einzelansicht.
@@ -11,6 +13,7 @@
 * Weapons View
 * Rangeweapons View
 * Armors View
+* Shield View
 
 ## Planned:
 

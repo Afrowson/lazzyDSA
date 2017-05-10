@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ArmorsSeeder::class);
         $this->call(WeaponsSeeder::class);
         $this->call(RangeweaponsSeeder::class);
+        $this->call(ShieldsSeeder::class);
 
         $this->call(DegroSeeder::class);
         $this->call(LeonardoSeeder::class);

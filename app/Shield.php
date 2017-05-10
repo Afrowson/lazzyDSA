@@ -4,13 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rangeweapon extends Model
+class Shield extends Model
 {
-    public function characters()
-    {
-        return $this->belongsToMany(Character::class);
-    }
-
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name']))
@@ -43,18 +38,26 @@ class Rangeweapon extends Model
         return $value;
     }
 
-    public function getReloadTimeAttribute($value)
+    public function getSSAttribute($value)
     {
-        if (isset($this->modifiers['reload_time']))
-            $value = $value + $this->modifiers['reload?time'];
+        if (isset($this->modifiers['SS']))
+            $value = $value + $this->modifiers['SS'];
 
         return $value;
     }
 
-    public function getMunitionTzpeAttribute($value)
+    public function getPaModAttribute($value)
     {
-        if (isset($this->modifiers['munition_type']))
-            $value = $value + $this->modifiers['munition_type'];
+        if (isset($this->modifiers['pa_mod']))
+            $value = $value + $this->modifiers['pa_mod'];
+
+        return $value;
+    }
+
+    public function getAtModAttribute($value)
+    {
+        if (isset($this->modifiers['at_mod']))
+            $value = $value + $this->modifiers['at_mod'];
 
         return $value;
     }
@@ -67,36 +70,20 @@ class Rangeweapon extends Model
         return $value;
     }
 
-    public function getRange1Attribute($value)
+    public function getReachAttribute($value)
     {
-        if (isset($this->modifiers['range1']))
-            $value = $value + $this->modifiers['range1'];
+        if (isset($this->modifiers['reach']))
+            $value = $value + $this->modifiers['reach'];
 
         return $value;
     }
 
-    public function getRange2Attribute($value)
-    {
-        if (isset($this->modifiers['range2']))
-            $value = $value + $this->modifiers['range2'];
-
-        return $value;
-    }
-
-    public function getRange3Attribute($value)
-    {
-        if (isset($this->modifiers['range3']))
-            $value = $value + $this->modifiers['range3'];
-
-        return $value;
-    }
-
-    public function getModifiersAttribute()
+    protected function getModifiersAttribute()
     {
 
         $modifiers = explode(',', $this->pivot->modifiers);
         $keys = explode(',', $this->pivot->keys);
-
         return array_combine($keys, $modifiers);
+
     }
 }

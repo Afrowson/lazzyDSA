@@ -42,6 +42,9 @@
             <div class=" character-language-wrapper">
                 @include('includes.languages')
             </div>
+            <div class=" character-weapons-wrapper">
+                @include('includes.weapons')
+            </div>
         </div>
 
     </div>

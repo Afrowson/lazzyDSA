@@ -1,11 +1,14 @@
 <?php
 
+use App\Armor;
 use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
 use App\Handicap;
 use App\Language;
 use App\Lettering;
+use App\Rangeweapon;
+use App\Shield;
 use App\Talent;
 use App\Weapon;
 use Illuminate\Database\Seeder;
@@ -113,7 +116,40 @@ class DegroSeeder extends Seeder
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
             $character->addBenefice($benefice, $beneficee['options']);
         }
-
+        $wids = [1, 2, 3];
+        $wmods = [
+            ['name' => ' des Todes', 'bonus_dmg' => '1', 'at_mod' => '1'],
+            ['SS' => '-2', 'weight' => '-0.25'],
+            ['rules' => 'Some Text!']
+        ];
+        $rwids = [1];
+        $rwmods = [
+            ['reload_time' => '+4', 'rules' => 'Diese Balestrina wurde mit einem 5 Schuss Magazin ausgestttet'],
+        ];
+        $aids = [6];
+        $amods = [
+            ['name' => ' aus dem Kosch', 'weight' => '+1.5', 'RS' => '+1']
+        ];
+        $sids = [2];
+        $smods = [
+            ['weight' => '-1']
+        ];
+        foreach ($wids as $i => $id) {
+            $weapon = Weapon::find($id);
+            $character->addWeapon($weapon, $wmods[$i]);
+        }
+        foreach ($rwids as $i => $id) {
+            $rangeweapon = Rangeweapon::find($id);
+            $character->addRangeweapon($rangeweapon, $rwmods[$i]);
+        }
+        foreach ($aids as $i => $id) {
+            $armor = Armor::find($id);
+            $character->addArmor($armor, $amods[$i]);
+        }
+        foreach ($sids as $i => $id) {
+            $shield = Shield::find($id);
+            $character->addShield($shield, $smods[$i]);
+        }
     }
 
 }

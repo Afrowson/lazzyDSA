@@ -13,7 +13,7 @@ class RangeweaponsSeeder extends Seeder
     public function run()
     {
 
-        Rangeweapon::create([
+        $i = Rangeweapon::create([
             'name' => 'Balestrina',
             'fightingtalent_id' => '12',
             'reload_time' => '2',
