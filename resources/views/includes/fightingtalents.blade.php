@@ -10,8 +10,8 @@
         <div class="fightingtalents-single clearfix">
             <b class="pull-left ">{{$fightingtalent->name}}</b>
 
-            <p class="pull-right azure value-box">{{$fightingvalues[$i]['pa']}}</p>
-            <p class="pull-right azure value-box">{{$fightingvalues[$i]['at']}}</p>
+            <p class="pull-right azure value-box">{{$fightvalues[$i]['pa']}}</p>
+            <p class="pull-right azure value-box">{{$fightvalues[$i]['at']}}</p>
             <p class="pull-right azure value-box">{{$fightingtalent->pivot->value}}</p>
         </div>
     @endforeach

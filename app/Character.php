@@ -29,18 +29,18 @@ class Character extends Model
                 if ($this->{$fightingtalent->primary_skill} <= $this->{$fightingtalent->primary_skill_2}) {
                     $p = $this->{$fightingtalent->primary_skill_2};
                 }
-                $fightingvalues[$i] = [
+                $fightvalues[$i] = [
                     'at' => $ktw + floor(($this->MU - 8) / 3),
                     'pa' => ceil($ktw / 2) + floor(($p - 8) / 3),
                 ];
             } else {
-                $fightingvalues[$i] = [
+                $fightvalues[$i] = [
                     'at' => $ktw + floor(($this->FF - 8) / 3),
                     'pa' => '-'
                 ];
             }
         }
-        return $fightingvalues;
+        return $fightvalues;
     }
 
     public function handicaps()

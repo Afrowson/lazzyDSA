@@ -1,5 +1,6 @@
 <?php
 
+use App\Armor;
 use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
@@ -7,6 +8,7 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Talent;
+use App\Weapon;
 use Illuminate\Database\Seeder;
 
 class LeonardoSeeder extends Seeder
@@ -104,6 +106,21 @@ class LeonardoSeeder extends Seeder
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
             $character->addBenefice($benefice, $beneficee['options']);
         }
+        $wids = [4];
+        $wmods = [
+            []
+        ];
+        $aids = [1];
+        $amods = [
+            ['name' => ' eines Magiers','weight'=>'+2']
+        ];
+        foreach ($wids as $i => $id) {
+            $weapon = Weapon::find($id);
+            $character->addWeapon($weapon, $wmods[$i]);
+        }
+        foreach ($aids as $i => $id) {
+            $armor = Armor::find($id);
+            $character->addArmor($armor, $amods[$i]);
+        }
     }
-
 }

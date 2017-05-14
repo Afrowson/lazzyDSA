@@ -46,7 +46,7 @@ class TalentsSeeder extends Seeder
             'group' => 'Körper',
         ]);
         Talent::create([
-            'name' => 'Kratakt',
+            'name' => 'Kraftakt',
             'first_skill' => 'KO',
             'second_skill' => 'KK',
             'third_skill' => 'KK',

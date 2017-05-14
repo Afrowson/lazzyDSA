@@ -46,7 +46,7 @@ class Rangeweapon extends Model
     public function getReloadTimeAttribute($value)
     {
         if (isset($this->modifiers['reload_time']))
-            $value = $value + $this->modifiers['reload?time'];
+            $value = $value + $this->modifiers['reload_time'];
 
         return $value;
     }
@@ -62,7 +62,7 @@ class Rangeweapon extends Model
     public function getWeightAttribute($value)
     {
         if (isset($this->modifiers['weight']))
-            $value = $value + $this->modifiers['weight'];
+            $value = number_format($value + $this->modifiers['weight'],2);
 
         return $value;
     }

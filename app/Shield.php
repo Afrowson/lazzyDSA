@@ -65,7 +65,7 @@ class Shield extends Model
     public function getWeightAttribute($value)
     {
         if (isset($this->modifiers['weight']))
-            $value = $value + $this->modifiers['weight'];
+            $value = number_format($value + $this->modifiers['weight'], 2);
 
         return $value;
     }
@@ -75,6 +75,17 @@ class Shield extends Model
         if (isset($this->modifiers['reach']))
             $value = $value + $this->modifiers['reach'];
 
+        switch ($value) {
+            case 1:
+                $value = 'kurz';
+                break;
+                $value = 'mittel';
+                break;
+                $value = 'lang';
+                break;
+
+
+        };
         return $value;
     }
 

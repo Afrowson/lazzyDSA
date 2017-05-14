@@ -23,6 +23,10 @@
 @section('content')
     <div class="pull-right character-right-side clearfix">
         <div class="clearfix">
+            <div class=" character-weapons-wrapper">
+                @include('includes.weapons')
+            </div>
+            <div class="clearfix">
 
             <div class="pull-right character-bio-wrapper">
                 @include('includes.bio')
@@ -32,20 +36,23 @@
             </div>
 
         </div>
-        <div class="pull-right character-fightingtalents-wrapper">
-            @include('includes.fightingtalents')
+
+        <div class="clearfix">
+            <div class="pull-right character-fightingtalents-wrapper">
+                @include('includes.fightingtalents')
+            </div>
+            <div class="clearfix pull-right">
+                <div class="pull-right character-benefices-wrapper">
+                    @include('includes.benefices')
+                </div>
+                <div class=" character-language-wrapper">
+                    @include('includes.languages')
+                </div>
+            </div>
         </div>
-        <div class="clearfix pull-right">
-            <div class="pull-right character-benefices-wrapper">
-                @include('includes.benefices')
-            </div>
-            <div class=" character-language-wrapper">
-                @include('includes.languages')
-            </div>
-            <div class=" character-weapons-wrapper">
-                @include('includes.weapons')
-            </div>
+
         </div>
+
 
     </div>
 

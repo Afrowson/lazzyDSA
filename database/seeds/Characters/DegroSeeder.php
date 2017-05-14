@@ -118,9 +118,9 @@ class DegroSeeder extends Seeder
         }
         $wids = [1, 2, 3];
         $wmods = [
-            ['name' => ' des Todes', 'bonus_dmg' => '1', 'at_mod' => '1'],
-            ['SS' => '-2', 'weight' => '-0.25'],
-            ['rules' => 'Some Text!']
+            ['bonus_dmg' => '1', 'at_mod' => '1'],
+            [],
+            []
         ];
         $rwids = [1];
         $rwmods = [

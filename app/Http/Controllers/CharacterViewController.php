@@ -18,8 +18,8 @@ class CharacterViewController extends Controller
     public function single(Character $character)
     {
         $talentgroups = ['Körper', 'Gesellschaft', 'Natur', 'Wissen', 'Handwerk'];
-        $fightingvalues= $character->fightingvalues();
+        $fightvalues= $character->fightingvalues();
 
-        return view('character', compact('character', 'talentgroups','fightingvalues'));
+        return view('character', compact('character', 'talentgroups','fightvalues'));
     }
 }

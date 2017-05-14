@@ -88,7 +88,7 @@ class FightingtalentsSeeder extends Seeder
             'melee' => '1'
         ]);
         Fightingtalent::create([
-            'name' => 'Zweihandhiebwaffen',
+            'name' => 'Zweihand-hiebwaffen',
             'description' => 'Besonders bei primitiven Kulturen werden die unausgewogenen Zweihandwaffen gerne im Kampf geführt, da sie oft ein abschreckendes Äußeres mit einer tödlichen Wuchtwirkung verbinden. Zu den Zweihandhiebwaffen gehören u.a. der Kriegshammer oder der zwergische Felsspalter.',
             'specials' => '-',
             'primary_skill' => 'KK',
@@ -96,7 +96,7 @@ class FightingtalentsSeeder extends Seeder
             'melee' => '1'
         ]);
         Fightingtalent::create([
-            'name' => 'Zweihandschwerter',
+            'name' => 'Zweihand-schwerter',
             'description' => 'Alle Klingenwaffen, die mit zwei Händen gehalten werden, vom klassischen Zweihänder bis zum Doppelkhunchomer, fallen unter diese Kampftechnik. Auch Anderthalbhänder werden mit dieser Kampftechnik geführt.',
             'specials' => '-',
             'primary_skill' => 'KK',
