@@ -263,19 +263,24 @@ margin: 0px 5px;
 
 //endregion
 
-//region
+//region Weapons Include
+.character-weapons-container{
+  background-color: #8eb4cb;
+  margin-top: 3px;
+  padding: 2px;
+}
 .weapons-block {
   margin: 3px;
 }
 .weapons-table-cell{
-  background-color: #8eb4cb;
+  background-color: azure;
   padding: 3px;
-  color: azure;
+  color: black;
 }
 
 .weapons-table-cell-w{
-background-color: azure;
-  color: black;
+background-color: #636b6f;
+  color: azure;
 }
 
 //endregion
@@ -291,9 +296,7 @@ background-color: azure;
   text-align: center;
   margin: 2px;
   padding: 2px;
-
 }
-
 
 .pull-left-p{
   margin: 0px 3px 0px;

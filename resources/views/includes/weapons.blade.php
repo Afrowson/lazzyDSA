@@ -1,4 +1,4 @@
-<div>
+<div class="character-weapons-container">
     <h4>Waffen und Rüstungen</h4>
     <table class='weapons-block '>
         <tr>
@@ -20,7 +20,8 @@
                 <td class="weapons-table-cell">{{$character->fightingtalents[$weapon->fightingtalent_id-1]->name }}</td>
                 <td class="weapons-table-cell-w">{{$weapon->at_mod+ $fightvalues[$weapon->fightingtalent_id-1]['at']}}</td>
                 <td class="weapons-table-cell-w">{{$weapon->pa_mod+ $fightvalues[$weapon->fightingtalent_id-1]['pa']}}</td>
-                <td class="weapons-table-cell-w">{{$weapon->dice}}W6+{{$weapon->bonus_dmg + max($character->{$weapon->skill}-$weapon->SS,0 )}}</td>
+                <td class="weapons-table-cell-w">{{$weapon->dice}}
+                    W6+{{$weapon->bonus_dmg + max($character->{$weapon->skill}-$weapon->SS,0 )}}</td>
                 <td class="weapons-table-cell">{{$weapon->reach}}</td>
                 <td class="weapons-table-cell">{{$weapon->skill}}</td>
                 <td class="weapons-table-cell">{{$weapon->SS}}</td>
@@ -29,23 +30,29 @@
                 <td class="weapons-table-cell">{{$weapon->weight}}</td>
             </tr>
         @endforeach
-<tr><td>Schilde</td></tr>
+        @if(!is_null($character->shields->first()))
+        <tr>
+            <td>Schilde</td>
+        </tr>
         @foreach($character->shields as $shield)
             <tr>
-                <td class="weapons-table-cell" style="color: red">{{$shield->name}}</td>
-                <td class="weapons-table-cell" style="color: red"></td>
-                <td class="weapons-table-cell-w" style="color: red">{{$shield->at_mod+ $fightvalues[$shield->fightingtalent_id-1]['at']}}</td>
-                <td class="weapons-table-cell-w" style="color: red">{{$shield->pa_mod+ $fightvalues[$shield->fightingtalent_id-1]['pa']}}</td>
-                <td class="weapons-table-cell-w" style="color: red">{{$shield->dice}}W6+{{$shield->bonus_dmg + max($character->{$shield->skill}-$shield->SS,0 )}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->reach}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->skill}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->SS}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->dice}}W6+{{$shield->bonus_dmg}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->at_mod}} | {{$shield->pa_mod}}</td>
-                <td class="weapons-table-cell" style="color: red">{{$shield->weight}}</td>
+                <td class="weapons-table-cell">{{$shield->name}}</td>
+                <td class="weapons-table-cell"></td>
+                <td class="weapons-table-cell-w">{{$shield->at_mod+ $fightvalues[$shield->fightingtalent_id-1]['at']}}</td>
+                <td class="weapons-table-cell-w">{{$shield->pa_mod+ $fightvalues[$shield->fightingtalent_id-1]['pa']}}</td>
+                <td class="weapons-table-cell-w">{{$shield->dice}}
+                    W6+{{$shield->bonus_dmg + max($character->{$shield->skill}-$shield->SS,0 )}}</td>
+                <td class="weapons-table-cell">{{$shield->reach}}</td>
+                <td class="weapons-table-cell">{{$shield->skill}}</td>
+                <td class="weapons-table-cell">{{$shield->SS}}</td>
+                <td class="weapons-table-cell">{{$shield->dice}}W6+{{$shield->bonus_dmg}}</td>
+                <td class="weapons-table-cell">{{$shield->at_mod}} | {{$shield->pa_mod}}</td>
+                <td class="weapons-table-cell">{{$shield->weight}}</td>
             </tr>
         @endforeach
     </table>
+    @endif
+    @if(!is_null($character->rangeweapons->first()))
     <table class='weapons-block '>
         <tr>
             <th style="width: 170px">Name</th>
@@ -72,6 +79,7 @@
             </tr>
         @endforeach
     </table>
+    @endif
 
     <table class='weapons-block '>
         <tr>
