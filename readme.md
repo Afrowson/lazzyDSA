@@ -7,33 +7,45 @@
 * Vor-/Nachteile anzeigen
 * Waffen und Rüsuntungen anzeigen
 
-
 ## Tasks:
 ### Character Einzelansicht.
 
-Sonderfertigeiten Migrations
-Sonderfertigeiten Models
-Sonderfertigeiten Seeds
-Sonderfertigeiten Views
+* Sonderfertigeiten Views
 
 
 ## Planned:
 
 1. Sonderfertigkeiten anzeigen
 
-1. Magie anzeigen 
-
 1. Inventar anzeigen
 
-1. Zustände speichern lassen
+1. Zustände/LP/AsP/KaP speichern
 
-1. LP/AP/KA/SE/ZH/AS/Ini/GS berechnen
+1. Zauber anzeigen
+
+1. Inventar verändern
+
+## Nicht geplant:
+
+Sonderfertigkeit 
++ Sprachspezialisierungen
++ Schriftstellerei
+
+Magie Spezialisierungen
 
 ## Ideas: 
+
+
+Talente mit Anwendungsgebieten(Talentspezialisierung) berechnen und als Hover/Dropdown anzeigen.
+
 Tagebuch/Background/Beschreibung
+
+Bild
+
+AP Werte bei erstellung und steigerung editierbar
 QS einer Probe berechnen
-
-
 https://github.com/FezVrasta/bootstrap-material-design
 
 jade language
+
+Grundwerte einer Rasse hinterlegen

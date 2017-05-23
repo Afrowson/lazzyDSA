@@ -9,6 +9,7 @@
         <div class=" pull-left header-name-wrapper">
             @include('includes.name')
         </div>
+
         <div class=" pull-left header-energy-wrapper">
             @include('includes.energy')
         </div>
@@ -26,34 +27,29 @@
             <div class=" character-weapons-wrapper">
                 @include('includes.weapons')
             </div>
+
             <div class="clearfix">
+                <div class="pull-right character-bio-wrapper">
+                    @include('includes.bio')
+                </div>
 
-            <div class="pull-right character-bio-wrapper">
-                @include('includes.bio')
-            </div>
-            <div class="pull-right character-calculateables-wrapper">
-                @include('includes.calculateables')
+                <div class="pull-right character-calculateables-wrapper">
+                    @include('includes.calculateables')
+                </div>
             </div>
 
-        </div>
-
-        <div class="clearfix">
-            <div class="pull-right character-fightingtalents-wrapper">
-                @include('includes.fightingtalents')
-            </div>
             <div class="clearfix pull-right">
-                <div class="pull-right character-benefices-wrapper">
-                    @include('includes.benefices')
+                <div class="pull-right character-fightingtalents-wrapper">
+                    @include('includes.fightingtalents')
                 </div>
-                <div class=" character-language-wrapper">
-                    @include('includes.languages')
+
+                <div class="clearfix pull-left">
+                    <div class="pull-right character-benefices-wrapper">
+                        @include('includes.benefices')
+                    </div>
                 </div>
             </div>
         </div>
-
-        </div>
-
-
     </div>
 
     <div class="pull-left character-talents-wrapper">
@@ -62,6 +58,10 @@
 
     <div class="pull-left character-talents-wrapper">
         @include('includes.talents',[$t='3', $e='4'])
+        <div class="pull-right character-language-wrapper">
+            @include('includes.languages')
+        </div>
     </div>
-
+    <div class="clearfix">
+    </div>
 @endsection

@@ -10,4 +10,9 @@ class Language extends Model
     {
         return $this->belongsToMany(Character::class);
     }
+
+    public function value()
+    {
+        return $this->pivot->value;
+    }
 }

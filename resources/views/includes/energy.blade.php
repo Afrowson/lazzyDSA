@@ -11,8 +11,8 @@
     @endif
     @if($character->ksp_max >= 1)
         <div class="pull-left clearfix energy-block">
-            <p class="pull-left energy-name">KsP</p>
-            <p class="pull-left energy-value value-box azure">{{$character->ksp}}/{{$character->ksp_max}}</p>
+            <p class="pull-left energy-name">KaP</p>
+            <p class="pull-left energy-value value-box azure">{{$character->kap}}/{{$character->kap_max}}</p>
         </div>
     @endif
     <div class="pull-left clearfix energy-block">

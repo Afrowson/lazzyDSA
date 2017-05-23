@@ -7,6 +7,7 @@ use App\Fightingtalent;
 use App\Handicap;
 use App\Language;
 use App\Lettering;
+use App\Specialmagictalent;
 use App\Talent;
 use App\Weapon;
 use Illuminate\Database\Seeder;
@@ -112,7 +113,7 @@ class LeonardoSeeder extends Seeder
         ];
         $aids = [1];
         $amods = [
-            ['name' => ' eines Magiers','weight'=>'+2']
+            ['name' => ' eines Magiers', 'weight' => '+2']
         ];
         foreach ($wids as $i => $id) {
             $weapon = Weapon::find($id);
@@ -121,6 +122,24 @@ class LeonardoSeeder extends Seeder
         foreach ($aids as $i => $id) {
             $armor = Armor::find($id);
             $character->addArmor($armor, $amods[$i]);
+        }
+        $stids = [3, 21];
+        $stlevel = [NULL, NULL];
+        $stmods = ['Xorlosch', 'Codex Albyricus'];
+
+        $smtids = [3, 6, 7, 8, 9];
+        $smtlevel = [NULL, NULL, NULL, NULL, NULL];
+        $smtmods = [NULL, NULL, NULL, NULL, NULL];
+
+        foreach ($stids as $i => $stid) {
+            dump($i);
+            $st = Specialtalent::find($stid);
+            $character->addSpecialtalent($st, $stlevel[$i], $stmods[$i]);
+        }
+
+        foreach ($smtids as $i => $smtid) {
+            $smt = Specialmagictalent::find($smtid);
+            $character->addSpecialmagictalent($smt, $smtlevel[$i], $smtmods[$i]);
         }
     }
 }

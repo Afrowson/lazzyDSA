@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
+    use CharacterRelations;
     public $skills = [
         'MU',
         'KL',
@@ -43,56 +44,6 @@ class Character extends Model
         return $fightvalues;
     }
 
-    public function handicaps()
-    {
-        return $this->belongsToMany(Handicap::class)->withPivot('value', 'type');
-    }
-
-    public function benefices()
-    {
-        return $this->belongsToMany(Benefice::class)->withPivot('value', 'type');
-    }
-
-    public function talents()
-    {
-        return $this->belongsToMany(Talent::class)->withPivot('value');
-    }
-
-    public function languages()
-    {
-        return $this->belongsToMany(Language::class)->withPivot('value');
-    }
-
-    public function letterings()
-    {
-        return $this->belongsToMany(Lettering::class);
-    }
-
-    public function fightingtalents()
-    {
-        return $this->belongsToMany(Fightingtalent::class)->withPivot('value');
-    }
-
-    public function weapons()
-    {
-        return $this->belongsToMany(Weapon::class)->withPivot('modifiers', 'keys');
-    }
-
-    public function rangeweapons()
-    {
-        return $this->belongsToMany(Rangeweapon::class)->withPivot('modifiers', 'keys');
-    }
-
-    public function armors()
-    {
-        return $this->belongsToMany(Armor::class)->withPivot('modifiers', 'keys');
-    }
-
-    public function shields()
-    {
-        return $this->belongsToMany(Shield::class)->withPivot('modifiers', 'keys');
-    }
-
     protected function getModifiersAttribute()
     {
         return explode(',', $this->pivot->xyz);
@@ -101,6 +52,21 @@ class Character extends Model
     public function addTalent(Talent $talent, $value)
     {
         return $this->talents()->save($talent, ['value' => $value]);
+    }
+
+    public function addSpecialTalent(SpecialTalent $specialtalent, $level, $data)
+    {
+        return $this->specialtalents()->save($specialtalent, ['value' => $level, 'data' => $data]);
+    }
+
+    public function addSpecialMagictalent(SpecialMagictalent $specialmagictalent, $level, $data)
+    {
+        return $this->specialmagictalents()->save($specialmagictalent, ['value' => $level, 'data' => $data]);
+    }
+
+    public function addSpecialfightingtalent(Specialfightingtalent $specialfightingtalent, $level, $data)
+    {
+        return $this->specialfightingtalents()->save($specialfightingtalent, ['value' => $level, 'data' => $data]);
     }
 
     public function addLanguage(Language $language, $value)

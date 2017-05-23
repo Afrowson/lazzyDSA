@@ -9,6 +9,8 @@ use App\Language;
 use App\Lettering;
 use App\Rangeweapon;
 use App\Shield;
+use App\Specialfightingtalent;
+use App\Specialtalent;
 use App\Talent;
 use App\Weapon;
 use Illuminate\Database\Seeder;
@@ -134,6 +136,7 @@ class DegroSeeder extends Seeder
         $smods = [
             ['weight' => '-1']
         ];
+
         foreach ($wids as $i => $id) {
             $weapon = Weapon::find($id);
             $character->addWeapon($weapon, $wmods[$i]);
@@ -150,6 +153,32 @@ class DegroSeeder extends Seeder
             $shield = Shield::find($id);
             $character->addShield($shield, $smods[$i]);
         }
+        $sftids = [1, 2, 9, 12, 16, 28];
+        $sftlevel = [NULL, 1, 1, 1, 1, 1];
+        $sftmods = [NULL, NULL, NULL, NULL, NULL, NULL];
+
+        $stids = [21, 24, 30];
+        $stlevel = [NULL, NULL, NULL];
+        $stmods = ['Xorlosch', NULL, NULL];
+
+        $smtids = [21, 24, 30];
+        $smtlevel = [NULL, NULL, NULL];
+        $smtmods = [NULL, NULL, NULL];
+
+        foreach ($stids as $i => $stid) {
+            dump($i);
+            $st = Specialtalent::find($stid);
+            $character->addSpecialtalent($st, $stlevel[$i], $stmods[$i]);
+        }
+        foreach ($sftids as $i => $sftid) {
+            dump($i);
+            $sft = Specialfightingtalent::find($sftid);
+            $character->addSpecialfightingtalent($sft, $sftlevel[$i], $sftmods[$i]);
+        }
+        //       foreach ($smtids as $i => $smtid){
+        //           $smt = Specialtalent::find($smtid);
+        //           $character->addSpecialmagictalent($smt,$smtlevel[$i],$smtmods[$i]);
+        //       }
     }
 
 }
