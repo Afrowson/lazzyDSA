@@ -10,15 +10,4 @@ class Specialmagictalent extends Model
     {
         return $this->belongsToMany(Character::class);
     }
-
-    public function data()
-    {
-        return $this->pivot('data');
-    }
-
-    public function value()
-    {
-        return $this->pivot('value');
-    }
-
 }
