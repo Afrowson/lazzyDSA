@@ -6,17 +6,17 @@
 * Kampftechniken anzeigen
 * Vor-/Nachteile anzeigen
 * Waffen und Rüsuntungen anzeigen
+* Sonderfertigkeiten/Kampf/Magie anzeigen
 
 ## Tasks:
 ### Character Einzelansicht.
 
-* Sonderfertigeiten Views
-
+* Inventar Migrations
+* Inventar Models
+* Inventar Seeds
+* Inventar View
 
 ## Planned:
-
-1. Sonderfertigkeiten anzeigen
-
 1. Inventar anzeigen
 
 1. Zustände/LP/AsP/KaP speichern

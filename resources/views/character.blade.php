@@ -42,10 +42,16 @@
                 <div class="pull-right character-fightingtalents-wrapper">
                     @include('includes.fightingtalents')
                 </div>
-
-                <div class="clearfix pull-left">
-                    <div class="pull-right character-benefices-wrapper">
-                        @include('includes.benefices')
+                <div class="pull-right">
+                    <div class="clearfix pull-left">
+                        <div class="pull-right character-benefices-wrapper">
+                            @include('includes.benefices')
+                        </div>
+                        <div>
+                        <div class="pull-right character-specialtalents-wrapper">
+                            @include('includes.specialtalents')
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
