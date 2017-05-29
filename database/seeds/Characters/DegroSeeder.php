@@ -166,12 +166,10 @@ class DegroSeeder extends Seeder
         $smtmods = [NULL, NULL, NULL];
 
         foreach ($stids as $i => $stid) {
-            dump($i);
             $st = Specialtalent::find($stid);
             $character->addSpecialtalent($st, $stlevel[$i], $stmods[$i]);
         }
         foreach ($sftids as $i => $sftid) {
-            dump($i);
             $sft = Specialfightingtalent::find($sftid);
             $character->addSpecialfightingtalent($sft, $sftlevel[$i], $sftmods[$i]);
         }

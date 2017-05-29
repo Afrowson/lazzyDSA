@@ -8,6 +8,7 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Specialmagictalent;
+use App\Specialtalent;
 use App\Talent;
 use App\Weapon;
 use Illuminate\Database\Seeder;
@@ -125,14 +126,13 @@ class LeonardoSeeder extends Seeder
         }
         $stids = [3, 21];
         $stlevel = [NULL, NULL];
-        $stmods = ['Xorlosch', 'Codex Albyricus'];
+        $stmods = ['Codex Albyricus','Xorlosch'];
 
         $smtids = [3, 6, 7, 8, 9];
         $smtlevel = [NULL, NULL, NULL, NULL, NULL];
         $smtmods = [NULL, NULL, NULL, NULL, NULL];
 
         foreach ($stids as $i => $stid) {
-            dump($i);
             $st = Specialtalent::find($stid);
             $character->addSpecialtalent($st, $stlevel[$i], $stmods[$i]);
         }
