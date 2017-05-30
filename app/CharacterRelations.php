@@ -69,4 +69,14 @@ trait CharacterRelations
     {
         return $this->belongsToMany(Shield::class)->withPivot('modifiers', 'keys');
     }
+
+    public function inventorys()
+    {
+        return $this->hasMany(Inventory::class);
+    }
+
+    public function purses()
+    {
+        return $this->hasMany(Purse::class);
+    }
 }

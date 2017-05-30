@@ -13,11 +13,11 @@ class CreateInventoryItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventoryitems', function (Blueprint $table) {
+        Schema::create('inventory_item', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('inventory_id')->unsigned();
-            $table->foreign('inventory_id')->references('id')->on('inventories');
+            $table->foreign('inventory_id')->references('id')->on('inventorys');
 
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
@@ -35,6 +35,6 @@ class CreateInventoryItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventoryitems');
+        Schema::dropIfExists('inventory_item');
     }
 }

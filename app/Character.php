@@ -125,4 +125,9 @@ class Character extends Model
         $modifiers = implode(',', $modifiers);
         return $this->shields()->save($shield, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
+
+    public function addPurse(Purse $purse)
+    {
+        return $this->purses()->save($purse);
+    }
 }

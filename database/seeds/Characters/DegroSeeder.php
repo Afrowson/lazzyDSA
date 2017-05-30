@@ -7,6 +7,7 @@ use App\Fightingtalent;
 use App\Handicap;
 use App\Language;
 use App\Lettering;
+use App\Purse;
 use App\Rangeweapon;
 use App\Shield;
 use App\Specialfightingtalent;
@@ -173,10 +174,16 @@ class DegroSeeder extends Seeder
             $sft = Specialfightingtalent::find($sftid);
             $character->addSpecialfightingtalent($sft, $sftlevel[$i], $sftmods[$i]);
         }
-        //       foreach ($smtids as $i => $smtid){
-        //           $smt = Specialtalent::find($smtid);
-        //           $character->addSpecialmagictalent($smt,$smtlevel[$i],$smtmods[$i]);
-        //       }
+
+        Purse::create([
+        'character_id'=>$character->id,
+        'location'=>'am Körper',
+        'dukaten'=>'28',
+        'silber'=>'4',
+        'heller'=>'0',
+        'kreuzer'=>'0',
+        ]);
+
     }
 
 }
