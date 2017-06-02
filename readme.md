@@ -11,9 +11,13 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Inventar Migrations
-* Inventar Models
 * Inventar Seeds
+  * Edelsteine
+  * Schmuck
+  * Lichtquellen
+  * Waffenzubehör
+  * Characterintegration
+ 
 * Inventar View
 
 ## Planned:
@@ -32,6 +36,10 @@ Sonderfertigkeit
 + Schriftstellerei
 
 Magie Spezialisierungen
+
+Gegenstände
++ Bücher und Magische Artefakte
++ Tiere/Fortbewegungsmittel
 
 ## Ideas: 
 

@@ -141,5 +141,20 @@ class LeonardoSeeder extends Seeder
             $smt = Specialmagictalent::find($smtid);
             $character->addSpecialmagictalent($smt, $smtlevel[$i], $smtmods[$i]);
         }
+
+
+        //Descartes uniqe Items:
+        Item::create([
+            'name' => 'Kunsvoller Pfeifenkopf',
+            'description' => '',
+            'value' => '',
+            'weight' => '',
+        ]);
+        Item::create([
+            'name' => 'SpielChips',
+            'description' => '',
+            'value' => '',
+            'weight' => '',
+        ]);
     }
 }
