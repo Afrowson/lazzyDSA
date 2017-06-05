@@ -5,6 +5,7 @@ use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
 use App\Handicap;
+use App\Item;
 use App\Language;
 use App\Lettering;
 use App\Purse;
@@ -176,12 +177,27 @@ class DegroSeeder extends Seeder
         }
 
         Purse::create([
-        'character_id'=>$character->id,
-        'location'=>'am Körper',
-        'dukaten'=>'28',
-        'silber'=>'4',
-        'heller'=>'0',
-        'kreuzer'=>'0',
+            'character_id' => $character->id,
+            'location' => 'am Körper',
+            'dukaten' => '28',
+            'silber' => '4',
+            'heller' => '0',
+            'kreuzer' => '0',
+        ]);
+
+        //Degro Items
+        //Degro:
+        //       Klamotten: 7,9,16,17,22,
+        //Items: 62, 101, 146, 147, 199, 201
+        //Ausrüstung bei Dario:
+        //81, 90, 92, 93, 95, 104
+        //
+        //Fake Dukaten, Sumpfkraut,
+        Item::create([
+            'name' => 'Bärenfellmantel',
+            'description' => 'mit Schafswollfutter (Braun)',
+            'value' => '10',
+            'weight' => '3.5',
         ]);
 
     }

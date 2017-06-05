@@ -61,7 +61,7 @@ class ClothesSeeder extends Seeder
             'weight' => '0.75',
         ]);
         Item::create([
-            'name' => 'Hose mit Hosentaschen',
+            'name' => 'Hose mit Taschen',
             'description' => '',
             'value' => '3',
             'weight' => '0.75',

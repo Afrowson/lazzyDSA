@@ -5,6 +5,7 @@ use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
 use App\Handicap;
+use App\Item;
 use App\Language;
 use App\Lettering;
 use App\Specialmagictalent;
@@ -143,18 +144,37 @@ class LeonardoSeeder extends Seeder
         }
 
 
-        //Descartes uniqe Items:
-        Item::create([
+        //Descartes Items:
+        //46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200
+        //Kunsvoller Pfeifenkopf
+        //Spiechips 16
+        $items[]= Item::create([
             'name' => 'Kunsvoller Pfeifenkopf',
-            'description' => '',
-            'value' => '',
-            'weight' => '',
+            'description' => 'Aus dem Haus von',
+            'value' => '0',
+            'weight' => '0.04',
         ]);
-        Item::create([
+        $itemammounts[]= Null;
+        $items[]= Item::create([
             'name' => 'SpielChips',
-            'description' => '',
-            'value' => '',
-            'weight' => '',
+            'description' => 'Aus einem Spiellokal',
+            'value' => '1',
+            'weight' => '0.01',
         ]);
+        $itemammounts[]= 16;
+        $iids=[46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200];
+        $iammounts=[NULL,NULL,NULL,NULL,NULL,NULL,10,NULL,NULL,25,NULL,NULL,];
+
+        foreach ($items as $i=>$item) {
+
+        }
+        foreach ($iids as $i=>$iid) {
+
+        }
+
+
+
+
+
     }
 }

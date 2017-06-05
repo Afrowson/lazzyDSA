@@ -12,10 +12,6 @@
 ### Character Einzelansicht.
 
 * Inventar Seeds
-  * Edelsteine
-  * Schmuck
-  * Lichtquellen
-  * Waffenzubehör
   * Characterintegration
  
 * Inventar View

@@ -1,5 +1,6 @@
 <?php
 
+use App\Item;
 use Illuminate\Database\Seeder;
 
 class VerbrauchLuxusSeeder extends Seeder
@@ -503,18 +504,7 @@ class VerbrauchLuxusSeeder extends Seeder
             'value' => '15',
             'weight' => '0.5',
         ]);
-        Item::create([
-            'name' => '',
-            'description' => '',
-            'value' => '',
-            'weight' => '',
-        ]);
-        Item::create([
-            'name' => '',
-            'description' => '',
-            'value' => '',
-            'weight' => '',
-        ]);
+
     }
 }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Item;
 use Illuminate\Database\Seeder;
 
 class ToolsSeeder extends Seeder
@@ -455,109 +456,41 @@ class ToolsSeeder extends Seeder
             'value' => '1',
             'weight' => '0.1',
         ]);
-
+        Item::create([
+            'name' => 'Fackel',
+            'description' => '',
+            'value' => '0.5',
+            'weight' => '0.5',
+        ]);
+        Item::create([
+            'name' => 'Gwen-Petryl-Stein',
+            'description' => '',
+            'value' => '1000',
+            'weight' => '0.75',
+        ]);
+        Item::create([
+            'name' => 'Kerze',
+            'description' => '',
+            'value' => '6',
+            'weight' => '0.5',
+        ]);
+        Item::create([
+            'name' => 'Laterne',
+            'description' => '',
+            'value' => '8',
+            'weight' => '0.5',
+        ]);
+        Item::create([
+            'name' => 'Öllampe',
+            'description' => '',
+            'value' => '0.5',
+            'weight' => '0.25',
+        ]);
+        Item::create([
+            'name' => 'Abblendlaterne',
+            'description' => '',
+            'value' => '15',
+            'weight' => '1.5',
+        ]);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
