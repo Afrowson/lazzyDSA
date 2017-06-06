@@ -11,9 +11,6 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-* Inventar Seeds
-  * Characterintegration
- 
 * Inventar View
 
 ## Planned:

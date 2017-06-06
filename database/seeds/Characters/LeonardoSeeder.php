@@ -5,6 +5,7 @@ use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
 use App\Handicap;
+use App\Inventory;
 use App\Item;
 use App\Language;
 use App\Lettering;
@@ -143,36 +144,36 @@ class LeonardoSeeder extends Seeder
             $character->addSpecialmagictalent($smt, $smtlevel[$i], $smtmods[$i]);
         }
 
+        $i1 = Inventory::create([
+           'character_id'=>$character->id ,
+           'location'=>'am Körper' ,
+           'weight'=>'1'
+        ]);
 
-        //Descartes Items:
-        //46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200
-        //Kunsvoller Pfeifenkopf
-        //Spiechips 16
-        $items[]= Item::create([
+
+        $iids1=[46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200];
+        $ia1=[1,1,1,1,1,1,10,1,1,25,1,1,];
+
+        $iids1[]= Item::create([
             'name' => 'Kunsvoller Pfeifenkopf',
             'description' => 'Aus dem Haus von',
             'value' => '0',
             'weight' => '0.04',
-        ]);
-        $itemammounts[]= Null;
-        $items[]= Item::create([
+        ])->id;
+        $ia1[]= 1;
+        $iids1[]= Item::create([
             'name' => 'SpielChips',
             'description' => 'Aus einem Spiellokal',
             'value' => '1',
             'weight' => '0.01',
-        ]);
-        $itemammounts[]= 16;
-        $iids=[46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200];
-        $iammounts=[NULL,NULL,NULL,NULL,NULL,NULL,10,NULL,NULL,25,NULL,NULL,];
+        ])->id;
+        $ia1[]= 16;
 
-        foreach ($items as $i=>$item) {
+        foreach ($iids1 as $i=> $iid){
+            $item= Item::find($iid);
+            $i1->addItem($item, $ia1[$i]);
 
-        }
-        foreach ($iids as $i=>$iid) {
-
-        }
-
-
+        };
 
 
 

@@ -5,6 +5,7 @@ use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
 use App\Handicap;
+use App\Inventory;
 use App\Item;
 use App\Language;
 use App\Lettering;
@@ -184,21 +185,72 @@ class DegroSeeder extends Seeder
             'heller' => '0',
             'kreuzer' => '0',
         ]);
+        $i1 = Inventory::create([
+            'character_id'=>$character->id,
+            'location'=>'am Körper',
+            'weight'=>'1',
+        ]);
 
-        //Degro Items
-        //Degro:
-        //       Klamotten: 7,9,16,17,22,
-        //Items: 62, 101, 146, 147, 199, 201
-        //Ausrüstung bei Dario:
-        //81, 90, 92, 93, 95, 104
-        //
-        //Fake Dukaten, Sumpfkraut,
-        Item::create([
+
+        $i2 = Inventory::create([
+            'character_id'=>$character->id,
+            'location'=>'bei Alrik',
+            'weight'=>'0',
+        ]);
+
+
+        $i3 = Inventory::create([
+            'character_id'=>$character->id,
+            'location'=>'getragen',
+            'weight'=>'0',
+        ]);
+
+
+
+        $iids1= [62, 101, 146, 147, 199, 201];
+        $ia1=[1,1,1,1,1,1];
+        $iids2= [81, 90, 92, 93, 95, 104];
+        $ia2=[1,1,1,1,1,1];
+        $iids3= [7,9,16,17,22,];
+        $ia3=[1,1,1,1,1];
+
+        $iids3[]= Item::create([
             'name' => 'Bärenfellmantel',
             'description' => 'mit Schafswollfutter (Braun)',
             'value' => '10',
             'weight' => '3.5',
-        ]);
+        ])->id;
+        $ia3[]=1;
+
+        $iids1[] = Item::create([
+            'name' => 'Sumpfkraut',
+            'description' => 'macht schön High',
+            'value' => '1',
+            'weight' => '0.01',
+        ])->id;
+        $ia1[]=1;
+
+        $iids1[] = Item::create([
+            'name' => 'Fake Dukaten',
+            'description' => 'täuschend echt',
+            'value' => '1',
+            'weight' => '0.01',
+        ])->id;
+        $ia1[]=1;
+        dump('TEST');
+
+        foreach ($iids1 as $i=> $iid){
+            $item= Item::find($iid);
+            $i1->addItem($item, $ia1[$i]);
+        }
+        foreach ($iids2 as $i=> $iid){
+            $item= Item::find($iid);
+            $i2->addItem($item, $ia2[$i]);
+        }
+        foreach ($iids3 as $i=> $iid){
+            $item= Item::find($iid);
+            $i3->addItem($item, $ia3[$i]);
+        }
 
     }
 

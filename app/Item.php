@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    public function inventorys()
+    public function inventories()
     {
         return $this->belongsToMany(Inventory::class);
     }

@@ -13,13 +13,13 @@ class CreateInventorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventorys', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('character_id')->unsigned()->index();
 
             $table->string('location')->nullable();
-
+            $table->boolean('weight')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateInventorysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventorys');
+        Schema::dropIfExists('inventories');
     }
 }

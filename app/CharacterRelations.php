@@ -70,7 +70,7 @@ trait CharacterRelations
         return $this->belongsToMany(Shield::class)->withPivot('modifiers', 'keys');
     }
 
-    public function inventorys()
+    public function inventories()
     {
         return $this->hasMany(Inventory::class);
     }

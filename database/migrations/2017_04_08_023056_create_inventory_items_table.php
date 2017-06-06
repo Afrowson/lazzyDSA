@@ -17,12 +17,12 @@ class CreateInventoryItemsTable extends Migration
             $table->increments('id');
 
             $table->integer('inventory_id')->unsigned();
-            $table->foreign('inventory_id')->references('id')->on('inventorys');
+            $table->foreign('inventory_id')->references('id')->on('inventories');
 
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
 
-            $table->integer('ammount')->default('1') ;
+            $table->integer('amount')->default('1') ;
 
             $table->timestamps();
         });

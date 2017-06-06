@@ -6,19 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
-    public function Items()
+    public function items()
     {
-        $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class);
     }
 
     public function character()
     {
-        $this->belongsTo(Character::class);
+        return $this->belongsTo(Character::class);
     }
 
-    public function addItem(Item $item,integer $ammount)
+    public function addItem(Item $item, $amount)
     {
-        $this->items()->save($item,['amount'=> $ammount]);
+
+       return $this->items()->save($item, ['amount' => $amount]);
     }
 
 }
