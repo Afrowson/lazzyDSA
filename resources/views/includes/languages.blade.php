@@ -1,5 +1,5 @@
 <div class="clearfix languages-container">
-    <div class="pull-left languages-block">
+    <div class="languages-block">
 
         <h4>Sprachen</h4>
 
@@ -12,7 +12,7 @@
             </div>
         @endforeach
     </div>
-    <div class="pull-left languages-block">
+    <div class="languages-block">
         <h4>Schriften</h4>
 
         @foreach($character->letterings as $lettering)

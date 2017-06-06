@@ -288,7 +288,7 @@ margin: 0px 5px;
 
 //endregion
 
-//region Weapons Include
+//region Charcter Weapons Include
 .character-weapons-container{
   background-color: #8eb4cb;
   margin-top: 3px;
@@ -310,6 +310,34 @@ background-color: #636b6f;
 }
 
 //endregion
+
+//region Charcter Inventory Include
+
+.inventory-container{
+  background-color: #8eb4cb;
+
+}
+.inventory-container h4{
+  margin: 5px;
+}
+.inventory-block{
+  margin: 5px;
+}
+.inventory-table{
+margin: 3px;
+}
+.inventory-table-cell{
+  background-color: azure;
+  padding: 0px 3px;
+  color: black;
+}
+.inventory-bottom{
+  border-top: solid 3px;
+}
+
+
+//endregion
+
 
 .azure {
   color: azure;

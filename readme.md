@@ -12,6 +12,8 @@
 ### Character Einzelansicht.
 
 * Inventar View
+* Items-Inventory
+    + add Note
 
 ## Planned:
 1. Inventar anzeigen

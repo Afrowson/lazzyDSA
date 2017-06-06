@@ -8,7 +8,7 @@ class Inventory extends Model
 {
     public function items()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class)->withPivot('amount');
     }
 
     public function character()

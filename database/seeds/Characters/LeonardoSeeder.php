@@ -152,7 +152,7 @@ class LeonardoSeeder extends Seeder
 
 
         $iids1=[46, 48, 64, 70,  97,127, 131,136, 146, 147, 199, 200];
-        $ia1=[1,1,1,1,1,1,10,1,1,25,1,1,];
+        $ia1=[1,1,1,1,1,1,10,1,25,1,1,1,];
 
         $iids1[]= Item::create([
             'name' => 'Kunsvoller Pfeifenkopf',

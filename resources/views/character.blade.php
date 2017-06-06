@@ -36,21 +36,28 @@
                 <div class="pull-right character-calculateables-wrapper">
                     @include('includes.calculateables')
                 </div>
+
             </div>
 
             <div class="clearfix pull-right">
+
                 <div class="pull-right character-fightingtalents-wrapper">
                     @include('includes.fightingtalents')
+
+                    <div class="pull-right character-language-wrapper">
+                        @include('includes.languages')
+                    </div>
                 </div>
+
                 <div class="pull-right">
                     <div class="clearfix pull-left">
                         <div class="pull-right character-benefices-wrapper">
                             @include('includes.benefices')
                         </div>
                         <div>
-                        <div class="pull-right character-specialtalents-wrapper">
-                            @include('includes.specialtalents')
-                        </div>
+                            <div class="pull-right character-specialtalents-wrapper">
+                                @include('includes.specialtalents')
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,10 +71,9 @@
 
     <div class="pull-left character-talents-wrapper">
         @include('includes.talents',[$t='3', $e='4'])
-        <div class="pull-right character-language-wrapper">
-            @include('includes.languages')
-        </div>
+
     </div>
-    <div class="clearfix">
+    <div class="pull-left character-inventries-wrapper">
+        @include('includes.inventory')
     </div>
 @endsection
