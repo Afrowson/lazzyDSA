@@ -25,12 +25,12 @@ class DatabaseSeeder extends Seeder
         $this->call(SpecialmagictalentSeeder::class);
         $this->call(SpecialtalentsSeeder::class);
         $this->call(ClothesSeeder::class);
-        $this->call(ContainersSeed::class);
         $this->call(ToolsSeeder::class);
         $this->call(VerbrauchLuxusSeeder::class);
         $this->call(GemsSeed::class);
         $this->call(WeaponAccessoriesSeeder::class);
         $this->call(ContainersSeed::class);
+        $this->call(MagictricksSeeder::class);
 
         $this->call(DegroSeeder::class);
         $this->call(LeonardoSeeder::class);

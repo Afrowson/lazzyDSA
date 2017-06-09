@@ -129,4 +129,9 @@ class Character extends Model
     {
         return $this->purses()->save($purse);
     }
+
+    public function addMagictrick(Magictrick $magictrick)
+    {
+        return $this->magictricks()->save($magictrick);
+    }
 }

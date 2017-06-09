@@ -10,13 +10,19 @@
 
 ## Tasks:
 ### Character Einzelansicht.
+Zaubertricks
+*  View
+Spells
+* Migration 16 Rows(QS + Probenwürfe)
+* Model (Spezialisierungen ?)
+* Seeds ( nur Leonardo und Gruppe)
+* View
 
-* Inventar View
-* Items-Inventory
-    + add Note
+"Tagebuch"
+* Freitextfeld mit speicherfunktion
+* Notizen( Button Link zu "Texteditor")
 
 ## Planned:
-1. Inventar anzeigen
 
 1. Zustände/LP/AsP/KaP speichern
 

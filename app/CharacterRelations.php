@@ -79,4 +79,9 @@ trait CharacterRelations
     {
         return $this->hasMany(Purse::class);
     }
+
+    public function magictricks()
+    {
+        return $this->belongsToMany(Magictrick::class);
+    }
 }

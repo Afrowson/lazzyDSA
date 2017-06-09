@@ -237,19 +237,18 @@ class DegroSeeder extends Seeder
             'weight' => '0.01',
         ])->id;
         $ia1[]=1;
-        dump('TEST');
 
         foreach ($iids1 as $i=> $iid){
             $item= Item::find($iid);
-            $i1->addItem($item, $ia1[$i]);
+            $i1->addItem($item, $ia1[$i],NULL);
         }
         foreach ($iids2 as $i=> $iid){
             $item= Item::find($iid);
-            $i2->addItem($item, $ia2[$i]);
+            $i2->addItem($item, $ia2[$i],NULL);
         }
         foreach ($iids3 as $i=> $iid){
             $item= Item::find($iid);
-            $i3->addItem($item, $ia3[$i]);
+            $i3->addItem($item, $ia3[$i],NULL);
         }
 
     }

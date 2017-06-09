@@ -9,6 +9,7 @@ use App\Inventory;
 use App\Item;
 use App\Language;
 use App\Lettering;
+use App\Magictrick;
 use App\Specialmagictalent;
 use App\Specialtalent;
 use App\Talent;
@@ -171,9 +172,20 @@ class LeonardoSeeder extends Seeder
 
         foreach ($iids1 as $i=> $iid){
             $item= Item::find($iid);
-            $i1->addItem($item, $ia1[$i]);
+            $i1->addItem($item, $ia1[$i],NULL);
 
         };
+
+        $mtids =[13, 14, 5 ,15 ,16, 17, 18,19,20,21];
+
+        foreach ($mtids as $mtid){
+            $trick= Magictrick::find($mtid);
+            $character->addMagictrick($trick);
+        }
+
+
+
+
 
 
 
