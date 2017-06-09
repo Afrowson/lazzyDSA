@@ -8,7 +8,7 @@ class Inventory extends Model
 {
     public function items()
     {
-        return $this->belongsToMany(Item::class)->withPivot('amount');
+        return $this->belongsToMany(Item::class)->withPivot('amount','notes');
     }
 
     public function character()
@@ -16,10 +16,10 @@ class Inventory extends Model
         return $this->belongsTo(Character::class);
     }
 
-    public function addItem(Item $item, $amount)
+    public function addItem(Item $item, $amount,$notes)
     {
 
-       return $this->items()->save($item, ['amount' => $amount]);
+       return $this->items()->save($item, ['amount' => $amount,'notes' => $notes]);
     }
 
 }

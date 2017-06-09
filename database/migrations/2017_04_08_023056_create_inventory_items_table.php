@@ -23,6 +23,7 @@ class CreateInventoryItemsTable extends Migration
             $table->foreign('item_id')->references('id')->on('items');
 
             $table->integer('amount')->default('1') ;
+            $table->text('notes')->nullable();
 
             $table->timestamps();
         });
