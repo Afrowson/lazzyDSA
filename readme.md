@@ -10,17 +10,23 @@
 
 ## Tasks:
 ### Character Einzelansicht.
+
+Inventar
+* fix Seeds der Helden
 Zaubertricks
 *  View
+
+
+
+"Tagebuch"
+* Freitextfeld mit speicherfunktion
+* Notizen( Button Link zu "Texteditor")
+
 Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
-
-"Tagebuch"
-* Freitextfeld mit speicherfunktion
-* Notizen( Button Link zu "Texteditor")
 
 ## Planned:
 

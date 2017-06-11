@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
         $this->call(GemsSeed::class);
         $this->call(WeaponAccessoriesSeeder::class);
         $this->call(ContainersSeed::class);
+
+
         $this->call(MagictricksSeeder::class);
 
         $this->call(DegroSeeder::class);
