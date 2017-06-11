@@ -11,16 +11,13 @@
 ## Tasks:
 ### Character Einzelansicht.
 
-Inventar
-* fix Seeds der Helden
-Zaubertricks
-*  View
-
-
-
 "Tagebuch"
-* Freitextfeld mit speicherfunktion
-* Notizen( Button Link zu "Texteditor")
+* TinyMCE lokal einbinden
+* Diary Model/Migraation anlegen
+* Diary Übersicht view gestalten
+* Diary Create funtion
+* Diary einzelansicht/Editor gestalten
+* Diary Save funktion
 
 Spells
 * Migration 16 Rows(QS + Probenwürfe)

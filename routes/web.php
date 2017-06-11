@@ -20,3 +20,4 @@ Route::get('/characters', 'CharacterViewController@index');
 
 Route::get('/character/{character}', 'CharacterViewController@single');
 
+Route::get('/character/{character}/diary', 'CharacterViewController@diary');
