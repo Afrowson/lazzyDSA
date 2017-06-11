@@ -7,56 +7,55 @@
 @section('header')
     <div class="header-wrapper clearfix">
         <div class=" pull-left header-name-wrapper">
-            @include('includes.name')
+            @include('character.name')
         </div>
 
         <div class=" pull-left header-energy-wrapper">
-            @include('includes.energy')
+            @include('character.energy')
         </div>
 
         <div class="pull-right header-skillbox-wrapper">
-            @include('includes.skills')
+            @include('character.skills')
         </div>
-
     </div>
 @endsection
 
 @section('content')
-    <div class="pull-right character-right-side clearfix">
-        <div class="clearfix">
+    <div class="pull-right character-right-side ">
+        <div>
             <div class=" character-weapons-wrapper">
-                @include('includes.weapons')
+                @include('character.weapons')
             </div>
 
-            <div class="clearfix">
+            <div>
                 <div class="pull-right character-bio-wrapper">
-                    @include('includes.bio')
+                    @include('character.bio')
                 </div>
 
                 <div class="pull-right character-calculateables-wrapper">
-                    @include('includes.calculateables')
+                    @include('character.calculateables')
                 </div>
 
             </div>
 
-            <div class="clearfix pull-right">
+            <div class="pull-right">
 
                 <div class="pull-right character-fightingtalents-wrapper">
-                    @include('includes.fightingtalents')
+                    @include('character.fightingtalents')
 
                     <div class="pull-right character-language-wrapper">
-                        @include('includes.languages')
+                        @include('character.languages')
                     </div>
                 </div>
 
                 <div class="pull-right">
-                    <div class="clearfix pull-left">
+                    <div class="pull-left">
                         <div class="pull-right character-benefices-wrapper">
-                            @include('includes.benefices')
+                            @include('character.benefices')
                         </div>
                         <div>
                             <div class="pull-right character-specialtalents-wrapper">
-                                @include('includes.specialtalents')
+                                @include('character.specialtalents')
                             </div>
                         </div>
                     </div>
@@ -66,14 +65,17 @@
     </div>
 
     <div class="pull-left character-talents-wrapper">
-        @include('includes.talents',[$t='0', $e='2'])
+        @include('character.talents',[$t='0', $e='2'])
     </div>
 
     <div class="pull-left character-talents-wrapper">
-        @include('includes.talents',[$t='3', $e='4'])
+        @include('character.talents',[$t='3', $e='4'])
 
     </div>
     <div class="pull-left character-inventries-wrapper">
-        @include('includes.inventory')
+        @include('character.inventory')
+    </div>
+    <div class="pull-left character-magictrick-wrapper">
+        @include('character.magictricks')
     </div>
 @endsection

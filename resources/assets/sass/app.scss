@@ -23,7 +23,8 @@
 .header {
   margin: 0px 100px
 }
-.header-name-wrapper{
+
+.header-name-wrapper {
   margin: 0px 10px 10px 100px;
 }
 
@@ -46,27 +47,31 @@
 //endregion
 
 //region Character Specialtalents Include
-.specialtalents-container{
+.specialtalents-container {
 }
-.specialtalent-name{
+
+.specialtalent-name {
   margin: 0px 3px
 }
-.specialtalent-value{
+
+.specialtalent-value {
   margin: 0px;
   color: azure;
 }
-.specialtalent-data{
+
+.specialtalent-data {
   margin: 0px;
   color: azure;
 }
-.specialtalent-single{
+
+.specialtalent-single {
   margin: 3px;
 }
-.specialtalent-box{
+
+.specialtalent-box {
   background-color: #8eb4cb;
   margin: 5px;
 }
-
 
 //endregion
 
@@ -123,7 +128,6 @@
 
 }
 
-
 .calculateable-name {
   margin: 0px 3px 0px 0px !important;
 
@@ -154,7 +158,7 @@
 }
 
 .energy-value {
-  width: auto!important;
+  width: auto !important;
 }
 
 //endregion
@@ -197,7 +201,7 @@
 }
 
 .talent-name {
-color: azure;
+  color: azure;
 }
 
 .talent-value {
@@ -208,33 +212,39 @@ color: azure;
 
 //region Characte Benefices Include
 
-.benefice-box{
+.benefice-box {
   padding: 3px;
- background-color: #8eb4cb;
+  background-color: #8eb4cb;
   margin: 5px;
 }
-.benefice-box h4{
+
+.benefice-box h4 {
   display: inline;
   margin: 5px;
 }
-.benefices-block{
+
+.benefices-block {
   display: block;
 }
 
-.benefice-single{
-margin: 0px 5px;
+.benefice-single {
+  margin: 0px 5px;
 }
-.benefice-single p{
+
+.benefice-single p {
   margin: 0px 0px 1px;
 }
-.benefice-name{
+
+.benefice-name {
   margin: 0px 3px;
 }
-.benefice-value{
-   margin: 0px 3px;
+
+.benefice-value {
+  margin: 0px 3px;
   font-size: 16px;
 }
-.benefice-type{
+
+.benefice-type {
 
 }
 
@@ -265,6 +275,7 @@ margin: 0px 5px;
   margin: 2px !important;
 
 }
+
 //endregion
 
 // region Character Bio Include
@@ -289,22 +300,24 @@ margin: 0px 5px;
 //endregion
 
 //region Charcter Weapons Include
-.character-weapons-container{
+.character-weapons-container {
   background-color: #8eb4cb;
   margin-top: 3px;
   padding: 2px;
 }
+
 .weapons-block {
   margin: 3px;
 }
-.weapons-table-cell{
+
+.weapons-table-cell {
   background-color: azure;
   padding: 0px 3px;
   color: black;
 }
 
-.weapons-table-cell-w{
-background-color: #636b6f;
+.weapons-table-cell-w {
+  background-color: #636b6f;
   text-align: center;
   color: azure;
 }
@@ -313,31 +326,43 @@ background-color: #636b6f;
 
 //region Charcter Inventory Include
 
-.inventory-container{
+.inventory-container {
   background-color: #8eb4cb;
 
 }
-.inventory-container h4{
+
+.inventory-container h4 {
   margin: 5px;
 }
-.inventory-block{
+
+.inventory-block {
   margin: 5px;
 }
-.inventory-table{
-margin: 3px;
+
+.inventory-table {
+  margin: 3px;
 }
-.inventory-table-cell{
+
+.inventory-table-cell {
   background-color: azure;
   padding: 0px 3px;
   color: black;
 }
-.inventory-bottom{
+
+.inventory-bottom {
   border-top: solid 3px;
 }
 
-
 //endregion
 
+.magictrick-container {
+  background-color: #8eb4cb;
+  margin: 5px;
+}
+
+.magictrick-block {
+  margin: 5px;
+}
 
 .azure {
   color: azure;
@@ -352,6 +377,6 @@ margin: 3px;
   padding: 2px;
 }
 
-.pull-left-p{
+.pull-left-p {
   margin: 0px 3px 0px;
 }
