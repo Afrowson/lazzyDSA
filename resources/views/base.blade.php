@@ -2,12 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-    <script>
-        tinymce.init({
-            selector: '#diary'
-        });
-    </script>
+    @yield('head')
     <title>LazzyDSA - @yield('title')</title>
 </head>
 <body>

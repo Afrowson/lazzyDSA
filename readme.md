@@ -1,4 +1,4 @@
-## Wat kann es denn?
+## Aktuell Implementiert
 
 * Alle Stats anzeigen.
 * Skills anzeigen
@@ -7,23 +7,28 @@
 * Vor-/Nachteile anzeigen
 * Waffen und Rüsuntungen anzeigen
 * Sonderfertigkeiten/Kampf/Magie anzeigen
+* Zaubertricks anzeigen
+* Inventare Anzeigen
 
 ## Tasks:
+
+### Redesign
+
+* Konzept für BaseBlade/Einzelansicht/Mehrfachansicht/Tagebuch
+
 ### Character Einzelansicht.
-
-"Tagebuch"
-* TinyMCE lokal einbinden
-* Diary Model/Migraation anlegen
-* Diary Übersicht view gestalten
-* Diary Create funtion
-* Diary einzelansicht/Editor gestalten
-* Diary Save funktion
-
 Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
+
+### Tagebuch
+* Diary Model/Migraation anlegen
+* Diary Übersicht view gestalten
+* Diary Create funtion
+* Diary einzelansicht/Editor gestalten
+* Diary Save funktion
 
 ## Planned:
 
