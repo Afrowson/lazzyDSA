@@ -1,18 +1,6 @@
-<div class="name-container">
+<h1 class="title is-1 primary is-marginless">{{($character->name)}}</h1>
+<b class=" primary">
+    {{$character->race}}&nbsp;{{$character->culture}},&nbsp;{{$character->profession}}
+    {{$character->ap_total}}&nbsp;AP
+</b>
 
-    <div class="name clearfix">
-        <h1 style="margin: 0px!important;">{{($character->name)}}
-            <small>{{$character->ap_total}} AP</small>
-        </h1>
-
-        <b class="pull-left-p pull-left">
-            {{$character->race}}
-        </b>
-        <b class="pull-left-p pull-left">
-            {{$character->culture}},
-        </b>
-        <b class="pull-left-p pull-left">
-            {{$character->profession}}
-        </b>
-    </div>
-</div>

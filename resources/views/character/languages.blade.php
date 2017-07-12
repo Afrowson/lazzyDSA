@@ -1,13 +1,13 @@
-<div class="clearfix languages-container">
+<div class="is-clearfix languages-container">
     <div class="languages-block">
 
         <h4>Sprachen</h4>
 
         @foreach($character->languages as $language)
-            <div class="clearfix language-single">
+            <div class="is-clearfix language-single">
 
-                <b class="pull-left language-name">{{$language->name}}</b>
-                <p class="pull-right language-value">  {{$language->pivot->value}}</p>
+                <b class="is-pulled-left language-name">{{$language->name}}</b>
+                <p class="is-pulled-right language-value">  {{$language->pivot->value}}</p>
 
             </div>
         @endforeach

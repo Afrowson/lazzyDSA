@@ -1,4 +1,4 @@
-@extends('base')
+@extends('app')
 
 @section('head')
     <script src='/js/tinymce/tinymce.min.js'></script>
@@ -6,8 +6,8 @@
         tinymce.init({
             selector: '#diary',
             theme: 'modern',
-            width: 'auto',
-            height: 300,
+            width: 1300,
+            height: 650
         });
     </script>
 @endsection
@@ -17,30 +17,24 @@
     {{$character->name}}'s Tagebuch
 @endsection
 
-@section('header')
-    <div class="header-wrapper clearfix">
-        <div class=" pull-left header-name-wrapper">
+@section('nav-left')
             @include('character.name')
-        </div>
-
-        <div class=" pull-left header-energy-wrapper">
+@endsection
+@section('nav-center')
             @include('character.energy')
-        </div>
-
-        <div class="pull-right header-skillbox-wrapper">
+@endsection
+@section('nav-right')
             @include('character.skills')
-        </div>
-    </div>
 @endsection
 
+@section('sidebar')
+    <h1>SOME TEXT</h1>
+    <h1> SOME Other Text</h1>
+
+@endsection
 @section('content')
 
-    <div class="pull-left sidebar">
-        <h1>SOME TEXT</h1>
-        <h1> SOME Other Text</h1>
-    </div>
-
-    <div class="pull-left">
+    <div class=" is-pulled-left">
      <textarea id="diary">
 SOME FANCY TEXT!
     </textarea>

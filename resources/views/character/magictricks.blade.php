@@ -1,4 +1,4 @@
-<div class="clearfix magictrick-container">
+<div class="is-clearfix magictrick-container">
     @if($character->magictricks->first())
         <h4>Zaubertricks</h4>
         <table class=" clearfix magictrick-block">

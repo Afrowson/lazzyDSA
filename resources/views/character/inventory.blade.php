@@ -1,11 +1,11 @@
-<div class="inventory-container clearfix">
+<div class="inventory-container is-clearfix">
 
     <h4>Inventare</h4>
     @foreach($character->inventories as $inventory)
         @php
             $weight=0;$value=0; $amount=0;
         @endphp
-        <div class="inventory-block pull-left">
+        <div class="inventory-block is-pulled-left">
             <h5>Ort: {{$inventory->location}}</h5>
             <table class='inventory-table'>
                 <tr class="inventory-table-cell">

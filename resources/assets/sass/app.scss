@@ -1,10 +1,101 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 // Variables
-@import "variables";
+//@import "variables";
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// 1. Import the initial variables
+@import "node_modules/bulma/sass/utilities/initial-variables";
 
+$blue: #3d4c7d;
+$green: #a5bba3;
+$red: #eeb6a0;
+$yellow: #d7cd96;
+$white: #e2e1e8;
+$blue-invert: #ffffff;
+
+$MU: #ff0000;
+$KL: #0000ff;
+$IN: #33cc33;
+$CH: #ffffff;
+$FF: #ffff00;
+$GE: #ffaa00;
+$KO: #767667;
+$KK: #663300;
+
+$primary: $blue;
+$primary-invert: $blue-invert;
+$info: $grey_lighter;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$body-background: $white;
+$background: $white;
+
+// 4. Import the rest of Bulma
+@import "node_modules/bulma/bulma";
+
+//region Basics
+
+.primary {
+  color: $blue-invert;
+}
+
+.primary-b {
+  background-color: $blue;
+}
+
+.MU {
+  border-color: $MU;
+}
+
+.KL {
+  border-color: $KL;
+}
+
+.IN {
+  border-color: $IN;
+}
+
+.CH {
+  border-color: $CH;
+}
+
+.FF {
+  border-color: $FF;
+}
+
+.GE {
+  border-color: $GE;
+}
+
+.KO {
+  border-color: $KO;
+}
+
+.KK {
+  border-color: $KK;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: $primary;
+}
+
+.topbar {
+  width: 100%;
+  min-height: 78px;
+  background-color: $primary;
+}
+
+.basebox {
+  background-color: #8eb4cb;
+  margin: 5px;
+}
+
+//endregion
 .character-box {
   display: inline-block;
   margin: 20px;
@@ -14,41 +105,7 @@
   padding: 40px 40px 40px 40px;
 }
 
-// region Character Single View
-.header-wrapper {
-  background-color: #8eb4cb;
-
-}
-
-.header {
-  margin: 0px 100px
-}
-
-.header-name-wrapper {
-  margin: 0px 10px 10px 100px;
-}
-
-.header-skillbox-wrapper {
-  margin: 5px 100px 5px 10px;
-}
-
-.character-bio-wrapper {
-
-}
-
-.character-talents-wrapper {
-
-}
-
-.character-calculateables-wrapper {
-
-}
-
-//endregion
-
 //region Character Specialtalents Include
-.specialtalents-container {
-}
 
 .specialtalent-name {
   margin: 0px 3px
@@ -67,12 +124,6 @@
 .specialtalent-single {
   margin: 3px;
 }
-
-.specialtalent-box {
-  background-color: #8eb4cb;
-  margin: 5px;
-}
-
 //endregion
 
 //region Character Fightingtalents Include
@@ -140,25 +191,6 @@
   text-align: center;
   margin: 0px !important;
 
-}
-
-//endregion
-
-//region Character Energy Include
-.energy-container {
-  margin: 10px;
-}
-
-.energy-block {
-  margin: 22px 0px 0px 10px;
-}
-
-.energy-name {
-  margin: 3px 5px 0px 0px !important;
-}
-
-.energy-value {
-  width: auto !important;
 }
 
 //endregion
@@ -270,7 +302,8 @@
   width: 25px;
   height: 25px;
   color: azure;
-  border: solid 1px #505a56;
+  border-style: solid;
+  border-width: 1px;
   text-align: center;
   margin: 2px !important;
 
@@ -382,10 +415,5 @@
 }
 
 // region Diary
-.sidebar {
-  width: 200px;
-  height: 100%;
-  background-color: #8eb4cb;
-}
 
 //endregion

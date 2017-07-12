@@ -1,23 +1,57 @@
-<div class="clearfix enrgy-container">
-    <div class="pull-left clearfix energy-block">
-        <p class="pull-left energy-name">LeP</p>
-        <p class="pull-left energy-value value-box azure">{{$character->lep}}/{{$character->lep_max}}</p>
-    </div>
-    @if($character->asp_max >= 1)
-        <div class="pull-left clearfix energy-block">
-            <p class="pull-left energy-name">AsP</p>
-            <p class="pull-left energy-value value-box azure">{{$character->asp}}/{{$character->asp_max}}</p>
-        </div>
-    @endif
-    @if($character->ksp_max >= 1)
-        <div class="pull-left clearfix energy-block">
-            <p class="pull-left energy-name">KaP</p>
-            <p class="pull-left energy-value value-box azure">{{$character->kap}}/{{$character->kap_max}}</p>
-        </div>
-    @endif
-    <div class="pull-left clearfix energy-block">
-        <p class="pull-left energy-name">Schicksalspunkte</p>
-        <p class="pull-left energy-value value-box azure">{{$character->SP}}/3</p>
-    </div>
+<form action="/character/{{$character->id}}/energy" method="POST">
+    {{csrf_field()}}
+    <div class="columns">
+        <div class="colum is is-two-thirds columns is-multiline">
+            <div class="column is-half">
+                <div class="field is-horizontal">
+                    <label class="label m-r-5 primary">LeP</label>
+                    <p class="control">
+                        <input class="input is-small" style="width: 30px" name="lep" type="text"
+                               placeholder="{{$character->lep}}">
+                    </p>
+                    <label class="label m-l-5 primary"> /{{$character->lep_max}}</label>
+                </div>
+            </div>
 
-</div>
+            @if($character->asp_max >= 1)
+                <div class="column is-half">
+                    <div class="field is-horizontal">
+                        <label class="label m-r-5 primary">AsP</label>
+                        <p class="control ">
+                            <input class="input is-small" style="width: 30px" name="asp" type="text"
+                                   placeholder="{{$character->asp}}">
+                        </p>
+                        <label class="label m-l-5 primary">/{{$character->asp_max}}</label>
+                    </div>
+                </div>
+            @endif
+            @if($character->kap_max >= 1)
+
+                <div class="column is-half">
+                    <div class="field is-horizontal">
+                        <label class="label m-r-5 primary">KaP</label>
+                        <p class="control ">
+                            <input class="input is-small" style="width: 30px" name="kap" type="text"
+                                   placeholder="{{$character->kap}}">
+                        </p>
+                        <label class="label m-l-5 primary">/{{$character->kap_max}}</label>
+                    </div>
+                </div>
+            @endif
+
+            <div class="column">
+                <div class="field is-half is-horizontal">
+                    <label class="label m-r-5 primary">SP</label>
+                    <p class="control ">
+                        <input class="input is-small" style="width: 23px" type="text" name="sp"
+                               placeholder="{{$character->SP}}">
+                    </p>
+                    <label class="label m-l-5 primary">/{{$character->SP}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="colum is-one-third">
+            <button class="button is-warning m-t-30">Update</button>
+        </div>
+    </div>
+</form>

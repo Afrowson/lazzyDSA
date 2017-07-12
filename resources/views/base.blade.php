@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%">
 <head>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('head')
     <title>LazzyDSA - @yield('title')</title>
 </head>
-<body>
-<div>
-    @yield('header')
-
-    @yield('siedebar')
-
-    @yield('content')
+<body style="height: 100%">
+<div class="topbar columns is-marginless">
+    <div class="column">
+        @yield('nav-left')
+    </div>
+    <div class="column">
+        @yield('nav-center')
+    </div>
+    <div class="column">
+        @yield('nav-right')
+    </div>
 </div>
+
+@yield('body')
+
 </body>
 </html>
