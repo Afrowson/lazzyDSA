@@ -16,7 +16,7 @@ class CreateInventorysTable extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('character_id')->unsigned()->index();
+            $table->uuid('character_id');
 
             $table->string('location')->nullable();
             $table->boolean('weight')->nullable();

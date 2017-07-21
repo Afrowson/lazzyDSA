@@ -15,7 +15,7 @@ class CreatCharacterMagictrickTable extends Migration
     {
         Schema::create('character_magictrick', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             $table->integer('magictrick_id');
             $table->timestamps();
         });

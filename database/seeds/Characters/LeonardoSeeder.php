@@ -26,6 +26,8 @@ class LeonardoSeeder extends Seeder
     public function run()
     {
         $character = Character::create([
+            'user_id' => '1',
+
             'name' => 'Leonardo Descartes',
             'race' => 'Mensch',
             'profession' => 'Grau Magier',

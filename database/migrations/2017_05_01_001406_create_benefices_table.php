@@ -16,7 +16,7 @@ class CreateBeneficesTable extends Migration
         Schema::create('benefices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('decription')->nullable();
+            $table->text('description')->nullable();
             $table->text('rules')->nullable();
             $table->integer('level')->nullable();
             $table->integer('ap_cost')->nullable();

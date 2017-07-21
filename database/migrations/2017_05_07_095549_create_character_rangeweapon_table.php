@@ -15,7 +15,7 @@ class CreateCharacterRangeweaponTable extends Migration
     {
         Schema::create('character_rangeweapon', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters');
             $table->integer('rangeweapon_id');
             //$table->foreign('rangeweapon_id')->references('id')->on('rangeweapons');

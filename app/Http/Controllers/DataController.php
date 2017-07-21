@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateData;
 use Illuminate\Http\Request;
 
 class DataController extends Controller
@@ -25,6 +26,7 @@ class DataController extends Controller
     public function create($model)
     {
         $model = $this->getModel($model);
+        // @Todo add View
     }
 
     /**
@@ -36,7 +38,11 @@ class DataController extends Controller
     public function store($model, Request $request)
     {
         $model = $this->getModel($model);
+        $fields = $model::fields;
 
+        $this->validate($request, $fields['validation']);
+
+        $model::store($request);
     }
 
     /**
@@ -56,24 +62,35 @@ class DataController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($model, $id)
+    public function edit($selected, $id)
     {
-        $model = $this->getModel($model);
+        $model = $this->getModel($selected);
         $data = $model::find($id);
         $fields = $model::$fields;
-        return view('dataedit', compact('data', 'fields'));
+        return view('dataedit', compact('data', 'selected', 'fields'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  UpdateData $request
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateData $request, $selected, $id)
     {
-        //
+        $model = $this->getModel($selected);
+        $fields = $model::$fields;
+        $data = $model::find($id);
+
+        foreach ($fields as $field)
+            $data->{$field['key']} = request()->{$field['key']};
+
+
+        $data->save();
+
+        return back();
+
     }
 
     /**
@@ -82,7 +99,7 @@ class DataController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($model, $id)
     {
         //
     }

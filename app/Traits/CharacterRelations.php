@@ -1,6 +1,23 @@
 <?php
 
-namespace App;
+namespace App\Traits;
+
+use App\Armor;
+use App\Benefice;
+use App\Fightingtalent;
+use App\Handicap;
+use App\Inventory;
+use App\Language;
+use App\Lettering;
+use App\Magictrick;
+use App\Purse;
+use App\Rangeweapon;
+use App\Shield;
+use App\Specialfightingtalent;
+use App\Specialmagictalent;
+use App\Specialtalent;
+use App\Talent;
+use App\Weapon;
 
 trait CharacterRelations
 {

@@ -1,3 +1,4 @@
+<div class="m-t-20">
 <form action="/character/{{$character->id}}/energy" method="POST">
     {{csrf_field()}}
     <div class="columns">
@@ -7,7 +8,7 @@
                     <label class="label m-r-5 primary">LeP</label>
                     <p class="control">
                         <input class="input is-small" style="width: 30px" name="lep" type="text"
-                               placeholder="{{$character->lep}}">
+                               value="{{$character->lep}}">
                     </p>
                     <label class="label m-l-5 primary"> /{{$character->lep_max}}</label>
                 </div>
@@ -19,7 +20,7 @@
                         <label class="label m-r-5 primary">AsP</label>
                         <p class="control ">
                             <input class="input is-small" style="width: 30px" name="asp" type="text"
-                                   placeholder="{{$character->asp}}">
+                                   value="{{$character->asp}}">
                         </p>
                         <label class="label m-l-5 primary">/{{$character->asp_max}}</label>
                     </div>
@@ -32,7 +33,7 @@
                         <label class="label m-r-5 primary">KaP</label>
                         <p class="control ">
                             <input class="input is-small" style="width: 30px" name="kap" type="text"
-                                   placeholder="{{$character->kap}}">
+                                   value="{{$character->kap}}">
                         </p>
                         <label class="label m-l-5 primary">/{{$character->kap_max}}</label>
                     </div>
@@ -44,9 +45,9 @@
                     <label class="label m-r-5 primary">SP</label>
                     <p class="control ">
                         <input class="input is-small" style="width: 23px" type="text" name="sp"
-                               placeholder="{{$character->SP}}">
+                               value="{{$character->sp}}">
                     </p>
-                    <label class="label m-l-5 primary">/{{$character->SP}}</label>
+                    <label class="label m-l-5 primary">/3</label>
                 </div>
             </div>
         </div>
@@ -55,3 +56,4 @@
         </div>
     </div>
 </form>
+</div>

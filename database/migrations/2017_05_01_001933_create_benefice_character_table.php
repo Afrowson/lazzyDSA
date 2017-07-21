@@ -15,7 +15,7 @@ class CreateBeneficeCharacterTable extends Migration
     {
         Schema::create('benefice_character', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id')->index();
+            $table->uuid('character_id');
             //$table->foreigen('character_id')->references('id')->on('characters');
             $table->integer('benefice_id')->index();
             //$table->foreigen('benefice_id')->references('id')->on('benefices');

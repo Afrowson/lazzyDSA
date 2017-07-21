@@ -15,7 +15,7 @@ class CreateCharacterWeaponTable extends Migration
     {
         Schema::create('character_weapon', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters');
             $table->integer('weapon_id');
             //$table->foreign('weapon_id')->references('id')->on('weapons');

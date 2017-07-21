@@ -15,7 +15,7 @@ class CreateCharacterSpecialmagictalentTable extends Migration
     {
         Schema::create('character_specialmagictalent', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             $table->integer('specialmagictalent_id');
             //$table->foreign('charaacter_id')->references('id')->on('characters');
             //$table->foreign('specialmagictalent_id')->references('id')->on('specialmagictalent');

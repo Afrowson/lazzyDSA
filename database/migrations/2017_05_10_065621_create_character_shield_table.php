@@ -15,7 +15,7 @@ class CreateCharacterShieldTable extends Migration
     {
         Schema::create('character_shield', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters');
             $table->integer('shield_id');
             //$table->foreign('shield_id')->references('id')->on('shields');

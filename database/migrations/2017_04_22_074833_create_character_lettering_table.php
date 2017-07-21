@@ -15,7 +15,7 @@ class CreateCharacterLetteringTable extends Migration
     {
         Schema::create('character_lettering', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id')->unsigned()->index();
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
             $table->integer('lettering_id')->unsigned()->index();
             //$table->foreign('lettering_id')->references('id')->on('letterings')->onDelete('cascade');

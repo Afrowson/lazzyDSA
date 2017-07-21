@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\CharacterTalent;
 use App\Character;
+use Illuminate\Support\Facades\Auth;
 
 
 class CharacterViewController extends Controller
 {
     public function index()
     {
-        $characters = Character::all();
+        $characters = Character::where('user_id', Auth::user()->id)->get();;
 
         return view('characters', compact('characters'));
     }

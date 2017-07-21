@@ -83,7 +83,7 @@ class CharacterController extends Controller
         //
     }
 
-    public function updateenergy(Character $character)
+    public function updateEnergy(Character $character)
     {
         if (request()->has('lep') && $character->lep_max >= request()->lep) {
             $character->lep = request()->lep;
@@ -93,6 +93,9 @@ class CharacterController extends Controller
         }
         if (request()->has('kap') && $character->kap_max >= request()->kap) {
             $character->kap = request()->kap;
+        }
+        if (request()->has('sp') && request()->sp < 4) {
+            $character->sp = request()->sp;
         }
         $character->save();
 

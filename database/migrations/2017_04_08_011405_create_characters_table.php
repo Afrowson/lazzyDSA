@@ -15,7 +15,11 @@ class CreateCharactersTable extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
 
-            $table->increments('id');
+            $table->uuid('id');
+            $table->primary('id');
+
+            $table->integer('user_id');
+
 
             $table->string('name');
             $table->string('race')->nullable();
@@ -47,6 +51,7 @@ class CreateCharactersTable extends Migration
             $table->integer('lep_max')->nullable();
             $table->integer('asp_max')->nullable();
             $table->integer('kap_max')->nullable();
+            $table->integer('sp')->nullable();
 
             $table->integer('SK')->nullable();
             $table->integer('ZK')->nullable();
@@ -54,7 +59,6 @@ class CreateCharactersTable extends Migration
             $table->integer('IT')->nullable();
             $table->integer('GW')->nullable();
 
-            $table->integer('SP')->nullable();
 
             $table->integer('ap_total');
             $table->integer('ap_spend')->nullable();

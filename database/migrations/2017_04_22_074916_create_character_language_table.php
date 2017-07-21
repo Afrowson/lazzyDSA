@@ -15,7 +15,7 @@ class CreateCharacterLanguageTable extends Migration
     {
         Schema::create('character_language', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('character_id')->unsigned()->index();
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
             $table->integer('language_id')->unsigned()->index();
             //$table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');

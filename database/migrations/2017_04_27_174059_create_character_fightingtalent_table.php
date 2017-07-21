@@ -16,7 +16,7 @@ class CreateCharacterFightingtalentTable extends Migration
         Schema::create('character_fightingtalent', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('value');
-            $table->integer('character_id');
+            $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('charaacters')->onDelete('cascade');
             $table->integer('fightingtalent_id');
             //$table->foreign('fightingtalent_id')->references('id')->on('fightingtalents')->onDelete('cascade');

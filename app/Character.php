@@ -2,12 +2,17 @@
 
 namespace App;
 
+use App\Traits\CharacterRelations;
+use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;
 
 
 class Character extends Model
 {
     use CharacterRelations;
+    use Uuids;
+
+    public $incrementing = false;
     public $skills = [
         'MU',
         'KL',
@@ -125,6 +130,7 @@ class Character extends Model
         $modifiers = implode(',', $modifiers);
         return $this->shields()->save($shield, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
+
     public function addPurse(Purse $purse)
     {
         return $this->purses()->save($purse);

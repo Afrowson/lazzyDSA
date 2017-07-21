@@ -19,35 +19,44 @@ class Handicap extends Model
                 'key' => 'name',
                 'name' => 'Name',
                 'type' => 'string',
-                'required' => TRUE
+                'required' => TRUE,
+                'validation' => 'required|max:191'
             ],
         'description' =>
             [
                 'key' => 'description',
                 'name' => 'Beschreibung',
-                'type' => 'string',
-                'required' => FALSE
+                'type' => 'text',
+                'required' => FALSE,
+                'validation' => 'nullable'
+
             ],
         'rules' =>
             [
                 'key' => 'rules',
                 'name' => 'Regel',
-                'type' => 'string',
-                'required' => FALSE
+                'type' => 'text',
+                'required' => FALSE,
+                'validation' => 'nullable'
+
             ],
         'level' =>
             [
                 'key' => 'level',
                 'name' => 'Level',
                 'type' => 'integer',
-                'required' => FALSE
+                'required' => FALSE,
+                'validation' => 'nullable|numeric|min:0|max:18'
+
             ],
         'ap_cost' =>
             [
                 'key' => 'ap_cost',
                 'name' => 'AP',
                 'type' => 'integer',
-                'required' => FALSE
+                'required' => FALSE,
+                'validation' => 'nullable|numeric|min:0|max:100'
+
             ],
     ];
 

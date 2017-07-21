@@ -28,6 +28,8 @@ class DegroSeeder extends Seeder
     public function run()
     {
         $character = Character::create([
+            'user_id' => '1',
+
             'name' => 'Degro',
             'race' => 'Zwerg',
             'profession' => 'Warrior',
@@ -50,7 +52,7 @@ class DegroSeeder extends Seeder
             'KO' => '14',
             'KK' => '14',
 
-            'lep' => '31',
+            'lep' => '36',
             'asp' => '0',
             'kap' => '0',
             'lep_max' => '36',
@@ -65,8 +67,8 @@ class DegroSeeder extends Seeder
 
             'SP' => '3',
 
-            'ap_total' => '1147',
-            'ap_spend' => '1119',
+            'ap_total' => '1186',
+            'ap_spend' => '1125',
         ]);
 
         $tvalues = [0, 0, 0, 6, 5, 0, 0, 5, 0, 6, 0, 0, 4, 10, 0, 0, 7, 0, 0, 5,

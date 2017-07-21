@@ -5,19 +5,24 @@
 @endsection
 
 @section('nav-center')
-    <div class="container">
-        <h1> Charaktere</h1>
-        <p>Hier werden alle Charactere angezeigt, die in LazzyPHP gespeichert wurden.</p>
-
+    <div class="hero is-primary">
+        <h1 class="title is 2">Deine Charaktere</h1>
+        <p>Hier werden alle deine Charactere angezeigt.</p>
     </div>
-
+@endsection
+@section('nav-right')
+    @if (Auth::guest())
+        <a class="button is-danger" href="{{ route('login') }}">Login</a>
+        <a class="button is-warning" href="{{ route('register') }}">Register</a>
+    @else
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            {{ csrf_field() }}
+            <button class="button is-info" type="submit" href="{{ route('logout') }}">Logout</button>
+        </form>
+    @endif
 @endsection
 
 @section('content')
-
-    <div class="container">
-
-    </div>
 
     <div class="container">
         @foreach($characters as $character)

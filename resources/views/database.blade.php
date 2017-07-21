@@ -41,7 +41,7 @@
                         <td>{{($data->{$fillable['key']} )}}</td>
                     @endforeach
                     <td>
-                        <a href="/database/table/{{class_basename($data)}}/{{$data->id}}"
+                        <a href="/database/{{class_basename($data)}}/{{$data->id}}/edit"
                            class="button is-primary">Edit</a>
                     </td>
                 </tr>
