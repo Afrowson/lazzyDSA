@@ -2,6 +2,7 @@
 
 
 @section('nav-center')
+    <h1
     @if (!Auth::guest())
         <h1 class="primary">Hallo {{Auth::user()->name}}</h1>
     @endif
