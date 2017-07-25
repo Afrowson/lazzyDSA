@@ -1,5 +1,11 @@
 @extends('base')
 
+@section('nav-left')
+    <a href="/index" class=" button is-info">Deine Helden</a>
+
+    <a href="/database" class="button is-info">Datenbank</a>
+@endsection
+
 @section('nav-center')
     <form action="/database/table" method="GET">
         <div class="field">

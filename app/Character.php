@@ -7,10 +7,15 @@ use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;
 
 
+/**
+ * @property array skills
+ */
 class Character extends Model
 {
     use CharacterRelations;
     use Uuids;
+
+    protected $guarded = [];
 
     public $incrementing = false;
     public $skills = [

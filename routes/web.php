@@ -15,15 +15,20 @@
 Route::get('/', function () {
     return view('home');
 });
-//Route::get('/home', 'SiteController@home');
+Route::get('/index', 'SiteController@index');
 
-Route::get('/characters', 'CharacterViewController@index');
+
+Route::get('/character/create', 'CharacterViewController@create');
+
+Route::post('/character/store', 'CharacterController@store');
+
 
 Route::get('/character/{character}', 'CharacterViewController@single');
 
 Route::get('/character/{character}/diary', 'CharacterViewController@diary');
 
 Route::post('/character/{character}/energy', 'CharacterController@updatEenergy');
+
 
 Route::get('/database', 'SiteController@database');
 
@@ -38,5 +43,3 @@ Route::get('/database/{model}/create', 'DataController@store');
 Route::get('/database/{model}/{id}/delete', 'DataController@destroy');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

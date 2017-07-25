@@ -52,6 +52,10 @@
     <div class="is-pulled-left">
         @include('character.inventory')
     </div>
+@endsection
 
+@section('sidebar')
+    <a href="/index" class=" button is-info">Deine Helden</a>
 
+    <a href="/diary" class="button is-info">Tagebuch</a>
 @endsection

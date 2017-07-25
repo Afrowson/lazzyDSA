@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class CharacterViewController extends Controller
 {
-    public function index()
+    public function create()
     {
-        $characters = Character::where('user_id', Auth::user()->id)->get();;
 
-        return view('characters', compact('characters'));
+        $character = new Character();
+        $skills = $character->skills;
+
+        return view('createCharacter', compact('skills'));
     }
 
     public function single(Character $character)

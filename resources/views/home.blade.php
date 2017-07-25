@@ -1,8 +1,8 @@
-@extends('app')
+@extends('base')
 
 
 @section('nav-center')
-    <h1
+    <h1 class="title primary"> Lazzy DSA</h1>
     @if (!Auth::guest())
         <h1 class="primary">Hallo {{Auth::user()->name}}</h1>
     @endif
@@ -21,13 +21,12 @@
     @endif
 @endsection
 
-@section('sidebar')
-    <a href="/characters" class=" button is-info">Deine Helden</a>
+@section('nav-left')
+    @if (!Auth::guest())
+        <a href="/index" class=" button is-info">Deine Helden</a>
 
     <a href="/database" class="button is-info">Datenbank</a>
-
-
-
+    @endif
 @endsection
 
 @section('content')
