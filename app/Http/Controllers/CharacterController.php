@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Character;
+use App\Fightingtalent;
+use App\Talent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,7 +83,7 @@ class CharacterController extends Controller
                 'ap_spend' => 'numeric|nullable'
             ]);
 
-        $char = Character::create([
+        $character = Character::create([
             'user_id' => Auth::user()->id,
             'name' => request()->name,
             'race' => request()->race,
@@ -121,9 +123,8 @@ class CharacterController extends Controller
         ]);
 
 
-        dd($char);
-
-        return view();//ToDo Link zu add Talents usw.
+        $talents = Talent::all();
+        return redirect()->route('addTalents', [$character]);
     }
 
     /**
@@ -188,9 +189,40 @@ class CharacterController extends Controller
         $character->save();
 
         return back();
-
-
     }
+
+    public function addTalents(Request $reqest, Character $character)
+    {
+
+        dump($reqest->except('_token') );
+        $talents =$reqest->except('_token');
+
+        foreach ($talents as $key=>$value) {
+            dump($key);
+            $talent = Talent::find($key);
+            dump($talent);
+            $character->addTalent($talent,$value);
+
+        }
+        return redirect()->route('addFightingtalents',[$character]);
+    }
+    public function addFightingtalents(Request $reqest, Character $character)
+    {
+
+        dump($reqest->except('_token') );
+        $fightingtalents =$reqest->except('_token');
+
+        foreach ($fightingtalents as $key=>$value) {
+            dump($key);
+            $fightingtalent = Fightingtalent::find($key);
+            dump($fightingtalent);
+            $character->addFightingtalent($fightingtalent,$value);
+
+        }
+        die();
+        return redirect()->route('add',[$character]);
+    }
+
 }
 
 

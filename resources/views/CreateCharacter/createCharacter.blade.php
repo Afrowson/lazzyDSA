@@ -108,8 +108,8 @@
                         <div class="control">
                             <div class="select">
                                 <select name="{{$skill}}">
-                                    @for($i=1;$i<=20;$i++)
-                                        <option>{{$i}}</option>
+                                    @for($i=20;$i>=8;$i--)
+                                        <option @if($i==8)selected @endif > {{$i}} </option>
                                     @endfor
                                 </select>
                             </div>

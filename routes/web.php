@@ -22,6 +22,19 @@ Route::get('/character/create', 'CharacterViewController@create');
 
 Route::post('/character/store', 'CharacterController@store');
 
+Route::get('/character/{character}/addTalents', 'CharacterViewController@addTalents')->name('addTalents');
+
+Route::post('/character/{character}/addTalents', 'CharacterController@addTalents');
+
+Route::get('/character/{character}/addFightingtalents', 'CharacterViewController@addFightingtalents')->name('addFightingtalents');
+
+Route::post('/character/{character}/addFightingtalents', 'CharacterController@addFightingtalents');
+
+
+
+
+
+
 
 Route::get('/character/{character}', 'CharacterViewController@single');
 
