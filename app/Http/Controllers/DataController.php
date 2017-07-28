@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateData;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
+use phpDocumentor\Reflection\Types\Null_;
 
 class DataController extends Controller
 {
@@ -12,10 +14,22 @@ class DataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($model)
+    public function index($model, Request $request = Null)
     {
+
         $model = $this->getModel($model);
-        return $model::all();
+
+        if (isset($request) && $request->ajax()) {
+            $response = $model::all();
+            $response . toJSON();
+            return response()->json(['response' => 'This is get method']);
+        }
+
+        return json_encode(['nope']);
+
+        //   return $model::all();
+
+        dd(nope);
     }
 
     /**

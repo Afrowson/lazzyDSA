@@ -25,6 +25,12 @@ class CharacterViewController extends Controller
         $talents = Talent::all();
         return view('CreateCharacter.addTalents', compact('character', 'talents'));
     }
+
+    public function addLanguages(Character $character)
+    {
+        return view('CreateCharacter.addLanguages', compact('character'));
+    }
+
     public function addFightingtalents(Character $character)
     {
         $fightingtalents = Fightingtalent::all();

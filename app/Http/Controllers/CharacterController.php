@@ -219,8 +219,7 @@ class CharacterController extends Controller
             $character->addFightingtalent($fightingtalent,$value);
 
         }
-        die();
-        return redirect()->route('add',[$character]);
+        return redirect()->route('addLanguages', [$character]);
     }
 
 }

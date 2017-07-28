@@ -30,6 +30,7 @@ Route::get('/character/{character}/addFightingtalents', 'CharacterViewController
 
 Route::post('/character/{character}/addFightingtalents', 'CharacterController@addFightingtalents');
 
+Route::get('/character/{character}/addLanguages', 'CharacterViewController@addLanguages')->name('addLanguages');
 
 
 
@@ -46,6 +47,8 @@ Route::post('/character/{character}/energy', 'CharacterController@updatEenergy')
 Route::get('/database', 'SiteController@database');
 
 Route::get('/database/table', 'SiteController@database');
+
+Route::get('/api/{model}', 'DataController@index');
 
 Route::get('/database/{model}/{id}/edit', 'DataController@edit');
 
