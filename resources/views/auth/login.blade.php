@@ -6,7 +6,7 @@
 @endsection
 @section('body')
     <div class="columns">
-        <div class="column is-half is-offset-2">
+        <div class="m-t-50 column is-half is-offset-4">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
 

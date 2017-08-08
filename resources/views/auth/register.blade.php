@@ -8,7 +8,7 @@
 @section('body')
 
     <div class="columns">
-        <div class="column is-offset-one-quarter">
+        <div class="column is-offset-4 m-t-50">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 

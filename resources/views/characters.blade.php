@@ -6,7 +6,7 @@
 
 @section('nav-center')
     <div class="hero is-primary">
-        <h1 class="title is 2">Deine Charaktere</h1>
+        <h1 class="title is 2 is-marginless">Deine Helden</h1>
         <p>Hier werden alle deine Charactere angezeigt.</p>
     </div>
 @endsection
@@ -25,10 +25,12 @@
 @section('content')
     <div class="container">
         @foreach($characters as $character)
-            <a href="character/{{$character->id}}" class="character-box">
+            <div href="character/{{$character->id}}" class="character-box">
                 <h3>{{$character->name}}, {{$character->ap_total}} AP</h3>
                 <p>{{$character->race}}, {{$character->profession}}</p>
-            </a>
+                <a href="/character/{{$character->id}}/editCharacter" class="button is-primary">Bearbeiten</a>
+                <a href="/character/{{$character->id}}/show" class="button is-primary">Anzeigen</a>
+            </div>
         @endforeach
         <a href="/character/create" class="character-box">
             Erstelle einen neuen Helden

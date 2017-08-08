@@ -94,6 +94,7 @@ class Character extends Model
     public function addHandicap(Handicap $handicap, $options)
     {
         $options = array_replace(['value' => null, 'type' => null], $options);
+    
         return $this->handicaps()->save($handicap, ['value' => $options['value'], 'type' => $options['type']]);
     }
 
@@ -119,6 +120,7 @@ class Character extends Model
     {
         $keys = implode(',', array_keys($modifiers));
         $modifiers = implode(',', $modifiers);
+    
         return $this->rangeweapons()->save($rangeweapon, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
 
@@ -126,6 +128,7 @@ class Character extends Model
     {
         $keys = implode(',', array_keys($modifiers));
         $modifiers = implode(',', $modifiers);
+    
         return $this->armors()->save($armor, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
 
@@ -133,6 +136,7 @@ class Character extends Model
     {
         $keys = implode(',', array_keys($modifiers));
         $modifiers = implode(',', $modifiers);
+    
         return $this->shields()->save($shield, ['keys' => $keys, 'modifiers' => $modifiers]);
     }
 

@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="colum is-half">
-                <button class="button is-warning m-t-30">Update</button>
+                <button class="button is-warning m-b-5 m-l-25 m-t-5">Update</button>
             </div>
         </div>
 

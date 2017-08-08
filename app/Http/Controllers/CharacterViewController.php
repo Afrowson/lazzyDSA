@@ -19,7 +19,15 @@ class CharacterViewController extends Controller
 
         return view('CreateCharacter.createCharacter', compact('skills'));
     }
-
+    
+    public function editCharacter(Character $character)
+    {
+        return view('editCharacter', compact('character'));
+    }
+    
+    
+    
+    
     public function addTalents(Character $character)
     {
         $talents = Talent::all();
