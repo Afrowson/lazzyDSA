@@ -24,8 +24,8 @@
 
 <script>
     export default {
-        
-        props: ['pickedletterings'],
+    
+        props: ['pickedletterings', 'character'],
         
         
         data(){

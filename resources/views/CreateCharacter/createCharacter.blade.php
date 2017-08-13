@@ -41,7 +41,7 @@
                     </p>
                 </div>
             </div>
-
+    
             <div class="is-clearfix m-t-10">
                 <div class="field is-pulled-left m-l-10">
                     <label class="label m-r-5 ">Spezie:</label>
@@ -100,10 +100,11 @@
                     </p>
                 </div>
             </div>
-
+    
             <div class="is-clearfix m-t-10">
                 @foreach($skills as $skill)
-                    <div class="field is-pulled-left m-l-10">
+                    <div class="
+                     is-pulled-left m-l-10">
                         <label class="label m-r-5 ">{{$skill}}:</label>
                         <div class="control">
                             <div class="select">

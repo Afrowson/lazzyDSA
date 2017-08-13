@@ -30,7 +30,7 @@
 <script>
     export default {
     
-        props: ['pickedlanguages'],
+        props: ['pickedlanguages', 'character'],
     
         data(){
             return {
@@ -51,6 +51,9 @@
             },
             unpick(id){
                 this.pickedlanguages.pop(id)
+            },
+            update(){
+                console.log('test')
             }
         },
         mounted(){

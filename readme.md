@@ -1,26 +1,51 @@
 ## Aktuell Implementiert
 
-* Alle Stats anzeigen.
-* Skills anzeigen
-* Talente anzeigen
-* Kampftechniken anzeigen
-* Vor-/Nachteile anzeigen
-* Waffen und Rüsuntungen anzeigen
-* Sonderfertigkeiten/Kampf/Magie anzeigen
-* Zaubertricks anzeigen
-* Inventare Anzeigen
+###Login
+*Register/Login
+
+###CreateCharacter 2/10(12)
+* Basics
+* Sprachen/Schriften
+
+###Character Einzelansicht
+* Stats
+* Skills
+* Talente
+* Kampftechniken
+* Vor-/Nachteile
+* Waffen und Rüsuntungen
+* Sonderfertigkeiten/Kampf/Magie
+* Zaubertricks
+* Inventare
+* Sprachen / Schriften
+* Lep/AsP/Kap/SP updatebar
+
+Datenbank:
+*Einträge anzeigen & editieren
+
 
 ## Tasks:
 
-### Redesign
+### Edit Character
 
-* Konzept für BaseBlade/Einzelansicht/Mehrfachansicht/Tagebuch
+* Talents
+* Fightingtalents
+* Vor/Nachteile
+* Spezialtalente
+* Waffen & Schilde
+* Inventar
+* Geldbeutel
+* Zaupertricks
+* (Magie)
 
 ### Character Einzelansicht.
 Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
+* View
+
+Purses
 * View
 
 ### Tagebuch
@@ -31,8 +56,6 @@ Spells
 * Diary Save funktion
 
 ## Planned:
-
-1. Zustände/LP/AsP/KaP speichern
 
 1. Zauber anzeigen
 

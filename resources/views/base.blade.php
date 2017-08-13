@@ -12,19 +12,21 @@
 </head>
 <body style="height: 100%">
 <div id="app" style="height: 100%">
-<div class="topbar columns is-marginless">
-    <div class="column">
-        @yield('nav-left')
+    <div class="topbar columns is-marginless">
+        <div class="column">
+            @yield('nav-left')
+        </div>
+        <div class="column">
+            @yield('nav-center')
+        </div>
+        <div class="column">
+            @yield('nav-right')
+        </div>
     </div>
-    <div class="column">
-        @yield('nav-center')
-    </div>
-    <div class="column">
-        @yield('nav-right')
-    </div>
-</div>
     
     @yield('body')
 </div>
+@include('vars')
+<script src="/js/app.js"></script>
 </body>
 </html>

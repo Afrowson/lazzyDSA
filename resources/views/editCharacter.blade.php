@@ -9,7 +9,7 @@
 @endsection
 
 @section('nav-left')
-    @include('character.name')
+
 @endsection
 
 @section('nav-center')
@@ -24,7 +24,6 @@
 
 @section('sidebar')
     <div>
-        
         <button v-on:click="status = 1" class="hero m-b-5">
             <h5 class="title">Basics</h5>
         </button>
@@ -59,21 +58,19 @@
 @endsection
 
 @section('content')
-    
     <div>
+        <div v-show="status == 1">
+            <addcharacter v-bind:character="character"></addcharacter>
+        </div>
         <div v-show="status == 4" class="columns">
             <div class="column is-half">
-                <addlanguages v-bind:pickedlanguages="pickedlanguages"></addlanguages>
+                <addlanguages v-bind:pickedlanguages="pickedlanguages" v-bind:character="character"></addlanguages>
             </div>
             <div class="column is-half">
-                <addletterings v-bind:pickedletterings="pickedletterings"></addletterings>
+                <addletterings v-bind:pickedletterings="pickedletterings" v-bind:character="character"></addletterings>
             </div>
-        
         </div>
-        <button class="button" v-on:click="save()">Übertragen</button>
+        <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>
-    
-    <script src="/js/app.js"></script>
-
 @endsection
