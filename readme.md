@@ -1,13 +1,13 @@
 ## Aktuell Implementiert
 
-###Login
+### Login
 *Register/Login
 
-###CreateCharacter 2/10(12)
+### CreateCharacter 2/10(12)
 * Basics
 * Sprachen/Schriften
 
-###Character Einzelansicht
+### Character Einzelansicht
 * Stats
 * Skills
 * Talente
