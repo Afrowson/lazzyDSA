@@ -51,7 +51,6 @@
         mounted(){
             axios.get('/api/Language').then(response => {
                 this.letterings = response.data
-                console.log(this.letterings)
             });
         }
     }

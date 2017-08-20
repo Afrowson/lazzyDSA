@@ -13,11 +13,11 @@ class CharacterViewController extends Controller
 {
     public function create()
     {
+        Javascript::put([
+            'character' => new \stdClass(),
+        ]);
     
-        $character = new Character();
-        $skills = $character->skills;
-    
-        return view('CreateCharacter.createCharacter', compact('skills'));
+        return view('editCharacter');
     }
     
     public function editCharacter(Character $character)
@@ -44,7 +44,6 @@ class CharacterViewController extends Controller
             'character' => $character,
         ]);
 
-//        dd($character);
         return view('editCharacter');
     }
     
@@ -56,10 +55,6 @@ class CharacterViewController extends Controller
         return view('CreateCharacter.addTalents', compact('character', 'talents'));
     }
     
-    public function addLanguages(Character $character)
-    {
-        return view('CreateCharacter.addLanguages', compact('character'));
-    }
     
     public function addFightingtalents(Character $character)
     {

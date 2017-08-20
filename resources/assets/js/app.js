@@ -1,7 +1,9 @@
 import Vue from 'vue';
-import addLetterings from './components/addLetterings.vue';
-import addLanguages from './components/addLanguages.vue';
 import addCharacter from './components/addCharacter.vue';
+import addTalents from './components/addTalents.vue';
+import addFightingtalents from './components/addFightingtalents.vue';
+import addLanguages from './components/addLanguages.vue';
+import addLetterings from './components/addLetterings.vue';
 import axios from 'axios';
 
 
@@ -16,35 +18,26 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 4,
+        status: 1,
         pickedlanguages: [],
         pickedletterings: [],
+        pickedtalents: [],
+        pickedfightingtalents: [],
         character: character
     },
     
     components: {
         'addcharacter': addCharacter,
+        'addtalents': addTalents,
+        'addfightingtalents': addFightingtalents,
         'addlanguages': addLanguages,
-        'addletterings': addLetterings
+        'addletterings': addLetterings,
     },
     
     methods: {
         status(selected){
             this.status = selected
             console.log(this.status)
-            console.log(selected)
-        },
-        // save(){
-        //     let child= this.$children[1]
-        //     child.update()
-        //     axios.post('addLanguages', this.pickedlanguages)
-        //         .then(function(response) {
-        //             console.log(response)
-        //         })
-        //     axios.post('addLetterings', this.pickedletterings)
-        //         .then(function(response) {
-        //             console.log(response)
-        //         })
-        // }
+        }
     },
 })

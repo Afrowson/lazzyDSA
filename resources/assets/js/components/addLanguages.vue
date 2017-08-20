@@ -53,13 +53,11 @@
                 this.pickedlanguages.pop(id)
             },
             update(){
-                console.log('test')
             }
         },
         mounted(){
             axios.get('/api/Language').then(response => {
                 this.languages = response.data
-                console.log(this.languages)
             });
         }
     }

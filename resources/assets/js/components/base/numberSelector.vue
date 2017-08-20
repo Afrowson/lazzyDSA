@@ -2,9 +2,9 @@
     <div class="field">
         <label class="label">{{lable}}</label>
         <div class="control">
-            <select class="select" v-model="model">
-                <option v-for="i in max" v-if="i>=min">
-                    {{i}}
+            <select class="select" v-model="selected" v-on:change="changevalue">
+                <option v-for="i in max+1" v-if="i>=min+1">
+                    {{i - 1}}
                 </option>
             </select>
         </div>
@@ -14,7 +14,19 @@
 <script>
     
     export default{
-        props: ['lable', 'model', 'min', 'max']
+        props: ['lable', 'id', 'min', 'max', 'value'],
+    
+        data(){
+            return {
+                selected: this.value
+            }
+        },
+        methods: {
+            changevalue() {
+            
+                this.$emit('changevalue', this.id, Number(this.selected))
+            }
+        }
     }
 
 </script>

@@ -62,6 +62,12 @@
         <div v-show="status == 1">
             <addcharacter v-bind:character="character"></addcharacter>
         </div>
+        <div v-show="status == 2">
+            <addtalents :pickedtalents="pickedtalents" v-bind:character="character"></addtalents>
+        </div>
+        <div v-show="status == 3">
+            <addfightingtalents :pickedfightingtalents="pickedfightingtalents" v-bind:character="character"></addfightingtalents>
+        </div>
         <div v-show="status == 4" class="columns">
             <div class="column is-half">
                 <addlanguages v-bind:pickedlanguages="pickedlanguages" v-bind:character="character"></addlanguages>

@@ -3,9 +3,11 @@
 ### Login
 *Register/Login
 
-### CreateCharacter 2/10(12)
+### CreateCharacter 3.5/10(12)
 * Basics
-* Sprachen/Schriften
+* Talente
+* Kampftechniken
+* (Sprachen/Schriften)
 
 ### Character Einzelansicht
 * Stats
@@ -28,8 +30,6 @@ Datenbank:
 
 ### Edit Character
 
-* Talents
-* Fightingtalents
 * Vor/Nachteile
 * Spezialtalente
 * Waffen & Schilde
