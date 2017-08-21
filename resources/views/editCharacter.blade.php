@@ -84,6 +84,28 @@
                 <addhandicaps v-bind:pickedhandicaps="pickedhandicaps" v-bind:character="character"></addhandicaps>
             </div>
         </div>
+        <div v-show="status == 6" class="columns is-multiline">
+            <div class="column is-half">
+                <addspecialtalents v-bind:pickedspecialtalents="pickedspecialtalents" v-bind:character="character"></addspecialtalents>
+            </div>
+            <div class="column is-half">
+                <addspecialfightingtalents v-bind:pickedspecialfightingtalents="pickedspecialfightingtalents" v-bind:character="character"></addspecialfightingtalents>
+            </div>
+            <div class="column is-half">
+                <addspecialmagictalents v-bind:pickedspecialmagictalents="pickedspecialmagictalents" v-bind:character="character"></addspecialmagictalents>
+            </div>
+        </div>
+        <div v-show="status == 7" class="columns is-multiline">
+            <div class="column is-half">
+                <addweapons v-bind:pickedweapons="pickedweapons" v-bind:character="character"></addweapons>
+            </div>
+            {{--<div class="column is-half">--}}
+            {{--<addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons" v-bind:character="character"></addrangeweapons>--}}
+            {{--</div>--}}
+            {{--<div class="column is-half">--}}
+            {{--<addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>--}}
+            {{--</div>--}}
+        </div>
         <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>

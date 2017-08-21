@@ -47,22 +47,6 @@ class CharacterViewController extends Controller
         return view('editCharacter');
     }
     
-    
-    public function addTalents(Character $character)
-    {
-        $talents = Talent::all();
-    
-        return view('CreateCharacter.addTalents', compact('character', 'talents'));
-    }
-    
-    
-    public function addFightingtalents(Character $character)
-    {
-        $fightingtalents = Fightingtalent::all();
-    
-        return view('CreateCharacter.addFightingtalents', compact('character', 'fightingtalents'));
-    }
-    
     public function single(Character $character)
     {
         $talentgroups = ['Körper', 'Gesellschaft', 'Natur', 'Wissen', 'Handwerk'];

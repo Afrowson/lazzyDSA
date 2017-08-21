@@ -6,6 +6,10 @@ import addLanguages from './components/addLanguages.vue';
 import addLetterings from './components/addLetterings.vue';
 import addBenefices from './components/addBenefices.vue';
 import addHandicaps from './components/addHandicaps.vue';
+import addSpecialtalents from './components/addSpecialtalents.vue';
+import addSpecialfightingtalents from './components/addSpecialfightingtalents.vue';
+import addSpecialmagictalents from './components/addSpecialmagictalents.vue';
+import addWeapons from './components/addWeapons.vue'
 import axios from 'axios';
 
 
@@ -20,13 +24,17 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 5,
+        status: 6,
+        pickedtalents: [],
+        pickedfightingtalents: [],
         pickedlanguages: [],
         pickedletterings: [],
         pickedbenefices: [],
-        pickedtalents: [],
-        pickedfightingtalents: [],
         pickedhandicaps: [],
+        pickedspecialtalents: [],
+        pickedspecialfightingtalents: [],
+        pickedspecialmagictalents: [],
+        pickedweapons: [],
         character: character
     },
     
@@ -37,7 +45,11 @@ var app = new Vue({
         'addlanguages': addLanguages,
         'addletterings': addLetterings,
         'addbenefices': addBenefices,
-        'addhandicaps': addHandicaps
+        'addhandicaps': addHandicaps,
+        'addspecialtalents': addSpecialtalents,
+        'addspecialfightingtalents': addSpecialfightingtalents,
+        'addspecialmagictalents': addSpecialmagictalents,
+        'addweapons': addWeapons,
     },
     
     methods: {
