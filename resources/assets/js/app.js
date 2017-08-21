@@ -4,6 +4,8 @@ import addTalents from './components/addTalents.vue';
 import addFightingtalents from './components/addFightingtalents.vue';
 import addLanguages from './components/addLanguages.vue';
 import addLetterings from './components/addLetterings.vue';
+import addBenefices from './components/addBenefices.vue';
+import addHandicaps from './components/addHandicaps.vue';
 import axios from 'axios';
 
 
@@ -18,11 +20,13 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 1,
+        status: 5,
         pickedlanguages: [],
         pickedletterings: [],
+        pickedbenefices: [],
         pickedtalents: [],
         pickedfightingtalents: [],
+        pickedhandicaps: [],
         character: character
     },
     
@@ -32,6 +36,8 @@ var app = new Vue({
         'addfightingtalents': addFightingtalents,
         'addlanguages': addLanguages,
         'addletterings': addLetterings,
+        'addbenefices': addBenefices,
+        'addhandicaps': addHandicaps
     },
     
     methods: {

@@ -32,7 +32,7 @@
             return {
                 text: 'test',
                 letterings: [],
-                selected: '',
+                selected: 1,
             }
         },
         
@@ -51,7 +51,15 @@
         mounted(){
             axios.get('/api/Language').then(response => {
                 this.letterings = response.data
-            });
+            })
+            if(Object.keys(this.character).length !== 0) {
+                this.character.letterings.forEach(lettering => {
+                    this.pickedletterings.push({
+                        id: lettering.id,
+                        name: lettering.name,
+                    })
+                })
+            }
         }
     }
 </script>

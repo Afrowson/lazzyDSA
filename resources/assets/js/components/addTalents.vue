@@ -1,10 +1,49 @@
 <template>
     <div>
-        <h1 class="title is-3">Talente auswählen</h1>
-        
+        <h2 class="title is-4">Körper</h2>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
+                v-if="talent.group == 'Körper'"
+                :value="talent.value"
+                @changevalue="changevalue"
+                :id="talent.id"
+                :lable="talent.name"
+                :min="0"
+                :max="25"
+            ></numberselector>
+        </div>
+        <h2 class="title is-4">Gesellschaft</h2>
+        <div class="columns is-multiline">
+            <numberselector class="column is-narrow"
+                v-for="talent in pickedtalents"
+                v-if="talent.group == 'Gesellschaft'"
+                :value="talent.value"
+                @changevalue="changevalue"
+                :id="talent.id"
+                :lable="talent.name"
+                :min="0"
+                :max="25"
+            ></numberselector>
+        </div>
+        <h2 class="title is-4">Natur & Wissen</h2>
+        <div class="columns is-multiline">
+            <numberselector class="column is-narrow"
+                v-for="talent in pickedtalents"
+                v-if="talent.group == 'Natur' || talent.group == 'Wissen'"
+                :value="talent.value"
+                @changevalue="changevalue"
+                :id="talent.id"
+                :lable="talent.name"
+                :min="0"
+                :max="25"
+            ></numberselector>
+        </div>
+        <h2 class="title is-4">Handwerk</h2>
+        <div class="columns is-multiline">
+            <numberselector class="column is-narrow"
+                v-for="talent in pickedtalents"
+                v-if="talent.group == 'Handwerk'"
                 :value="talent.value"
                 @changevalue="changevalue"
                 :id="talent.id"
@@ -52,6 +91,7 @@
                     this.pickedtalents.push({
                         name: talent.name,
                         id: talent.id,
+                        group: talent.group,
                         value: Object.keys(this.character).length === 0 ? 0 : this.character.talents[talent.id - 1].pivot.value
                     });
                 })

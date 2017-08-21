@@ -76,6 +76,14 @@
                 <addletterings v-bind:pickedletterings="pickedletterings" v-bind:character="character"></addletterings>
             </div>
         </div>
+        <div v-show="status == 5" class="columns">
+            <div class="column is-half">
+                <addbenefices v-bind:pickedbenefices="pickedbenefices" v-bind:character="character"></addbenefices>
+            </div>
+            <div class="column is-half">
+                <addhandicaps v-bind:pickedhandicaps="pickedhandicaps" v-bind:character="character"></addhandicaps>
+            </div>
+        </div>
         <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>

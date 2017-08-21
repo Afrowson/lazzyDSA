@@ -35,7 +35,7 @@
         data(){
             return {
                 languages: [],
-                selected: '',
+                selected: 1,
                 levels: [1, 2, 3, 4],
                 selectedLevel: 1,
             }
@@ -52,13 +52,20 @@
             unpick(id){
                 this.pickedlanguages.pop(id)
             },
-            update(){
-            }
         },
         mounted(){
             axios.get('/api/Language').then(response => {
                 this.languages = response.data
-            });
+            })
+            if(Object.keys(this.character).length !== 0) {
+                this.character.languages.forEach(language => {
+                    this.pickedlanguages.push({
+                        id: language.id,
+                        name: language.name,
+                        level: language.pivot.value
+                    })
+                })
+            }
         }
     }
 </script>
