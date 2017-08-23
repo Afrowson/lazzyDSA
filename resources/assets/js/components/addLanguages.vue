@@ -42,16 +42,19 @@
         },
         methods: {
             pick(){
-                let picked = {
-                    id: this.selected,
-                    name: this.languages[this.selected - 1].name,
-                    level: this.selectedLevel
+                if((this.pickedlanguages.find(language => language.id == this.selected)) == null) {
+                    let picked = {
+                        id: this.selected,
+                        name: this.languages[this.selected - 1].name,
+                        level: this.selectedlevel
+                    }
+                    this.pickedlanguages.unshift(picked)
                 }
-                this.pickedlanguages.push(picked)
             },
             unpick(id){
-                this.pickedlanguages.pop(id)
-            },
+                let index = this.pickedlanguages.findIndex(language => language.id == id);
+                this.pickedlanguages.splice(index, 1)
+            }
         },
         mounted(){
             axios.get('/api/Language').then(response => {

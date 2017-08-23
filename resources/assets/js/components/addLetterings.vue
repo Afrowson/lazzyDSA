@@ -38,17 +38,22 @@
         
         methods: {
             pick(){
-                let picked = {
-                    id: this.selected,
-                    name: this.letterings[this.selected - 1].name,
+                if((this.pickedletterings.find(lettering => lettering.id == this.selected)) == null) {
+                    let picked = {
+                        id: this.selected,
+                        name: this.letterings[this.selected - 1].name,
+                    }
+                    this.pickedletterings.unshift(picked)
                 }
-                this.pickedletterings.push(picked)
             },
             unpick(id){
-                this.pickedletterings.pop(id)
+                let index = this.pickedletterings.findIndex(lettering => lettering.id == id);
+                this.pickedletterings.splice(index, 1)
             }
-        },
-        mounted(){
+        }
+        ,
+        mounted()
+        {
             axios.get('/api/Language').then(response => {
                 this.letterings = response.data
             })

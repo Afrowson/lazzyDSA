@@ -73,7 +73,6 @@
             },
             unpick(id){
                 let index = this.pickedbenefices.findIndex(benefice => benefice.id == id);
-                console.log(index)
                 this.pickedbenefices.splice(index, 1)
             },
         },
