@@ -89,17 +89,19 @@ class Weapon extends Model
         if (isset($this->modifiers['reach'])) {
             $value = $value + $this->modifiers['reach'];
         }
-        
-        switch ($value) {
-            case 1:
-                $value = 'kurz';
-                break;
-                $value = 'mittel';
-                break;
-                $value = 'lang';
-                break;
-    
-        };
+
+//        switch ($value) {
+//            case 1:
+//                $value = 'kurz';
+//                break;
+//            case 2:
+//                $value = 'mittel';
+//                break;
+//            case 3:
+//                $value = 'lang';
+//                break;
+//
+//        };
     
         return $value;
     }

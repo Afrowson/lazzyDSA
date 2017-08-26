@@ -53,17 +53,17 @@ class WeaponsSeeder extends Seeder
             'reach' => '1',
         ]);
         Weapon::create([
-            'name' => 'Magierstab, mittel',
-            'rules' => '',
+            'name'              => 'Magierstab, mittel',
+            'rules'             => '',
             'fightingtalent_id' => '3',
-            'skill' => 'KK',
-            'SS' => '14',
-            'dice' => '1',
-            'bonus_dmg' => '2',
-            'at_mod' => '0',
-            'pa_mod' => '-1',
-            'weight' => '0.75',
-            'reach' => '1',
+            'skill'             => 'KK',
+            'SS'                => '14',
+            'dice'              => '1',
+            'bonus_dmg'         => '2',
+            'at_mod'            => '0',
+            'pa_mod'            => '-1',
+            'weight'            => '0.75',
+            'reach'             => '2',
         ]);
 
 //       Weapon::create([

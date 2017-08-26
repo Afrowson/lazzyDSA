@@ -22,6 +22,7 @@ class CharacterViewController extends Controller
     
     public function editCharacter(Character $character)
     {
+        $character->_skills = $character->skills;
         $character->load([
             'armors',
             'benefices',

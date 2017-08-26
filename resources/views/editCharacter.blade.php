@@ -96,7 +96,7 @@
             </div>
         </div>
         <div v-show="status == 7" class="columns is-multiline">
-            <div class="column is-half">
+            <div class="column is-full">
                 <addweapons v-bind:pickedweapons="pickedweapons" v-bind:character="character"></addweapons>
             </div>
             {{--<div class="column is-half">--}}
