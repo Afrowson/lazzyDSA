@@ -1,0 +1,188 @@
+<template>
+    <div class="addrangeweapons">
+        <h1 class="title m-t-5 "> Wähle die Fernkampfwaffen deines Held.</h1>
+        <div class="columns">
+            <div class="column is-narrow">
+                <select class="select" v-model="selected" v-on:change="selectrangeweapon">
+                    <option v-for="rangeweapon in rangeweapons" v-bind:value="rangeweapon.id">
+                        {{rangeweapon.name }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <h3 class="title is-4">Modifiziere die gewählte Fernkampfwaffe</h3>
+        <div class="columns">
+            <div style="min-width: 190px" class="column ">Name
+                <input class="input" v-model="selectedrangeweapon.name">
+            </div>
+            <div style="min-width: 190px" class="column ">Kampftalent
+                <select class="input" v-model="selectedrangeweapon.fightingtalent_id">
+                    <option v-for="fightingtalent in fightingtalents" v-bind:value="fightingtalent.id">
+                        {{fightingtalent.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="column ">Nachladezeit
+                <input class="input" v-model="selectedrangeweapon.reload_time">
+            </div>
+            <div class="column ">Munitionstyp
+                <input class="input" v-model="selectedrangeweapon.munition_type">
+            </div>
+            <div class="column ">Dice
+                <input class="input" v-model="selectedrangeweapon.dice">
+            </div>
+            <div class="column ">Bonus&nbsp;Schaden
+                <input class="input" v-model="selectedrangeweapon.bonus_dmg">
+            </div>
+            <div class="column ">Gewicht
+                <input class="input" v-model="selectedrangeweapon.weight">
+            </div>
+            <div class="column ">Kurze Distanz
+                <input class="input" v-model="selectedrangeweapon.range_1">
+            </div>
+            <div class="column ">Mittlere Distanz
+                <input class="input" v-model="selectedrangeweapon.range_2">
+            </div>
+            <div class="column ">Weite Distanz
+                <input class="input" v-model="selectedrangeweapon.range_3">
+            </div>
+        </div>
+        
+        <button class="button" v-on:click="pick()">wählen</button>
+        
+        
+        <div v-for="pickedrangeweapon in pickedrangeweapons">
+            <div class="box m-t-5">
+                
+                <table class="table is-narrow">
+                    <thead>
+                    <tr>
+                        <th style="min-width: 170px">Name</th>
+                        <th>Kampftalent</th>
+                        <th>Nachladezeit</th>
+                        <th>Munitionstyp</th>
+                        <th>Dice</th>
+                        <th>Bonus&nbsp;Schaden</th>
+                        <th>Gewicht</th>
+                        <th>Kurze Distanz</th>
+                        <th>Mittlere Distanz</th>
+                        <th>Weite Distanz</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>{{pickedrangeweapon.name}}</th>
+                        <th v-for="fightingtalent in fightingtalents"
+                            v-if="fightingtalent.id==pickedrangeweapon.fightingtalent_id">
+                            {{fightingtalent.name}}
+                        </th>
+                        <th>{{pickedrangeweapon.reload_time}}</th>
+                        <th>{{pickedrangeweapon.munition_type}}</th>
+                        <th>{{pickedrangeweapon.dice}}</th>
+                        <th>{{pickedrangeweapon.bonus_dmg}}</th>
+                        <th>{{pickedrangeweapon.weight}}</th>
+                        <th>{{pickedrangeweapon.range_1}}</th>
+                        <th>{{pickedrangeweapon.range_2}}</th>
+                        <th>{{pickedrangeweapon.range_3}}</th>
+                    </tr>
+                    </tbody>
+                
+                </table>
+                <button class="button" v-on:click="unpick(pickedrangeweapon.id)">Löschen</button>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script
+>
+    export default {
+        
+        props: ['pickedrangeweapons', 'character'],
+        
+        data(){
+            return {
+                rangeweapons: [],
+                fightingtalents: [],
+                reachs: ['', 'kurz', 'mittel', 'lang'],
+                selected: 1,
+                selectedrangeweapon: {},
+            }
+        },
+        methods: {
+            selectrangeweapon(){
+                
+                this.selectedrangeweapon = {
+                    id: this.rangeweapons[this.selected - 1].id,
+                    name: this.rangeweapons[this.selected - 1].name,
+                    rules: this.rangeweapons[this.selected - 1].rules,
+                    fightingtalent_id: this.rangeweapons[this.selected - 1].fightingtalent_id,
+                    reload_time: this.rangeweapons[this.selected - 1].reload_time,
+                    munition_type: this.rangeweapons[this.selected - 1].munition_type,
+                    dice: this.rangeweapons[this.selected - 1].dice,
+                    bonus_dmg: this.rangeweapons[this.selected - 1].bonus_dmg,
+                    weight: this.rangeweapons[this.selected - 1].weight,
+                    range_1: this.rangeweapons[this.selected - 1].range_1,
+                    range_2: this.rangeweapons[this.selected - 1].range_2,
+                    range_3: this.rangeweapons[this.selected - 1].range_3,
+                    
+                }
+            },
+            
+            pick(){
+                this.pickedrangeweapons.unshift(this.selectedrangeweapon)
+            },
+            
+            unpick(id){
+                let index = this.pickedrangeweapons.findIndex(rangeweapon => rangeweapon.id == id);
+                this.pickedrangeweapons.splice(index, 1)
+            },
+            
+            getCharacterWeapons(){
+                if(Object.keys(this.character).length !== 0) {
+                    this.character.rangeweapons.forEach(rangeweapon => {
+                        
+                        this.pickedrangeweapons.push({
+                            
+                            id: rangeweapon.id,
+                            name: rangeweapon.name,
+                            rules: rangeweapon.rules,
+                            fightingtalent_id: rangeweapon.fightingtalent_id,
+                            reload_time: rangeweapon.reload_time,
+                            munition_type: rangeweapon.munition_type,
+                            dice: rangeweapon.dice,
+                            bonus_dmg: rangeweapon.bonus_dmg,
+                            weight: rangeweapon.weight,
+                            range_1: rangeweapon.range_1,
+                            range_2: rangeweapon.range_2,
+                            range_3: rangeweapon.range_3,
+                            
+                        })
+                    })
+                }
+            }
+        },
+        mounted(){
+            
+            let that = this
+            
+            axios.all([
+                axios.get('/api/Rangeweapon'),
+                axios.get('/api/Fightingtalent')
+            ]).then(
+                axios.spread(
+                    function(dbrangeweapons, ftalents) {
+                        that.fightingtalents = ftalents.data
+                        that.fightingtalents.unshift('none')
+                        
+                        that.rangeweapons = dbrangeweapons.data
+                        
+                        that.getCharacterWeapons()
+                        that.selectrangeweapon()
+                    }
+                ),
+            )
+            
+        },
+    }
+</script>

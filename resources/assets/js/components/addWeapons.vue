@@ -10,7 +10,7 @@
                 </select>
             </div>
         </div>
-    
+        <h3 class="title is-4">Modifiziere die gewählte Waffe</h3>
         <div class="columns">
             <div style="min-width: 190px" class="column ">Name
                 <input class="input" v-model="selectedweapon.name">
@@ -22,14 +22,14 @@
                     </option>
                 </select>
             </div>
-            <div class="column ">Skill
+            <div class="column ">Eigenschaft
                 <select class="input" v-model="selectedweapon.skill">
                     <option v-for="skill in character._skills">
                         {{skill}}
                     </option>
                 </select>
             </div>
-            <div class="column ">Skill2
+            <div class="column ">Eigenschaft 2
                 <select class="input" v-model="selectedweapon.skill2">
                     <option v-for="skill in character._skills">
                         {{skill}}
@@ -74,8 +74,8 @@
                     <tr>
                         <th style="min-width: 170px">Name</th>
                         <th>Kampftalent</th>
-                        <th>Skill</th>
-                        <th>Skill 2</th>
+                        <th>Eigenschaft</th>
+                        <th>Eigenschaft 2</th>
                         <th>SS</th>
                         <th>Dice</th>
                         <th>Bonus&nbsp;Schaden</th>
@@ -88,7 +88,10 @@
                     <tbody>
                     <tr>
                         <th>{{pickedweapon.name}}</th>
-                        <th>{{pickedweapon.fightingtalent_name}}</th>
+                        <th v-for="fightingtalent in fightingtalents"
+                            v-if="fightingtalent.id==pickedweapon.fightingtalent_id">
+                            {{fightingtalent.name}}
+                        </th>
                         <th>{{pickedweapon.skill}}</th>
                         <th>{{pickedweapon.skill_2}}</th>
                         <th>{{pickedweapon.SS}}</th>
@@ -131,7 +134,6 @@
                     name: this.weapons[this.selected - 1].name,
                     rules: this.weapons[this.selected - 1].rules,
                     fightingtalent_id: this.weapons[this.selected - 1].fightingtalent_id,
-                    fightingtalent_name: this.fightingtalents[(this.weapons[this.selected - 1].fightingtalent_id)].name,
                     skill: this.weapons[this.selected - 1].skill,
                     skill_2: this.weapons[this.selected - 1].skill_2,
                     SS: this.weapons[this.selected - 1].SS,
@@ -144,26 +146,26 @@
         
                 }
             },
+    
             pick(){
-        
                 this.pickedweapons.unshift(this.selectedweapon)
             },
+    
             unpick(id){
                 let index = this.pickedweapons.findIndex(weapon => weapon.id == id);
                 this.pickedweapons.splice(index, 1)
             },
+    
             getCharacterWeapons(){
                 if(Object.keys(this.character).length !== 0) {
                     this.character.weapons.forEach(weapon => {
-                        console.log(weapon)
-                
+    
                         this.pickedweapons.push({
-                    
+        
                             id: weapon.id,
                             name: weapon.name,
                             rules: weapon.rules,
                             fightingtalent_id: weapon.fightingtalent_id,
-                            fightingtalent_name: this.fightingtalents[weapon.fightingtalent_id].name,
                             skill: weapon.skill,
                             skill_2: weapon.skill_2,
                             SS: weapon.SS,
@@ -173,47 +175,33 @@
                             pa_mod: weapon.pa_mod,
                             weight: weapon.weight,
                             reach: weapon.reach,
-                    
+        
                         })
-                        console.log(weapon)
                     })
                 }
             }
         },
         mounted(){
-        
+    
             let that = this
+    
             axios.all([
                 axios.get('/api/Weapon'),
                 axios.get('/api/Fightingtalent')
-            ])
-                .then(
-                    axios.spread(
-                        function(dbweapons, ftalents) {
-                            console.log(dbweapons)
-                            that.fightingtalents = ftalents.data
-                            that.weapons = dbweapons.data
-                            that.getCharacterWeapons()
-                            that.selectweapon()
-                        }
-                    ),
-                )
-//
-//            axios.get('/api/Weapon').then(response => {
-//                this.weapons = response.data
-//            }).then(
-//                console.log('2'),
-//                axios.get('/api/Fightingtalent').then(response => {
-//                    this.fightingtalents = response.data
-//                    this.fightingtalents.unshift('none')
-//                    console.log('3')
-//                    console.log(this.fightingtalents)
-//                })).then(
-//                console.log('4'),
-//                this.getCharacterWeapons(),
-//                this.selectweapon(),
-//            );
-//
+            ]).then(
+                axios.spread(
+                    function(dbweapons, ftalents) {
+                        that.fightingtalents = ftalents.data
+                        that.fightingtalents.unshift('none')
+                
+                        that.weapons = dbweapons.data
+                
+                        that.getCharacterWeapons()
+                        that.selectweapon()
+                    }
+                ),
+            )
+            
         },
     }
 </script>

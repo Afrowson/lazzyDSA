@@ -99,12 +99,12 @@
             <div class="column is-full">
                 <addweapons v-bind:pickedweapons="pickedweapons" v-bind:character="character"></addweapons>
             </div>
-            {{--<div class="column is-half">--}}
-            {{--<addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons" v-bind:character="character"></addrangeweapons>--}}
-            {{--</div>--}}
-            {{--<div class="column is-half">--}}
-            {{--<addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>--}}
-            {{--</div>--}}
+            <div class="column is-full">
+                <addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons" v-bind:character="character"></addrangeweapons>
+            </div>
+            <div class="column is-full">
+                <addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>
+            </div>
         </div>
         <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}

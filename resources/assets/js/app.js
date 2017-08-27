@@ -10,6 +10,9 @@ import addSpecialtalents from './components/addSpecialtalents.vue';
 import addSpecialfightingtalents from './components/addSpecialfightingtalents.vue';
 import addSpecialmagictalents from './components/addSpecialmagictalents.vue';
 import addWeapons from './components/addWeapons.vue'
+import addRangeweapons from './components/addRangeweapons.vue'
+import addShields from './components/addShields.vue'
+
 import axios from 'axios';
 
 
@@ -24,7 +27,7 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 6,
+        status: 8,
         pickedtalents: [],
         pickedfightingtalents: [],
         pickedlanguages: [],
@@ -35,6 +38,8 @@ var app = new Vue({
         pickedspecialfightingtalents: [],
         pickedspecialmagictalents: [],
         pickedweapons: [],
+        pickedrangeweapons: [],
+        pickedshields: [],
         character: character
     },
     
@@ -50,6 +55,8 @@ var app = new Vue({
         'addspecialfightingtalents': addSpecialfightingtalents,
         'addspecialmagictalents': addSpecialmagictalents,
         'addweapons': addWeapons,
+        'addrangeweapons': addRangeweapons,
+        'addshields': addShields,
     },
     
     methods: {

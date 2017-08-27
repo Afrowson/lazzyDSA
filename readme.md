@@ -1,15 +1,16 @@
 ## Aktuell Implementiert
 
 ### Login
-*Register/Login
+* Register/Login
 
-### CreateCharacter 6/10(12)
+### CreateCharacter 7/10(12)
 * Basics
 * Talente
 * Kampftechniken
 * Sprachen/Schriften
 * Vor/Nachteile
-* Spezialtalente
+* Spezialtalente/Magie/Kampf
+* Waffen & Rüstungen 
 
 ### Character Einzelansicht
 * Stats
@@ -25,14 +26,13 @@
 * Lep/AsP/Kap/SP updatebar
 
 Datenbank:
-*Einträge anzeigen & editieren
+*(Einträge anzeigen & editieren)
 
 
 ## Tasks:
 
 ### Edit Character
 
-* Waffen & Schilde
 * Inventar
 * Geldbeutel
 * Zaupertricks
@@ -84,7 +84,6 @@ Bild
 
 AP Werte bei erstellung und steigerung editierbar
 QS einer Probe berechnen
-https://github.com/FezVrasta/bootstrap-material-design
 
 jade language
 
