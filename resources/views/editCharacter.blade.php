@@ -109,4 +109,7 @@
         <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>
+    <div v-show="status == 10">
+        <addmagictricks :pickedmagictricks="pickedmagictricks" v-bind:character="character"></addmagictricks>
+    </div>
 @endsection

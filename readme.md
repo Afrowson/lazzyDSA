@@ -3,7 +3,7 @@
 ### Login
 * Register/Login
 
-### CreateCharacter 7/10(12)
+### CreateCharacter 8/10(12)
 * Basics
 * Talente
 * Kampftechniken
@@ -11,6 +11,7 @@
 * Vor/Nachteile
 * Spezialtalente/Magie/Kampf
 * Waffen & Rüstungen 
+* Zaubertricks
 
 ### Character Einzelansicht
 * Stats
@@ -35,7 +36,6 @@ Datenbank:
 
 * Inventar
 * Geldbeutel
-* Zaupertricks
 * (Magie)
 
 ### Character Einzelansicht.

@@ -54,7 +54,7 @@
         ,
         mounted()
         {
-            axios.get('/api/Language').then(response => {
+            axios.get('/api/Lettering').then(response => {
                 this.letterings = response.data
             })
             if(Object.keys(this.character).length !== 0) {
