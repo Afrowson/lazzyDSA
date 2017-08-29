@@ -58,5 +58,6 @@ Route::get('/database/{model}/{id}/delete', 'DataController@destroy');
 //Route::get('/api/character/{character}/{model}', );
 
 Route::get('/api/{model}', 'DataController@index');
+Route::get('/api/Inventorie/{inventorie}/Items', 'InventorieController@items');
 
 Auth::routes();
