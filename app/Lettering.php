@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lettering extends Model
 {
+    protected $hidden = ['created_at', 'updated_at'];
+    
     public function characters()
     {
         return $this->belongsToMany(Character::class);

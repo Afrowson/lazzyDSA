@@ -16,7 +16,9 @@ class Character extends Model
     use Uuids;
 
     protected $guarded = [];
-
+    protected $hidden = ['created_at', 'updated_at'];
+    
+    
     public $incrementing = false;
     public $skills = [
         'MU',

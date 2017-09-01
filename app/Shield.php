@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shield extends Model
 {
+    protected $hidden = ['created_at', 'updated_at'];
+    
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name'])) {

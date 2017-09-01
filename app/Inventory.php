@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
+    protected $hidden = ['created_at', 'updated_at'];
     public function items()
     {
         return $this->belongsToMany(Item::class)->withPivot('amount','notes');
