@@ -58,7 +58,6 @@
             selectbenefice(){
                 this.levels = this.benefices[this.selected - 1].level
                 this.type = ''
-                console.log(this.levels)
             },
             pick(){
                 if((this.pickedbenefices.find(benefice => benefice.id == this.selected)) == null) {

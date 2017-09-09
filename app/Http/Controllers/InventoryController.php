@@ -10,7 +10,7 @@ class InventoryController extends Controller
     public function items(Inventory $inventory)
     {
     
-        $items = $inventory->items();
+        $items = $inventory->items()->get();
         $respone = json_encode($items);
     
         return $respone;

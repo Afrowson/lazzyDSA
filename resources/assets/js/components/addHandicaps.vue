@@ -58,7 +58,6 @@
             selecthandicap(){
                 this.levels = this.handicap[this.selected - 1].level
                 this.type = ''
-                console.log(this.levels)
             },
             pick(){
                 if((this.pickedhandicaps.find(handicap => handicap.id == this.selected)) == null) {
@@ -73,7 +72,6 @@
             },
             unpick(id){
                 let index = this.pickedhandicaps.findIndex(handicap => handicap.id == id);
-                console.log(index)
                 this.pickedhandicaps.splice(index, 1)
             },
         },

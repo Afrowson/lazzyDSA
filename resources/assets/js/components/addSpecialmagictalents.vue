@@ -58,7 +58,6 @@
             selectspecialmagictalent(){
                 this.levels = this.specialmagictalents[this.selected - 1].level
                 this.type = ''
-                console.log(this.levels)
             },
             pick(){
                 if((this.pickedspecialmagictalents.find(specialmagictalent => specialmagictalent.id == this.selected)) == null) {
@@ -73,7 +72,6 @@
             },
             unpick(id){
                 let index = this.pickedspecialmagictalents.findIndex(specialmagictalent => specialmagictalent.id == id);
-                console.log(index)
                 this.pickedspecialmagictalents.splice(index, 1)
             },
         },

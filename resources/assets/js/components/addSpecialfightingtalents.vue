@@ -58,7 +58,6 @@
             selectspecialfightingtalent(){
                 this.levels = this.specialfightingtalents[this.selected - 1].level
                 this.type = ''
-                console.log(this.levels)
             },
             pick(){
                 if((this.pickedspecialfightingtalents.find(specialfightingtalent => specialfightingtalent.id == this.selected)) == null) {
@@ -73,7 +72,6 @@
             },
             unpick(id){
                 let index = this.pickedspecialfightingtalents.findIndex(specialfightingtalent => specialfightingtalent.id == id);
-                console.log(index)
                 this.pickedspecialfightingtalents.splice(index, 1)
             },
         },

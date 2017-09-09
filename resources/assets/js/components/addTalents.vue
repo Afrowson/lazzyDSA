@@ -79,8 +79,6 @@
             changevalue(id, value){
                 
                 this.pickedtalents[id - 1].value = value
-                console.log(value)
-                console.log(id)
             }
         },
         mounted(){
