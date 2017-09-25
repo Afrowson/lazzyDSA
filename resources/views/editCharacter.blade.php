@@ -106,6 +106,16 @@
                 <addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>
             </div>
         </div>
+        <div v-show="status == 8" class="columns is-multiline">
+            <div class="column is-full">
+                <addinventories :pickedinventories="pickedinventories" :character="character"></addinventories>
+            </div>
+        </div>
+        {{--<div v-show="status == 9" class="columns is-multiline">--}}
+        {{--<div class="column is-full">--}}
+        {{--<addpurses v-bind:pickedpurses="pickedpurses" v-bind:character="character"></addpurses>--}}
+        {{--</div>--}}
+        {{--</div>--}}
         <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>

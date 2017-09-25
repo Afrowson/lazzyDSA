@@ -58,6 +58,9 @@ Route::get('/database/{model}/{id}/delete', 'DataController@destroy');
 //Route::get('/api/character/{character}/{model}', );
 
 Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
+Route::post('api/Inventory/{inventory}/delete', 'InventoryController@delete');
+Route::post('api/Inventory/{inventory}/addItem/{item}', 'InventoryController@addItem');
 Route::get('/api/{model}', 'DataController@index');
+Route::post('/api/{model}/store', 'DataController@store');
 
 Auth::routes();

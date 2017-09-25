@@ -13,6 +13,8 @@ import addWeapons from './components/addWeapons.vue'
 import addRangeweapons from './components/addRangeweapons.vue'
 import addShields from './components/addShields.vue'
 import addMagictricks  from './components/addMagictricks.vue'
+import addInventories  from './components/addInventories.vue'
+// import addPurses  from './components/addPurses.vue'
 
 import axios from 'axios';
 
@@ -41,6 +43,8 @@ var app = new Vue({
         pickedweapons: [],
         pickedrangeweapons: [],
         pickedshields: [],
+        pickedinventories: [],
+        pickedpurses: [],
         pickedmagictricks: [],
         
         character: character
@@ -61,6 +65,8 @@ var app = new Vue({
         'addrangeweapons': addRangeweapons,
         'addshields': addShields,
         'addmagictricks': addMagictricks,
+        'addinventories': addInventories,
+        // 'addpurses': addPurses,
     },
     
     methods: {

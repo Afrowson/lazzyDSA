@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Inventory;
+use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
@@ -14,6 +15,25 @@ class InventoryController extends Controller
         $respone = json_encode($items);
     
         return $respone;
+    }
+    
+    public function addItem()
+    {
+        //@todo add functionality
         
+        
+    }
+    
+    public function deleteItem()
+    {
+        //@todo add functionality
+    }
+    
+    public function delete($id)
+    {
+        Inventory::find($id)->deleteItems();
+        Inventory::find($id)->delete();
+        
+        return $id;
     }
 }

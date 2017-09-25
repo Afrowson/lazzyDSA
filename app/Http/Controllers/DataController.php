@@ -43,15 +43,17 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store($model, Request $request)
+    public function store($model, UpdateData $request)
     {
-    
         $model = $this->getModel($model);
-        $fields = $model::fields;
+        $fields = $model::$fields;
+        $data = [];
+        foreach ($fields as $field) {
+            $data[$field['key']] = request()->{$field['key']};
+        }
+        $model = $model::create($data);
     
-        $this->validate($request, $fields['validation']);
-    
-        $model::store($request);
+        return $model->id;
     }
     
     /**
