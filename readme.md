@@ -34,9 +34,13 @@ Datenbank:
 
 ### Edit Character
 
-* Inventar
-* Geldbeutel
-* (Magie)
+Inventar
+* Items hinzufügen
+* items löschen
+
+Geldbeutel
+
+(Magie)
 
 ### Character Einzelansicht.
 Spells

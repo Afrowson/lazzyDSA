@@ -112,7 +112,8 @@ class DataController extends Controller
      */
     public function destroy($model, $id)
     {
-        //
+        $model = $this->getModel($model);
+        $model->find($id)->delete();
     }
     
     public function getModel($model)
