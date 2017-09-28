@@ -37,10 +37,14 @@
 </template>
 
 <script>
+    import addItem from './components/addItem.vue';
     export default {
         
         props: ['character', 'pickedinventories'],
-        
+
+        components:{
+          'additem': addItem
+        },
         
         data(){
             return {
@@ -92,7 +96,7 @@
                 }
                 //Inventory an den server senden
                 axios.post('/api/Inventory/store', inventory)
-                //dann Inventar hinzufügen + auswählen
+                 //dann Inventar hinzufügen + auswählen
                     .then(response => {
                         inventory.id = response.data
                         this.pickedinventories.unshift(inventory)

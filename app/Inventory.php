@@ -11,7 +11,8 @@ class Inventory extends Model
     
     public function items()
     {
-        return $this->belongsToMany(Item::class)->withPivot('amount', 'notes');
+        $items= $this->belongsToMany(Item::class)->withPivot('id','amount', 'notes');
+        return $items;
     }
     
     public function character()
