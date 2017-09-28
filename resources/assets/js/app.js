@@ -9,11 +9,12 @@ import addHandicaps from './components/addHandicaps.vue';
 import addSpecialtalents from './components/addSpecialtalents.vue';
 import addSpecialfightingtalents from './components/addSpecialfightingtalents.vue';
 import addSpecialmagictalents from './components/addSpecialmagictalents.vue';
-import addWeapons from './components/addWeapons.vue'
-import addRangeweapons from './components/addRangeweapons.vue'
-import addShields from './components/addShields.vue'
-import addMagictricks  from './components/addMagictricks.vue'
-import addInventories  from './components/addInventories.vue'
+import addWeapons from './components/addWeapons.vue';
+import addRangeweapons from './components/addRangeweapons.vu';
+import addShields from './components/addShields.vue';
+import addMagictricks  from './components/addMagictricks.vue';
+import addInventories  from './components/addInventories.vue';
+
 // import addPurses  from './components/addPurses.vue'
 
 import axios from 'axios';
@@ -66,11 +67,12 @@ var app = new Vue({
         'addshields': addShields,
         'addmagictricks': addMagictricks,
         'addinventories': addInventories,
+        'additem': addItem,
         // 'addpurses': addPurses,
     },
     
     methods: {
-        status(selected){
+        changestatus(selected){
             this.status = selected
             console.log(this.status)
         }
