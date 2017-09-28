@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shield extends Model
 {
+    protected $fillable = ['name', 'rules', 'fightingtalent_id', 'skill', 'SS', 'dice', 'bonus_dmg', 'weight', 'at_mod', 'pa_mod', 'reach'];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function getNameAttribute($value)
@@ -111,4 +112,85 @@ class Shield extends Model
             return array_combine($keys, $modifiers);
         }
     }
+    
+    public static $fields = [
+        'name'              => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'reqired'    => true,
+            'validation' => 'required',
+        ],
+        'rules'             => [
+            'key'        => 'rules',
+            'name'       => 'Regeln',
+            'type'       => 'string',
+            'reqired'    => false,
+            'validation' => 'nullable',
+        ],
+        'fightingtslent_id' => [
+            'key'        => 'fightingtslent_id',
+            'name'       => 'Kampffertigkeit',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'skill'             => [
+            'key'        => 'skill',
+            'name'       => 'Eigenschaft',
+            'type'       => 'string',
+            'reqired'    => true,
+            'validation' => 'required|min:2',
+        ],
+        'SS'                => [
+            'key'        => 'SS',
+            'name'       => 'Schadensschwelle',
+            'type'       => 'integer',
+            'required'   => false,
+            'validation' => 'nullable|integer',
+        ],
+        'dice'              => [
+            'key'        => 'dice',
+            'name'       => 'Würfel',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer|min:1',
+        ],
+        'bonus_dmg'         => [
+            'key'        => 'bonus_dmg',
+            'name'       => 'Bonusschaden',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'weight'            => [
+            'key'        => 'weight',
+            'name'       => 'Gewicht',
+            'type'       => 'decimal',
+            'reqired'    => true,
+            'validation' => 'required|numeric',
+        ],
+        'reach'             => [
+            'key'        => 'reach',
+            'name'       => 'Reichweite',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer|min:1|max:3',
+        ],
+        'at_mod'            => [
+            'key'        => 'at_mod',
+            'name'       => 'AT Modifikator',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'pa_mod'            => [
+            'key'        => 'pa_mod',
+            'name'       => 'PA Modifikator',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+    
+    ];
 }

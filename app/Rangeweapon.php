@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rangeweapon extends Model
 {
+    protected $fillable = [
+        'name',
+        'rules',
+        'fightingtalent_id',
+        'reload_time',
+        'munition_type',
+        'dice',
+        'bonus_dmg',
+        'weight',
+        'range_1',
+        'range_2',
+        'range_3',
+    ];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function characters()
@@ -112,4 +125,85 @@ class Rangeweapon extends Model
             return array_combine($keys, $modifiers);
         }
     }
+    
+    public static $fields = [
+        'name'              => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'reqired'    => true,
+            'validation' => 'required',
+        ],
+        'rules'             => [
+            'key'        => 'rules',
+            'name'       => 'Regeln',
+            'type'       => 'string',
+            'reqired'    => false,
+            'validation' => 'nullable',
+        ],
+        'fightingtslent_id' => [
+            'key'        => 'fightingtslent_id',
+            'name'       => 'Kampffertigkeit',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'reload_time'       => [
+            'key'        => 'reload_time',
+            'name'       => 'Nachladezeit',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer|min:1',
+        ],
+        'munition_type'     => [
+            'key'        => 'munition_type',
+            'name'       => 'Munitionsart',
+            'type'       => 'string',
+            'required'   => false,
+            'validation' => 'nullable',
+        ],
+        'dice'              => [
+            'key'        => 'dice',
+            'name'       => 'Würfel',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer|min:1',
+        ],
+        'bonus_dmg'         => [
+            'key'        => 'bonus_dmg',
+            'name'       => 'Bonusschaden',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'weight'            => [
+            'key'        => 'weight',
+            'name'       => 'Gewicht',
+            'type'       => 'decimal',
+            'reqired'    => true,
+            'validation' => 'required|numeric',
+        ],
+        'range_1'           => [
+            'key'        => 'range_1',
+            'name'       => 'Kurze Distanz',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'range_2'           => [
+            'key'        => 'range_2',
+            'name'       => 'Mittlere Distanz',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+        'range_3'           => [
+            'key'        => 'range_3',
+            'name'       => 'Lange Distanz',
+            'type'       => 'integer',
+            'reqired'    => true,
+            'validation' => 'required|integer',
+        ],
+    
+    ];
 }
