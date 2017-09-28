@@ -14,8 +14,47 @@ class Character extends Model
 {
     use CharacterRelations;
     use Uuids;
-
-    protected $guarded = [];
+    
+    protected $fillable = [
+        'user_id',
+        'name',
+        'race',
+        'profession',
+        'gender',
+        'height',
+        'weight',
+        'age',
+        'hair',
+        'eyes',
+        'hair',
+        'eyes',
+        'culture',
+        'place_of_birth',
+        'title',
+        'social',
+        'MU',
+        'KL',
+        'IN',
+        'CH',
+        'FF',
+        'GE',
+        'KO',
+        'KK',
+        'lep',
+        'asp',
+        'kap',
+        'lep_max',
+        'asp_max',
+        'kap_max',
+        'sp',
+        'SK',
+        'ZK',
+        'AW',
+        'IT',
+        'GW',
+        'ap_total',
+        'ap_spend',
+    ];
     protected $hidden = ['created_at', 'updated_at'];
     
     

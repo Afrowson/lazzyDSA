@@ -6,62 +6,62 @@ use Illuminate\Database\Eloquent\Model;
 
 class Handicap extends Model
 {
+    protected $fillable = ['name', 'description', 'rules', 'level', 'ap_cost'];
     protected $hidden = ['created_at', 'updated_at'];
-    protected $guraded = ['created_at', 'updated_at'];
     
     public function characters()
     {
         $this->belongsToMany(Character::class);
     }
-
+    
     public static $fields = [
-
-
-        'name' =>
+        
+        
+        'name'        =>
             [
-                'key' => 'name',
-                'name' => 'Name',
-                'type' => 'string',
-                'required' => TRUE,
-                'validation' => 'required|max:191'
+                'key'        => 'name',
+                'name'       => 'Name',
+                'type'       => 'string',
+                'required'   => true,
+                'validation' => 'required|max:191',
             ],
         'description' =>
             [
-                'key' => 'description',
-                'name' => 'Beschreibung',
-                'type' => 'text',
-                'required' => FALSE,
-                'validation' => 'nullable'
-
+                'key'        => 'description',
+                'name'       => 'Beschreibung',
+                'type'       => 'text',
+                'required'   => false,
+                'validation' => 'nullable',
+            
             ],
-        'rules' =>
+        'rules'       =>
             [
-                'key' => 'rules',
-                'name' => 'Regel',
-                'type' => 'text',
-                'required' => FALSE,
-                'validation' => 'nullable'
-
+                'key'        => 'rules',
+                'name'       => 'Regel',
+                'type'       => 'text',
+                'required'   => false,
+                'validation' => 'nullable',
+            
             ],
-        'level' =>
+        'level'       =>
             [
-                'key' => 'level',
-                'name' => 'Level',
-                'type' => 'integer',
-                'required' => FALSE,
-                'validation' => 'nullable|numeric|min:0|max:18'
-
+                'key'        => 'level',
+                'name'       => 'Level',
+                'type'       => 'integer',
+                'required'   => false,
+                'validation' => 'nullable|integer|min:0|max:18',
+            
             ],
-        'ap_cost' =>
+        'ap_cost'     =>
             [
-                'key' => 'ap_cost',
-                'name' => 'AP',
-                'type' => 'integer',
-                'required' => FALSE,
-                'validation' => 'nullable|numeric|min:0|max:100'
-
+                'key'        => 'ap_cost',
+                'name'       => 'AP',
+                'type'       => 'integer',
+                'required'   => false,
+                'validation' => 'nullable|integer|min:0|max:100',
+            
             ],
     ];
-
-
+    
+    
 }

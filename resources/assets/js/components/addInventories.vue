@@ -23,27 +23,27 @@
         </div>
         <div class="is-clearfix m-t-15">
             <div class="columns is-multiline">
-                <div class="column is-narrow box is-success m-r-5" v-for="item in selecteditems">
-                    <h1 class="Title is-3 is-pulled-left">{{item.name}}</h1>
-                    <p>&nbsp;x {{item.pivot.amount}}</p>
+                <div class="column is-narrow box m-r-5" v-for="item in selecteditems" v-on:click="edititem(item)">
+                    <h1 class="title is-5">{{item.name}}&nbsp;x&nbsp;{{item.pivot.amount}}</h1>
                     <p>Wert: {{item.value}}</p>
                     <p>Gewicht: {{item.weight}}</p>
-                    <p>{{item.description}}</p>
                 </div>
             </div>
         </div>
+        <additem :togle="togle">
+        </additem>
     
     </div>
 </template>
 
 <script>
-    import addItem from './components/addItem.vue';
+    import addItem from './addItem.vue'
     export default {
         
         props: ['character', 'pickedinventories'],
-
-        components:{
-          'additem': addItem
+    
+        components: {
+            'additem': addItem
         },
         
         data(){
@@ -53,6 +53,7 @@
                 inventorielocation: '',
                 selectedinventory: '',
                 selecteditems: [],
+                togle: 0,
             }
         },
         
@@ -96,7 +97,7 @@
                 }
                 //Inventory an den server senden
                 axios.post('/api/Inventory/store', inventory)
-                 //dann Inventar hinzufügen + auswählen
+                //dann Inventar hinzufügen + auswählen
                     .then(response => {
                         inventory.id = response.data
                         this.pickedinventories.unshift(inventory)
@@ -117,6 +118,12 @@
                 
                 
             },
+            edititem(item){
+                this.togle = 1
+        
+                console.log(item)
+            },
+            
             addItem(){
             
             }

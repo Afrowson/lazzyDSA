@@ -11,7 +11,8 @@ class Inventory extends Model
     
     public function items()
     {
-        $items= $this->belongsToMany(Item::class)->withPivot('id','amount', 'notes');
+        $items = $this->belongsToMany(Item::class)->withPivot('id', 'amount', 'notes');
+        
         return $items;
     }
     
@@ -60,7 +61,7 @@ class Inventory extends Model
             [
                 'key'        => 'weight',
                 'name'       => 'Gewicht',
-                'type'       => 'integer',
+                'type'       => 'decimal',
                 'required'   => false,
                 'validation' => 'nullable|numeric',
             

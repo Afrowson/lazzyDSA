@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Weapon extends Model
 {
+    protected $fillable = ['name', 'rules', 'fightingtalent_id', 'skill', 'skill_2', 'SS', 'dice', 'bonus_dmg', 'weight', 'at_mod', 'pa_mod', 'reach'];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function characters()
@@ -113,11 +114,92 @@ class Weapon extends Model
         if ($this->pivot) {
             $modifiers = explode(',', $this->pivot->modifiers);
             $keys = explode(',', $this->pivot->keys);
-        
+    
             return array_combine($keys, $modifiers);
         }
     
         return null;
     }
+    
+    public static $fields = [
+        'name'              => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required',
+        ],
+        'rules'             => [
+            'key'        => 'rules',
+            'name'       => 'Regeln',
+            'type'       => 'string',
+            'required'   => false,
+            'validation' => 'nullable',
+        ],
+        'fightingtslent_id' => [
+            'key'        => 'fightingtslent_id',
+            'name'       => 'Kampffertigkeit',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer',
+        ],
+        'skill'             => [
+            'key'        => 'skill',
+            'name'       => 'Eigenschaft',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required|min:2',
+        ],
+        'SS'                => [
+            'key'        => 'SS',
+            'name'       => 'Schadensschwelle',
+            'type'       => 'integer',
+            'required'   => false,
+            'validation' => 'nullable|integer',
+        ],
+        'dice'              => [
+            'key'        => 'dice',
+            'name'       => 'Würfel',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer|min:1',
+        ],
+        'bonus_dmg'         => [
+            'key'        => 'bonus_dmg',
+            'name'       => 'Bonusschaden',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer',
+        ],
+        'weight'            => [
+            'key'        => 'weight',
+            'name'       => 'Gewicht',
+            'type'       => 'decimal',
+            'required'   => true,
+            'validation' => 'required|numeric',
+        ],
+        'reach'             => [
+            'key'        => 'reach',
+            'name'       => 'Reichweite',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer|min:1|max:3',
+        ],
+        'at_mod'            => [
+            'key'        => 'at_mod',
+            'name'       => 'AT Modifikator',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer',
+        ],
+        'pa_mod'            => [
+            'key'        => 'pa_mod',
+            'name'       => 'PA Modifikator',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|integer',
+        ],
+    
+    ];
     
 }

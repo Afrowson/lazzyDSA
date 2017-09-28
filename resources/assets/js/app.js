@@ -10,7 +10,7 @@ import addSpecialtalents from './components/addSpecialtalents.vue';
 import addSpecialfightingtalents from './components/addSpecialfightingtalents.vue';
 import addSpecialmagictalents from './components/addSpecialmagictalents.vue';
 import addWeapons from './components/addWeapons.vue';
-import addRangeweapons from './components/addRangeweapons.vu';
+import addRangeweapons from './components/addRangeweapons.vue';
 import addShields from './components/addShields.vue';
 import addMagictricks  from './components/addMagictricks.vue';
 import addInventories  from './components/addInventories.vue';
@@ -67,7 +67,6 @@ var app = new Vue({
         'addshields': addShields,
         'addmagictricks': addMagictricks,
         'addinventories': addInventories,
-        'additem': addItem,
         // 'addpurses': addPurses,
     },
     
