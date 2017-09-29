@@ -32,7 +32,7 @@ class SiteController extends Controller
             'Handicap',
             'Weapon',
             'Armor',
-            'Rangewapon',
+            'Rangeweapon',
             'Shield',
             'Specialtalent',
             'Specialmagictalent',

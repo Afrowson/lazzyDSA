@@ -4,22 +4,18 @@
     Held Bearbeiten
 @endsection
 
-@section('head')
-
+@section('vue-id')
+    id="app"
 @endsection
 
 @section('nav-left')
-
+    <a href="/index" class=" button is-info">Deine Helden</a>
+    
+    <a href="/database" class="button is-info">Datenbank</a>
 @endsection
 
 @section('nav-center')
     <h1 class="subtitle is-4 primary">Hier kannst du deinen Character bearbeiten.</h1>
-@endsection
-
-@section('nav-right')
-    <a href="/index" class=" button is-info">Deine Helden</a>
-    
-    <a href="/database" class="button is-info">Datenbank</a>
 @endsection
 
 @section('sidebar')

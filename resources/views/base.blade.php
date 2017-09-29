@@ -11,7 +11,7 @@
     <title>LazzyDSA - @yield('title')</title>
 </head>
 <body style="height: 100%">
-<div id="app" style="height: 100%">
+<div @yield('vue-id') style="height: 100%">
     <div class="topbar columns is-marginless">
         <div class="column">
             @yield('nav-left')

@@ -4,6 +4,10 @@
 
 @endsection
 
+@section('vue-id')
+    id=""
+@endsection
+
 @section('head')
 
 @endsection
@@ -25,10 +29,5 @@
 @endsection
 
 @section('content')
-    
-    <div id="app">
-    
-    
-    </div>
 
 @endsection
