@@ -63,11 +63,14 @@ class Armor extends Model
     
     public function getModifiersAttribute()
     {
+        if ($this->pivot) {
+            $modifiers = explode(',', $this->pivot->modifiers);
+            $keys = explode(',', $this->pivot->keys);
+        
+            return array_combine($keys, $modifiers);
+        }
     
-        $modifiers = explode(',', $this->pivot->modifiers);
-        $keys = explode(',', $this->pivot->keys);
-    
-        return array_combine($keys, $modifiers);
+        return null;
     }
     
     public static $fields = [

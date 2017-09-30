@@ -124,6 +124,8 @@ class Rangeweapon extends Model
         
             return array_combine($keys, $modifiers);
         }
+    
+        return null;
     }
     
     public static $fields = [

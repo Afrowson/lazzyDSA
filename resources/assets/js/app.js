@@ -14,11 +14,7 @@ import addRangeweapons from './components/addRangeweapons.vue';
 import addShields from './components/addShields.vue';
 import addMagictricks  from './components/addMagictricks.vue';
 import addInventories  from './components/addInventories.vue';
-
 // import addPurses  from './components/addPurses.vue'
-
-import axios from 'axios';
-
 
 require('./bootstrap');
 /**
@@ -69,11 +65,57 @@ var app = new Vue({
         'addinventories': addInventories,
         // 'addpurses': addPurses,
     },
+    methods: {}
+})
+
+var db = new Vue({
+    el: '#db',
     
+    data: {
+        tables: ['Armor', 'Benefice', 'Fightingtalent', 'Handicap', 'Inventory', 'Item', 'Language',
+            'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
+            'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
+        activetable: 'Armor',
+        armors: [],
+        benefices: [],
+        fightingtalents: [],
+        handicaps: [],
+        inventorys: [],
+        items: [],
+        languages: [],
+        letterings: [],
+        magictricks: [],
+        purses: [],
+        rangeweapons: [],
+        shields: [],
+        specialfightingtalents: [],
+        specialmagictalents: [],
+        specialtalents: [],
+        talents: [],
+        weapons: [],
+        
+    },
+    components: {},
     methods: {
-        changestatus(selected){
-            this.status = selected
-            console.log(this.status)
+        changetable(table){
+            this.gettable(table)
+        },
+        
+        gettable(table){
+            axios.get('/api/' + table).then(result => {
+                    console.log(table)
+                    table = table.charAt(0).toUpperCase() + table.slice(1) + 's'
+                    console.log(table)
+                    this[table] = result.data
+                    console.log(this[table])
+                }
+            )
+            
         }
     },
+    mounted(){
+        this.gettable(this.activetable)
+    }
+    
+    
 })

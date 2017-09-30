@@ -51,6 +51,6 @@ class SiteController extends Controller
             $fillables = $model::$fields;
         }
     
-        return view('database', compact('datas', 'tables', 'selected', 'fillables'));
+        return view('db', compact('datas', 'tables', 'selected', 'fillables'));
     }
 }
