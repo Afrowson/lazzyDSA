@@ -14,18 +14,18 @@ class DataController extends Controller
      */
     public function index($model, Request $request = null)
     {
-    
+
         $model = $this->getModel($model);
-    
+
         if (isset($request) && $request->ajax()) {
             $response = json_encode($model::all());
-        
+
             return $response;
         }
-    
+
         return $model::all();
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +36,7 @@ class DataController extends Controller
         $model = $this->getModel($model);
         // @Todo add View
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,10 +52,10 @@ class DataController extends Controller
             $data[$field['key']] = request()->{$field['key']};
         }
         $model = $model::create($data);
-    
+
         return $model->id;
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -66,7 +66,7 @@ class DataController extends Controller
     {
         //
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,10 +78,10 @@ class DataController extends Controller
         $model = $this->getModel($selected);
         $data = $model::find($id);
         $fields = $model::$fields;
-    
+
         return view('dataedit', compact('data', 'selected', 'fields'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -94,16 +94,16 @@ class DataController extends Controller
         $model = $this->getModel($selected);
         $fields = $model::$fields;
         $data = $model::find($id);
-    
+
         foreach ($fields as $field) {
             $data->{$field['key']} = request()->{$field['key']};
         }
         $data->save();
-    
+
         return back();
-    
+
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -115,9 +115,23 @@ class DataController extends Controller
         $model = $this->getModel($model);
         $model->find($id)->delete();
     }
-    
+
+
     public function getModel($model)
     {
         return $model = '\\App\\' . $model;
+    }
+
+    public function fields(Request $request)
+    {
+        $fields = [];
+        $models = $request->except('_token');
+        foreach ($models as $model) {
+            $model = $this->getModel($model);
+            array_push($fields, $model::$fields);
+
+        }
+        return $fields;
+
     }
 }

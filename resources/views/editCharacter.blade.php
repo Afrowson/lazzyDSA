@@ -10,12 +10,19 @@
 
 @section('nav-left')
     <a href="/index" class=" button is-info">Deine Helden</a>
-    
+
     <a href="/database" class="button is-info">Datenbank</a>
 @endsection
 
 @section('nav-center')
     <h1 class="subtitle is-4 primary">Hier kannst du deinen Character bearbeiten.</h1>
+@endsection
+
+@section('nav-right')
+    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        {{ csrf_field() }}
+        <button class="button is-info" type="submit" href="{{ route('logout') }}">Logout</button>
+    </form>
 @endsection
 
 @section('sidebar')
@@ -62,7 +69,8 @@
             <addtalents :pickedtalents="pickedtalents" v-bind:character="character"></addtalents>
         </div>
         <div v-show="status == 3">
-            <addfightingtalents :pickedfightingtalents="pickedfightingtalents" v-bind:character="character"></addfightingtalents>
+            <addfightingtalents :pickedfightingtalents="pickedfightingtalents"
+                                v-bind:character="character"></addfightingtalents>
         </div>
         <div v-show="status == 4" class="columns">
             <div class="column is-half">
@@ -82,13 +90,16 @@
         </div>
         <div v-show="status == 6" class="columns is-multiline">
             <div class="column is-half">
-                <addspecialtalents v-bind:pickedspecialtalents="pickedspecialtalents" v-bind:character="character"></addspecialtalents>
+                <addspecialtalents v-bind:pickedspecialtalents="pickedspecialtalents"
+                                   v-bind:character="character"></addspecialtalents>
             </div>
             <div class="column is-half">
-                <addspecialfightingtalents v-bind:pickedspecialfightingtalents="pickedspecialfightingtalents" v-bind:character="character"></addspecialfightingtalents>
+                <addspecialfightingtalents v-bind:pickedspecialfightingtalents="pickedspecialfightingtalents"
+                                           v-bind:character="character"></addspecialfightingtalents>
             </div>
             <div class="column is-half">
-                <addspecialmagictalents v-bind:pickedspecialmagictalents="pickedspecialmagictalents" v-bind:character="character"></addspecialmagictalents>
+                <addspecialmagictalents v-bind:pickedspecialmagictalents="pickedspecialmagictalents"
+                                        v-bind:character="character"></addspecialmagictalents>
             </div>
         </div>
         <div v-show="status == 7" class="columns is-multiline">
@@ -96,7 +107,8 @@
                 <addweapons v-bind:pickedweapons="pickedweapons" v-bind:character="character"></addweapons>
             </div>
             <div class="column is-full">
-                <addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons" v-bind:character="character"></addrangeweapons>
+                <addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons"
+                                 v-bind:character="character"></addrangeweapons>
             </div>
             <div class="column is-full">
                 <addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>

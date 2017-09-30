@@ -18,12 +18,10 @@ Route::get('/', function () {
 
 Route::get('/index', 'SiteController@index');
 
-
 Route::get('/character/create', 'CharacterViewController@create');
+Route::get('/character/{character}/editCharacter', 'CharacterViewController@editCharacter');
+
 Route::post('/character/store', 'CharacterController@store');
-
-Route::get('/character/{character}/editCharacter', 'CharacterViewController@editCharacter')->name('editCharacter');
-
 Route::post('/character/{character}/addTalents', 'CharacterController@addTalents');
 Route::post('/character/{character}/addFightingtalents', 'CharacterController@addFightingtalents');
 Route::post('/character/{character}/addLanguages', 'CharacterController@addLanguages');
@@ -36,9 +34,7 @@ Route::post('/character/{character}/energy', 'CharacterController@updatEenergy')
 
 //Route::get('/character/{character}/diary', 'CharacterViewController@diary');
 
-
 Route::get('/database', 'SiteController@database');
-
 
 Route::get('/database/table', 'SiteController@database');
 
@@ -51,6 +47,7 @@ Route::get('/database/{model}/create', 'DataController@store');
 Route::get('/database/{model}/{id}/delete', 'DataController@destroy');
 
 
+Route::post('api/fields', 'DataController@fields');
 Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
 Route::post('api/Inventory/{inventory}/delete', 'InventoryController@delete');
 Route::post('api/Inventory/{inventory}/addItem', 'InventoryController@addItem');

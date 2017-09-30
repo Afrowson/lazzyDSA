@@ -6,7 +6,7 @@
 
 @section('nav-center')
     <div class="hero is-primary">
-        <h1 class="title is 2 is-marginless">Deine Helden</h1>
+        <h1 class="title is 3 is-marginless">Deine Helden</h1>
         <p>Hier werden alle deine Charactere angezeigt.</p>
     </div>
 @endsection

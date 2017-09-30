@@ -76,6 +76,8 @@ var db = new Vue({
             'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
             'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
         activetable: 'Armor',
+        fields:[],
+
         armors: [],
         benefices: [],
         fightingtalents: [],
@@ -98,23 +100,26 @@ var db = new Vue({
     components: {},
     methods: {
         changetable(table){
-            this.gettable(table)
+            this.getTable(this.activetable)
         },
         
-        gettable(table){
+        getTable(table){
             axios.get('/api/' + table).then(result => {
-                    console.log(table)
-                    table = table.charAt(0).toUpperCase() + table.slice(1) + 's'
-                    console.log(table)
+                    table = table.charAt(0).toLowerCase() + table.slice(1) + 's'
                     this[table] = result.data
-                    console.log(this[table])
                 }
             )
             
+        },
+        getFields(tables){
+            axios.post('/api/fields', tables).then(result=>{
+                this.fields= result.data
+            });
         }
     },
     mounted(){
-        this.gettable(this.activetable)
+        this.getTable(this.activetable)
+        this.getFields(this.tables)
     }
     
     
