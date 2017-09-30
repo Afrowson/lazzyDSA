@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-
+    
     <div class="is-pulled-left">
         @include('character.talents',[$t='0', $e='2'])
     </div>
@@ -28,7 +28,7 @@
     <div class="is-pulled-right">
         @include('character.fightingtalents')
     </div>
-
+    
     <div class="is-pulled-right">
         @include('character.languages')
     </div>
@@ -41,11 +41,11 @@
     <div class="is-pulled-right">
         @include('character.specialtalents')
     </div>
-
+    
     <div class="is-pulled-left">
         @include('character.weapons')
     </div>
-
+    
     <div class="is-pulled-right">
         @include('character.magictricks')
     </div>

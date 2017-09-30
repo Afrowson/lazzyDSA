@@ -25,11 +25,11 @@
 @endsection
 
 @section('body')
-
-    @if( $datas == NULL)
+    
+    @if( $datas == null)
         <p>Es wurde keine Tabelle ausgewählt. Wähle eine Tabelle in der Navigationsbar</p>
     @else
-
+        
         <table class="table is-pulled-left">
             <thead>
             <tr>
@@ -48,7 +48,8 @@
                     @endforeach
                     <td>
                         <a href="/database/{{class_basename($data)}}/{{$data->id}}/edit"
-                           class="button is-primary">Edit</a>
+                            class="button is-primary">Edit
+                        </a>
                     </td>
                 </tr>
             @endforeach

@@ -70,7 +70,7 @@
         </div>
         <div v-show="status == 3">
             <addfightingtalents :pickedfightingtalents="pickedfightingtalents"
-                                v-bind:character="character"></addfightingtalents>
+                v-bind:character="character"></addfightingtalents>
         </div>
         <div v-show="status == 4" class="columns">
             <div class="column is-half">
@@ -91,15 +91,15 @@
         <div v-show="status == 6" class="columns is-multiline">
             <div class="column is-half">
                 <addspecialtalents v-bind:pickedspecialtalents="pickedspecialtalents"
-                                   v-bind:character="character"></addspecialtalents>
+                    v-bind:character="character"></addspecialtalents>
             </div>
             <div class="column is-half">
                 <addspecialfightingtalents v-bind:pickedspecialfightingtalents="pickedspecialfightingtalents"
-                                           v-bind:character="character"></addspecialfightingtalents>
+                    v-bind:character="character"></addspecialfightingtalents>
             </div>
             <div class="column is-half">
                 <addspecialmagictalents v-bind:pickedspecialmagictalents="pickedspecialmagictalents"
-                                        v-bind:character="character"></addspecialmagictalents>
+                    v-bind:character="character"></addspecialmagictalents>
             </div>
         </div>
         <div v-show="status == 7" class="columns is-multiline">
@@ -108,7 +108,7 @@
             </div>
             <div class="column is-full">
                 <addrangeweapons v-bind:pickedrangeweapons="pickedrangeweapons"
-                                 v-bind:character="character"></addrangeweapons>
+                    v-bind:character="character"></addrangeweapons>
             </div>
             <div class="column is-full">
                 <addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>

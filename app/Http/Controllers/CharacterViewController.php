@@ -44,7 +44,7 @@ class CharacterViewController extends Controller
         Javascript::put([
             'character' => $character,
         ]);
-
+    
         return view('editCharacter');
     }
     

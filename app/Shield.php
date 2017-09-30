@@ -108,7 +108,7 @@ class Shield extends Model
         if ($this->pivot) {
             $modifiers = explode(',', $this->pivot->modifiers);
             $keys = explode(',', $this->pivot->keys);
-        
+    
             return array_combine($keys, $modifiers);
         }
     

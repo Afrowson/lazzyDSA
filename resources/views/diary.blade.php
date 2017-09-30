@@ -18,13 +18,13 @@
 @endsection
 
 @section('nav-left')
-            @include('character.name')
+    @include('character.name')
 @endsection
 @section('nav-center')
-            @include('character.energy')
+    @include('character.energy')
 @endsection
 @section('nav-right')
-            @include('character.skills')
+    @include('character.skills')
 @endsection
 
 @section('sidebar')
@@ -33,7 +33,7 @@
 
 @endsection
 @section('content')
-
+    
     <div class=" is-pulled-left">
      <textarea id="diary">
 SOME FANCY TEXT!

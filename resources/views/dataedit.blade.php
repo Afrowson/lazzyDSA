@@ -5,7 +5,7 @@
 @endsection
 
 @section('nav-left')
-
+    
     <a href="/database/table/?table={{$selected}}" class="button is-danger">
         Zurück
     </a>
@@ -16,7 +16,7 @@
 
 @endsection
 @section('body')
-
+    
     <form action="/database/{{$selected}}/{{$data->id}}/update" method="POST">
         {!! csrf_field() !!}
         @foreach($fields as $field)
@@ -25,9 +25,9 @@
                     <label class="label m-r-5 primary">{{$field['name']}}</label>
                     <p class="control">
                         <input class="input is-pulled-left" name="{{$field['key']}}" type="text"
-                               value="{{$data[$field['key']]}}">
+                            value="{{$data[$field['key']]}}">
                     </p>
-                    @if($field['required']== TRUE)
+                    @if($field['required']== true)
                         <lable class=" lable primary is-pulled-left">*</lable>
                     @endif
                 </div>
@@ -46,7 +46,7 @@
                     <label class="label m-r-5 primary">{{$field['name']}}</label>
                     <p class="control">
                         <input class="input is-small" name="{{$field['key']}}" type="number"
-                               value="{{$data[$field['key']]}}">
+                            value="{{$data[$field['key']]}}">
                     </p>
                 </div>
             @endif
@@ -58,7 +58,7 @@
                 @endforeach
             </div>
         @endif
-
+        
         <button class="button is-danger" type="submit">Save</button>
     </form>
 

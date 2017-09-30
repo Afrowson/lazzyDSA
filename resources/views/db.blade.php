@@ -20,7 +20,7 @@
 
 @section('nav-center')
     <label class=" label primary">
-Tabele wählen:
+        Tabele wählen:
         <select class="select" v-model="activetable" v-on:change="changetable">
             <option v-for="table in tables">
                 @{{table}}
@@ -56,7 +56,8 @@ Tabele wählen:
                 @endforeach
                 <td>
                     <a href="/database/{{class_basename($data)}}/{{$data->id}}/edit"
-                       class="button is-primary">Edit</a>
+                        class="button is-primary">Edit
+                    </a>
                 </td>
             </tr>
         @endforeach

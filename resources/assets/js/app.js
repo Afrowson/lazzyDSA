@@ -76,8 +76,8 @@ var db = new Vue({
             'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
             'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
         activetable: 'Armor',
-        fields:[],
-
+        fields: [],
+        
         armors: [],
         benefices: [],
         fightingtalents: [],
@@ -112,8 +112,8 @@ var db = new Vue({
             
         },
         getFields(tables){
-            axios.post('/api/fields', tables).then(result=>{
-                this.fields= result.data
+            axios.post('/api/fields', tables).then(result => {
+                this.fields = result.data
             });
         }
     },

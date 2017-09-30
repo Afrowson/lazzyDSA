@@ -12,9 +12,10 @@ class InventoryController extends Controller
     {
     
         $items = $inventory->items()->get();
-        foreach ($items as $item)
+        foreach ($items as $item) {
             $item->id = $item->pivot->id;
-
+        }
+        
         $respone = json_encode($items);
     
         return $respone;

@@ -25,7 +25,7 @@
     @if (!Auth::guest())
         <a href="/index" class=" button is-info">Deine Helden</a>
 
-    <a href="/database" class="button is-info">Datenbank</a>
+        <a href="/database" class="button is-info">Datenbank</a>
     @endif
 @endsection
 
