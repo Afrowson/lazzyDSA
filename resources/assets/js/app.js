@@ -75,8 +75,10 @@ var db = new Vue({
         tables: ['Armor', 'Benefice', 'Fightingtalent', 'Handicap', 'Inventory', 'Item', 'Language',
             'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
             'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
-        activetable: 'Armor',
+        selected_table_name: null,
+        allfields: [],
         fields: [],
+        selectedtable: [],
         
         armors: [],
         benefices: [],
@@ -98,27 +100,38 @@ var db = new Vue({
         
     },
     components: {},
+    
     methods: {
-        changetable(table){
-            this.getTable(this.activetable)
+        changetable(){
+            let table = this.selected_table_name
+            console.log(table)
+            axios.get('/api/' + table).then(result => {
+    
+                this.fields = this.allfields[this.tables.findIndex(looptable => looptable == table)]
+                table = this.formatName(table)
+                this[table] = result.data
+                this.selectedtable = this[table]
+    
+            })
+            
         },
         
         getTable(table){
-            axios.get('/api/' + table).then(result => {
-                    table = table.charAt(0).toLowerCase() + table.slice(1) + 's'
-                    this[table] = result.data
-                }
-            )
+        
             
         },
+        
         getFields(tables){
             axios.post('/api/fields', tables).then(result => {
-                this.fields = result.data
+                this.allfields = result.data
             });
+        },
+        formatName(table){
+            return table.charAt(0).toLowerCase() + table.slice(1) + 's'
         }
+        
     },
     mounted(){
-        this.getTable(this.activetable)
         this.getFields(this.tables)
     }
     

@@ -8,10 +8,6 @@
     id="db"
 @endsection
 
-@section('head')
-
-@endsection
-
 @section('nav-left')
     <a href="/index" class="button is-info">Deine Helden</a>
 
@@ -21,7 +17,9 @@
 @section('nav-center')
     <label class=" label primary">
         Tabele wählen:
-        <select class="select" v-model="activetable" v-on:change="changetable">
+        <select class="select" v-model="selected_table_name" v-on:change="changetable">
+            <option :value="null" disabled hidden>Select Table</option>
+        
             <option v-for="table in tables">
                 @{{table}}
             </option>
@@ -37,30 +35,28 @@
     </form>
 @endsection
 
-@section('content')
+@section('body')
     <table class="table is-pulled-left">
         <thead>
         <tr>
-            <th><abbr title="ID">ID</abbr></th>
-            @foreach($fillables as $fillable)
-                <th><abbr title="Name">{{($fillable['name'])}}</abbr></th>
-            @endforeach
+            <th>ID</th>
+    
+            <th v-for="field in fields">
+                @{{ field.key}}
+            </th>
+
         </tr>
         </thead>
-        <tbody>
-        @foreach($datas as $data)
-            <tr>
-                <td>{{$data->id}}</td>
-                @foreach($fillables as $fillable)
-                    <td>{{($data->{$fillable['key']} )}}</td>
-                @endforeach
+        <tbody v-for="entry in selectedtable">
+        <tr v-for>
+            <td v-for>'hier stand php'>
+            <td>'hier stand php'']} )}}</td>
                 <td>
-                    <a href="/database/{{class_basename($data)}}/{{$data->id}}/edit"
+                    <a href="/database/'hier stand php''hier stand php'"
                         class="button is-primary">Edit
                     </a>
                 </td>
             </tr>
-        @endforeach
         </tbody>
     </table>
 @endsection
