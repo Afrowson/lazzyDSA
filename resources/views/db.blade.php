@@ -19,7 +19,6 @@
         Tabele wählen:
         <select class="select" v-model="selected_table_name" v-on:change="changetable">
             <option :value="null" disabled hidden>Select Table</option>
-        
             <option v-for="table in tables">
                 @{{table}}
             </option>
@@ -40,23 +39,21 @@
         <thead>
         <tr>
             <th>ID</th>
-    
             <th v-for="field in fields">
                 @{{ field.key}}
             </th>
-
+            <th>Options</th>
         </tr>
         </thead>
-        <tbody v-for="entry in selectedtable">
-        <tr v-for>
-            <td v-for>'hier stand php'>
-            <td>'hier stand php'']} )}}</td>
-                <td>
-                    <a href="/database/'hier stand php''hier stand php'"
-                        class="button is-primary">Edit
-                    </a>
-                </td>
-            </tr>
+        <tbody>
+        <tr v-for="entry in selectedtable">
+            <td v-for="value in entry">@{{value}}</td>
+            <td>
+                <a href="/database/'hier stand php''hier stand php'"
+                    class="button is-primary">Edit
+                </a>
+            </td>
+        </tr>
         </tbody>
     </table>
 @endsection
