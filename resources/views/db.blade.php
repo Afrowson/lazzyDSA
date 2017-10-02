@@ -40,20 +40,16 @@
         <thead>
         <tr>
             <th>ID</th>
-    
-            <th v-for="field in fields">
-                @{{ field.key}}
-            </th>
+            <th v-for="field in fields">@{{ field.key}}</th>
             <th>Optionen</th>
-
         </tr>
         </thead>
         <tbody>
         <tr v-for="entry in selectedtable">
             <td v-for="value in entry">@{{value}}</td>
                 <td>
-                    <a href="/database/'hier stand php''hier stand php'"
-                        class="button is-primary">Edit
+                    <a href="/database/'hier stand php''hier stand php'" class="button is-primary">
+                        Edit
                     </a>
                 </td>
             </tr>
