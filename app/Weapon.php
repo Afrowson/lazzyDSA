@@ -92,20 +92,6 @@ class Weapon extends Model
         if (isset($this->modifiers['reach'])) {
             $value = $value + $this->modifiers['reach'];
         }
-
-//        switch ($value) {
-//            case 1:
-//                $value = 'kurz';
-//                break;
-//            case 2:
-//                $value = 'mittel';
-//                break;
-//            case 3:
-//                $value = 'lang';
-//                break;
-//
-//        };
-    
         return $value;
     }
     
@@ -143,9 +129,16 @@ class Weapon extends Model
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'skill'             => [
-            'key'        => 'skill',
-            'name'       => 'Eigenschaft',
+        'skill_1'             => [
+            'key'        => 'skill_1',
+            'name'       => 'Eigenschaft 1',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required|min:2',
+        ],
+        'skill_2'             => [
+            'key'        => 'skill_2',
+            'name'       => 'Eigenschaft 2',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required|min:2',

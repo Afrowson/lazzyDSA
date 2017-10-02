@@ -10,16 +10,16 @@
 
 @section('nav-left')
     <a href="/index" class="button is-info">Deine Helden</a>
-
+    
     <a href="/database" class="button is-info">Datenbank</a>
 @endsection
 
 @section('nav-center')
     <label class=" label primary">
         Tabele wählen:
-        <select class="select" v-model="selected_table_name" v-on:change="changetable">
+        <select class="select" v-model="selected_table_name" v-on:change="change_table">
             <option :value="null" disabled hidden>Select Table</option>
-        
+            
             <option v-for="table in tables">
                 @{{table}}
             </option>
@@ -40,19 +40,20 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th v-for="field in fields">@{{ field.key}}</th>
+            <th v-for="field in fields">@{{ field.name}}</th>
             <th>Optionen</th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="entry in selectedtable">
+        <tr v-for="entry in selected_table">
             <td v-for="value in entry">@{{value}}</td>
-                <td>
-                    <a href="/database/'hier stand php''hier stand php'" class="button is-primary">
-                        Edit
-                    </a>
-                </td>
-            </tr>
+            <td>
+                <button class="button is-success" v-on:click="edit_entry(entry)">Edit</button>
+                <button class="button is-danger" v-on:click="delete_entry(entry)">Delete</button>
+            </td>
+        </tr>
         </tbody>
     </table>
+    <add_entry :togle="togle" @close="close" :entry="" >
+    </add_entry>
 @endsection

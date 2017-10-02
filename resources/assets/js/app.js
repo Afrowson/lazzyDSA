@@ -68,6 +68,7 @@ var app = new Vue({
     methods: {}
 })
 
+import addEntry from './components/database/addEntry.vue'
 var db = new Vue({
     el: '#db',
     
@@ -76,9 +77,11 @@ var db = new Vue({
             'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
             'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
         selected_table_name: null,
-        allfields: [],
+        all_fields: [],
         fields: [],
-        selectedtable: [],
+        selected_table: [],
+        selected_entry:[],
+        togle: 0,
         
         armors: [],
         benefices: [],
@@ -99,31 +102,36 @@ var db = new Vue({
         weapons: [],
         
     },
-    components: {},
+    components: {
+        'add_entry': addEntry
+    },
     
     methods: {
-        changetable(){
+        change_table(){
             let table = this.selected_table_name
-            console.log(table)
             axios.get('/api/' + table).then(result => {
     
-                this.fields = this.allfields[this.tables.findIndex(looptable => looptable == table)]
+                this.fields = this.all_fields[this.tables.findIndex(looptable => looptable == table)]
                 table = this.formatName(table)
                 this[table] = result.data
-                this.selectedtable = this[table]
-    
+                this.selected_table = this[table]
             })
-            
         },
         
-        getTable(table){
-        
-            
+        edit_entry(entry){
+            console.log(entry)
+            this.togle= 1;
+        },
+        delete_entry(entry){
+            console.log(entry)
+        },
+        close(){
+            this.togle=0
         },
         
         getFields(tables){
             axios.post('/api/fields', tables).then(result => {
-                this.allfields = result.data
+                this.all_fields = result.data
             });
         },
         formatName(table){
