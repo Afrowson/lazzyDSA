@@ -27,7 +27,7 @@
 * Lep/AsP/Kap/SP updatebar
 
 Datenbank:
-*(Einträge anzeigen & editieren)
+*(Einträge anzeigen, editieren und löschen)
 
 
 ## Tasks:
@@ -89,6 +89,4 @@ Bild
 AP Werte bei erstellung und steigerung editierbar
 QS einer Probe berechnen
 
-jade language
-
-Grundwerte einer Rasse hinterlegen
+Grundwerte der Rassen/Professionen hinterlegen

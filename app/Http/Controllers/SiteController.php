@@ -22,35 +22,6 @@ class SiteController extends Controller
     
     public function database()
     {
-        $tables = [
-            'Item',
-            'Talent',
-            'Language',
-            'Lettering',
-            'Fightingtalent',
-            'Benefice',
-            'Handicap',
-            'Weapon',
-            'Armor',
-            'Rangeweapon',
-            'Shield',
-            'Specialtalent',
-            'Specialmagictalent',
-            'Specialfightingtalent',
-            'Purse',
-            'Magictrick',
-        ];
-        $datas = [];
-        $fillables = [];
-        $selected = request()->table;
-    
-        if (isset($selected)) {
-            $controller = new DataController();
-            $datas = $controller->index($selected);
-            $model = $controller->getModel($selected);
-            $fillables = $model::$fields;
-        }
-    
-        return view('db', compact('datas', 'tables', 'selected', 'fillables'));
+        return view('database');
     }
 }

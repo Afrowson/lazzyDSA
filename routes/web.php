@@ -34,24 +34,13 @@ Route::post('/character/{character}/energy', 'CharacterController@updatEenergy')
 
 //Route::get('/character/{character}/diary', 'CharacterViewController@diary');
 
-Route::get('/database', 'SiteController@database');
-
-Route::get('/database/table', 'SiteController@database');
-
-Route::get('/database/{model}/{id}/edit', 'DataController@edit');
-
-Route::post('/database/{model}/{id}/update', 'DataController@update');
-
-Route::get('/database/{model}/create', 'DataController@store');
-
-Route::get('/database/{model}/{id}/delete', 'DataController@destroy');
-
-
 Route::post('api/fields', 'DataController@fields');
 Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
 Route::post('api/Inventory/{inventory}/delete', 'InventoryController@delete');
 Route::post('api/Inventory/{inventory}/addItem', 'InventoryController@addItem');
 Route::get('/api/{model}', 'DataController@index');
 Route::post('/api/{model}/store', 'DataController@store');
+Route::post('api/{model}/{id}/update', 'DataController@update');
+Route::post('api/{model}/{id}/delete', 'DataController@destroy');
 
 Auth::routes();

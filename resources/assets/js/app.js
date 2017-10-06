@@ -117,13 +117,24 @@ var db = new Vue({
                 this.selected_table = this[table]
             })
         },
+        update_entry(edited_entry){
+        
+            let id = this.selected_table.findIndex(entry => entry.id === edited_entry.id)
+            this.selected_table[id] = edited_entry
+            axios.post('./api/' + this.selected_table_name + '/' + edited_entry.id + '/update', edited_entry)
+            this.close()
+        },
         
         edit_entry(entry){
             console.log(entry)
+            this.selected_entry = entry
             this.togle= 1;
         },
         delete_entry(entry){
             console.log(entry)
+            let id = this.selected_table.findIndex(st_entry => st_entry.id === entry.id)
+            this.selected_table.splice(id, 1)
+            axios.post('./api/' + this.selected_table_name + '/' + entry.id + '/delete')
         },
         close(){
             this.togle=0

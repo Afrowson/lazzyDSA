@@ -45,7 +45,7 @@ class Magictrick extends Model
         'duration'    =>
             [
                 'key'        => 'duration',
-                'name'       => 'Reichweite',
+                'name'       => 'dauer',
                 'type'       => 'string',
                 'required'   => true,
                 'validation' => 'required',
@@ -53,7 +53,7 @@ class Magictrick extends Model
         'target'      =>
             [
                 'key'        => 'target',
-                'name'       => 'Reichweite',
+                'name'       => 'Ziel',
                 'type'       => 'string',
                 'required'   => true,
                 'validation' => 'required',
