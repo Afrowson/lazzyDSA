@@ -25,6 +25,7 @@
             </option>
         </select>
     </label>
+    <button v-show="selected_table_name !== null" class="button" v-on:click="create_entry">Eintrag anlegen</button>
 
 @endsection
 

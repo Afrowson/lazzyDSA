@@ -66,23 +66,32 @@ class Armor extends Model
         if ($this->pivot) {
             $modifiers = explode(',', $this->pivot->modifiers);
             $keys = explode(',', $this->pivot->keys);
-    
+            
             return array_combine($keys, $modifiers);
         }
-    
+        
         return null;
     }
     
     public static $fields = [
         
         
-        'name' =>
+        'name'  =>
             [
                 'key'        => 'name',
                 'name'       => 'Name',
                 'type'       => 'string',
                 'required'   => true,
                 'validation' => 'required|max:191',
+            ],
+        'rules' =>
+            [
+                'key'        => 'rules',
+                'name'       => 'Regel',
+                'type'       => 'text',
+                'required'   => false,
+                'validation' => 'nullable',
+            
             ],
         
         'RS'     =>

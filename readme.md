@@ -26,9 +26,7 @@
 * Sprachen / Schriften
 * Lep/AsP/Kap/SP updatebar
 
-Datenbank:
-*(Einträge anzeigen, editieren und löschen)
-
+### Datenbank Bearbeitung
 
 ## Tasks:
 

@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'SiteController@index');
+Route::get('/database','SiteController@database');
 
 Route::get('/character/create', 'CharacterViewController@create');
 Route::get('/character/{character}/editCharacter', 'CharacterViewController@editCharacter');
@@ -39,7 +40,7 @@ Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
 Route::post('api/Inventory/{inventory}/delete', 'InventoryController@delete');
 Route::post('api/Inventory/{inventory}/addItem', 'InventoryController@addItem');
 Route::get('/api/{model}', 'DataController@index');
-Route::post('/api/{model}/store', 'DataController@store');
+Route::post('/api/{model}/create', 'DataController@store');
 Route::post('api/{model}/{id}/update', 'DataController@update');
 Route::post('api/{model}/{id}/delete', 'DataController@destroy');
 

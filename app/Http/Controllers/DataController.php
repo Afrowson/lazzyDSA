@@ -75,11 +75,7 @@ class DataController extends Controller
      */
     public function edit($selected, $id)
     {
-        $model = $this->getModel($selected);
-        $data = $model::find($id);
-        $fields = $model::$fields;
-    
-        return view('dataedit', compact('data', 'selected', 'fields'));
+        //
     }
     
     /**
