@@ -17,7 +17,7 @@
     @else
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
             {{ csrf_field() }}
-            <button class="button is-info" type="submit" href="{{ route('logout') }}">Logout</button>
+            <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>
         </form>
     @endif
 @endsection
@@ -40,6 +40,6 @@
 @endsection
 
 @section('nav-left')
-    <a href="/index" class=" button is-info">Deine Helden</a>
-    <a href="/database" class="button is-info">Datenbank</a>
+    <a href="/index" class="button">Deine Helden</a>
+    <a href="/database" class="button">Datenbank</a>
 @endsection

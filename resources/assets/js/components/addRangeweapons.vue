@@ -1,14 +1,12 @@
 <template>
     <div class="addrangeweapons">
         <h1 class="title m-t-5 "> Wähle die Fernkampfwaffen deines Held.</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                <select class="select" v-model="selected" v-on:change="selectrangeweapon">
-                    <option v-for="rangeweapon in rangeweapons" v-bind:value="rangeweapon.id">
-                        {{rangeweapon.name }}
-                    </option>
-                </select>
-            </div>
+        <div class="select">
+            <select v-model="selected" v-on:change="selectrangeweapon">
+                <option v-for="rangeweapon in rangeweapons" v-bind:value="rangeweapon.id">
+                    {{rangeweapon.name }}
+                </option>
+            </select>
         </div>
         <h3 class="title is-4">Modifiziere die gewählte Fernkampfwaffe</h3>
         <div class="columns">

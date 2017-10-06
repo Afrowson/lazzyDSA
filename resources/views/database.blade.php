@@ -9,30 +9,28 @@
 @endsection
 
 @section('nav-left')
-    <a href="/index" class="button is-info">Deine Helden</a>
+    <a href="/index" class="button">Deine Helden</a>
     
-    <a href="/database" class="button is-info">Datenbank</a>
+    <a href="/database" class="button">Datenbank</a>
 @endsection
 
 @section('nav-center')
-    <label class=" label primary">
-        Tabele wählen:
-        <select class="select" v-model="selected_table_name" v-on:change="change_table">
-            <option :value="null" disabled hidden>Select Table</option>
+    <div class="select is-pulled-left">
+        <select v-model="selected_table_name" v-on:change="change_table">
+            <option :value="null" disabled hidden>Select a Table</option>
             
             <option v-for="table in tables">
                 @{{table}}
             </option>
         </select>
-    </label>
-    <button v-show="selected_table_name !== null" class="button" v-on:click="create_entry">Eintrag anlegen</button>
-
+    </div>
+    <button v-show="selected_table_name !== null" class="button is-pulled-left m-l-5" v-on:click="create_entry">Eintrag anlegen</button>
 @endsection
 
 @section('nav-right')
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
         {{ csrf_field() }}
-        <button class="button is-info" type="submit" href="{{ route('logout') }}">Logout</button>
+        <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>
     </form>
 @endsection
 

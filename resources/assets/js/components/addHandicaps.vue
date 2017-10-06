@@ -1,28 +1,31 @@
 <template>
     <div class="addhandicap">
         <h1 class="title m-t-5 "> Wähle die Nachteile deines Held.</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                <select class="select" v-model="selected" v-on:change="selecthandicap">
-                    <option v-for="handicap in handicap" v-bind:value="handicap.id">
-                        {{handicap.name }}
-                    </option>
-                </select>
-            </div>
-            <div class="column is-narrow" v-if="levels != null">
-                <p class="is-pulled-left">Level</p>
-                <select class="select is-pulled-left" v-model="selectedLevel">
+        <div class="is-pulled-left select">
+            <select v-model="selected" v-on:change="selecthandicap">
+                <option v-for="handicap in handicap" v-bind:value="handicap.id">
+                    {{handicap.name }}
+                </option>
+            </select>
+        </div>
+        <div class="is-pulled-left" v-if="levels != null">
+            <p class="is-pulled-left">Level</p>
+            <div class="is-pulled-left select">
+                <select v-model="selectedLevel">
                     <option v-for="n in levels">
                         {{n}}
                     </option>
                 </select>
             </div>
-            <div class="column is-narrow">
-                <p class="is-pulled-left">Typ:</p>
-                <input class="input is-pulled-left is-inline" v-model="type"/>
-            </div>
-        
         </div>
+        <div class="is-pulled-left is-clearfix">
+            <p class="is-pulled-left">Typ:</p>
+            <div class="is-pulled-left">
+                <input class="input" v-model="type"/>
+            </div>
+        </div>
+    
+    
         <button class="button" v-on:click="pick()">wählen</button>
         
         

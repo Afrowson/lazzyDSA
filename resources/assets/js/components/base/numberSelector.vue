@@ -1,8 +1,8 @@
 <template>
     <div class="field">
         <label class="label">{{lable}}</label>
-        <div class="control">
-            <select class="select" v-model="selected" v-on:change="changevalue">
+        <div class="select">
+            <select v-model="selected" v-on:change="changevalue">
                 <option v-for="i in max+1" v-if="i>=min+1">
                     {{i - 1}}
                 </option>
@@ -18,7 +18,7 @@
     
         data(){
             return {
-                selected: this.value
+                selected: this.value || this.min
             }
         },
         methods: {

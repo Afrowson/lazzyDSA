@@ -1,25 +1,29 @@
 <template>
     <div class="addspecialmagictalents">
         <h1 class="title m-t-5 "> Wähle die Spezialen Magievorteile deines Held.</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                <select class="select" v-model="selected" v-on:change="selectspecialmagictalent">
+        <div class="is-clearfix">
+            <div class="select is-pulled-left">
+                <select v-model="selected" v-on:change="selectspecialmagictalent">
                     <option v-for="specialmagictalent in specialmagictalents" v-bind:value="specialmagictalent.id">
                         {{specialmagictalent.name }}
                     </option>
                 </select>
             </div>
-            <div class="column is-narrow" v-if="levels != null">
+            <div class="is-pulled-left" v-if="levels != null">
                 <p class="is-pulled-left">Level</p>
-                <select class="select is-pulled-left" v-model="selectedLevel">
-                    <option v-for="n in levels">
-                        {{n}}
-                    </option>
-                </select>
+                <div class="select">
+                    <select v-model="selectedLevel">
+                        <option v-for="n in levels">
+                            {{n}}
+                        </option>
+                    </select>
+                </div>
             </div>
-            <div class="column is-narrow">
+            <div class="is-pulled-left">
                 <p class="is-pulled-left">Typ:</p>
-                <input class="input is-pulled-left is-inline" v-model="type"/>
+                <div class=" is-pulled-left">
+                    <input class="input" v-model="type"/>
+            </div>
             </div>
         
         </div>

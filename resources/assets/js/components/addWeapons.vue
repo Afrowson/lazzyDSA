@@ -1,14 +1,12 @@
 <template>
     <div class="addweapons">
         <h1 class="title m-t-5 "> Wähle die Waffen deines Held.</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                <select class="select" v-model="selected" v-on:change="selectweapon">
-                    <option v-for="weapon in weapons" v-bind:value="weapon.id">
-                        {{weapon.name }}
-                    </option>
-                </select>
-            </div>
+        <div class="select">
+            <select v-model="selected" v-on:change="selectweapon">
+                <option v-for="weapon in weapons" v-bind:value="weapon.id">
+                    {{weapon.name }}
+                </option>
+            </select>
         </div>
         <h3 class="title is-4">Modifiziere die gewählte Waffe</h3>
         <div class="columns">
@@ -193,9 +191,9 @@
                     function(dbweapons, ftalents) {
                         that.fightingtalents = ftalents.data
                         that.fightingtalents.unshift('none')
-                
+    
                         that.weapons = dbweapons.data
-                
+    
                         that.getCharacterWeapons()
                         that.selectweapon()
                     }

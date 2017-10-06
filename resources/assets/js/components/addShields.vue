@@ -1,14 +1,12 @@
 <template>
     <div class="addshields">
         <h1 class="title m-t-5 "> Wähle Die Schilder deines Held.</h1>
-        <div class="columns">
-            <div class="column is-narrow">
-                <select class="select" v-model="selected" v-on:change="selectshield">
-                    <option v-for="shield in shields" v-bind:value="shield.id">
-                        {{shield.name }}
-                    </option>
-                </select>
-            </div>
+        <div class="select">
+            <select v-model="selected" v-on:change="selectshield">
+                <option v-for="shield in shields" v-bind:value="shield.id">
+                    {{shield.name }}
+                </option>
+            </select>
         </div>
         <h3 class="title is-4">Modifiziere das gewählte Schild</h3>
         <div class="columns">

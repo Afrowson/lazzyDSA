@@ -1,14 +1,14 @@
 <template>
     <div class="addletterings">
         <h1 class="title m-t-5 "> Wähle die Schriften deines Held.</h1>
-        <label>
-            <select class="select" v-model="selected">
+        <div class="select">
+            <select v-model="selected">
                 <option v-for="lettering in letterings" v-bind:value="lettering.id">
                     {{lettering.name }}
                 </option>
             </select>
-            <button class="button" v-on:click="pick()">wählen</button>
-        </label>
+        </div>
+        <button class="button" v-on:click="pick()">wählen</button>
         
         <div v-for="pickedlettering in pickedletterings">
             <div class="box m-t-5">

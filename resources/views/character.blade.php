@@ -55,7 +55,7 @@
 @endsection
 
 @section('sidebar')
-    <a href="/index" class=" button is-info">Deine Helden</a>
-
-    <a href="/diary" class="button is-info">Tagebuch</a>
+    <a href="/index" class="button">Deine Helden</a>
+    
+    <a href="/diary" class="button">Tagebuch</a>
 @endsection

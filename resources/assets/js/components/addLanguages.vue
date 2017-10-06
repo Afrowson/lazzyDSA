@@ -1,19 +1,21 @@
 <template>
     <div class="addlanguages">
         <h1 class="title m-t-5 "> Wähle die Sprachen deines Held.</h1>
-        <label>
-            <select class="select" v-model="selected">
+        <div class="select">
+            <select v-model="selected">
                 <option v-for="language in languages" v-bind:value="language.id">
                     {{language.name }}
                 </option>
             </select>
-            <select class="select" v-model="selectedLevel">
+        </div>
+        <div class="select">
+            <select v-model="selectedLevel">
                 <option v-for="level in levels">
                     {{level}}
                 </option>
             </select>
-            <button class="button" v-on:click="pick()">wählen</button>
-        </label>
+        </div>
+        <button class="button" v-on:click="pick()">wählen</button>
         
         <div v-for="pickedlanguage in pickedlanguages">
             <div class="box m-t-5">
@@ -46,7 +48,7 @@
                     let picked = {
                         id: this.selected,
                         name: this.languages[this.selected - 1].name,
-                        level: this.selectedlevel
+                        level: this.selectedLevel
                     }
                     this.pickedlanguages.unshift(picked)
                 }

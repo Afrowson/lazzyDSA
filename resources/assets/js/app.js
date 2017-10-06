@@ -43,8 +43,18 @@ var app = new Vue({
         pickedinventories: [],
         pickedpurses: [],
         pickedmagictricks: [],
-        
-        character: character
+    
+        // character: character
+    },
+    computed: {
+        character: function() {
+            if(character) {
+                return character
+            }
+            else {
+                return []
+            }
+        }
     },
     
     components: {

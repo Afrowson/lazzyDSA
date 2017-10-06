@@ -9,15 +9,13 @@
         <div class="is-clearfix">
             <h1 class="title is-4">Inventar zum Bearbeiten auswählen</h1>
             <h5 class="title is-5 is-pulled-left m-r-5">Ort:</h5>
-            <select
-                class="select is-pulled-left"
-                v-show="pickedinventories != ''"
-                v-model="selectedinventory"
-                v-on:change="selectinventory">
+            <div class="select">
+                <select v-show="pickedinventories != ''" v-model="selectedinventory" v-on:change="selectinventory">
                 <option v-for="inventory in pickedinventories" v-bind:value="inventory">
                     {{inventory.location}}
                 </option>
             </select>
+            </div>
             <h5 class="title is-5 m-l-10 is-pulled-left">Gewicht: {{selectedinventory.weight}}</h5>
             <button class="button" v-on:click="deleteinventory">Löschen</button>
         </div>
@@ -120,7 +118,7 @@
             },
             edititem(item){
                 this.togle = 1
-        
+    
                 console.log(item)
             },
             
