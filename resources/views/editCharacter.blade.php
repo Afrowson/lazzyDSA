@@ -28,36 +28,16 @@
 
 @section('sidebar')
     <div>
-        <button v-on:click="status = 1" class="hero m-b-5">
-            <h5 class="title">Basics</h5>
-        </button>
-        <button v-on:click="status = 2" class="hero m-b-5">
-            <h5 class="title">Talente</h5>
-        </button>
-        <button v-on:click="status = 3" class="hero m-b-5">
-            <h5 class="title">Kampf-fertigkeiten</h5>
-        </button>
-        <button v-on:click="status = 4" class="hero m-b-5">
-            <h5 class="title">Sprachen & Schriften</h5>
-        </button>
-        <button v-on:click="status = 5" class="hero m-b-5">
-            <h5 class="title">Vor- & Nachteile</h5>
-        </button>
-        <button v-on:click="status = 6" class="hero m-b-5">
-            <h5 class="title">Spezialtalente</h5>
-        </button>
-        <button v-on:click="status = 7" class="hero m-b-5">
-            <h5 class="title">Waffen & Schilde</h5>
-        </button>
-        <button v-on:click="status = 8" class="hero m-b-5">
-            <h5 class="title">Inventare</h5>
-        </button>
-        <button v-on:click="status = 9" class="hero m-b-5">
-            <h5 class="title">Geldbeutel</h5>
-        </button>
-        <button v-on:click="status = 10" class="hero m-b-5">
-            <h5 class="title">Zaubertricks</h5>
-        </button>
+        <button v-on:click="status = 1" class="button is-medium m-b-5 m-l-5" style="width:190px">Basics</button>
+        <button v-on:click="status = 2" class="button is-medium m-b-5 m-l-5" style="width:190px">Talente</button>
+        <button v-on:click="status = 3" class="button is-medium m-b-5 m-l-5" style="width:190px">Kampf-fertigkeiten</button>
+        <button v-on:click="status = 4" class="button is-medium m-b-5 m-l-5" style="width:190px">Sprachen & Schriften</button>
+        <button v-on:click="status = 5" class="button is-medium m-b-5 m-l-5" style="width:190px">Vor- & Nachteile</button>
+        <button v-on:click="status = 6" class="button is-medium m-b-5 m-l-5" style="width:190px">Spezialtalente</button>
+        <button v-on:click="status = 7" class="button is-medium m-b-5 m-l-5" style="width:190px">Waffen & Schilde</button>
+        <button v-on:click="status = 8" class="button is-medium m-b-5 m-l-5" style="width:190px">Inventare</button>
+        <button v-on:click="status = 9" class="button is-medium m-b-5 m-l-5" style="width:190px">Geldbeutel</button>
+        <button v-on:click="status = 10" class="button is-medium m-b-5 m-l-5" style="width:190px">Zaubertricks</button>
     </div>
 @endsection
 

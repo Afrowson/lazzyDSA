@@ -52,7 +52,6 @@ class DataController extends Controller
             $data[$field['key']] = request()->{$field['key']};
         }
         $model = $model::create($data);
-    
         return $model->id;
     }
     
@@ -96,7 +95,7 @@ class DataController extends Controller
         }
         $data->save();
     
-        return back();
+        return $data;
     
     }
     

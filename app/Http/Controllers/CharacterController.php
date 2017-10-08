@@ -108,13 +108,13 @@ class CharacterController extends Controller
             'GE'             => request()->GE,
             'KO'             => request()->KO,
             'KK'             => request()->KK,
-            'lep'            => request()->lep,
-            'asp'            => request()->asp,
-            'kap'            => request()->kap,
+            'lep'            => request()->lep_max,
+            'asp'            => request()->asp_max,
+            'kap'            => request()->kap_max,
             'lep_max'        => request()->lep_max,
             'asp_max'        => request()->asp_max,
             'kap_max'        => request()->kap_max,
-            'sp'             => request()->sp,
+            'sp'             => 3,
             'SK'             => request()->SK,
             'ZK'             => request()->ZK,
             'AW'             => request()->AW,
@@ -123,9 +123,8 @@ class CharacterController extends Controller
             'ap_total'       => request()->ap_total,
             'ap_spend'       => request()->ap_spend,
         ]);
-        $talents = Talent::all();
     
-        return redirect()->route('addTalents', [$character]);
+        return $character->id;
     }
     
     /**

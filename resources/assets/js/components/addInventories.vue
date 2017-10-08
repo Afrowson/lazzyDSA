@@ -132,10 +132,12 @@
         
         mounted(){
             this.getItems()
-            this.getCharacterInventories()
-            if(this.pickedinventories != []) {
-                console.log(this.pickedinventories)
-                this.getInventoryItems()
+            if(character.id != null && character.inventorys != null) {
+                this.getCharacterInventories()
+                if(this.pickedinventories != []) {
+                    console.log(this.pickedinventories)
+                    this.getInventoryItems()
+                }
             }
         }
     }
