@@ -23,16 +23,6 @@ class CharacterController extends Controller
     }
     
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-    
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -46,7 +36,7 @@ class CharacterController extends Controller
                 'name'       => 'required',
                 'race'       => '|nullable',
                 'profession' => '|nullable',
-    
+
                 'gender'         => 'numeric|min:0|max:2',
                 'height'         => 'numeric|nullable',
                 'weight'         => 'numeric|nullable',
@@ -57,7 +47,7 @@ class CharacterController extends Controller
                 'place_of_birth' => '|nullable',
                 'title'          => '|nullable',
                 'social'         => '|nullable',
-    
+
                 'MU' => 'numeric|min:6|max:20',
                 'KL' => 'numeric|min:6|max:20',
                 'IN' => 'numeric|min:6|max:20',
@@ -66,7 +56,7 @@ class CharacterController extends Controller
                 'GE' => 'numeric|min:6|max:20',
                 'KO' => 'numeric|min:6|max:20',
                 'KK' => 'numeric|min:6|max:20',
-    
+
                 'lep'     => 'numeric|nullable',
                 'asp'     => 'numeric|nullable',
                 'kap'     => 'numeric|nullable',
@@ -74,13 +64,13 @@ class CharacterController extends Controller
                 'asp_max' => 'numeric|nullable',
                 'kap_max' => 'numeric|nullable',
                 'sp'      => 'numeric|nullable',
-    
+
                 'SK' => 'numeric|nullable',
                 'ZK' => 'numeric|nullable',
                 'AW' => 'numeric|nullable',
                 'IT' => 'numeric|nullable',
                 'GW' => 'numeric|nullable',
-    
+
                 'ap_total' => 'numeric',
                 'ap_spend' => 'numeric|nullable',
             ]);
@@ -124,41 +114,16 @@ class CharacterController extends Controller
             'ap_spend'       => request()->ap_spend,
         ]);
     
+        $talents = Talent::all();
+        foreach ($talents as $talent) {
+            $character->addTalent($talent, 0);
+        }
+        $fightingtalents = Fightingtalent::all();
+        foreach ($fightingtalents as $fightingtalent) {
+            $character->addFightingtalent($fightingtalent, 6);
+        }
+        
         return $character->id;
-    }
-    
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Character $character
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Character $character)
-    {
-        //
-    }
-    
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Character $character
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Character $character)
-    {
-        //
-    }
-    
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Character $character
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Character $character)
-    {
-        //
     }
     
     /**
@@ -191,31 +156,28 @@ class CharacterController extends Controller
         return back();
     }
     
-    public function addTalents(Request $request, Character $character)
+    public function updateTalents(Request $request, Character $character)
     {
-    
-        $talents = $request->except('_token');
-    
-        foreach ($talents as $key => $value) {
-            $talent = Talent::find($key);
-            $character->addTalent($talent, $value);
-        
+        $updatedTalents = $request->except('_token');
+        $talents = $character->talents;
+        foreach ($talents as $t => $talent) {
+            $talent->pivot->value = $updatedTalents[$t]['value'];
+            $talent->pivot->save();
         }
     
-        return redirect()->route('addFightingtalents', [$character]);
+        return 'ok';
     }
     
     public function addFightingtalents(Request $request, Character $character)
     {
-    
-        $fightingtalents = $request->except('_token');
-    
-        foreach ($fightingtalents as $key => $value) {
-            $fightingtalent = Fightingtalent::find($key);
-            $character->addFightingtalent($fightingtalent, $value);
+        $updatedFightingtalents = $request->except('_token');
+        $fightingtalents = $character->fightingtalents;
+        foreach ($fightingtalents as $t => $fightingtalent) {
+            $fightingtalent->pivot->value = $updatedFightingtalents[$t]['value'];
+            $fightingtalent->pivot->save();
         }
     
-        return redirect()->route('editCharacter', [$character]);
+        return 'ok';
     }
     
     public function addLanguages(Request $request, Character $character)

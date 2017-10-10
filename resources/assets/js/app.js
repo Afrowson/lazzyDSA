@@ -52,7 +52,7 @@ var app = new Vue({
                 return character
             }
             else {
-                return []
+                return null
             }
         }
     },

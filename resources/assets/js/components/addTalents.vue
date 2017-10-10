@@ -52,6 +52,7 @@
                 :max="25"
             ></numberselector>
         </div>
+        <button class="button" v-on:click="save()">Speichern</button>
     </div>
 </template>
 
@@ -79,21 +80,37 @@
             changevalue(id, value){
                 
                 this.pickedtalents[id - 1].value = value
-            }
-        },
-        mounted(){
-            axios.get('/api/Talent').then(response => {
-                let talents = response.data
-                
+            },
+            getCharacterTalents(){
+                if(character === null) {
+                    axios.get('/api/Talent').then(response => {
+                        let talents = response.data
+                        this.pickCharacterTalents(talents)
+                    })
+                }
+                else {
+                    let talents = this.character.talents
+                    this.pickCharacterTalents(talents)
+                }
+            },
+            pickCharacterTalents(talents){
                 talents.forEach(talent => {
                     this.pickedtalents.push({
                         name: talent.name,
                         id: talent.id,
                         group: talent.group,
-                        value: Object.keys(this.character).length === 0 ? 0 : this.character.talents[talent.id - 1].pivot.value
+                        value: talent.pivot.value || 0
                     });
                 })
-            })
+            },
+            save(){
+                axios.post('/api/Character/' + this.character.id + '/updatetalents', this.pickedtalents).then(response => {
+                    console.log(response.data)
+                })
+            }
+        },
+        mounted(){
+            this.getCharacterTalents()
         },
     }
 </script>

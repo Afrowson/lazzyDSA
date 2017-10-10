@@ -28,8 +28,8 @@
             <div href="character/{{$character->id}}" class="character-box">
                 <h3>{{$character->name}}, {{$character->ap_total}} AP</h3>
                 <p>{{$character->race}}, {{$character->profession}}</p>
-                <a href="/character/{{$character->id}}/editCharacter" class="button is-primary">Bearbeiten</a>
                 <a href="/character/{{$character->id}}/show" class="button is-primary">Anzeigen</a>
+                <a href="/character/{{$character->id}}/edit" class="button is-primary">Bearbeiten</a>
             </div>
         @endforeach
         <a href="/character/create" class="character-box">

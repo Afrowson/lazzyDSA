@@ -201,7 +201,7 @@
                     console.log('NULL')
                     console.log(this.character)
                     axios.post('/api/Character/create', this.character).then(result => {
-                        console.log(result.data.id)
+                        console.log(result.data)
                         this.character.id = result.data
                     })
                 } else {

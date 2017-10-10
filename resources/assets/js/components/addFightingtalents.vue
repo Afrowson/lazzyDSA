@@ -9,10 +9,11 @@
                 @changevalue="changevalue"
                 :id="talent.id"
                 :lable="talent.name"
-                :min="0"
+                :min="6"
                 :max="25"
             ></numberselector>
         </div>
+        <button class="button" v-on:click="save()">Speichern</button>
     </div>
 </template>
 
@@ -32,28 +33,45 @@
             'numberselector': numberSelector
         },
         data(){
-            return {
-                talents: [],
-            }
+            return {}
         },
         methods: {
             changevalue(id, value){
                 
                 this.pickedfightingtalents[id - 1].value = value
-            }
-        },
-        mounted(){
-            axios.get('/api/Fightingtalent').then(response => {
-                let talents = response.data
-                
-                talents.forEach(talent => {
+            },
+            getCharacterFightingtalents(){
+                if(character === null) {
+                    axios.get('/api/Fightingtalent').then(response => {
+                        let fightingtalents = response.data
+                        this.pickCharacterFightingtalents(fightingtalents)
+                    })
+                }
+                else {
+                    let fightingtalents = this.character.fightingtalents
+                    this.pickCharacterFightingtalents(fightingtalents)
+            
+                }
+            },
+            pickCharacterFightingtalents(fightingtalents){
+                fightingtalents.forEach(fightingtalent => {
                     this.pickedfightingtalents.push({
-                        name: talent.name,
-                        id: talent.id,
-                        value: Object.keys(this.character).length === 0 ? 0 : this.character.fightingtalents[talent.id - 1].pivot.value
+                        name: fightingtalent.name,
+                        id: fightingtalent.id,
+                        group: fightingtalent.group,
+                        value: fightingtalent.pivot.value || 6
                     });
                 })
-            })
+            },
+    
+            save(){
+                axios.post('/api/Character/' + this.character.id + '/updatefightingtalents', this.pickedfightingtalents).then(response => {
+                    console.log(response.data)
+                })
+            },
+        },
+        mounted(){
+            this.getCharacterFightingtalents()
         },
     }
 </script>

@@ -29,7 +29,7 @@ class DegroSeeder extends Seeder
     {
         $character = Character::create([
             'user_id' => '1',
-
+    
             'name'           => 'Degro',
             'race'           => 'Zwerg',
             'profession'     => 'Warrior',
@@ -42,7 +42,7 @@ class DegroSeeder extends Seeder
             'culture'        => 'Ambosszwerg',
             'social'         => 'Frei',
             'place_of_birth' => 'Xorlosch',
-
+    
             'MU' => '14',
             'KL' => '13',
             'IN' => '13',
@@ -51,22 +51,22 @@ class DegroSeeder extends Seeder
             'GE' => '13',
             'KO' => '14',
             'KK' => '14',
-
-            'lep'     => '24',
+    
+            'lep'     => '31',
             'asp'     => '0',
             'kap'     => '0',
             'lep_max' => '36',
             'asp_max' => '0',
             'kap_max' => '0',
-
+    
             'SK' => '3',
             'ZK' => '3',
             'AW' => '7',
             'IT' => '15',
             'GW' => '6',
-
+    
             'SP' => '3',
-
+    
             'ap_total' => '1186',
             'ap_spend' => '1125',
         ]);
