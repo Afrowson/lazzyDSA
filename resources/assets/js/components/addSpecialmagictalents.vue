@@ -77,12 +77,7 @@
                 let index = this.pickedspecialmagictalents.findIndex(specialmagictalent => specialmagictalent.id == id);
                 this.pickedspecialmagictalents.splice(index, 1)
             },
-        },
-        mounted(){
-            axios.get('/api/Specialmagictalent').then(response => {
-                this.specialmagictalents = response.data
-            })
-            if(Object.keys(this.character).length !== 0) {
+            getCharacterSpecialmagictalents(){
                 this.character.specialmagictalents.forEach(specialmagictalent => {
                     this.pickedspecialmagictalents.push({
                         id: specialmagictalent.id,
@@ -92,6 +87,13 @@
                     })
                 })
             }
+        },
+        mounted(){
+            axios.get('/api/Specialmagictalent').then(response => {
+                this.specialmagictalents = response.data
+            })
+            if(this.character.specialmagictalents != null)
+                this.getCharacterSpecialmagictalents()
         }
     }
 </script>

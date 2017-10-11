@@ -77,12 +77,7 @@
                 let index = this.pickedspecialtalents.findIndex(specialtalent => specialtalent.id == id);
                 this.pickedspecialtalents.splice(index, 1)
             },
-        },
-        mounted(){
-            axios.get('/api/Specialtalent').then(response => {
-                this.specialtalents = response.data
-            })
-            if(Object.keys(this.character).length !== 0) {
+            getCharacterSpecialtalents(){
                 this.character.specialtalents.forEach(specialtalent => {
                     this.pickedspecialtalents.push({
                         id: specialtalent.id,
@@ -91,6 +86,14 @@
                         type: specialtalent.pivot.data
                     })
                 })
+            }
+        },
+        mounted(){
+            axios.get('/api/Specialtalent').then(response => {
+                this.specialtalents = response.data
+            })
+            if(this.character.specialtalents != null) {
+                this.getCharacterSpecialtalents()
             }
         }
     }
