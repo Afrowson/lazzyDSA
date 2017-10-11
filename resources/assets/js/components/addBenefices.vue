@@ -23,7 +23,7 @@
             <div class="is-pulled-left">
                 <input class="input" v-model="type"/>
             </div>
-        
+    
             <button class="button is-pulled-left" v-on:click="pick()">wählen</button>
         </div>
         
@@ -68,19 +68,20 @@
                         level: this.selectedLevel,
                         type: this.type
                     }
+                    axios.post('/api/Character/' + this.character.id + '/addbenefice', picked).then(response => {
+                        console.log(response.data)
+                    })
                     this.pickedbenefices.unshift(picked)
                 }
             },
             unpick(id){
+                axios.post('/api/Character/' + this.character.id + '/removebenefice', {'id': id}).then(response => {
+                    console.log(response.data)
+                })
                 let index = this.pickedbenefices.findIndex(benefice => benefice.id == id);
                 this.pickedbenefices.splice(index, 1)
             },
-        },
-        mounted(){
-            axios.get('/api/Benefice').then(response => {
-                this.benefices = response.data
-            })
-            if(Object.keys(this.character).length !== 0) {
+            getCharacterBenefices() {
                 this.character.benefices.forEach(benefice => {
                     this.pickedbenefices.push({
                         id: benefice.id,
@@ -89,6 +90,15 @@
                         type: benefice.pivot.type
                     })
                 })
+            },
+    
+        }, mounted(){
+            axios.get('/api/Benefice').then(response => {
+                this.benefices = response.data
+            })
+        
+            if(this.character.benefices != null) {
+                this.getCharacterBenefices()
             }
         }
     }

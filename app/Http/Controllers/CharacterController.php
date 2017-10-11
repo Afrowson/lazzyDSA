@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
+use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Talent;
@@ -30,13 +32,13 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-    
+        
         $this->validate($request,
             [
                 'name'       => 'required',
                 'race'       => '|nullable',
                 'profession' => '|nullable',
-
+                
                 'gender'         => 'numeric|min:0|max:2',
                 'height'         => 'numeric|nullable',
                 'weight'         => 'numeric|nullable',
@@ -47,7 +49,7 @@ class CharacterController extends Controller
                 'place_of_birth' => '|nullable',
                 'title'          => '|nullable',
                 'social'         => '|nullable',
-
+                
                 'MU' => 'numeric|min:6|max:20',
                 'KL' => 'numeric|min:6|max:20',
                 'IN' => 'numeric|min:6|max:20',
@@ -56,7 +58,7 @@ class CharacterController extends Controller
                 'GE' => 'numeric|min:6|max:20',
                 'KO' => 'numeric|min:6|max:20',
                 'KK' => 'numeric|min:6|max:20',
-
+                
                 'lep'     => 'numeric|nullable',
                 'asp'     => 'numeric|nullable',
                 'kap'     => 'numeric|nullable',
@@ -64,17 +66,17 @@ class CharacterController extends Controller
                 'asp_max' => 'numeric|nullable',
                 'kap_max' => 'numeric|nullable',
                 'sp'      => 'numeric|nullable',
-
+                
                 'SK' => 'numeric|nullable',
                 'ZK' => 'numeric|nullable',
                 'AW' => 'numeric|nullable',
                 'IT' => 'numeric|nullable',
                 'GW' => 'numeric|nullable',
-
+                
                 'ap_total' => 'numeric',
                 'ap_spend' => 'numeric|nullable',
             ]);
-    
+        
         $character = Character::create([
             'user_id'        => Auth::user()->id,
             'name'           => request()->name,
@@ -113,7 +115,7 @@ class CharacterController extends Controller
             'ap_total'       => request()->ap_total,
             'ap_spend'       => request()->ap_spend,
         ]);
-    
+        
         $talents = Talent::all();
         foreach ($talents as $talent) {
             $character->addTalent($talent, 0);
@@ -152,7 +154,7 @@ class CharacterController extends Controller
             $character->sp = request()->sp;
         }
         $character->save();
-    
+        
         return back();
     }
     
@@ -160,51 +162,92 @@ class CharacterController extends Controller
     {
         $updatedTalents = $request->except('_token');
         $talents = $character->talents;
+        
         foreach ($talents as $t => $talent) {
             $talent->pivot->value = $updatedTalents[$t]['value'];
             $talent->pivot->save();
         }
-    
+        
         return 'ok';
     }
     
-    public function addFightingtalents(Request $request, Character $character)
+    public function updateFightingtalents(Request $request, Character $character)
     {
         $updatedFightingtalents = $request->except('_token');
         $fightingtalents = $character->fightingtalents;
+        
         foreach ($fightingtalents as $t => $fightingtalent) {
             $fightingtalent->pivot->value = $updatedFightingtalents[$t]['value'];
             $fightingtalent->pivot->save();
         }
-    
+        
         return 'ok';
     }
     
-    public function addLanguages(Request $request, Character $character)
+    public function addLanguage(Request $request, Character $character)
     {
-    
-        $languages = $request->except('_token');
-        Log::info($languages);
-    
-        foreach ($languages as $language) {
-            $level = $language['level'];
-            $language = Language::find($language['id']);
-            $character->addLanguage($language, $level);
-        }
-    
+        $level = $request->level;
+        $language = Language::find($request->id);
+        $character->addLanguage($language, $level);
+        
         return 'ok';
     }
     
-    public function addLetterings(Request $request, Character $character)
+    public function addLettering(Request $request, Character $character)
     {
+        $lettering = Lettering::find($request->id);
+        $character->addLettering($lettering);
+        
+        return 'ok';
+    }
     
-        $letterings = $request->except('_token');
+    public function addBenefice(Request $request, Character $character)
+    {
+        $benefice = Benefice::find($request->id);
+        $options = ['value' => $request->level, 'type' => $request->type];
+        $character->addBenefice($benefice, $options);
+        
+        return 'ok';
+    }
     
-        foreach ($letterings as $lettering) {
-            $lettering = Lettering::find($lettering['id']);
-            $character->addLettering($lettering);
-        }
+    public function addHandicap(Request $request, Character $character)
+    {
+        $handicap = Handicap::find($request->id);
+        $options = ['value' => $request->level, 'type' => $request->type];
+        $character->addHandicap($handicap, $options);
+        
+        return 'ok';
+    }
     
+    public function removeLanguage(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->languages()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeLettering(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->letterings()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeBenefice(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->benefices()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeHandicap(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->handicaps()->detach($id);
+        
         return 'ok';
     }
 }

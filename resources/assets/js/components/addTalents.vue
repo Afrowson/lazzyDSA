@@ -82,7 +82,7 @@
                 this.pickedtalents[id - 1].value = value
             },
             getCharacterTalents(){
-                if(character === null) {
+                if(character.talents == null) {
                     axios.get('/api/Talent').then(response => {
                         let talents = response.data
                         this.pickCharacterTalents(talents)
@@ -99,7 +99,7 @@
                         name: talent.name,
                         id: talent.id,
                         group: talent.group,
-                        value: talent.pivot.value || 0
+                        value: talent.pivot ? talent.pivot.value : 0,
                     });
                 })
             },

@@ -29,12 +29,12 @@ class Inventory extends Model
     
     public function deleteItem($id)
     {
-        return $this->items()->find($id)->delete();
+        return $this->items()->detach($id);
     }
     
     public function deleteItems()
     {
-        return $this->items()->delete();
+        return $this->items()->detach();
     }
     
     public static $fields = [

@@ -70,10 +70,18 @@
                         level: this.selectedLevel,
                         type: this.type
                     }
+                    axios.post('/api/Character/' + this.character.id + '/addhandicap', picked).then(response => {
+                        console.log(response.data)
+                    })
                     this.pickedhandicaps.unshift(picked)
                 }
             },
             unpick(id){
+    
+                axios.post('/api/Character/' + this.character.id + '/removehandicap', {'id': id}).then(response => {
+                    console.log(response.data)
+                })
+                
                 let index = this.pickedhandicaps.findIndex(handicap => handicap.id == id);
                 this.pickedhandicaps.splice(index, 1)
             },

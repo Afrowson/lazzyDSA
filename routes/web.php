@@ -17,13 +17,10 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'SiteController@index');
-Route::get('/database','SiteController@database');
+Route::get('/database', 'SiteController@database');
 
 Route::get('/character/create', 'CharacterViewController@create');
 Route::get('/character/{character}/edit', 'CharacterViewController@editCharacter');
-
-Route::post('/character/{character}/addLanguages', 'CharacterController@addLanguage');
-Route::post('/character/{character}/addLetterings', 'CharacterController@addLettering');
 
 
 Route::get('/character/{character}/show', 'CharacterViewController@single');
@@ -35,7 +32,15 @@ Route::post('/api/fields', 'DataController@fields');
 
 Route::post('/api/Character/create', 'CharacterController@store');
 Route::post('/api/Character/{character}/updatetalents', 'CharacterController@updateTalents');
-Route::post('/api/Character/{character}/updatefightingtalents', 'CharacterController@addFightingtalents');
+Route::post('/api/Character/{character}/updatefightingtalents', 'CharacterController@updateFightingtalents');
+Route::post('/api/Character/{character}/addlanguage', 'CharacterController@addLanguage');
+Route::post('/api/Character/{character}/addlettering', 'CharacterController@addLettering');
+Route::post('/api/Character/{character}/removelanguage', 'CharacterController@removeLanguage');
+Route::post('/api/Character/{character}/removelettering', 'CharacterController@removeLettering');
+Route::post('/api/Character/{character}/removebenefice', 'CharacterController@removeBenefice');
+Route::post('/api/Character/{character}/addbenefice', 'CharacterController@addBenefice');
+Route::post('/api/Character/{character}/removehandicap', 'CharacterController@removeHandicap');
+Route::post('/api/Character/{character}/addhandicap', 'CharacterController@addHandicap');
 
 Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
 Route::post('/api/Inventory/{inventory}/delete', 'InventoryController@delete');

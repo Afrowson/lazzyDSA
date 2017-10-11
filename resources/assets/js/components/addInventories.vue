@@ -11,10 +11,10 @@
             <h5 class="title is-5 is-pulled-left m-r-5">Ort:</h5>
             <div class="select">
                 <select v-show="pickedinventories != ''" v-model="selectedinventory" v-on:change="selectinventory">
-                <option v-for="inventory in pickedinventories" v-bind:value="inventory">
-                    {{inventory.location}}
-                </option>
-            </select>
+                    <option v-for="inventory in pickedinventories" v-bind:value="inventory">
+                        {{inventory.location}}
+                    </option>
+                </select>
             </div>
             <h5 class="title is-5 m-l-10 is-pulled-left">Gewicht: {{selectedinventory.weight}}</h5>
             <button class="button" v-on:click="deleteinventory">Löschen</button>
@@ -94,7 +94,7 @@
                     weight: 0
                 }
                 //Inventory an den server senden
-                axios.post('/api/Inventory/store', inventory)
+                axios.post('/api/Inventory/create', inventory)
                 //dann Inventar hinzufügen + auswählen
                     .then(response => {
                         inventory.id = response.data
@@ -132,7 +132,8 @@
         
         mounted(){
             this.getItems()
-            if(character.id != null && character.inventorys != null) {
+    
+            if(this.character.inventories != null) {
                 this.getCharacterInventories()
                 if(this.pickedinventories != []) {
                     console.log(this.pickedinventories)

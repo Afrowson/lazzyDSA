@@ -41,7 +41,7 @@
                 this.pickedfightingtalents[id - 1].value = value
             },
             getCharacterFightingtalents(){
-                if(character === null) {
+                if(character.fightingtalents == null) {
                     axios.get('/api/Fightingtalent').then(response => {
                         let fightingtalents = response.data
                         this.pickCharacterFightingtalents(fightingtalents)
@@ -50,7 +50,7 @@
                 else {
                     let fightingtalents = this.character.fightingtalents
                     this.pickCharacterFightingtalents(fightingtalents)
-            
+        
                 }
             },
             pickCharacterFightingtalents(fightingtalents){
@@ -58,9 +58,8 @@
                     this.pickedfightingtalents.push({
                         name: fightingtalent.name,
                         id: fightingtalent.id,
-                        group: fightingtalent.group,
-                        value: fightingtalent.pivot.value || 6
-                    });
+                        value: fightingtalent.pivot ? fightingtalent.pivot.value : 0
+                    })
                 })
             },
     

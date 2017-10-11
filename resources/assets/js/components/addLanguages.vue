@@ -50,19 +50,21 @@
                         name: this.languages[this.selected - 1].name,
                         level: this.selectedLevel
                     }
+                    axios.post('/api/Character/' + this.character.id + '/addlanguage', picked).then(response => {
+                        console.log(response.data)
+                    })
                     this.pickedlanguages.unshift(picked)
                 }
             },
             unpick(id){
-                let index = this.pickedlanguages.findIndex(language => language.id == id);
+                console.log(id)
+                axios.post('/api/Character/' + this.character.id + '/removelanguage', {'id': id}).then(response => {
+                    console.log(response.data)
+                })
+                let index = this.pickedlanguages.findIndex(language => language.id == id)
                 this.pickedlanguages.splice(index, 1)
-            }
-        },
-        mounted(){
-            axios.get('/api/Language').then(response => {
-                this.languages = response.data
-            })
-            if(Object.keys(this.character).length !== 0) {
+            },
+            getCharacterLanguages() {
                 this.character.languages.forEach(language => {
                     this.pickedlanguages.push({
                         id: language.id,
@@ -70,7 +72,14 @@
                         level: language.pivot.value
                     })
                 })
-            }
+            },
+        },
+        mounted(){
+            axios.get('/api/Language').then(response => {
+                this.languages = response.data
+            })
+            if(this.character.languages != null)
+                this.getCharacterLanguages();
         }
     }
 </script>

@@ -44,7 +44,6 @@ var app = new Vue({
         pickedpurses: [],
         pickedmagictricks: [],
     
-        // character: character
     },
     computed: {
         character: function() {

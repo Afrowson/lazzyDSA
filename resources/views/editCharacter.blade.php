@@ -105,7 +105,6 @@
         {{--<addpurses v-bind:pickedpurses="pickedpurses" v-bind:character="character"></addpurses>--}}
         {{--</div>--}}
         {{--</div>--}}
-        <button class="button m-t-10" v-on:click="save()">Übertragen</button>
         @{{ status }}
     </div>
     <div v-show="status == 10">

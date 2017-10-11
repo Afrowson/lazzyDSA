@@ -43,12 +43,27 @@
                         id: this.selected,
                         name: this.letterings[this.selected - 1].name,
                     }
+                    axios.post('/api/Character/' + this.character.id + '/addlettering', picked).then(response => {
+                        console.log(response.data)
+                    })
+                    
                     this.pickedletterings.unshift(picked)
                 }
             },
             unpick(id){
-                let index = this.pickedletterings.findIndex(lettering => lettering.id == id);
+                let index = this.pickedletterings.findIndex(lettering => lettering.id == id)
+                axios.post('/api/Character/' + this.character.id + '/removelettering', {'id': id}).then(response => {
+                    console.log(response.data)
+                })
                 this.pickedletterings.splice(index, 1)
+            },
+            getCharacterLetterings(){
+                this.character.letterings.forEach(lettering => {
+                    this.pickedletterings.push({
+                        id: lettering.id,
+                        name: lettering.name,
+                    })
+                })
             }
         }
         ,
@@ -57,13 +72,8 @@
             axios.get('/api/Lettering').then(response => {
                 this.letterings = response.data
             })
-            if(Object.keys(this.character).length !== 0) {
-                this.character.letterings.forEach(lettering => {
-                    this.pickedletterings.push({
-                        id: lettering.id,
-                        name: lettering.name,
-                    })
-                })
+            if(this.character.letterings != null) {
+                this.getCharacterLetterings()
             }
         }
     }
