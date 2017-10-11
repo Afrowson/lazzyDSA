@@ -1,6 +1,6 @@
 <template>
     <div class="addletterings">
-        <h1 class="title m-t-5 "> Wähle die Schriften deines Held.</h1>
+        <h1 class="title m-t-5"> Wähle die Schriften deines Held.</h1>
         <div class="select">
             <select v-model="selected">
                 <option v-for="lettering in letterings" v-bind:value="lettering.id">
@@ -12,10 +12,8 @@
         
         <div v-for="pickedlettering in pickedletterings">
             <div class="box m-t-5">
-                
                 <P>{{ pickedlettering.name}}</P>
                 <P>ID: {{pickedlettering.id}}</P>
-                
                 <button class="button" v-on:click="unpick(pickedlettering.id)">Löschen</button>
             </div>
         </div>
@@ -46,7 +44,6 @@
                     axios.post('/api/Character/' + this.character.id + '/addlettering', picked).then(response => {
                         console.log(response.data)
                     })
-                    
                     this.pickedletterings.unshift(picked)
                 }
             },

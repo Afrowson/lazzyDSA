@@ -20,8 +20,10 @@
                 </div>
             </div>
             <div class="is-pulled-left">
-                <p class="is-pulled-left">Typ:</p>
-                <input class="input is-pulled-left is-inline" v-model="type"/>
+                <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
+                <div class="is-pulled-left">
+                    <input class="input is-pulled-left" v-model="type"/>
+                </div>
             </div>
         </div>
         <button class="button" v-on:click="pick()">wählen</button>

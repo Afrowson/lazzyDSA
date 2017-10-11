@@ -9,7 +9,7 @@
             </select>
         </div>
         <div class="is-pulled-left" v-if="levels != null">
-            <p class="is-pulled-left">Level</p>
+            <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
             <div class="is-pulled-left select">
                 <select v-model="selectedLevel">
                     <option v-for="n in levels">
@@ -19,15 +19,12 @@
             </div>
         </div>
         <div class="is-pulled-left is-clearfix">
-            <p class="is-pulled-left">Typ:</p>
+            <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
             <div class="is-pulled-left">
                 <input class="input" v-model="type"/>
             </div>
         </div>
-    
-    
         <button class="button" v-on:click="pick()">wählen</button>
-        
         
         <div v-for="pickedhandicap in pickedhandicaps">
             <div class="box m-t-5">
@@ -81,16 +78,10 @@
                 axios.post('/api/Character/' + this.character.id + '/removehandicap', {'id': id}).then(response => {
                     console.log(response.data)
                 })
-                
                 let index = this.pickedhandicaps.findIndex(handicap => handicap.id == id);
                 this.pickedhandicaps.splice(index, 1)
             },
-        },
-        mounted(){
-            axios.get('/api/Handicap').then(response => {
-                this.handicap = response.data
-            })
-            if(Object.keys(this.character).length !== 0) {
+            getCharacterHandicaps(){
                 this.character.handicaps.forEach(handicap => {
                     this.pickedhandicaps.push({
                         id: handicap.id,
@@ -100,6 +91,13 @@
                     })
                 })
             }
+        },
+        mounted(){
+            axios.get('/api/Handicap').then(response => {
+                this.handicap = response.data
+            })
+            if(this.character.handicap != null)
+                this.getCharacterHandicaps()
         }
     }
 </script>

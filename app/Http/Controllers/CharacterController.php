@@ -8,6 +8,7 @@ use App\Fightingtalent;
 use App\Handicap;
 use App\Language;
 use App\Lettering;
+use App\Magictrick;
 use App\Talent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -219,6 +220,14 @@ class CharacterController extends Controller
         return 'ok';
     }
     
+    public function addMagictrick(Request $request, Character $character)
+    {
+        $magictrick = Magictrick::find($request->id);
+        $character->addMagictrick($magictrick);
+        
+        return 'ok';
+    }
+    
     public function removeLanguage(Request $request, Character $character)
     {
         $id = $request->id;
@@ -247,6 +256,14 @@ class CharacterController extends Controller
     {
         $id = $request->id;
         $character->handicaps()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeMagictrick(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->magictricks()->detach($id);
         
         return 'ok';
     }

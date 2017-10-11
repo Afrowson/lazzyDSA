@@ -2,7 +2,7 @@
     <div class="addspecialmagictalents">
         <h1 class="title m-t-5 "> Wähle die Spezialen Magievorteile deines Held.</h1>
         <div class="is-clearfix">
-            <div class="select is-pulled-left">
+            <div class="is-pulled-left select">
                 <select v-model="selected" v-on:change="selectspecialmagictalent">
                     <option v-for="specialmagictalent in specialmagictalents" v-bind:value="specialmagictalent.id">
                         {{specialmagictalent.name }}
@@ -10,7 +10,7 @@
                 </select>
             </div>
             <div class="is-pulled-left" v-if="levels != null">
-                <p class="is-pulled-left">Level</p>
+                <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
                 <div class="select">
                     <select v-model="selectedLevel">
                         <option v-for="n in levels">
@@ -20,12 +20,11 @@
                 </div>
             </div>
             <div class="is-pulled-left">
-                <p class="is-pulled-left">Typ:</p>
-                <div class=" is-pulled-left">
-                    <input class="input" v-model="type"/>
+                <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
+                <div class="is-pulled-left">
+                    <input class="input is-pulled-left" v-model="type"/>
+                </div>
             </div>
-            </div>
-        
         </div>
         <button class="button" v-on:click="pick()">wählen</button>
         

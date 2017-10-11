@@ -10,7 +10,7 @@
                 </select>
             </div>
             <div class="is-pulled-left" v-if="levels != null">
-                <p class="is-pulled-left">Level</p>
+                <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
                 <div class="select">
                     <select v-model="selectedLevel">
                         <option v-for="n in levels">
@@ -20,12 +20,11 @@
                 </div>
             </div>
             <div class="is-pulled-left">
-                <p class="is-pulled-left">Typ:</p>
+                <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
                 <div class="is-pulled-left">
                     <input class="input" v-model="type"/>
                 </div>
             </div>
-        
         </div>
         <button class="button" v-on:click="pick()">wählen</button>
         

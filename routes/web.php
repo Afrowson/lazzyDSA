@@ -35,12 +35,14 @@ Route::post('/api/Character/{character}/updatetalents', 'CharacterController@upd
 Route::post('/api/Character/{character}/updatefightingtalents', 'CharacterController@updateFightingtalents');
 Route::post('/api/Character/{character}/addlanguage', 'CharacterController@addLanguage');
 Route::post('/api/Character/{character}/addlettering', 'CharacterController@addLettering');
+Route::post('/api/Character/{character}/addbenefice', 'CharacterController@addBenefice');
+Route::post('/api/Character/{character}/addhandicap', 'CharacterController@addHandicap');
+Route::post('/api/Character/{character}/addmagictrick', 'CharacterController@addMagictrick');
 Route::post('/api/Character/{character}/removelanguage', 'CharacterController@removeLanguage');
 Route::post('/api/Character/{character}/removelettering', 'CharacterController@removeLettering');
 Route::post('/api/Character/{character}/removebenefice', 'CharacterController@removeBenefice');
-Route::post('/api/Character/{character}/addbenefice', 'CharacterController@addBenefice');
 Route::post('/api/Character/{character}/removehandicap', 'CharacterController@removeHandicap');
-Route::post('/api/Character/{character}/addhandicap', 'CharacterController@addHandicap');
+Route::post('/api/Character/{character}/removemagictrick', 'CharacterController@removeMagictrick');
 
 Route::get('/api/Inventory/{inventory}/Items', 'InventoryController@items');
 Route::post('/api/Inventory/{inventory}/delete', 'InventoryController@delete');

@@ -10,7 +10,7 @@
                 </select>
             </div>
             <div class="is-pulled-left" v-if="levels != null">
-                <p class="is-pulled-left">Level</p>
+                <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
                 <div class="is-pulled-left select">
                     <select v-model="selectedLevel">
                         <option v-for="n in levels">
@@ -19,7 +19,7 @@
                     </select>
                 </div>
             </div>
-            <p class="is-pulled-left">Typ:</p>
+            <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
             <div class="is-pulled-left">
                 <input class="input" v-model="type"/>
             </div>
