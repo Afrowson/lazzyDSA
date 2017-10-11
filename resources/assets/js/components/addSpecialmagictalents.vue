@@ -70,10 +70,16 @@
                         level: this.selectedLevel,
                         type: this.type
                     }
+                    axios.post('/api/Character/' + this.character.id + '/addspecialmagictalent', picked).then(response => {
+                        console.log(response.data)
+                    })
                     this.pickedspecialmagictalents.unshift(picked)
                 }
             },
             unpick(id){
+                axios.post('/api/Character/' + this.character.id + '/removespecialmagictalent', {'id': id}).then(response => {
+                    console.log(response.data)
+                })
                 let index = this.pickedspecialmagictalents.findIndex(specialmagictalent => specialmagictalent.id == id);
                 this.pickedspecialmagictalents.splice(index, 1)
             },

@@ -106,19 +106,25 @@ class Character extends Model
         return $this->talents()->save($talent, ['value' => $value]);
     }
     
-    public function addSpecialTalent(SpecialTalent $specialtalent, $level, $data)
+    public function addSpecialTalent(SpecialTalent $specialtalent, $options)
     {
-        return $this->specialtalents()->save($specialtalent, ['value' => $level, 'data' => $data]);
+        $options = array_replace(['value' => null, 'data' => null], $options);
+    
+        return $this->specialtalents()->save($specialtalent, $options);
     }
     
-    public function addSpecialMagictalent(SpecialMagictalent $specialmagictalent, $level, $data)
+    public function addSpecialMagictalent(SpecialMagictalent $specialmagictalent, $options)
     {
-        return $this->specialmagictalents()->save($specialmagictalent, ['value' => $level, 'data' => $data]);
+        $options = array_replace(['value' => null, 'data' => null], $options);
+    
+        return $this->specialmagictalents()->save($specialmagictalent, $options);
     }
     
-    public function addSpecialfightingtalent(Specialfightingtalent $specialfightingtalent, $level, $data)
+    public function addSpecialFightingtalent(Specialfightingtalent $specialfightingtalent, $options)
     {
-        return $this->specialfightingtalents()->save($specialfightingtalent, ['value' => $level, 'data' => $data]);
+        $options = array_replace(['value' => null, 'data' => null], $options);
+    
+        return $this->specialfightingtalents()->save($specialfightingtalent, $options);
     }
     
     public function addLanguage(Language $language, $value)
@@ -130,14 +136,14 @@ class Character extends Model
     {
         $options = array_replace(['value' => null, 'type' => null], $options);
     
-        return $this->benefices()->save($benefice, ['value' => $options['value'], 'type' => $options['type']]);
+        return $this->benefices()->save($benefice, $options);
     }
     
     public function addHandicap(Handicap $handicap, $options)
     {
         $options = array_replace(['value' => null, 'type' => null], $options);
     
-        return $this->handicaps()->save($handicap, ['value' => $options['value'], 'type' => $options['type']]);
+        return $this->handicaps()->save($handicap, $options);
     }
     
     public function addLettering(Lettering $lettering)

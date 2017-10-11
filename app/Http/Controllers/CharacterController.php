@@ -9,6 +9,9 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Magictrick;
+use App\Specialfightingtalent;
+use App\Specialmagictalent;
+use App\Specialtalent;
 use App\Talent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -228,6 +231,33 @@ class CharacterController extends Controller
         return 'ok';
     }
     
+    public function addSpecialTalent(Request $request, Character $character)
+    {
+        $specialtalent = Specialtalent::find($request->id);
+        $options = ['value' => $request->level, 'data' => $request->type];
+        $character->addSpecialTalent($specialtalent, $options);
+        
+        return 'ok';
+    }
+    
+    public function addSpecialFightingtalent(Request $request, Character $character)
+    {
+        $specialfightingtalent = Specialfightingtalent::find($request->id);
+        $options = ['value' => $request->level, 'data' => $request->type];
+        $character->addSpecialFightingtalent($specialfightingtalent, $options);
+        
+        return 'ok';
+    }
+    
+    public function addSpecialMagictalent(Request $request, Character $character)
+    {
+        $specialmagictalent = Specialmagictalent::find($request->id);
+        $options = ['value' => $request->level, 'data' => $request->type];
+        $character->addSpecialMagictalent($specialmagictalent, $options);
+        
+        return 'ok';
+    }
+    
     public function removeLanguage(Request $request, Character $character)
     {
         $id = $request->id;
@@ -264,6 +294,30 @@ class CharacterController extends Controller
     {
         $id = $request->id;
         $character->magictricks()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeSpecialtalent(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->specialtalents()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeSpecialfightingtalent(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->specialfightingtalents()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeSpecialmagictalent(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->specialmagictalents()->detach($id);
         
         return 'ok';
     }
