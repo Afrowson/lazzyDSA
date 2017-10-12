@@ -29,7 +29,7 @@ class DegroSeeder extends Seeder
     {
         $character = Character::create([
             'user_id' => '1',
-    
+
             'name'           => 'Degro',
             'race'           => 'Zwerg',
             'profession'     => 'Warrior',
@@ -42,7 +42,7 @@ class DegroSeeder extends Seeder
             'culture'        => 'Ambosszwerg',
             'social'         => 'Frei',
             'place_of_birth' => 'Xorlosch',
-    
+
             'MU' => '14',
             'KL' => '13',
             'IN' => '13',
@@ -51,22 +51,22 @@ class DegroSeeder extends Seeder
             'GE' => '13',
             'KO' => '14',
             'KK' => '14',
-    
+
             'lep'     => '31',
             'asp'     => '0',
             'kap'     => '0',
             'lep_max' => '36',
             'asp_max' => '0',
             'kap_max' => '0',
-    
+
             'SK' => '3',
             'ZK' => '3',
             'AW' => '7',
             'IT' => '15',
             'GW' => '6',
-    
+
             'SP' => '3',
-    
+
             'ap_total' => '1186',
             'ap_spend' => '1125',
         ]);
@@ -154,7 +154,6 @@ class DegroSeeder extends Seeder
         foreach ($ftalents as $t => $ftalent) {
             $character->addFightingtalent($ftalent, $fvalues[$t]);
         }
-    
         $handycaps = [
             ['name' => 'Angst vor', 'options' => ['value' => '1', 'type' => 'dem Meer']],
             ['name' => 'Unfähig', 'options' => ['type' => 'Schwimmen']],
@@ -166,6 +165,7 @@ class DegroSeeder extends Seeder
             $handicap = Handicap::where('name', '=', $handycap['name'])->first();
             $character->addHandicap($handicap, $handycap['options']);
         }
+    
         $beneficees = [
             ['name' => 'Dunkelsicht', 'options' => ['value' => '2']],
             ['name' => 'Reich', 'options' => ['value' => '5']],
@@ -181,6 +181,7 @@ class DegroSeeder extends Seeder
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
             $character->addBenefice($benefice, $beneficee['options']);
         }
+    
         $wids = [1, 2, 3];
         $wmods = [
             ['bonus_dmg' => '1', 'at_mod' => '1'],
@@ -216,25 +217,31 @@ class DegroSeeder extends Seeder
             $shield = Shield::find($id);
             $character->addShield($shield, $smods[$i]);
         }
+    
         $sftids = [1, 2, 9, 12, 16, 28];
-        $sftlevel = [null, 1, 1, 1, 1, 1];
-        $sftmods = [null, null, null, null, null, null];
-        
+        $sftoptions = [
+            ['value' => null, 'data' => null],
+            ['value' => 1, 'data' => null],
+            ['value' => 1, 'data' => null],
+            ['value' => 1, 'data' => null],
+            ['value' => 1, 'data' => null],
+            ['value' => 1, 'data' => null],
+        ];
         $stids = [21, 24, 30];
-        $stlevel = [null, null, null];
-        $stmods = ['Xorlosch', null, null];
-        
-        $smtids = [21, 24, 30];
-        $smtlevel = [null, null, null];
-        $smtmods = [null, null, null];
+        $stoptions = [
+            ['value' => null, 'data' => 'Xorlosch'],
+            ['value' => null, 'data' => null],
+            ['value' => null, 'data' => null],
+        ];
         
         foreach ($stids as $i => $stid) {
             $st = Specialtalent::find($stid);
-            $character->addSpecialtalent($st, $stlevel[$i], $stmods[$i]);
+            $character->addSpecialtalent($st, $stoptions[$i]);
         }
+    
         foreach ($sftids as $i => $sftid) {
             $sft = Specialfightingtalent::find($sftid);
-            $character->addSpecialfightingtalent($sft, $sftlevel[$i], $sftmods[$i]);
+            $character->addSpecialfightingtalent($sft, $sftoptions[$i]);
         }
     
         Purse::create([

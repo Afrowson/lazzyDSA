@@ -28,7 +28,7 @@
                 </select>
             </div>
             <div class="column ">Eigenschaft 2
-                <select class="input" v-model="selectedweapon.skill2">
+                <select class="input" v-model="selectedweapon.skill_two">
                     <option v-for="skill in character._skills">
                         {{skill}}
                     </option>
@@ -91,7 +91,7 @@
                             {{fightingtalent.name}}
                         </th>
                         <th>{{pickedweapon.skill}}</th>
-                        <th>{{pickedweapon.skill_2}}</th>
+                        <th>{{pickedweapon.skill_two}}</th>
                         <th>{{pickedweapon.SS}}</th>
                         <th>{{pickedweapon.dice}}</th>
                         <th>{{pickedweapon.bonus_dmg}}</th>
@@ -133,7 +133,7 @@
                     rules: this.weapons[this.selected - 1].rules,
                     fightingtalent_id: this.weapons[this.selected - 1].fightingtalent_id,
                     skill: this.weapons[this.selected - 1].skill,
-                    skill_2: this.weapons[this.selected - 1].skill_2,
+                    skill_two: this.weapons[this.selected - 1].skill_two,
                     SS: this.weapons[this.selected - 1].SS,
                     dice: this.weapons[this.selected - 1].dice,
                     bonus_dmg: this.weapons[this.selected - 1].bonus_dmg,
@@ -165,7 +165,7 @@
                             rules: weapon.rules,
                             fightingtalent_id: weapon.fightingtalent_id,
                             skill: weapon.skill,
-                            skill_2: weapon.skill_2,
+                            skill_two: weapon.skill_two,
                             SS: weapon.SS,
                             dice: weapon.dice,
                             bonus_dmg: weapon.bonus_dmg,

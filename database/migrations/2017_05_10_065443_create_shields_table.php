@@ -20,7 +20,7 @@ class CreateShieldsTable extends Migration
             $table->integer('fightingtalent_id');
 //  $table->foreign('fightingtalent_id')->references('id')->on('fightingtalents');
             $table->string('skill')->nullable();
-            $table->integer('SS')->nullable();
+            $table->integer('ss')->nullable();
             $table->integer('dice');
             $table->integer('bonus_dmg');
             $table->integer('at_mod')->nullable();

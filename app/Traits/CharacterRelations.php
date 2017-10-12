@@ -91,6 +91,11 @@ trait CharacterRelations
     {
         return $this->hasMany(Inventory::class);
     }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function purses()
     {

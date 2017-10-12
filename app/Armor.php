@@ -18,7 +18,7 @@ class Armor extends Model
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name'])) {
-            $value = $value . $this->modifiers['name'];
+            $value = $this->modifiers['name'];
         }
         
         return $value;
@@ -27,17 +27,7 @@ class Armor extends Model
     public function getRulesAttribute($value)
     {
         if (isset($this->modifiers['rules'])) {
-            $value = $value . $this->modifiers['rules'];
-        }
-        
-        return $value;
-    }
-    
-    
-    public function getWeightAttribute($value)
-    {
-        if (isset($this->modifiers['weight'])) {
-            $value = number_format($value + $this->modifiers['weight'], 2);
+            $value = $this->modifiers['rules'];
         }
         
         return $value;
@@ -61,6 +51,17 @@ class Armor extends Model
         return $value;
     }
     
+    public function getWeightAttribute($value)
+    {
+        if (isset($this->modifiers['weight'])) {
+            $value = number_format($value + $this->modifiers['weight'], 2);
+        }
+        
+        return $value;
+    }
+    
+    //creates an Array with all available keys and the
+    //coresponding value of anny modification on this Object
     public function getModifiersAttribute()
     {
         if ($this->pivot) {

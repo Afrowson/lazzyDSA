@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Weapon extends Model
 {
-    protected $fillable = ['name', 'rules', 'fightingtalent_id', 'skill', 'skill_2', 'SS', 'dice', 'bonus_dmg', 'weight', 'at_mod', 'pa_mod', 'reach'];
+    protected $fillable = ['name', 'rules', 'fightingtalent_id', 'skill', 'skill_two', 'ss', 'dice', 'bonus_dmg', 'weight', 'at_mod', 'pa_mod', 'reach'];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function characters()
@@ -18,7 +18,7 @@ class Weapon extends Model
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name'])) {
-            $value = $value . $this->modifiers['name'];
+            $value = $this->modifiers['name'];
         }
         
         return $value;
@@ -27,7 +27,43 @@ class Weapon extends Model
     public function getRulesAttribute($value)
     {
         if (isset($this->modifiers['rules'])) {
-            $value = $value . $this->modifiers['rules'];
+            $value = $this->modifiers['rules'];
+        }
+        
+        return $value;
+    }
+    
+    public function getFightingtalentIdAttribute($value)
+    {
+        if (isset($this->modifiers['fightingtalent_id'])) {
+            $value = $this->modifiers['fightingtalent_id'];
+        }
+        
+        return $value;
+    }
+    
+    public function getSkillAttribute($value)
+    {
+        if (isset($this->modifiers['skill'])) {
+            $value = $this->modifiers['skill'];
+        }
+        
+        return $value;
+    }
+    
+    public function getSkillTwoAttribute($value)
+    {
+        if (isset($this->modifiers['skill_two'])) {
+            $value = $this->modifiers['skill_two'];
+        }
+        
+        return $value;
+    }
+    
+    public function getSsAttribute($value)
+    {
+        if (isset($this->modifiers['ss'])) {
+            $value = $value + $this->modifiers['ss'];
         }
         
         return $value;
@@ -51,10 +87,10 @@ class Weapon extends Model
         return $value;
     }
     
-    public function getSSAttribute($value)
+    public function getAtModAttribute($value)
     {
-        if (isset($this->modifiers['SS'])) {
-            $value = $value + $this->modifiers['SS'];
+        if (isset($this->modifiers['at_mod'])) {
+            $value = $value + $this->modifiers['at_mod'];
         }
         
         return $value;
@@ -64,15 +100,6 @@ class Weapon extends Model
     {
         if (isset($this->modifiers['pa_mod'])) {
             $value = $value + $this->modifiers['pa_mod'];
-        }
-        
-        return $value;
-    }
-    
-    public function getAtModAttribute($value)
-    {
-        if (isset($this->modifiers['at_mod'])) {
-            $value = $value + $this->modifiers['at_mod'];
         }
         
         return $value;
@@ -92,9 +119,11 @@ class Weapon extends Model
         if (isset($this->modifiers['reach'])) {
             $value = $value + $this->modifiers['reach'];
         }
+    
         return $value;
     }
-    
+    //creates an Array with all available keys and the
+    //coresponding value of anny modification on this Object
     protected function getModifiersAttribute()
     {
         if ($this->pivot) {
@@ -122,29 +151,29 @@ class Weapon extends Model
             'required'   => false,
             'validation' => 'nullable',
         ],
-        'fightingtslent_id' => [
-            'key'        => 'fightingtslent_id',
+        'fightingtalent_id' => [
+            'key'        => 'fightingtalent_id',
             'name'       => 'Kampffertigkeit',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'skill_1'             => [
-            'key'        => 'skill_1',
+        'skill'             => [
+            'key'        => 'skill',
             'name'       => 'Eigenschaft 1',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required|min:2',
         ],
-        'skill_2'             => [
-            'key'        => 'skill_2',
+        'skill_two'         => [
+            'key'        => 'skill_two',
             'name'       => 'Eigenschaft 2',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required|min:2',
         ],
-        'SS'                => [
-            'key'        => 'SS',
+        'ss'                => [
+            'key'        => 'ss',
             'name'       => 'Schadensschwelle',
             'type'       => 'integer',
             'required'   => false,

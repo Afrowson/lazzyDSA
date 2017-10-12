@@ -29,4 +29,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
 }

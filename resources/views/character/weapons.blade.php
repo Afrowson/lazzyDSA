@@ -20,10 +20,10 @@
                 <td class="weapons-table-cell">{{$character->fightingtalents[$weapon->fightingtalent_id-1]->name }}</td>
                 <td class="weapons-table-cell-w">{{$weapon->at_mod+ $fightvalues[$weapon->fightingtalent_id-1]['at']}}</td>
                 <td class="weapons-table-cell-w">{{$weapon->pa_mod+ $fightvalues[$weapon->fightingtalent_id-1]['pa']}}</td>
-                <td class="weapons-table-cell-w">{{$weapon->dice}}W6+{{$weapon->bonus_dmg + max($character->{$weapon->skill}-$weapon->SS,0 )}}</td>
+                <td class="weapons-table-cell-w">{{$weapon->dice}}W6+{{$weapon->bonus_dmg + max($character->{$weapon->skill}-$weapon->ss,0 )}}</td>
                 <td class="weapons-table-cell">{{$weapon->reach}}</td>
                 <td class="weapons-table-cell">{{$weapon->skill}}</td>
-                <td class="weapons-table-cell">{{$weapon->SS}}</td>
+                <td class="weapons-table-cell">{{$weapon->ss}}</td>
                 <td class="weapons-table-cell">{{$weapon->dice}}W6+{{$weapon->bonus_dmg}}</td>
                 <td class="weapons-table-cell">{{$weapon->at_mod}} | {{$weapon->pa_mod}}</td>
                 <td class="weapons-table-cell">{{$weapon->weight}}</td>
@@ -39,10 +39,10 @@
                 <td class="weapons-table-cell"></td>
                 <td class="weapons-table-cell-w">{{$shield->at_mod+ $fightvalues[$shield->fightingtalent_id-1]['at']}}</td>
                 <td class="weapons-table-cell-w">{{$shield->pa_mod+ $fightvalues[$shield->fightingtalent_id-1]['pa']}}</td>
-                <td class="weapons-table-cell-w">{{$shield->dice}}W6+{{$shield->bonus_dmg + max($character->{$shield->skill}-$shield->SS,0 )}}</td>
+                <td class="weapons-table-cell-w">{{$shield->dice}}W6+{{$shield->bonus_dmg + max($character->{$shield->skill}-$shield->ss,0 )}}</td>
                 <td class="weapons-table-cell">{{$shield->reach}}</td>
                 <td class="weapons-table-cell">{{$shield->skill}}</td>
-                <td class="weapons-table-cell">{{$shield->SS}}</td>
+                <td class="weapons-table-cell">{{$shield->ss}}</td>
                 <td class="weapons-table-cell">{{$shield->dice}}W6+{{$shield->bonus_dmg}}</td>
                 <td class="weapons-table-cell">{{$shield->at_mod}} | {{$shield->pa_mod}}</td>
                 <td class="weapons-table-cell">{{$shield->weight}}</td>

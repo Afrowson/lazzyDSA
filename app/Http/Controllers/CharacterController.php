@@ -9,6 +9,7 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Magictrick;
+use App\Shield;
 use App\Specialfightingtalent;
 use App\Specialmagictalent;
 use App\Specialtalent;
@@ -255,6 +256,33 @@ class CharacterController extends Controller
         $options = ['value' => $request->level, 'data' => $request->type];
         $character->addSpecialMagictalent($specialmagictalent, $options);
         
+        return 'ok';
+    }
+    
+    public function addShield(Request $request, Character $character)
+    {
+        $shield = Shield::find($request->id);
+        $fields = Shield::$fields;
+        $modifiers = [];
+        foreach ($fields as $field) {
+        
+            if (isset($request[$field['key']]) && $request[$field['key']] != $shield[$field['key']]) {
+                if ($field['type'] != 'string') {
+                    if ($field['key'] == 'fightingtalent_id') {
+                        $modifiers['fightingtalent_id'] = $request['fightingtalent_id'];
+                    } else {
+                        $modifiers[$field['key']] = $request[$field['key']] - $shield[$field['key']];
+                    
+                    }
+                } else {
+                
+                    $modifiers[$field['key']] = $request[$field['key']];
+                }
+            }
+        
+        };
+        $character->addShield($shield, $modifiers);
+    
         return 'ok';
     }
     

@@ -15,9 +15,9 @@ class Rangeweapon extends Model
         'dice',
         'bonus_dmg',
         'weight',
-        'range_1',
-        'range_2',
-        'range_3',
+        'range_one',
+        'range_two',
+        'range_three',
     ];
     protected $hidden = ['created_at', 'updated_at'];
     
@@ -44,6 +44,33 @@ class Rangeweapon extends Model
         return $value;
     }
     
+    public function getFightingtalentIdAttribute($value)
+    {
+        if (isset($this->modifiers['fightingtalent_id'])) {
+            $value = $this->modifiers['fightingtalent_id'];
+        }
+        
+        return $value;
+    }
+    
+    public function getReloadTimeAttribute($value)
+    {
+        if (isset($this->modifiers['reload_time'])) {
+            $value = $value + $this->modifiers['reload_time'];
+        }
+        
+        return $value;
+    }
+    
+    public function getMunitionTypeAttribute($value)
+    {
+        if (isset($this->modifiers['munition_type'])) {
+            $value = $value + $this->modifiers['munition_type'];
+        }
+        
+        return $value;
+    }
+    
     public function getDiceAttribute($value)
     {
         if (isset($this->modifiers['dice'])) {
@@ -62,24 +89,6 @@ class Rangeweapon extends Model
         return $value;
     }
     
-    public function getReloadTimeAttribute($value)
-    {
-        if (isset($this->modifiers['reload_time'])) {
-            $value = $value + $this->modifiers['reload_time'];
-        }
-        
-        return $value;
-    }
-    
-    public function getMunitionTzpeAttribute($value)
-    {
-        if (isset($this->modifiers['munition_type'])) {
-            $value = $value + $this->modifiers['munition_type'];
-        }
-        
-        return $value;
-    }
-    
     public function getWeightAttribute($value)
     {
         if (isset($this->modifiers['weight'])) {
@@ -89,33 +98,35 @@ class Rangeweapon extends Model
         return $value;
     }
     
-    public function getRange1Attribute($value)
+    public function getRangeOneAttribute($value)
     {
-        if (isset($this->modifiers['range1'])) {
-            $value = $value + $this->modifiers['range1'];
+        if (isset($this->modifiers['range_one'])) {
+            $value = $value + $this->modifiers['range_one'];
         }
         
         return $value;
     }
     
-    public function getRange2Attribute($value)
+    public function getRangeTwoAttribute($value)
     {
-        if (isset($this->modifiers['range2'])) {
-            $value = $value + $this->modifiers['range2'];
+        if (isset($this->modifiers['range_two'])) {
+            $value = $value + $this->modifiers['range_two'];
         }
         
         return $value;
     }
     
-    public function getRange3Attribute($value)
+    public function getRangeThreeAttribute($value)
     {
-        if (isset($this->modifiers['range3'])) {
-            $value = $value + $this->modifiers['range3'];
+        if (isset($this->modifiers['range_three'])) {
+            $value = $value + $this->modifiers['range_three'];
         }
         
         return $value;
     }
     
+    //creates an Array with all available keys and the
+    //coresponding value of anny modification on this Object
     public function getModifiersAttribute()
     {
         if ($this->pivot) {
@@ -143,8 +154,8 @@ class Rangeweapon extends Model
             'required'   => false,
             'validation' => 'nullable',
         ],
-        'fightingtslent_id' => [
-            'key'        => 'fightingtslent_id',
+        'fightingtalent_id' => [
+            'key'        => 'fightingtalent_id',
             'name'       => 'Kampffertigkeit',
             'type'       => 'integer',
             'required'   => true,
@@ -185,22 +196,22 @@ class Rangeweapon extends Model
             'required'   => true,
             'validation' => 'required|numeric',
         ],
-        'range_1'           => [
-            'key'        => 'range_1',
+        'range_one'         => [
+            'key'        => 'range_one',
             'name'       => 'Kurze Distanz',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'range_2'           => [
-            'key'        => 'range_2',
+        'range_two'         => [
+            'key'        => 'range_two',
             'name'       => 'Mittlere Distanz',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'range_3'           => [
-            'key'        => 'range_3',
+        'range_three'       => [
+            'key'        => 'range_three',
             'name'       => 'Lange Distanz',
             'type'       => 'integer',
             'required'   => true,

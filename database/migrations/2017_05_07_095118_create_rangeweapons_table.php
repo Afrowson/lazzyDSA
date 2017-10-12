@@ -24,9 +24,9 @@ class CreateRangeweaponsTable extends Migration
             $table->integer('dice');
             $table->integer('bonus_dmg');
             $table->decimal('weight')->nullable();
-            $table->integer('range_1');
-            $table->integer('range_2');
-            $table->integer('range_3');
+            $table->integer('range_one');
+            $table->integer('range_two');
+            $table->integer('range_three');
 
             $table->timestamps();
         });

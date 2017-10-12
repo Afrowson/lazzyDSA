@@ -2,7 +2,7 @@
     <div class="addshields">
         <h1 class="title m-t-5 "> Wähle Die Schilder deines Held.</h1>
         <div class="select">
-            <select v-model="selected" v-on:change="selectshield">
+            <select v-model="selected" v-on:change="selectShield">
                 <option v-for="shield in shields" v-bind:value="shield.id">
                     {{shield.name }}
                 </option>
@@ -27,15 +27,9 @@
                     </option>
                 </select>
             </div>
-            <div class="column ">Eigenschaft 2
-                <select class="input" v-model="selectedshield.skill2">
-                    <option v-for="skill in character._skills">
-                        {{skill}}
-                    </option>
-                </select>
-            </div>
+    
             <div class="column ">SS
-                <input class="input" v-model="selectedshield.SS">
+                <input class="input" v-model="selectedshield.ss">
             </div>
             <div class="column ">Dice
                 <input class="input" v-model="selectedshield.dice">
@@ -73,7 +67,6 @@
                         <th style="min-width: 170px">Name</th>
                         <th>Kampftalent</th>
                         <th>Eigenschaft</th>
-                        <th>Eigenschaft 2</th>
                         <th>SS</th>
                         <th>Dice</th>
                         <th>Bonus&nbsp;Schaden</th>
@@ -91,8 +84,7 @@
                             {{fightingtalent.name}}
                         </th>
                         <th>{{pickedshield.skill}}</th>
-                        <th>{{pickedshield.skill_2}}</th>
-                        <th>{{pickedshield.SS}}</th>
+                        <th>{{pickedshield.ss}}</th>
                         <th>{{pickedshield.dice}}</th>
                         <th>{{pickedshield.bonus_dmg}}</th>
                         <th>{{pickedshield.at_mod}}</th>
@@ -125,39 +117,43 @@
             }
         },
         methods: {
-            selectshield(){
+            selectShield(){
                 
                 this.selectedshield = {
+    
                     id: this.shields[this.selected - 1].id,
                     name: this.shields[this.selected - 1].name,
                     rules: this.shields[this.selected - 1].rules,
                     fightingtalent_id: this.shields[this.selected - 1].fightingtalent_id,
                     skill: this.shields[this.selected - 1].skill,
-                    skill_2: this.shields[this.selected - 1].skill_2,
-                    SS: this.shields[this.selected - 1].SS,
+                    skill_two: this.shields[this.selected - 1].skill_two,
+                    ss: this.shields[this.selected - 1].ss,
                     dice: this.shields[this.selected - 1].dice,
                     bonus_dmg: this.shields[this.selected - 1].bonus_dmg,
                     at_mod: this.shields[this.selected - 1].at_mod,
                     pa_mod: this.shields[this.selected - 1].pa_mod,
                     weight: this.shields[this.selected - 1].weight,
                     reach: this.shields[this.selected - 1].reach,
-                    
                 }
+        
             },
             
             pick(){
                 this.pickedshields.unshift(this.selectedshield)
+    
+                this.selected = 1
+                this.selectShield()
             },
             
             unpick(id){
                 let index = this.pickedshields.findIndex(shield => shield.id == id);
                 this.pickedshields.splice(index, 1)
             },
-            
-            getCharacterWeapons(){
+    
+            getCharacterShields(){
                 if(Object.keys(this.character).length !== 0) {
+    
                     this.character.shields.forEach(shield => {
-                        
                         this.pickedshields.push({
                             
                             id: shield.id,
@@ -165,8 +161,8 @@
                             rules: shield.rules,
                             fightingtalent_id: shield.fightingtalent_id,
                             skill: shield.skill,
-                            skill_2: shield.skill_2,
-                            SS: shield.SS,
+                            skill_two: shield.skill_two,
+                            ss: shield.ss,
                             dice: shield.dice,
                             bonus_dmg: shield.bonus_dmg,
                             at_mod: shield.at_mod,
@@ -182,20 +178,22 @@
         mounted(){
             
             let that = this
-            
+            //get Data from server
             axios.all([
                 axios.get('/api/Shield'),
                 axios.get('/api/Fightingtalent')
             ]).then(
                 axios.spread(
+                    //Add results to Data
                     function(dbshields, ftalents) {
                         that.fightingtalents = ftalents.data
-                        that.fightingtalents.unshift('none')
-                        
                         that.shields = dbshields.data
-                        
-                        that.getCharacterWeapons()
-                        that.selectshield()
+    
+                        //get Shields from Character
+                        if(that.character.shields != null)
+                            that.getCharacterShields()
+    
+                        that.selectShield()
                     }
                 ),
             )

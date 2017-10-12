@@ -36,13 +36,13 @@
                 <input class="input" v-model="selectedrangeweapon.weight">
             </div>
             <div class="column ">Kurze Distanz
-                <input class="input" v-model="selectedrangeweapon.range_1">
+                <input class="input" v-model="selectedrangeweapon.range_one">
             </div>
             <div class="column ">Mittlere Distanz
-                <input class="input" v-model="selectedrangeweapon.range_2">
+                <input class="input" v-model="selectedrangeweapon.range_two">
             </div>
             <div class="column ">Weite Distanz
-                <input class="input" v-model="selectedrangeweapon.range_3">
+                <input class="input" v-model="selectedrangeweapon.range_three">
             </div>
         </div>
         
@@ -79,9 +79,9 @@
                         <th>{{pickedrangeweapon.dice}}</th>
                         <th>{{pickedrangeweapon.bonus_dmg}}</th>
                         <th>{{pickedrangeweapon.weight}}</th>
-                        <th>{{pickedrangeweapon.range_1}}</th>
-                        <th>{{pickedrangeweapon.range_2}}</th>
-                        <th>{{pickedrangeweapon.range_3}}</th>
+                        <th>{{pickedrangeweapon.range_one}}</th>
+                        <th>{{pickedrangeweapon.range_two}}</th>
+                        <th>{{pickedrangeweapon.range_three}}</th>
                     </tr>
                     </tbody>
                 
@@ -120,9 +120,9 @@
                     dice: this.rangeweapons[this.selected - 1].dice,
                     bonus_dmg: this.rangeweapons[this.selected - 1].bonus_dmg,
                     weight: this.rangeweapons[this.selected - 1].weight,
-                    range_1: this.rangeweapons[this.selected - 1].range_1,
-                    range_2: this.rangeweapons[this.selected - 1].range_2,
-                    range_3: this.rangeweapons[this.selected - 1].range_3,
+                    range_one: this.rangeweapons[this.selected - 1].range_one,
+                    range_two: this.rangeweapons[this.selected - 1].range_two,
+                    range_three: this.rangeweapons[this.selected - 1].range_three,
                     
                 }
             },
@@ -151,9 +151,9 @@
                             dice: rangeweapon.dice,
                             bonus_dmg: rangeweapon.bonus_dmg,
                             weight: rangeweapon.weight,
-                            range_1: rangeweapon.range_1,
-                            range_2: rangeweapon.range_2,
-                            range_3: rangeweapon.range_3,
+                            range_one: rangeweapon.range_one,
+                            range_two: rangeweapon.range_two,
+                            range_three: rangeweapon.range_three,
                             
                         })
                     })
