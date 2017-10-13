@@ -35,7 +35,7 @@
                 </select>
             </div>
             <div class="column ">SS
-                <input class="input" v-model="selectedweapon.SS">
+                <input class="input" v-model="selectedweapon.ss">
             </div>
             <div class="column ">Dice
                 <input class="input" v-model="selectedweapon.dice">
@@ -92,7 +92,7 @@
                         </th>
                         <th>{{pickedweapon.skill}}</th>
                         <th>{{pickedweapon.skill_two}}</th>
-                        <th>{{pickedweapon.SS}}</th>
+                        <th>{{pickedweapon.ss}}</th>
                         <th>{{pickedweapon.dice}}</th>
                         <th>{{pickedweapon.bonus_dmg}}</th>
                         <th>{{pickedweapon.at_mod}}</th>
@@ -134,7 +134,7 @@
                     fightingtalent_id: this.weapons[this.selected - 1].fightingtalent_id,
                     skill: this.weapons[this.selected - 1].skill,
                     skill_two: this.weapons[this.selected - 1].skill_two,
-                    SS: this.weapons[this.selected - 1].SS,
+                    ss: this.weapons[this.selected - 1].ss,
                     dice: this.weapons[this.selected - 1].dice,
                     bonus_dmg: this.weapons[this.selected - 1].bonus_dmg,
                     at_mod: this.weapons[this.selected - 1].at_mod,
@@ -146,10 +146,20 @@
             },
     
             pick(){
-                this.pickedweapons.unshift(this.selectedweapon)
+                axios.post('/api/Character/' + this.character.id + '/addweapon', this.selectedweapon).then(result => {
+                    console.log(result.data)
+                    this.selectedweapon.id = result.data
+                    this.pickedweapons.unshift(this.selectedweapon)
+                    this.selectedweapon = 1
+                    this.selectweapon()
+                })
+                
             },
     
             unpick(id){
+                axios.post('/api/Character/' + this.character.id + '/removeweapon', {'id': id}).then(result => {
+                    console.log(result.data)
+                })
                 let index = this.pickedweapons.findIndex(weapon => weapon.id == id);
                 this.pickedweapons.splice(index, 1)
             },
@@ -166,7 +176,7 @@
                             fightingtalent_id: weapon.fightingtalent_id,
                             skill: weapon.skill,
                             skill_two: weapon.skill_two,
-                            SS: weapon.SS,
+                            ss: weapon.ss,
                             dice: weapon.dice,
                             bonus_dmg: weapon.bonus_dmg,
                             at_mod: weapon.at_mod,
@@ -182,19 +192,21 @@
         mounted(){
     
             let that = this
-    
+            //get Data from server
             axios.all([
                 axios.get('/api/Weapon'),
                 axios.get('/api/Fightingtalent')
             ]).then(
                 axios.spread(
+                    //Add results to Data
                     function(dbweapons, ftalents) {
                         that.fightingtalents = ftalents.data
-                        that.fightingtalents.unshift('none')
-    
                         that.weapons = dbweapons.data
     
-                        that.getCharacterWeapons()
+                        //get Weapons from Character
+                        if(that.character.weapons != null)
+                            that.getCharacterWeapons()
+                        
                         that.selectweapon()
                     }
                 ),

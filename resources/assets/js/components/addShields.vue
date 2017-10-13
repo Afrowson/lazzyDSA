@@ -135,17 +135,23 @@
                     weight: this.shields[this.selected - 1].weight,
                     reach: this.shields[this.selected - 1].reach,
                 }
-        
+    
             },
             
             pick(){
-                this.pickedshields.unshift(this.selectedshield)
-    
-                this.selected = 1
-                this.selectShield()
+                axios.post('/api/Character/' + this.character.id + '/addshield', this.selectedshield).then(result => {
+                    console.log(result.data)
+                    this.selectedrangeweapon.id = result.data
+                    this.pickedshields.unshift(this.selectedshield)
+                    this.selected = 1
+                    this.selectShield()
+                })
             },
             
             unpick(id){
+                axios.post('/api/Character/' + this.character.id + '/removeshield', {'id': id}).then(result => {
+                    console.log(result.data)
+                })
                 let index = this.pickedshields.findIndex(shield => shield.id == id);
                 this.pickedshields.splice(index, 1)
             },

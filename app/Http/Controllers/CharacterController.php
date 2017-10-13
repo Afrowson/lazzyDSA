@@ -9,11 +9,13 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Magictrick;
+use App\Rangeweapon;
 use App\Shield;
 use App\Specialfightingtalent;
 use App\Specialmagictalent;
 use App\Specialtalent;
 use App\Talent;
+use App\Weapon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -144,6 +146,17 @@ class CharacterController extends Controller
         //
     }
     
+    public function weapons(Character $character)
+    {
+        $weapons = $character->weapons()->get();
+        foreach ($weapons as $item) {
+            $item->id = $item->pivot->id;
+        }
+        
+        
+        return $weapons;
+    }
+    
     public function updateEnergy(Character $character)
     {
         if (request()->has('lep') && $character->lep_max >= request()->lep) {
@@ -265,25 +278,90 @@ class CharacterController extends Controller
         $fields = Shield::$fields;
         $modifiers = [];
         foreach ($fields as $field) {
-        
+    
             if (isset($request[$field['key']]) && $request[$field['key']] != $shield[$field['key']]) {
                 if ($field['type'] != 'string') {
                     if ($field['key'] == 'fightingtalent_id') {
                         $modifiers['fightingtalent_id'] = $request['fightingtalent_id'];
                     } else {
                         $modifiers[$field['key']] = $request[$field['key']] - $shield[$field['key']];
-                    
                     }
                 } else {
-                
                     $modifiers[$field['key']] = $request[$field['key']];
                 }
             }
-        
         };
-        $character->addShield($shield, $modifiers);
+        $id = $character->addShield($shield, $modifiers);
     
-        return 'ok';
+        return $id;
+    }
+    
+    public function addWeapon(Request $request, Character $character)
+    {
+        $weapon = Weapon::find($request->id);
+        $fields = Weapon::$fields;
+        $modifiers = [];
+        foreach ($fields as $field) {
+            
+            if (isset($request[$field['key']]) && $request[$field['key']] != $weapon[$field['key']]) {
+                if ($field['type'] != 'string') {
+                    if ($field['key'] == 'fightingtalent_id') {
+                        $modifiers['fightingtalent_id'] = $request['fightingtalent_id'];
+                    } else {
+                        $modifiers[$field['key']] = $request[$field['key']] - $weapon[$field['key']];
+                    }
+                } else {
+                    $modifiers[$field['key']] = $request[$field['key']];
+                }
+            }
+        };
+        $id = $character->addWeapon($weapon, $modifiers);
+        
+        return $id;
+    }
+    
+    public function addRangeweapon(Request $request, Character $character)
+    {
+        $rangeweapon = Rangeweapon::find($request->id);
+        $fields = Rangeweapon::$fields;
+        $modifiers = [];
+        foreach ($fields as $field) {
+            
+            if (isset($request[$field['key']]) && $request[$field['key']] != $rangeweapon[$field['key']]) {
+                if ($field['type'] != 'string') {
+                    if ($field['key'] == 'fightingtalent_id') {
+                        $modifiers['fightingtalent_id'] = $request['fightingtalent_id'];
+                    } else {
+                        $modifiers[$field['key']] = $request[$field['key']] - $rangeweapon[$field['key']];
+                    }
+                } else {
+                    $modifiers[$field['key']] = $request[$field['key']];
+                }
+            }
+        };
+        $id = $character->addRangeweapon($rangeweapon, $modifiers);
+        
+        return $id;
+    }
+    
+    public function addArmor(Request $request, Character $character)
+    {
+        $armor = Armor::find($request->id);
+        $fields = Armor::$fields;
+        $modifiers = [];
+        foreach ($fields as $field) {
+            
+            if (isset($request[$field['key']]) && $request[$field['key']] != $armor[$field['key']]) {
+                if ($field['type'] != 'string') {
+                    $modifiers[$field['key']] = $request[$field['key']] - $armor[$field['key']];
+                } else {
+                    $modifiers[$field['key']] = $request[$field['key']];
+                }
+            }
+        };
+        $id = $character->addArmor($armor, $modifiers);
+        
+        return $id;
     }
     
     public function removeLanguage(Request $request, Character $character)
@@ -346,6 +424,30 @@ class CharacterController extends Controller
     {
         $id = $request->id;
         $character->specialmagictalents()->detach($id);
+    
+        return 'ok';
+    }
+    
+    public function removeShield(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->shields()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeWeapon(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->weapons()->detach($id);
+        
+        return 'ok';
+    }
+    
+    public function removeRangeweapon(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->rangeweapons()->detach($id);
         
         return 'ok';
     }

@@ -128,10 +128,20 @@
             },
             
             pick(){
-                this.pickedrangeweapons.unshift(this.selectedrangeweapon)
+                axios.post('/api/Character/' + this.character.id + '/addrangeweapon', this.selectedrangeweapon).then(result => {
+                    console.log(result.data)
+                    this.selectedrangeweapon.id = result.data
+                    this.pickedrangeweapons.unshift(this.selectedrangeweapon)
+                    this.selectedrangeweapon = 1
+                    this.selectrangeweapon()
+                })
+                
             },
             
             unpick(id){
+                axios.post('/api/Character/' + this.character.id + '/removerangeweapon', {'id': id}).then(result => {
+                    console.log(result.data)
+                })
                 let index = this.pickedrangeweapons.findIndex(rangeweapon => rangeweapon.id == id);
                 this.pickedrangeweapons.splice(index, 1)
             },
@@ -163,19 +173,21 @@
         mounted(){
             
             let that = this
-            
+            //get Data from server
             axios.all([
                 axios.get('/api/Rangeweapon'),
                 axios.get('/api/Fightingtalent')
             ]).then(
                 axios.spread(
+                    //Add results to Data
                     function(dbrangeweapons, ftalents) {
                         that.fightingtalents = ftalents.data
-                        that.fightingtalents.unshift('none')
-                        
                         that.rangeweapons = dbrangeweapons.data
+    
+                        //get Rangeweapons from Character
+                        if(that.character.rangeweapons != null)
+                            that.getCharacterWeapons()
                         
-                        that.getCharacterWeapons()
                         that.selectrangeweapon()
                     }
                 ),
