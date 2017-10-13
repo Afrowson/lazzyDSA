@@ -15,6 +15,15 @@ class Armor extends Model
         return $this->belongsToMany(Character::class);
     }
     
+    public function getIdAttribute($value)
+    {
+        if (isset($this->pivot)) {
+            $value = $this->pivot->id;
+        }
+        
+        return $value;
+    }
+    
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name'])) {
@@ -75,52 +84,45 @@ class Armor extends Model
     }
     
     public static $fields = [
-        
-        
-        'name'  =>
-            [
-                'key'        => 'name',
-                'name'       => 'Name',
-                'type'       => 'string',
-                'required'   => true,
-                'validation' => 'required|max:191',
-            ],
-        'rules' =>
-            [
-                'key'        => 'rules',
-                'name'       => 'Regel',
-                'type'       => 'text',
-                'required'   => false,
-                'validation' => 'nullable',
-            
-            ],
-        
-        'RS'     =>
-            [
-                'key'        => 'RS',
-                'name'       => 'RS',
-                'type'       => 'integer',
-                'required'   => true,
-                'validation' => 'integer|min:0',
-            
-            ],
-        'BE'     =>
-            [
-                'key'        => 'BE',
-                'name'       => 'BE',
-                'type'       => 'integer',
-                'required'   => true,
-                'validation' => 'integer|min:0|max:4',
-            
-            ],
-        'weight' =>
-            [
-                'key'        => 'weight',
-                'name'       => 'Gewicht',
-                'type'       => 'decimal',
-                'required'   => true,
-                'validation' => 'nullable|numeric|min:0',
-            
-            ],
+    
+        'name' => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required|max:191',
+        ],
+    
+        'rules' => [
+            'key'        => 'rules',
+            'name'       => 'Regel',
+            'type'       => 'text',
+            'required'   => false,
+            'validation' => 'nullable',
+        ],
+    
+        'RS' => [
+            'key'        => 'RS',
+            'name'       => 'RS',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'integer|min:0',
+        ],
+    
+        'BE' => [
+            'key'        => 'BE',
+            'name'       => 'BE',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'integer|min:0|max:4',
+        ],
+    
+        'weight' => [
+            'key'        => 'weight',
+            'name'       => 'Gewicht',
+            'type'       => 'decimal',
+            'required'   => true,
+            'validation' => 'nullable|numeric|min:0',
+        ],
     ];
 }

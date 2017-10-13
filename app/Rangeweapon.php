@@ -26,6 +26,15 @@ class Rangeweapon extends Model
         return $this->belongsToMany(Character::class);
     }
     
+    public function getIdAttribute($value)
+    {
+        if (isset($this->pivot)) {
+            $value = $this->pivot->id;
+        }
+        
+        return $value;
+    }
+    
     public function getNameAttribute($value)
     {
         if (isset($this->modifiers['name'])) {
@@ -140,20 +149,23 @@ class Rangeweapon extends Model
     }
     
     public static $fields = [
-        'name'              => [
+    
+        'name' => [
             'key'        => 'name',
             'name'       => 'Name',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required',
         ],
-        'rules'             => [
+    
+        'rules' => [
             'key'        => 'rules',
             'name'       => 'Regeln',
             'type'       => 'string',
             'required'   => false,
             'validation' => 'nullable',
         ],
+    
         'fightingtalent_id' => [
             'key'        => 'fightingtalent_id',
             'name'       => 'Kampffertigkeit',
@@ -161,56 +173,64 @@ class Rangeweapon extends Model
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'reload_time'       => [
+    
+        'reload_time' => [
             'key'        => 'reload_time',
             'name'       => 'Nachladezeit',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer|min:1',
         ],
-        'munition_type'     => [
+    
+        'munition_type' => [
             'key'        => 'munition_type',
             'name'       => 'Munitionsart',
             'type'       => 'string',
             'required'   => false,
             'validation' => 'nullable',
         ],
-        'dice'              => [
+    
+        'dice' => [
             'key'        => 'dice',
             'name'       => 'Würfel',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer|min:1',
         ],
-        'bonus_dmg'         => [
+    
+        'bonus_dmg' => [
             'key'        => 'bonus_dmg',
             'name'       => 'Bonusschaden',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'weight'            => [
+    
+        'weight' => [
             'key'        => 'weight',
             'name'       => 'Gewicht',
             'type'       => 'decimal',
             'required'   => true,
             'validation' => 'required|numeric',
         ],
-        'range_one'         => [
+    
+        'range_one' => [
             'key'        => 'range_one',
             'name'       => 'Kurze Distanz',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'range_two'         => [
+    
+        'range_two' => [
             'key'        => 'range_two',
             'name'       => 'Mittlere Distanz',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'range_three'       => [
+    
+        'range_three' => [
             'key'        => 'range_three',
             'name'       => 'Lange Distanz',
             'type'       => 'integer',

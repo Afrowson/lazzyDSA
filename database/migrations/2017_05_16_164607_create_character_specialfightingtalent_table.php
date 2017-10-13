@@ -19,9 +19,9 @@ class CreateCharacterSpecialfightingtalentTable extends Migration
             $table->integer('Specialfightingtalent_id');
             //$table->foreign('charaacter_id')->references('id')->on('characters');
             //$table->foreign('Specialfightingtalent_id')->references('id')->on('Specialfightingtalents');
-            $table->timestamps();
             $table->string('data')->nullable();
             $table->string('value')->nullable();
+            $table->timestamps();
         });
     }
 

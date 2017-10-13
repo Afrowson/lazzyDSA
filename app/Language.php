@@ -15,6 +15,7 @@ class Language extends Model
     }
     
     public static $fields = [
+    
         'name' => [
             'key'        => 'name',
             'name'       => 'Name',

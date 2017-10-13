@@ -19,10 +19,10 @@ class CreateCharacterSpecialtalentTable extends Migration
             $table->integer('specialtalent_id');
             //$table->foreign('charaacter_id')->references('id')->on('characters');
             //$table->foreign('specialtalent_id')->references('id')->on('specialtalent');
-            $table->timestamps();
             $table->string('data')->nullable();
             $table->string('value')->nullable();
-
+            $table->timestamps();
+    
         });
     }
 

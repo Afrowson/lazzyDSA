@@ -19,9 +19,9 @@ class CreateCharacterSpecialmagictalentTable extends Migration
             $table->integer('specialmagictalent_id');
             //$table->foreign('charaacter_id')->references('id')->on('characters');
             //$table->foreign('specialmagictalent_id')->references('id')->on('specialmagictalent');
-            $table->timestamps();
             $table->string('data')->nullable();
             $table->string('value')->nullable();
+            $table->timestamps();
         });
     }
 

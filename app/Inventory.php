@@ -38,34 +38,30 @@ class Inventory extends Model
     }
     
     public static $fields = [
-        
-        
-        'character_id' =>
-            [
-                'key'        => 'character_id',
-                'name'       => 'Character ID',
-                'type'       => 'integer',
-                'required'   => true,
-                'validation' => 'required|max:191',
-            ],
-        'location'     =>
-            [
-                'key'        => 'location',
-                'name'       => 'Ort',
-                'type'       => 'text',
-                'required'   => true,
-                'validation' => 'required|max:191',
-            
-            ],
-        'weight'       =>
-            [
-                'key'        => 'weight',
-                'name'       => 'Gewicht',
-                'type'       => 'decimal',
-                'required'   => false,
-                'validation' => 'nullable|numeric',
-            
-            ],
+    
+        'character_id' => [
+            'key'        => 'character_id',
+            'name'       => 'Character ID',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'required|max:191',
+        ],
+    
+        'location' => [
+            'key'        => 'location',
+            'name'       => 'Ort',
+            'type'       => 'text',
+            'required'   => true,
+            'validation' => 'required|max:191',
+        ],
+    
+        'weight' => [
+            'key'        => 'weight',
+            'name'       => 'Gewicht',
+            'type'       => 'decimal',
+            'required'   => false,
+            'validation' => 'nullable|numeric',
+        ],
     ];
     
 }

@@ -15,6 +15,7 @@ class Purse extends Model
     }
     
     public static $fields = [
+    
         'character_id' => [
             'key'        => 'character_id',
             'name'       => 'Character',
@@ -22,35 +23,40 @@ class Purse extends Model
             'required'   => true,
             'validation' => 'required|min:36|max:36',
         ],
-        'location'     => [
+    
+        'location' => [
             'key'        => 'location',
             'name'       => 'Ort',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required',
         ],
-        'dukaten'      => [
+    
+        'dukaten' => [
             'key'        => 'dukaten',
             'name'       => 'Dukaten',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'silber'       => [
+    
+        'silber' => [
             'key'        => 'silber',
             'name'       => 'Silber',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'heller'       => [
+    
+        'heller' => [
             'key'        => 'heller',
             'name'       => 'Heller',
             'type'       => 'integer',
             'required'   => true,
             'validation' => 'required|integer',
         ],
-        'kreuzer'      => [
+    
+        'kreuzer' => [
             'key'        => 'kreuzer',
             'name'       => 'Kreuzer',
             'type'       => 'integer',

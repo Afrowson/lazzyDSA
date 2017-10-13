@@ -15,24 +15,21 @@ class Lettering extends Model
     }
     
     public static $fields = [
-        
-        
-        'name'       =>
-            [
-                'key'        => 'name',
-                'name'       => 'Name',
-                'type'       => 'string',
-                'required'   => true,
-                'validation' => 'required|max:191',
-            ],
-        'difficulty' =>
-            [
-                'key'        => 'difficulty',
-                'name'       => 'Schwierigkeitsstufe',
-                'type'       => 'integer',
-                'required'   => true,
-                'validation' => 'nullable|integer|min:2|max:6',
-            
-            ],
+    
+        'name' => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required|max:191',
+        ],
+    
+        'difficulty' => [
+            'key'        => 'difficulty',
+            'name'       => 'Schwierigkeitsstufe',
+            'type'       => 'integer',
+            'required'   => true,
+            'validation' => 'nullable|integer|min:2|max:6',
+        ],
     ];
 }

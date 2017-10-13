@@ -22,6 +22,7 @@ class CreateCharacterShieldTable extends Migration
 
             $table->string('keys');
             $table->string('modifiers');
+            $table->timestamps();
 
         });
     }

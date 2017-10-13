@@ -17,13 +17,9 @@ class DataController extends Controller
     
         $model = $this->getModel($model);
     
-        if (isset($request) && $request->ajax()) {
-            $response = json_encode($model::all());
-        
-            return $response;
-        }
+        $data = $model::all();
     
-        return $model::all();
+        return $data;
     }
     
     /**
@@ -52,6 +48,7 @@ class DataController extends Controller
             $data[$field['key']] = request()->{$field['key']};
         }
         $model = $model::create($data);
+    
         return $model->id;
     }
     

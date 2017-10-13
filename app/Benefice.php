@@ -15,51 +15,45 @@ class Benefice extends Model
     }
     
     public static $fields = [
-        
-        
-        'name'        =>
-            [
-                'key'        => 'name',
-                'name'       => 'Name',
-                'type'       => 'string',
-                'required'   => true,
-                'validation' => 'required|max:191',
-            ],
-        'description' =>
-            [
-                'key'        => 'description',
-                'name'       => 'Beschreibung',
-                'type'       => 'text',
-                'required'   => false,
-                'validation' => 'nullable',
-            
-            ],
-        'rules'       =>
-            [
-                'key'        => 'rules',
-                'name'       => 'Regel',
-                'type'       => 'text',
-                'required'   => false,
-                'validation' => 'nullable',
-            
-            ],
-        'level'       =>
-            [
-                'key'        => 'level',
-                'name'       => 'Level',
-                'type'       => 'integer',
-                'required'   => false,
-                'validation' => 'nullable|integer|min:0|max:18',
-            
-            ],
-        'ap_cost'     =>
-            [
-                'key'        => 'ap_cost',
-                'name'       => 'AP',
-                'type'       => 'integer',
-                'required'   => false,
-                'validation' => 'nullable|integer|min:0|max:100',
-            
-            ],
+    
+        'name' => [
+            'key'        => 'name',
+            'name'       => 'Name',
+            'type'       => 'string',
+            'required'   => true,
+            'validation' => 'required|max:191',
+        ],
+    
+        'description' => [
+            'key'        => 'description',
+            'name'       => 'Beschreibung',
+            'type'       => 'text',
+            'required'   => false,
+            'validation' => 'nullable',
+        ],
+    
+        'rules' => [
+            'key'        => 'rules',
+            'name'       => 'Regel',
+            'type'       => 'text',
+            'required'   => false,
+            'validation' => 'nullable',
+        ],
+    
+        'level' => [
+            'key'        => 'level',
+            'name'       => 'Level',
+            'type'       => 'integer',
+            'required'   => false,
+            'validation' => 'nullable|integer|min:0|max:18',
+        ],
+    
+        'ap_cost' => [
+            'key'        => 'ap_cost',
+            'name'       => 'AP',
+            'type'       => 'integer',
+            'required'   => false,
+            'validation' => 'nullable|integer|min:0|max:100',
+        ],
     ];
 }
