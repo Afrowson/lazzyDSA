@@ -43,6 +43,7 @@ Route::post('/api/Character/{character}/addspecialtalent', 'CharacterController@
 Route::post('/api/Character/{character}/addspecialfightingtalent', 'CharacterController@addSpecialFightingtalent');
 Route::post('/api/Character/{character}/addspecialmagictalent', 'CharacterController@addSpecialMagictalent');
 Route::post('/api/Character/{character}/addshield', 'CharacterController@addShield');
+Route::post('/api/Character/{character}/addarmor', 'CharacterController@addArmor');
 Route::post('/api/Character/{character}/addweapon', 'CharacterController@addWeapon');
 Route::post('/api/Character/{character}/addrangeweapon', 'CharacterController@addRangeweapon');
 
@@ -55,6 +56,7 @@ Route::post('/api/Character/{character}/removespecialtalent', 'CharacterControll
 Route::post('/api/Character/{character}/removespecialfightingtalent', 'CharacterController@removeSpecialFightingtalent');
 Route::post('/api/Character/{character}/removespecialmagictalent', 'CharacterController@removeSpecialMagictalent');
 Route::post('/api/Character/{character}/removeshield', 'CharacterController@removeShield');
+Route::post('/api/Character/{character}/removearmor', 'CharacterController@removeArmor');
 Route::post('/api/Character/{character}/removeweapon', 'CharacterController@removeWeapon');
 Route::post('/api/Character/{character}/removerangeweapon', 'CharacterController@removeRangeweapon');
 

@@ -34,7 +34,7 @@
         <button v-on:click="status = 4" class="button is-medium m-b-5 m-l-5" style="width:190px">Sprachen & Schriften</button>
         <button v-on:click="status = 5" class="button is-medium m-b-5 m-l-5" style="width:190px">Vor- & Nachteile</button>
         <button v-on:click="status = 6" class="button is-medium m-b-5 m-l-5" style="width:190px">Spezialtalente</button>
-        <button v-on:click="status = 7" class="button is-medium m-b-5 m-l-5" style="width:190px">Waffen & Schilde</button>
+        <button v-on:click="status = 7" class="button is-medium m-b-5 m-l-5" style="width:190px">Waffen & Rüstung</button>
         <button v-on:click="status = 8" class="button is-medium m-b-5 m-l-5" style="width:190px">Inventare</button>
         <button v-on:click="status = 9" class="button is-medium m-b-5 m-l-5" style="width:190px">Geldbeutel</button>
         <button v-on:click="status = 10" class="button is-medium m-b-5 m-l-5" style="width:190px">Zaubertricks</button>
@@ -93,6 +93,9 @@
             </div>
             <div class="column is-full">
                 <addshields v-bind:pickedshields="pickedshields" v-bind:character="character"></addshields>
+            </div>
+            <div class="column is-full">
+                <addarmors v-bind:pickedarmors="pickedarmors" v-bind:character="character"></addarmors>
             </div>
         </div>
         <div v-show="status == 8" class="columns is-multiline">
