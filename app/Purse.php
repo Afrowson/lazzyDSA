@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purse extends Model
 {
-    protected $fillable = ['character_id', 'location', 'dukaten', 'silber', 'heller', 'kreuzer'];
+    protected $fillable = ['character_id', 'name', 'dukaten', 'silber', 'heller', 'kreuzer'];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function character()
     {
-        return $this->hasOne(Character::class);
+        return $this->belongsTo(Character::class);
     }
     
     public static $fields = [
@@ -24,9 +24,9 @@ class Purse extends Model
             'validation' => 'required|min:36|max:36',
         ],
     
-        'location' => [
-            'key'        => 'location',
-            'name'       => 'Ort',
+        'name' => [
+            'key'        => 'name',
+            'name'       => 'Name',
             'type'       => 'string',
             'required'   => true,
             'validation' => 'required',

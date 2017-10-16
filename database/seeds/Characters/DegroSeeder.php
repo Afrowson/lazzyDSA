@@ -246,7 +246,7 @@ class DegroSeeder extends Seeder
     
         Purse::create([
             'character_id' => $character->id,
-            'location'     => 'am Körper',
+            'name'         => 'am Körper',
             'dukaten'      => '28',
             'silber'       => '4',
             'heller'       => '0',

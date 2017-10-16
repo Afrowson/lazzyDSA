@@ -15,7 +15,7 @@ import addShields from './components/addShields.vue';
 import addArmors from './components/addArmors.vue';
 import addMagictricks from './components/addMagictricks.vue';
 import addInventories from './components/addInventories.vue';
-// import addPurses  from './components/addPurses.vue'
+import addPurses  from './components/addPurses.vue'
 
 require('./bootstrap');
 /**
@@ -28,7 +28,7 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 7,
+        status: 9,
         pickedtalents: [],
         pickedfightingtalents: [],
         pickedlanguages: [],
@@ -75,7 +75,7 @@ var app = new Vue({
         'addarmors': addArmors,
         'addmagictricks': addMagictricks,
         'addinventories': addInventories,
-        // 'addpurses': addPurses,
+        'addpurses': addPurses,
     },
     methods: {}
 })
@@ -168,7 +168,7 @@ var db = new Vue({
         },
         
         getFields(tables) {
-            axios.post('/api/fields', tables).then(result => {
+            axios.get('/api/fields', tables).then(result => {
                 this.all_fields = result.data
             });
         },

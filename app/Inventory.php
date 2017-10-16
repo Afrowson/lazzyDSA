@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inventory extends Model
 {
-    protected $fillable = ['character_id', 'location', 'weight'];
+    protected $fillable = ['character_id', 'name', 'weight'];
     protected $hidden = ['created_at', 'updated_at'];
     
     public function items()
@@ -47,8 +47,8 @@ class Inventory extends Model
             'validation' => 'required|max:191',
         ],
     
-        'location' => [
-            'key'        => 'location',
+        'name' => [
+            'key'        => 'name',
             'name'       => 'Ort',
             'type'       => 'text',
             'required'   => true,

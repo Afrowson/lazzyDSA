@@ -103,11 +103,11 @@
                 <addinventories :pickedinventories="pickedinventories" :character="character"></addinventories>
             </div>
         </div>
-        {{--<div v-show="status == 9" class="columns is-multiline">--}}
-        {{--<div class="column is-full">--}}
-        {{--<addpurses v-bind:pickedpurses="pickedpurses" v-bind:character="character"></addpurses>--}}
-        {{--</div>--}}
-        {{--</div>--}}
+        <div v-show="status == 9" class="columns is-multiline">
+            <div class="column is-full">
+                <addpurses v-bind:pickedpurses="pickedpurses" v-bind:character="character"></addpurses>
+            </div>
+        </div>
         <div v-show="status == 10" class="columns is-multiline">
             <div class="column is-full">
                 <addmagictricks :pickedmagictricks="pickedmagictricks" v-bind:character="character"></addmagictricks>

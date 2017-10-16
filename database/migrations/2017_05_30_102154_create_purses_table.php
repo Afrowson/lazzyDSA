@@ -17,7 +17,7 @@ class CreatePursesTable extends Migration
             $table->increments('id');
             $table->uuid('character_id');
             //$table->foreign('character_id')->references('id')->on('characters');
-            $table->string('location');
+            $table->string('name');
             $table->integer('dukaten');
             $table->integer('silber');
             $table->integer('heller');

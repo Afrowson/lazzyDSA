@@ -9,6 +9,7 @@ use App\Handicap;
 use App\Language;
 use App\Lettering;
 use App\Magictrick;
+use App\Purse;
 use App\Rangeweapon;
 use App\Shield;
 use App\Specialfightingtalent;
@@ -202,6 +203,21 @@ class CharacterController extends Controller
         return 'ok';
     }
     
+    public function updatePurse(Request $request, Character $character)
+    {
+        $updatepurse = $request->except('_token');
+        $id = $request->id;
+        $purse = $character->purses()->find($id);
+        $purse->name = $updatepurse['name'];
+        $purse->dukaten = $updatepurse['dukaten'];
+        $purse->silber = $updatepurse['silber'];
+        $purse->heller = $updatepurse['heller'];
+        $purse->kreuzer = $updatepurse['kreuzer'];
+        $purse->save();
+        
+        return 'ok';
+    }
+    
     public function addLanguage(Request $request, Character $character)
     {
         $level = $request->level;
@@ -364,6 +380,20 @@ class CharacterController extends Controller
         return $id;
     }
     
+    public function addPurse(Request $request, Character $character)
+    {
+        Purse::create([
+            'name'         => $request->name,
+            'character_id' => $request->character_id,
+            'dukaten'      => $request->dukaten,
+            'silber'       => $request->silber,
+            'heller'       => $request->heller,
+            'kreuzer'      => $request->kreuzer,
+        ])->save();
+    
+        return 'ok';
+    }
+    
     public function removeLanguage(Request $request, Character $character)
     {
         $id = $request->id;
@@ -431,7 +461,7 @@ class CharacterController extends Controller
     public function removeShield(Request $request, Character $character)
     {
         $id = $request->id;
-        $character->shields()->detach($id);
+        $character->shields()->where('pivot_id' == $id)->detach();
         
         return 'ok';
     }
@@ -439,7 +469,7 @@ class CharacterController extends Controller
     public function removeWeapon(Request $request, Character $character)
     {
         $id = $request->id;
-        $character->weapons()->detach($id);
+        $character->weapons()->where('pivot_id' == $id)->detach();
         
         return 'ok';
     }
@@ -447,7 +477,24 @@ class CharacterController extends Controller
     public function removeRangeweapon(Request $request, Character $character)
     {
         $id = $request->id;
-        $character->rangeweapons()->detach($id);
+        $character->rangeweapons()->where('pivot_id' == $id)->detach();
+    
+        return 'ok';
+    }
+    
+    public function removeArmor(Request $request, Character $character)
+    {
+        $id = $request->id;
+        $character->armors()->where('pivot_id' == $id)->detach();
+        
+        return 'ok';
+        
+    }
+    
+    public function removePurse(Request $request, Character $character)
+    {
+        $id = $request->except('_token');
+        Purse::destroy($id);
         
         return 'ok';
     }

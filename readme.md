@@ -3,7 +3,7 @@
 ### Login
 * Register/Login
 
-### CreateCharacter 8/10(12)
+### CreateCharacter 9/10(11)
 * Basics
 * Talente
 * Kampftechniken
@@ -11,6 +11,7 @@
 * Vor/Nachteile
 * Spezialtalente/Magie/Kampf
 * Waffen & Rüstungen 
+* Geldbeutel
 * Zaubertricks
 
 ### Character Einzelansicht
@@ -36,9 +37,7 @@ Inventar
 * Items hinzufügen
 * items löschen
 
-Geldbeutel
-
-(Magie)
+(Spells)
 
 ### Character Einzelansicht.
 Spells
