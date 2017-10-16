@@ -15,10 +15,8 @@ class InventoryController extends Controller
         foreach ($items as $item) {
             $item->id = $item->pivot->id;
         }
-        
-        $respone = json_encode($items);
     
-        return $respone;
+        return $items;
     }
     
     public function addItem()

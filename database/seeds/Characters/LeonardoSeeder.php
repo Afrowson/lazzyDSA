@@ -214,7 +214,7 @@ class LeonardoSeeder extends Seeder
     
         $i1 = Inventory::create([
             'character_id' => $character->id,
-            'location'     => 'am Körper',
+            'name'         => 'am Körper',
             'weight'       => '1',
         ]);
     

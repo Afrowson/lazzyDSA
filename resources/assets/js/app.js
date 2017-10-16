@@ -28,7 +28,7 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 9,
+        status: 8,
         pickedtalents: [],
         pickedfightingtalents: [],
         pickedlanguages: [],

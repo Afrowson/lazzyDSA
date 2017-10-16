@@ -254,21 +254,21 @@ class DegroSeeder extends Seeder
         ]);
         $i1 = Inventory::create([
             'character_id' => $character->id,
-            'location'     => 'am Körper',
+            'name'         => 'am Körper',
             'weight'       => '1',
         ]);
     
     
         $i2 = Inventory::create([
             'character_id' => $character->id,
-            'location'     => 'bei Alrik',
+            'name'         => 'bei Alrik',
             'weight'       => '0',
         ]);
     
     
         $i3 = Inventory::create([
             'character_id' => $character->id,
-            'location'     => 'getragen',
+            'name'         => 'getragen',
             'weight'       => '0',
         ]);
     

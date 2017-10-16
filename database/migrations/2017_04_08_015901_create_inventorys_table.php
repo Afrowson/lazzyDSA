@@ -15,15 +15,15 @@ class CreateInventorysTable extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->increments('id');
-
+    
             $table->uuid('character_id');
-
-            $table->string('location')->nullable();
+    
+            $table->string('name');
             $table->boolean('weight')->nullable();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
