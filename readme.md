@@ -37,7 +37,10 @@ Inventar
 * Items hinzufügen
 * items löschen
 
-(Spells)
+Spells
+* Hinzufügen
+* Löschen
+* Anzeigen
 
 ### Character Einzelansicht.
 Spells
@@ -49,18 +52,21 @@ Spells
 Purses
 * View
 
+## Planned:
+
+1. Single View in VUEjs
+1. Character Image
+1. Notizen erstellen können
+1. Tagebuch
+1. Custom Login
+
 ### Tagebuch
 * Diary Model/Migraation anlegen
 * Diary Übersicht view gestalten
-* Diary Create funtion
 * Diary einzelansicht/Editor gestalten
+* Diary Create funtion
 * Diary Save funktion
 
-## Planned:
-
-1. Zauber anzeigen
-
-1. Inventar verändern
 
 ## Nicht geplant:
 
@@ -76,14 +82,10 @@ Gegenstände
 
 ## Ideas: 
 
-
 Talente mit Anwendungsgebieten(Talentspezialisierung) berechnen und als Hover/Dropdown anzeigen.
+Tagebuch erweitern mit Background/Beschreibung
 
-Tagebuch/Background/Beschreibung
-
-Bild
-
-AP Werte bei erstellung und steigerung editierbar
+AP Werte bei erstellung und steigerung nutzbar
 QS einer Probe berechnen
 
 Grundwerte der Rassen/Professionen hinterlegen
