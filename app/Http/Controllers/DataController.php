@@ -14,9 +14,7 @@ class DataController extends Controller
      */
     public function index($model, Request $request = null)
     {
-    
         $model = $this->getModel($model);
-    
         $data = $model::all();
     
         return $data;
@@ -106,6 +104,8 @@ class DataController extends Controller
     {
         $model = $this->getModel($model);
         $model::find($id)->delete();
+    
+        return 'ok';
     }
     
     
@@ -121,10 +121,8 @@ class DataController extends Controller
         foreach ($models as $model) {
             $model = $this->getModel($model);
             array_push($fields, $model::$fields);
-    
         }
     
         return $fields;
-    
     }
 }

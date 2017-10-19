@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('fields', 'DataController@fields');
+Route::post('fields', 'DataController@fields');
 
 Route::post('Character/create', 'CharacterController@store');
 Route::post('Character/{character}/updatetalents', 'CharacterController@updateTalents');

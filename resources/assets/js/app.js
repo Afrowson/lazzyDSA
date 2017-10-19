@@ -168,7 +168,7 @@ var db = new Vue({
         },
         
         getFields(tables) {
-            axios.get('/api/fields', tables).then(result => {
+            axios.post('/api/fields', tables).then(result => {
                 this.all_fields = result.data
             });
         },
