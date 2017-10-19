@@ -15,27 +15,28 @@
             </div>
             <button class="is-pulled-left button m-l-5" v-on:click="addPurse()">Hinzufügen</button>
         </div>
-        <div class="is-clearfix m-t-30">
-            <div class="is-pulled-left m-l-25" style="max-width:250px">
-                Dukaten:
-                <input class="input is-large" v-model="selectedpurse.dukaten"/>
+        <div v-show="pickedpurses != []">
+            <div class="is-clearfix m-t-30">
+                <div class="is-pulled-left m-l-25" style="max-width:250px">
+                    Dukaten:
+                    <input class="input is-large" v-model="selectedpurse.dukaten"/>
+                </div>
+                <div class="is-pulled-left m-l-25" style="max-width:250px">
+                    Silbertaler:
+                    <input class="input is-large" v-model="selectedpurse.silber"/>
+                </div>
+                <div class="is-pulled-left m-l-25" style="max-width:250px">
+                    Heller:
+                    <input class="input is-large" v-model="selectedpurse.heller"/>
+                </div>
+                <div class="is-pulled-left m-l-25" style="max-width:250px">
+                    Kreuzer:
+                    <input class="input is-large" v-model="selectedpurse.kreuzer"/>
+                </div>
             </div>
-            <div class="is-pulled-left m-l-25" style="max-width:250px">
-                Silbertaler:
-                <input class="input is-large" v-model="selectedpurse.silber"/>
-            </div>
-            <div class="is-pulled-left m-l-25" style="max-width:250px">
-                Heller:
-                <input class="input is-large" v-model="selectedpurse.heller"/>
-            </div>
-            <div class="is-pulled-left m-l-25" style="max-width:250px">
-                Kreuzer:
-                <input class="input is-large" v-model="selectedpurse.kreuzer"/>
-            </div>
+            <button class="button" v-on:click="updatePurse()">Aktualisieren</button>
+            <button class="button" v-on:click="removePurse()">Löschen</button>
         </div>
-        <button class="button" v-on:click="updatePurse()">Aktualisieren</button>
-        <button class="button" v-on:click="removePurse()">Löschen</button>
-    
     </div>
 </template>
 
@@ -46,7 +47,12 @@
         
         data(){
             return {
-                selectedpurse: {},
+                selectedpurse: {
+                    dukaten: 0,
+                    silber: 0,
+                    heller: 0,
+                    kruezer: 0,
+                },
                 selected: 0,
                 name: '',
             }
@@ -97,20 +103,11 @@
                 })
                 this.selectPurse(last)
             },
-            newCharacter(){
-                this.name = 'Am Körper'
-                this.addPurse()
-                
-            }
         },
         created(){
-            if(this.character.purses != false) {
+            if(this.character.purses != null) {
                 this.getCharacterPurses()
             }
-            else {
-                this.newCharacter()
-            }
-            
         }
         
     }

@@ -198,9 +198,10 @@
             },
             save(){
                 if(this.character.id == null) {
-                    axios.post('/api/Character/create', this.character).then(result => {
+                    axios.post('/fail/Character/create', this.character).then(result => {
                         console.log(result.data)
                         this.character.id = result.data
+                        this.$emit('new_character')
                     })
                 } else {
                     axios.post('/api/Character/' + this.character.id + '/update', this.character).then(result => {

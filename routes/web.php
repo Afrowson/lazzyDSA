@@ -26,6 +26,8 @@ Route::get('/character/{character}/edit', 'CharacterViewController@editCharacter
 Route::get('/character/{character}/show', 'CharacterViewController@single');
 Route::post('/character/{character}/energy', 'CharacterController@updatEenergy');
 
+Route::post('/fail/Character/create', 'CharacterController@store');
+
 //Route::get('/character/{character}/diary', 'CharacterViewController@diary');
 
 Auth::routes();

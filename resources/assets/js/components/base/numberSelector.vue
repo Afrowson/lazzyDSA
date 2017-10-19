@@ -23,7 +23,7 @@
         },
         methods: {
             changevalue() {
-            
+    
                 this.$emit('changevalue', this.id, Number(this.selected))
             }
         }

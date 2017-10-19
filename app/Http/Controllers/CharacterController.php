@@ -46,41 +46,41 @@ class CharacterController extends Controller
                 'name'       => 'required',
                 'race'       => '|nullable',
                 'profession' => '|nullable',
-                
-                'gender'         => 'numeric|min:0|max:2',
+    
+                'gender'         => 'required|numeric|min:0|max:2',
                 'height'         => 'numeric|nullable',
                 'weight'         => 'numeric|nullable',
                 'age'            => 'numeric|nullable',
-                'hair'           => '|nullable',
-                'eyes'           => '|nullable',
-                'culture'        => '|nullable',
-                'place_of_birth' => '|nullable',
-                'title'          => '|nullable',
-                'social'         => '|nullable',
-                
-                'MU' => 'numeric|min:6|max:20',
-                'KL' => 'numeric|min:6|max:20',
-                'IN' => 'numeric|min:6|max:20',
-                'CH' => 'numeric|min:6|max:20',
-                'FF' => 'numeric|min:6|max:20',
-                'GE' => 'numeric|min:6|max:20',
-                'KO' => 'numeric|min:6|max:20',
-                'KK' => 'numeric|min:6|max:20',
-                
+                'hair'           => 'nullable',
+                'eyes'           => 'nullable',
+                'culture'        => 'nullable',
+                'place_of_birth' => 'nullable',
+                'title'          => 'nullable',
+                'social'         => 'nullable',
+    
+                'MU' => 'numeric|min:8|max:20',
+                'KL' => 'numeric|min:8|max:20',
+                'IN' => 'numeric|min:8|max:20',
+                'CH' => 'numeric|min:8|max:20',
+                'FF' => 'numeric|min:8|max:20',
+                'GE' => 'numeric|min:8|max:20',
+                'KO' => 'numeric|min:8|max:20',
+                'KK' => 'numeric|min:8|max:20',
+    
                 'lep'     => 'numeric|nullable',
                 'asp'     => 'numeric|nullable',
                 'kap'     => 'numeric|nullable',
-                'lep_max' => 'numeric|nullable',
+                'lep_max' => 'numeric',
                 'asp_max' => 'numeric|nullable',
                 'kap_max' => 'numeric|nullable',
                 'sp'      => 'numeric|nullable',
-                
+    
                 'SK' => 'numeric|nullable',
                 'ZK' => 'numeric|nullable',
                 'AW' => 'numeric|nullable',
                 'IT' => 'numeric|nullable',
                 'GW' => 'numeric|nullable',
-                
+    
                 'ap_total' => 'numeric',
                 'ap_spend' => 'numeric|nullable',
             ]);
@@ -382,7 +382,7 @@ class CharacterController extends Controller
     
     public function addPurse(Request $request, Character $character)
     {
-        Purse::create([
+        $purse = Purse::create([
             'name'         => $request->name,
             'character_id' => $request->character_id,
             'dukaten'      => $request->dukaten,

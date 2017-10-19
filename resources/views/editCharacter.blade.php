@@ -29,22 +29,22 @@
 @section('sidebar')
     <div>
         <button v-on:click="status = 1" class="button is-medium m-b-5 m-l-5" style="width:190px">Basics</button>
-        <button v-on:click="status = 2" class="button is-medium m-b-5 m-l-5" style="width:190px">Talente</button>
-        <button v-on:click="status = 3" class="button is-medium m-b-5 m-l-5" style="width:190px">Kampf-fertigkeiten</button>
-        <button v-on:click="status = 4" class="button is-medium m-b-5 m-l-5" style="width:190px">Sprachen & Schriften</button>
-        <button v-on:click="status = 5" class="button is-medium m-b-5 m-l-5" style="width:190px">Vor- & Nachteile</button>
-        <button v-on:click="status = 6" class="button is-medium m-b-5 m-l-5" style="width:190px">Spezialtalente</button>
-        <button v-on:click="status = 7" class="button is-medium m-b-5 m-l-5" style="width:190px">Waffen & Rüstung</button>
-        <button v-on:click="status = 8" class="button is-medium m-b-5 m-l-5" style="width:190px">Inventare</button>
-        <button v-on:click="status = 9" class="button is-medium m-b-5 m-l-5" style="width:190px">Geldbeutel</button>
-        <button v-on:click="status = 10" class="button is-medium m-b-5 m-l-5" style="width:190px">Zaubertricks</button>
+        <button v-show="status != 0" v-on:click="status = 2" class="button is-medium m-b-5 m-l-5" style="width:190px">Talente</button>
+        <button v-show="status != 0" v-on:click="status = 3" class="button is-medium m-b-5 m-l-5" style="width:190px">Kampf-fertigkeiten</button>
+        <button v-show="status != 0" v-on:click="status = 4" class="button is-medium m-b-5 m-l-5" style="width:190px">Sprachen & Schriften</button>
+        <button v-show="status != 0" v-on:click="status = 5" class="button is-medium m-b-5 m-l-5" style="width:190px">Vor- & Nachteile</button>
+        <button v-show="status != 0" v-on:click="status = 6" class="button is-medium m-b-5 m-l-5" style="width:190px">Spezialtalente</button>
+        <button v-show="status != 0" v-on:click="status = 7" class="button is-medium m-b-5 m-l-5" style="width:190px">Waffen & Rüstung</button>
+        <button v-show="status != 0" v-on:click="status = 8" class="button is-medium m-b-5 m-l-5" style="width:190px">Inventare</button>
+        <button v-show="status != 0" v-on:click="status = 9" class="button is-medium m-b-5 m-l-5" style="width:190px">Geldbeutel</button>
+        <button v-show="status != 0" v-on:click="status = 10" class="button is-medium m-b-5 m-l-5" style="width:190px">Zaubertricks</button>
     </div>
 @endsection
 
 @section('content')
     <div>
-        <div v-show="status == 1">
-            <addcharacter v-bind:character="character"></addcharacter>
+        <div v-show="status == 1 || status == 0">
+            <addcharacter v-bind:character="character" v-on:new_character="new_character"></addcharacter>
         </div>
         <div v-show="status == 2">
             <addtalents :pickedtalents="pickedtalents" v-bind:character="character"></addtalents>

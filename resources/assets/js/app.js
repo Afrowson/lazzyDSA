@@ -28,7 +28,7 @@ var app = new Vue({
     el: '#app',
     
     data: {
-        status: 8,
+        status: 0,
         pickedtalents: [],
         pickedfightingtalents: [],
         pickedlanguages: [],
@@ -77,7 +77,17 @@ var app = new Vue({
         'addinventories': addInventories,
         'addpurses': addPurses,
     },
-    methods: {}
+    methods: {
+        new_character(){
+            this.status = 1
+        }
+    },
+    
+    mounted(){
+        if(this.character.id) {
+            this.status = 1
+        }
+    }
 })
 
 import addEntry from './components/database/addEntry.vue'
