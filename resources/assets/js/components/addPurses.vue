@@ -2,7 +2,6 @@
     <div>
         <h1 class="title is-3">Verwalte die Geldbeutel deines Helden</h1>
         <div class="is-clearfix">
-    
             <div v-show="pickedpurses != false" class="is-pulled-left select">
                 <select v-model="selected" v-on:change="selectPurse(selected)">
                     <option v-for="purse in pickedpurses" v-bind:value="purse.id">
@@ -15,7 +14,7 @@
             </div>
             <button class="is-pulled-left button m-l-5" v-on:click="addPurse()">Hinzufügen</button>
         </div>
-        <div v-show="pickedpurses != []">
+        <div v-show="pickedpurses != false">
             <div class="is-clearfix m-t-30">
                 <div class="is-pulled-left m-l-25" style="max-width:250px">
                     Dukaten:
@@ -80,7 +79,10 @@
                     console.log(result.data)
                     let index = this.pickedpurses.findIndex(purse => purse.id == this.selected);
                     this.pickedpurses.splice(index, 1)
-                    this.selectPurse(this.pickedpurses[0].id)
+                    if(this.pickedpurses != []) {
+                        this.selectPurse(this.pickedpurses[0].id)
+                    }
+                    
                 })
             },
             selectPurse(id){
@@ -91,7 +93,8 @@
             updatePurse(){
                 axios.post('/api/Character/' + this.character.id + '/updatepurse', this.selectedpurse).then(result => {
                     console.log(result.data)
-                    this.pickedpurses[1] = this.selectedpurse
+                    let index = this.pickedpurses.findIndex(purse => purse.id == this.selectedpurse.id);
+                    this.pickedpurses[index] = this.selectedpurse
                 })
                 
             },
@@ -105,7 +108,7 @@
             },
         },
         created(){
-            if(this.character.purses != null) {
+            if(this.character.purses != null && this.character.purses != false) {
                 this.getCharacterPurses()
             }
         }

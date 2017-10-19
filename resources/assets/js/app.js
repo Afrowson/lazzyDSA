@@ -84,7 +84,7 @@ var app = new Vue({
     },
     
     mounted(){
-        if(this.character.id) {
+        if(this.character && this.character.id) {
             this.status = 1
         }
     }
