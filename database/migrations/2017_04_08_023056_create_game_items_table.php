@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInventoryItemsTable extends Migration
+class CreateGameItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,20 @@ class CreateInventoryItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventory_item', function (Blueprint $table) {
+        Schema::create('game_items', function (Blueprint $table) {
             $table->increments('id');
-
+        
             $table->integer('inventory_id')->unsigned();
             $table->foreign('inventory_id')->references('id')->on('inventories');
-
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
-
-            $table->integer('amount')->default('1') ;
+            $table->integer('amount')->default('1');
             $table->text('notes')->nullable();
-
+        
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

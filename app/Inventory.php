@@ -11,7 +11,7 @@ class Inventory extends Model
     
     public function items()
     {
-        $items = $this->belongsToMany(Item::class)->withPivot('id', 'amount', 'notes');
+        $items = $this->hasMany(GameItem::class);
         
         return $items;
     }
@@ -19,22 +19,6 @@ class Inventory extends Model
     public function character()
     {
         return $this->belongsTo(Character::class);
-    }
-    
-    public function addItem(Item $item, $amount, $notes)
-    {
-    
-        return $this->items()->save($item, ['amount' => $amount, 'notes' => $notes]);
-    }
-    
-    public function deleteItem($id)
-    {
-        return $this->items()->detach($id);
-    }
-    
-    public function deleteItems()
-    {
-        return $this->items()->detach();
     }
     
     public static $fields = [

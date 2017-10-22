@@ -46,7 +46,7 @@ class CharacterController extends Controller
                 'name'       => 'required',
                 'race'       => '|nullable',
                 'profession' => '|nullable',
-    
+
                 'gender'         => 'required|numeric|min:0|max:2',
                 'height'         => 'numeric|nullable',
                 'weight'         => 'numeric|nullable',
@@ -57,7 +57,7 @@ class CharacterController extends Controller
                 'place_of_birth' => 'nullable',
                 'title'          => 'nullable',
                 'social'         => 'nullable',
-    
+
                 'MU' => 'numeric|min:8|max:20',
                 'KL' => 'numeric|min:8|max:20',
                 'IN' => 'numeric|min:8|max:20',
@@ -66,7 +66,7 @@ class CharacterController extends Controller
                 'GE' => 'numeric|min:8|max:20',
                 'KO' => 'numeric|min:8|max:20',
                 'KK' => 'numeric|min:8|max:20',
-    
+
                 'lep'     => 'numeric|nullable',
                 'asp'     => 'numeric|nullable',
                 'kap'     => 'numeric|nullable',
@@ -74,13 +74,13 @@ class CharacterController extends Controller
                 'asp_max' => 'numeric|nullable',
                 'kap_max' => 'numeric|nullable',
                 'sp'      => 'numeric|nullable',
-    
+
                 'SK' => 'numeric|nullable',
                 'ZK' => 'numeric|nullable',
                 'AW' => 'numeric|nullable',
                 'IT' => 'numeric|nullable',
                 'GW' => 'numeric|nullable',
-    
+
                 'ap_total' => 'numeric',
                 'ap_spend' => 'numeric|nullable',
             ]);
@@ -382,15 +382,15 @@ class CharacterController extends Controller
     
     public function addPurse(Request $request, Character $character)
     {
-        $purse = Purse::create([
+        Purse::create([
             'name'         => $request->name,
             'character_id' => $request->character_id,
             'dukaten'      => $request->dukaten,
             'silber'       => $request->silber,
             'heller'       => $request->heller,
             'kreuzer'      => $request->kreuzer,
-        ])->save();
-    
+        ]);
+        
         return 'ok';
     }
     

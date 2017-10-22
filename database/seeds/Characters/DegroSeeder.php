@@ -4,6 +4,7 @@ use App\Armor;
 use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
+use App\GameItem;
 use App\Handicap;
 use App\Inventory;
 use App\Item;
@@ -132,10 +133,12 @@ class DegroSeeder extends Seeder
             4,
             0,
         ];
+    
         $talents = Talent::all();
         foreach ($talents as $t => $talent) {
             $character->addTalent($talent, $tvalues[$t]);
         }
+    
         $languages = [8, 17];
         $lvalues = [3, 4];
     
@@ -145,15 +148,19 @@ class DegroSeeder extends Seeder
         }
     
         $letterings = [9, 11];
+    
         foreach ($letterings as $id) {
             $lett = Lettering::find($id);
             $character->addLettering($lett);
         }
+    
         $fvalues = [6, 6, 13, 6, 6, 10, 12, 6, 6, 6, 6, 13, 6, 6];
         $ftalents = Fightingtalent::all();
+    
         foreach ($ftalents as $t => $ftalent) {
             $character->addFightingtalent($ftalent, $fvalues[$t]);
         }
+    
         $handycaps = [
             ['name' => 'Angst vor', 'options' => ['value' => '1', 'type' => 'dem Meer']],
             ['name' => 'Unfähig', 'options' => ['type' => 'Schwimmen']],
@@ -161,6 +168,7 @@ class DegroSeeder extends Seeder
             ['name' => 'Persönlichkeitsschwäche', 'options' => ['type' => 'Vorurteil(Elfen)']],
             ['name' => 'Schlechte Eigenschaft', 'options' => ['type' => 'Geiz']],
         ];
+    
         foreach ($handycaps as $handycap) {
             $handicap = Handicap::where('name', '=', $handycap['name'])->first();
             $character->addHandicap($handicap, $handycap['options']);
@@ -177,6 +185,7 @@ class DegroSeeder extends Seeder
             ['name' => 'Waffenbegabung', 'options' => ['type' => 'Hiebwaffen']],
             ['name' => 'Schlechte Eigenschaft', 'options' => ['type' => 'Geiz']],
         ];
+    
         foreach ($beneficees as $beneficee) {
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
             $character->addBenefice($benefice, $beneficee['options']);
@@ -205,14 +214,17 @@ class DegroSeeder extends Seeder
             $weapon = Weapon::find($id);
             $character->addWeapon($weapon, $wmods[$i]);
         }
+    
         foreach ($rwids as $i => $id) {
             $rangeweapon = Rangeweapon::find($id);
             $character->addRangeweapon($rangeweapon, $rwmods[$i]);
         }
+    
         foreach ($aids as $i => $id) {
             $armor = Armor::find($id);
             $character->addArmor($armor, $amods[$i]);
         }
+    
         foreach ($sids as $i => $id) {
             $shield = Shield::find($id);
             $character->addShield($shield, $smods[$i]);
@@ -252,12 +264,12 @@ class DegroSeeder extends Seeder
             'heller'       => '0',
             'kreuzer'      => '0',
         ]);
+    
         $i1 = Inventory::create([
             'character_id' => $character->id,
             'name'         => 'am Körper',
             'weight'       => '1',
         ]);
-    
     
         $i2 = Inventory::create([
             'character_id' => $character->id,
@@ -265,13 +277,11 @@ class DegroSeeder extends Seeder
             'weight'       => '0',
         ]);
     
-    
         $i3 = Inventory::create([
             'character_id' => $character->id,
             'name'         => 'getragen',
             'weight'       => '0',
         ]);
-    
     
         $iids1 = [62, 101, 146, 147, 199, 201];
         $ia1 = [1, 1, 1, 1, 1, 1];
@@ -305,18 +315,29 @@ class DegroSeeder extends Seeder
         $ia1[] = 1;
     
         foreach ($iids1 as $i => $iid) {
-            $item = Item::find($iid);
-            $i1->addItem($item, $ia1[$i], null);
+            GameItem::create([
+                'item_id'      => $iid,
+                'inventory_id' => $i1->id,
+                'amount'       => $ia1[$i],
+                'notes'        => null,
+            ]);
         }
         foreach ($iids2 as $i => $iid) {
-            $item = Item::find($iid);
-            $i2->addItem($item, $ia2[$i], null);
+            GameItem::create([
+                'item_id'      => $iid,
+                'inventory_id' => $i2->id,
+                'amount'       => $ia1[$i],
+                'notes'        => null,
+            ]);
         }
         foreach ($iids3 as $i => $iid) {
-            $item = Item::find($iid);
-            $i3->addItem($item, $ia3[$i], null);
+            GameItem::create([
+                'item_id'      => $iid,
+                'inventory_id' => $i3->id,
+                'amount'       => $ia1[$i],
+                'notes'        => null,
+            ]);
         }
-    
     }
     
 }

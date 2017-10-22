@@ -49,6 +49,10 @@ Spells
 Purses
 * View
 
+
+### Middleware
+* Cookies for Auth.
+
 ### Tagebuch
 * Diary Model/Migraation anlegen
 * Diary Übersicht view gestalten

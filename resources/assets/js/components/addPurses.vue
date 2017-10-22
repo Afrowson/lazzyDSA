@@ -74,6 +74,7 @@
                     this.selectPurse(purse.id)
                 })
             },
+    
             removePurse(){
                 axios.post('/api/Character/' + this.character.id + '/removepurse', {'id': this.selected}).then(result => {
                     console.log(result.data)
@@ -88,16 +89,16 @@
             selectPurse(id){
                 this.selected = id
                 this.selectedpurse = this.pickedpurses.find(purse => purse.id === id)
-                
             },
+    
             updatePurse(){
                 axios.post('/api/Character/' + this.character.id + '/updatepurse', this.selectedpurse).then(result => {
                     console.log(result.data)
                     let index = this.pickedpurses.findIndex(purse => purse.id == this.selectedpurse.id);
                     this.pickedpurses[index] = this.selectedpurse
                 })
-                
             },
+    
             getCharacterPurses(){
                 let last
                 this.character.purses.forEach(purse => {

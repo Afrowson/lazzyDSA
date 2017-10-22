@@ -19,8 +19,6 @@ class CreateItemsTable extends Migration
             $table->string('description')->nullable();
             $table->decimal('value')->nullable();
             $table->decimal('weight')->nullable();
-            $table->longText('datajson')->nullable();
-
 
             $table->timestamps();
         });

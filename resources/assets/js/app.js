@@ -96,7 +96,7 @@ var db = new Vue({
     el: '#db',
     
     data: {
-        tables: ['Armor', 'Benefice', 'Fightingtalent', 'Handicap', 'Inventory', 'Item', 'Language',
+        tables: ['Armor', 'Benefice', 'Fightingtalent', 'Handicap', 'Item', 'Language',
             'Lettering', 'Magictrick', 'Purse', 'Rangeweapon', 'Shield', 'Specialfightingtalent',
             'Specialmagictalent', 'Specialtalent', 'Talent', 'Weapon'],
         selected_table_name: null,

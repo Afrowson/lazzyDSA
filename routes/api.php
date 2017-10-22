@@ -52,9 +52,12 @@ Route::post('Character/{character}/removerangeweapon', 'CharacterController@remo
 Route::post('Character/{character}/removepurse', 'CharacterController@removePurse');
 
 
-Route::get('Inventory/{inventory}/Items', 'InventoryController@items');
+Route::get('Inventory/{inventory}/items', 'InventoryController@items');
 Route::post('Inventory/{inventory}/delete', 'InventoryController@delete');
-Route::post('Inventory/{inventory}/addItem', 'InventoryController@addItem');
+
+Route::post('GameItem/create', 'GameItemController@store');
+Route::post('GameItem/{gameItem}/update', 'GameItemController@update');
+Route::post('GameItem/{gameItem}/delete', 'GameItemController@destroy');
 
 Route::get('{model}', 'DataController@index');
 Route::post('{model}/create', 'DataController@store');

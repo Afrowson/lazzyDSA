@@ -4,6 +4,7 @@ use App\Armor;
 use App\Benefice;
 use App\Character;
 use App\Fightingtalent;
+use App\GameItem;
 use App\Handicap;
 use App\Inventory;
 use App\Item;
@@ -27,7 +28,7 @@ class LeonardoSeeder extends Seeder
     {
         $character = Character::create([
             'user_id' => '1',
-    
+
             'name'       => 'Leonardo Descartes',
             'race'       => 'Mensch',
             'profession' => 'Grau Magier',
@@ -40,7 +41,7 @@ class LeonardoSeeder extends Seeder
             'culture'    => 'Horasier',
             'social'     => 'Frei',
             'title'      => 'Adeptuus',
-    
+
             'MU' => '13',
             'KL' => '14',
             'IN' => '14',
@@ -49,22 +50,22 @@ class LeonardoSeeder extends Seeder
             'GE' => '10',
             'KO' => '12',
             'KK' => '12',
-    
+
             'lep'     => '29',
             'asp'     => '32',
             'kap'     => '0',
             'lep_max' => '29',
             'asp_max' => '34',
             'kap_max' => '0',
-    
+
             'SK' => '2',
             'ZK' => '1',
             'AW' => '5',
             'IT' => '12',
             'GW' => '8',
-    
+
             'SP' => '3',
-    
+
             'ap_total' => '1100',
             'ap_spend' => '1100',
         ]);
@@ -130,10 +131,13 @@ class LeonardoSeeder extends Seeder
             0,
             0,
         ];
+    
         $talents = Talent::all();
+    
         foreach ($talents as $t => $talent) {
             $character->addTalent($talent, $tvalues[$t]);
         }
+    
         $languages = [6, 8, 23];
         $lvalues = [2, 4, 1];
     
@@ -143,12 +147,15 @@ class LeonardoSeeder extends Seeder
         }
     
         $letterings = [7, 9, 14];
+    
         foreach ($letterings as $id) {
             $lett = Lettering::find($id);
             $character->addLettering($lett);
         }
+    
         $fvalues = [6, 6, 6, 6, 6, 6, 6, 6, 10, 6, 6, 6, 6, 6];
         $ftalents = Fightingtalent::all();
+    
         foreach ($ftalents as $t => $ftalent) {
             $character->addFightingtalent($ftalent, $fvalues[$t]);
         }
@@ -171,10 +178,9 @@ class LeonardoSeeder extends Seeder
             $benefice = Benefice::where('name', '=', $beneficee['name'])->first();
             $character->addBenefice($benefice, $beneficee['options']);
         }
+    
         $wids = [4];
-        $wmods = [
-            [],
-        ];
+        $wmods = [[]];
         $aids = [1];
         $amods = [
             ['name' => ' eines Magiers', 'weight' => '+2'],
@@ -218,7 +224,6 @@ class LeonardoSeeder extends Seeder
             'weight'       => '1',
         ]);
     
-    
         $iids1 = [46, 48, 64, 70, 97, 127, 131, 136, 146, 147, 199, 200];
         $ia1 = [1, 1, 1, 1, 1, 1, 10, 1, 25, 1, 1, 1,];
     
@@ -238,18 +243,19 @@ class LeonardoSeeder extends Seeder
         $ia1[] = 16;
     
         foreach ($iids1 as $i => $iid) {
-            $item = Item::find($iid);
-            $i1->addItem($item, $ia1[$i], null);
-            
-        };
-    
+            GameItem::create([
+                'item_id'      => $iid,
+                'inventory_id' => $i1->id,
+                'amount'       => $ia1[$i],
+                'notes'        => null,
+            ]);
+        }
+        
         $mtids = [13, 14, 5, 15, 16, 17, 18, 19, 20, 21];
     
         foreach ($mtids as $mtid) {
             $trick = Magictrick::find($mtid);
             $character->addMagictrick($trick);
         }
-    
-    
     }
 }

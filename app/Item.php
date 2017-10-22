@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $fillable = ['name', 'description', 'value', 'weight', 'datajason'];
+    protected $fillable = ['name', 'description', 'value', 'weight'];
     protected $hidden = ['created_at', 'updated_at'];
     
-    public function inventories()
+    public function game_items()
     {
-        return $this->belongsToMany(Inventory::class);
+        return $this->hasMany(GameItem::class);
     }
     
     public static $fields = [
@@ -37,7 +37,7 @@ class Item extends Model
             'name'       => 'Wert',
             'type'       => 'decimal',
             'required'   => false,
-            'validation' => 'nullable|numeric|min:0|max:18',
+            'validation' => 'nullable|numeric|min:0',
         ],
     
         'weight' => [
@@ -48,12 +48,5 @@ class Item extends Model
             'validation' => 'nullable|numeric|min:0',
         ],
     
-        'datajson' => [
-            'key'        => 'datajson',
-            'name'       => 'Daten',
-            'type'       => 'text',
-            'required'   => false,
-            'validation' => 'nullable|json',
-        ],
     ];
 }
