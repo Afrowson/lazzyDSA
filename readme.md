@@ -3,55 +3,43 @@
 ### Login
 * Register/Login
 
-### CreateCharacter 9/10(11)
-* Basics
-* Talente
-* Kampftechniken
-* Sprachen/Schriften
-* Vor/Nachteile
-* Spezialtalente/Magie/Kampf
-* Waffen & Rüstungen 
-* Geldbeutel
-* Zaubertricks
+### CreateCharacter 10/10(11)
 
-### Character Einzelansicht
-* Stats
-* Skills
-* Talente
-* Kampftechniken
-* Vor-/Nachteile
-* Waffen und Rüsuntungen
-* Sonderfertigkeiten/Kampf/Magie
-* Zaubertricks
-* Inventare
-* Sprachen / Schriften
-* Lep/AsP/Kap/SP updatebar
+Heroes can be Created and Updated.
+You have to check for your selfe if everyting is right.
+Validation isn`t done.
 
-### Datenbank Bearbeitung
+### Character SingleView
+
+allmost everything about your Heroes can be shown.
+LeP/AsP/KaP can be updated.
+But it looks bad.
+Spells and Purses are missing.
+
+### Edit Database
+Every Object that can be given to a Character,
+can be added/updated/deleted.
 
 ## Tasks:
 
-### Edit Character
+###RoleSystem for the Databasese.
+* add a Verrified key to Users
+* only show DB Button if Verified User
 
-Inventar
-* Items hinzufügen
-* items löschen
+### Middleware
+* Cookies for Auth.
 
-(Spells)
+### Reworke Items
+* ????
 
-### Character Einzelansicht.
-Spells
+###Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
 
-Purses
+###Purses
 * View
-
-
-### Middleware
-* Cookies for Auth.
 
 ### Tagebuch
 * Diary Model/Migraation anlegen

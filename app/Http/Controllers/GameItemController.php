@@ -11,7 +11,7 @@ use Illuminate\Validation\Rules\In;
 
 class GameItemController extends Controller
 {
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $item = GameItem::create([
             'item_id'      => $request->item_id,

@@ -29,6 +29,12 @@
                 </div>
                 <button class="button" v-on:click="removeItem(item.id)">Entfernen</button>
             </div>
+            <div class="column is-narrow box m-r-10" style="min-width: 300px" v-on:click="addItem">
+                <div class="m-t-15 m-l-15">
+                    <h1 class="title is-3">Neues Item</h1>
+                    <h1 class="title is-3">Anlegen</h1>
+                </div>
+            </div>
         </div>
     
     
@@ -126,6 +132,7 @@
                     this.selectInventory(this.pickedinventories[0].id)
                 })
             },
+    
             editItem(item){
                 this.selecteditem = item
                 this.togle = 1
@@ -139,10 +146,33 @@
                 this.selecteditem.weight = updated_item.weight
                 this.selecteditem.amount = updated_item.amount
                 this.selecteditem.notes = updated_item.notes
-                axios.post('/api/GameItem/' + this.selecteditem.id + '/update', this.selecteditem).then(
-                    response => {
-                        console.log(response.data)
-                    })
+    
+                if(this.selecteditem.id != undefined) {
+                    axios.post('/api/GameItem/' + this.selecteditem.id + '/update', this.selecteditem).then(
+                        response => {
+                            console.log(response.data)
+                        })
+                } else {
+                    axios.post('/api/GameItem/create', this.selecteditem).then(
+                        response => {
+                            console.log(response.data)
+                            this.selecteditem.id = response.data
+                            this.selecteditems.push(this.selecteditem)
+                        })
+                }
+            },
+            addItem(){
+                this.selecteditem = {
+                    item_id: 1,
+                    inventory_id: this.selectedinventory.id,
+                    name: '',
+                    description: '',
+                    value: '0',
+                    weight: '0',
+                    amount: '1',
+                    notes: '',
+                }
+                this.togle = 1
             },
             removeItem(id){
                 let index = this.selecteditems.findIndex(item => item.id === id)
@@ -150,9 +180,6 @@
                 axios.post('/api/GameItem/' + id + '/delete')
                 
             }
-        },
-        created(){
-        
         },
         
         mounted(){
