@@ -14,7 +14,7 @@ Validation isn`t done.
 allmost everything about your Heroes can be shown.
 LeP/AsP/KaP can be updated.
 But it looks bad.
-Spells and Purses are missing.
+Spells are missing.
 
 ### Edit Database
 Every Object that can be given to a Character,
@@ -36,9 +36,6 @@ can be added/updated/deleted.
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
-* View
-
-###Purses
 * View
 
 ### Tagebuch

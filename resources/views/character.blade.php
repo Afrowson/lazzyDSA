@@ -52,6 +52,9 @@
     <div class="is-pulled-left">
         @include('character.inventory')
     </div>
+    <div class="is-pulled-left">
+        @include('character.purse')
+    </div>
 @endsection
 
 @section('sidebar')
