@@ -32,13 +32,13 @@ can be added/updated/deleted.
 ### Reworke Items
 * ????
 
-###Spells
+### Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
 
-###Purses
+### Purses
 * View
 
 ### Tagebuch
