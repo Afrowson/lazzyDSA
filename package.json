@@ -10,7 +10,7 @@
   "devDependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
-    "bulma": "^0.4.4",
+      "bulma": "^0.6.0",
     "cross-env": "^3.2.3",
     "jquery": "^3.1.1",
     "laravel-mix": "^0.8.3",

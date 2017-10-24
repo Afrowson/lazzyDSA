@@ -1,11 +1,11 @@
-<div class="is-clearfix magictrick-container">
-    @if($character->magictricks->first())
-        <h4>Zaubertricks</h4>
-        <table class=" clearfix magictrick-block">
-            <tr class="weapons-table-cell">
+@if(!is_null($character->magictricks->first()))
+    <div class="box is-pulled-left m-r-10">
+        <h4 class="title is-4">Zaubertricks</h4>
+        <table class="table is-narrow">
+            <tr>
                 <th style="width: 50px">Name</th>
                 <th style="width: 50px">Reichweite</th>
-                <th style="width: 80px">Dauer</th>
+                <th style="width: 105px">Dauer</th>
                 <th style="width: 50px">Ziel</th>
                 <th style="width: 50px">Merkmal</th>
             </tr>
@@ -19,5 +19,5 @@
                 </tr>
             @endforeach
         </table>
-    @endif
-</div>
+    </div>
+@endif

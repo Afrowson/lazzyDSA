@@ -50,7 +50,7 @@ class CharacterViewController extends Controller
     
     public function single(Character $character)
     {
-        $talentgroups = ['Körper', 'Gesellschaft', 'Natur', 'Wissen', 'Handwerk'];
+        $talentgroups = ['Handwerk', 'Gesellschaft', 'Natur', 'Körper', 'Wissen'];
         $fightvalues = $character->fightingvalues();
     
         return view('character', compact('character', 'talentgroups', 'fightvalues'));

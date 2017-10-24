@@ -390,12 +390,12 @@ class TalentsSeeder extends Seeder
             'group' => 'Handwerk',
         ]);
         Talent::create([
-            'name' => 'Heilkunde Krankheiten',
-            'first_skill' => 'MU',
-            'second_skill' => 'IN',
-            'third_skill' => 'KO',
+            'name'            => 'Heilkunde Krankheit.',
+            'first_skill'     => 'MU',
+            'second_skill'    => 'IN',
+            'third_skill'     => 'KO',
             'increase_factor' => '1',
-            'group' => 'Handwerk',
+            'group'           => 'Handwerk',
         ]);
         Talent::create([
             'name' => 'Heilkunde Seele',
@@ -422,12 +422,12 @@ class TalentsSeeder extends Seeder
             'group' => 'Handwerk',
         ]);
         Talent::create([
-            'name' => 'Lebensmittelbearbeitung',
-            'first_skill' => 'IN',
-            'second_skill' => 'FF',
-            'third_skill' => 'FF',
+            'name'            => 'Lebensmittelbear.',
+            'first_skill'     => 'IN',
+            'second_skill'    => 'FF',
+            'third_skill'     => 'FF',
             'increase_factor' => '0',
-            'group' => 'Handwerk',
+            'group'           => 'Handwerk',
         ]);
         Talent::create([
             'name' => 'Lederbearbeitung',
