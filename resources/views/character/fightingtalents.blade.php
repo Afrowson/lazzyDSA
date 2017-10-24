@@ -8,8 +8,8 @@
     @foreach($character->fightingtalents as $i=> $fightingtalent)
         <div class="is-clearfix">
             <b class="is-pulled-left ">{{$fightingtalent->name}}</b>
-            <p class="is-pulled-right value-box">{{$fightvalues[$i]['pa']}}</p>
-            <p class="is-pulled-right value-box">{{$fightvalues[$i]['at']}}</p>
+            <p class="is-pulled-right value-box">{{$character->fightvalues[$i]['pa']}}</p>
+            <p class="is-pulled-right value-box">{{$character->fightvalues[$i]['at']}}</p>
             <p class="is-pulled-right value-box">{{$fightingtalent->pivot->value}}</p>
         </div>
     @endforeach

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\CharacterTalent;
 use App\Character;
-use App\Fightingtalent;
-use App\Talent;
 use JavaScript;
 
 
@@ -51,9 +49,9 @@ class CharacterViewController extends Controller
     public function single(Character $character)
     {
         $talentgroups = ['Handwerk', 'Gesellschaft', 'Natur', 'Körper', 'Wissen'];
-        $fightvalues = $character->fightingvalues();
+        $character->fightvalues = $character->fightingvalues();
     
-        return view('character', compact('character', 'talentgroups', 'fightvalues'));
+        return view('character', compact('character', 'talentgroups'));
     }
     
     public function diary(Character $character)
