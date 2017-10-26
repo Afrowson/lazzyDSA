@@ -18,5 +18,5 @@ mix.js([
 
     'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .copy('node_modules/tinymce/', 'public/js/tinymce/', false)
+// .copy('node_modules/tinymce/', 'public/js/tinymce/', false)
 

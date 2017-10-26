@@ -16,7 +16,7 @@ return [
     |
     */
     
-    'driver' => env('SESSION_DRIVER', 'file'),
+    'driver'   => env('SESSION_DRIVER', 'file'),
     
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
     //@todo kürzer machen
-    'lifetime' => 9999999999,
+    'lifetime' => 9999,
     
     'expire_on_close' => false,
     

@@ -22,18 +22,18 @@
                         $amount+= $item->amount;
                     @endphp
                     <tr>
-                        <td>{{$item->item->name}}</td>
-                        <td>{{$item->item->weight}}</td>
-                        <td>{{$item->item->value}}</td>
-                        <td>{{$item->amount}}</td>
+                        <td class="table-cell">{{$item->item->name}}</td>
+                        <td class="table-cell">{{$item->item->weight}}</td>
+                        <td class="table-cell">{{$item->item->value}}</td>
+                        <td class="table-cell">{{$item->amount}}</td>
                     </tr>
                 @endforeach
                 <tfoot>
                 <tr>
-                    <td>Gesamt</td>
-                    <td>{{$weight}}</td>
-                    <td>{{$value}}</td>
-                    <td>{{$amount}}</td>
+                    <td class="table-cell-dark">Gesamt</td>
+                    <td class="table-cell-dark">{{$weight}}</td>
+                    <td class="table-cell-dark">{{$value}}</td>
+                    <td class="table-cell-dark">{{$amount}}</td>
                 </tr>
                 </tfoot>
             </table>

@@ -1,6 +1,6 @@
 <?php
 
-use App\lettering;
+use App\Lettering;
 use Illuminate\Database\Seeder;
 
 class LetteringSeeder extends Seeder

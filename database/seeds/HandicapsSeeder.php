@@ -122,15 +122,15 @@ class HandicapsSeeder extends Seeder
             'name' => 'Schlechte Eigenschaft',
         ]);
         Handicap::create([
-            'name' => 'Schlechte Regeneration der Astralenergie',
+            'name'  => 'Schlechte Reg. der Astralenergie',
             'level' => '3',
         ]);
         Handicap::create([
-            'name' => 'Schlechte Regeneration der Karmaenergie',
+            'name'  => 'Schlechte Reg. der Karmaenergie',
             'level' => '3',
         ]);
         Handicap::create([
-            'name' => 'Schlechte Regeneration der Lebensenergie',
+            'name'  => 'Schlechte Reg. der Lebensenergie',
             'level' => '3',
         ]);
         Handicap::create([

@@ -166,12 +166,12 @@ class TalentsSeeder extends Seeder
             'group' => 'Gesellschaft',
         ]);
         Talent::create([
-            'name' => 'Menschenkenntni',
-            'first_skill' => 'KL',
-            'second_skill' => 'IN',
-            'third_skill' => 'CH',
+            'name'            => 'Menschenkennt.',
+            'first_skill'     => 'KL',
+            'second_skill'    => 'IN',
+            'third_skill'     => 'CH',
             'increase_factor' => '2',
-            'group' => 'Gesellschaft',
+            'group'           => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Überreden',
@@ -190,12 +190,12 @@ class TalentsSeeder extends Seeder
             'group' => 'Gesellschaft',
         ]);
         Talent::create([
-            'name' => 'Willenskrat',
-            'first_skill' => 'MU',
-            'second_skill' => 'IN',
-            'third_skill' => 'CH',
+            'name'            => 'Willenskraft',
+            'first_skill'     => 'MU',
+            'second_skill'    => 'IN',
+            'third_skill'     => 'CH',
             'increase_factor' => '3',
-            'group' => 'Gesellschaft',
+            'group'           => 'Gesellschaft',
         ]);
         Talent::create([
             'name' => 'Fährtensuchen',
@@ -230,11 +230,11 @@ class TalentsSeeder extends Seeder
             'group' => 'Natur',
         ]);
         Talent::create([
-            'name' => 'Planzenkunde',
-            'first_skill' => 'KL',
-            'second_skill' => 'FF',
-            'third_skill' => 'KO',
-            'group' => 'Natur',
+            'name'            => 'Pflanzenkunde',
+            'first_skill'     => 'KL',
+            'second_skill'    => 'FF',
+            'third_skill'     => 'KO',
+            'group'           => 'Natur',
             'increase_factor' => '2',
         ]);
         Talent::create([

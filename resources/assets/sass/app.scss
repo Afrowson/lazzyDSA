@@ -114,16 +114,15 @@ $primary-invert: $blue-invert;
 }
 
 //region table
-.weapons-table-cell {
-    background-color: azure;
+.table-cell {
+    background-color: #bcbcbc;
     padding: 0px 3px;
-    color: black;
+    color: black !important;
 }
 
-.weapons-table-cell-w {
+.table-cell-dark {
     background-color: #636b6f;
-    text-align: center;
-    color: azure;
+    color: white !important;
 }
 
 //endregion

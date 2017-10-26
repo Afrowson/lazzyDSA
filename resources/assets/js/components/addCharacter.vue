@@ -37,7 +37,7 @@
                 <numberinput v-on:changevalue="changeValue" :id="'height'" :value="character.height" :lable="'Größe'" :placeholder="'Bitte in cm angeben!'"></numberinput>
             </div>
             <div class="column is-narrow">
-                <numberinput v-on:changevalue="changeValue" :id="'weight'" :value="character.weight" :lable="'Gewicht'" :placeholder="'Bitte in cm angeben!'"></numberinput>
+                <numberinput v-on:changevalue="changeValue" :id="'weight'" :value="character.weight" :lable="'Gewicht'" :placeholder="'Bitte in kg angeben!'"></numberinput>
             </div>
             <div class="column is-narrow">
                 <stringinput v-on:changevalue="changeValue" :id="'hair'" :value="character.hair" :lable="'Haarfarbe'" :placeholder="'Seelenlos'"></stringinput>

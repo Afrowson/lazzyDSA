@@ -68,7 +68,7 @@ class DegroSeeder extends Seeder
 
             'SP' => '3',
 
-            'ap_total' => '1186',
+            'ap_total' => '1211',
             'ap_spend' => '1125',
         ]);
     

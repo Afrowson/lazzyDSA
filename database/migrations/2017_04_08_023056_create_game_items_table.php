@@ -34,6 +34,7 @@ class CreateGameItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventory_item');
+        Schema::dropIfExists('game_items');
+    
     }
 }

@@ -13,7 +13,7 @@ class CreateCharacterSpecialfightingtalentTable extends Migration
      */
     public function up()
     {
-        Schema::create('character_Specialfightingtalent', function (Blueprint $table) {
+        Schema::create('character_specialfightingtalent', function (Blueprint $table) {
             $table->increments('id');
             $table->uuid('character_id');
             $table->integer('Specialfightingtalent_id');

@@ -27,7 +27,7 @@
                     </option>
                 </select>
             </div>
-            <div class="column ">Eigenschaft 2
+            <div class="column ">Eigenschaft&nbsp;2
                 <select class="input" v-model="selectedweapon.skill_two">
                     <option v-for="skill in character._skills">
                         {{skill}}
@@ -73,7 +73,7 @@
                         <th style="min-width: 170px">Name</th>
                         <th>Kampftalent</th>
                         <th>Eigenschaft</th>
-                        <th>Eigenschaft 2</th>
+                        <th>Eigenschaft&nbsp;2</th>
                         <th>SS</th>
                         <th>Dice</th>
                         <th>Bonus&nbsp;Schaden</th>

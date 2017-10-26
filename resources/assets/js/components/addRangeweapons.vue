@@ -35,13 +35,13 @@
             <div class="column ">Gewicht
                 <input class="input" v-model="selectedrangeweapon.weight">
             </div>
-            <div class="column ">Kurze Distanz
+            <div class="column ">Kurze&nbsp;Distanz
                 <input class="input" v-model="selectedrangeweapon.range_one">
             </div>
-            <div class="column ">Mittlere Distanz
+            <div class="column ">Mittlere&nbsp;Distanz
                 <input class="input" v-model="selectedrangeweapon.range_two">
             </div>
-            <div class="column ">Weite Distanz
+            <div class="column ">Weite&nbsp;Distanz
                 <input class="input" v-model="selectedrangeweapon.range_three">
             </div>
         </div>

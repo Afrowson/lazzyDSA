@@ -2,6 +2,8 @@
     <div class="addbenefices">
         <div class="is-clearfix">
             <h1 class="title m-t-5"> Wähle die Vorteile deines Held.</h1>
+    
+    
             <div class="is-pulled-left select">
                 <select v-model="selected" v-on:change="selectbenefice">
                     <option v-for="benefice in benefices" v-bind:value="benefice.id">
@@ -9,8 +11,10 @@
                     </option>
                 </select>
             </div>
-            <div class="is-pulled-left" v-if="levels != null">
-                <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
+    
+    
+            <div class="field" v-if="levels != null">
+                <label class="label">&nbsp;Level:&nbsp;</label>
                 <div class="is-pulled-left select">
                     <select v-model="selectedLevel">
                         <option v-for="n in levels">
@@ -19,9 +23,12 @@
                     </select>
                 </div>
             </div>
-            <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
-            <div class="is-pulled-left">
-                <input class="input" v-model="type"/>
+    
+            <div class="field">
+                <label class="label">Typ:</label>
+                <div class="control is-pulled-left" style="width: 200px">
+                    <input class="input" v-model="type"/>
+                </div>
             </div>
     
             <button class="button is-pulled-left" v-on:click="pick()">wählen</button>

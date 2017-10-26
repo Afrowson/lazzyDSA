@@ -29,7 +29,9 @@
                 </div>
                 <button class="button" v-on:click="removeItem(item.id)">Entfernen</button>
             </div>
-            <div class="column is-narrow box m-r-10" style="min-width: 300px" v-on:click="addItem">
+            <div class="column is-narrow box m-r-10" style="min-width: 300px"
+                v-show="this.pickedinventories != false"
+                v-on:click="addItem">
                 <div class="m-t-15 m-l-15">
                     <h1 class="title is-3">Neues Item</h1>
                     <h1 class="title is-3">Anlegen</h1>
@@ -69,19 +71,19 @@
         },
         
         methods: {
-            getItems() {
-                axios.get('/api/Item').then(respnse => {
-                    this.items = respnse.data
-                })
-            },
+//            getItems() {
+//                axios.get('/api/Item').then(respnse => {
+//                    this.items = respnse.data
+//                })
+//            },
             
             getCharacterInventories() {
                 this.character.inventories.forEach(inventory => {
                     this.pickedinventories.push(inventory)
                 })
             },
-            
-            getInventoryItems(){
+    
+            getGameItems(){
                 this.pickedinventories.forEach(inventory => {
     
                     axios.get('/api/Inventory/' + inventory.id + '/items')
@@ -90,6 +92,7 @@
     
                             inventory.items.forEach(gameitem => {
                                 let item = this.items.find(item => item.id == gameitem.item_id)
+        
                                 gameitem.name = item.name,
                                     gameitem.value = item.value,
                                     gameitem.weight = item.weight,
@@ -183,12 +186,14 @@
         },
         
         mounted(){
-            this.getItems()
-    
-            if(this.character.inventories != null) {
-                this.getCharacterInventories()
-                this.getInventoryItems()
-            }
+            axios.get('/api/Item').then(respnse => {
+                this.items = respnse.data
+                if(this.character.inventories != null) {
+                    this.getCharacterInventories()
+                    this.getGameItems()
+            
+                }
+            })
         }
     }
 </script>

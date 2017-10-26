@@ -13,7 +13,7 @@ class CreateSpecialfightingtalentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Specialfightingtalents', function (Blueprint $table) {
+        Schema::create('specialfightingtalents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
