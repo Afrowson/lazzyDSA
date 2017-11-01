@@ -1,33 +1,31 @@
 <template>
     <div class="addspecialmagictalents">
-        <h1 class="title m-t-5 "> Wähle die Spezialen Magievorteile deines Held.</h1>
-        <div class="is-clearfix">
-            <div class="is-pulled-left select">
-                <select v-model="selected" v-on:change="selectspecialmagictalent">
-                    <option v-for="specialmagictalent in specialmagictalents" v-bind:value="specialmagictalent.id">
-                        {{specialmagictalent.name }}
-                    </option>
-                </select>
+        <h1 class="title is-4 m-t-15 "> Wähle die Spezialen Magievorteile deines Held.</h1>
+        <div class="field has-addons">
+            <div class="control">
+                <div class="select">
+                    <select v-model="selected" v-on:change="selectspecialmagictalent">
+                        <option v-for="specialmagictalent in specialmagictalents" v-bind:value="specialmagictalent.id">
+                            {{specialmagictalent.name }}
+                        </option>
+                    </select>
+                </div>
             </div>
-            <div class="is-pulled-left" v-if="levels != null">
-                <p class="is-pulled-left">&nbsp;Level:&nbsp;</p>
+            <div class="control" v-if="levels !=null">
                 <div class="select">
                     <select v-model="selectedLevel">
+                        <option value="-" hidden>Level wählen</option>
                         <option v-for="n in levels">
                             {{n}}
                         </option>
                     </select>
                 </div>
             </div>
-            <div class="is-pulled-left">
-                <p class="is-pulled-left">&nbsp;Typ:&nbsp;</p>
-                <div class="is-pulled-left">
-                    <input class="input is-pulled-left" v-model="type"/>
-                </div>
+            <div class="control">
+                <input class="input" placeholder="Type" v-model="type"/>
             </div>
         </div>
-        <button class="button" v-on:click="pick()">wählen</button>
-        
+        <button class="button m-b-15" v-on:click="pick()">Bestätigen</button>
         
         <div v-for="pickedspecialmagictalent in pickedspecialmagictalents">
             <div class="box m-t-5">
@@ -41,6 +39,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -52,7 +51,7 @@
             return {
                 specialmagictalents: [],
                 selected: 1,
-                selectedLevel: '',
+                selectedLevel: '-',
                 levels: null,
                 type: ''
             }
@@ -61,6 +60,7 @@
             selectspecialmagictalent(){
                 this.levels = this.specialmagictalents[this.selected - 1].level
                 this.type = ''
+                this.selectedLevel = '-'
             },
             pick(){
                 if((this.pickedspecialmagictalents.find(specialmagictalent => specialmagictalent.id == this.selected)) == null) {

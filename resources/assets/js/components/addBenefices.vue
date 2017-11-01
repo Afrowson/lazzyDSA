@@ -1,38 +1,34 @@
 <template>
     <div class="addbenefices">
-        <div class="is-clearfix">
-            <h1 class="title m-t-5"> Wähle die Vorteile deines Held.</h1>
     
+        <h1 class="title is-4 m-t-15" style="width: 100%"> Wähle die Vorteile deines Held.</h1>
     
-            <div class="is-pulled-left select">
-                <select v-model="selected" v-on:change="selectbenefice">
-                    <option v-for="benefice in benefices" v-bind:value="benefice.id">
-                        {{benefice.name }}
-                    </option>
-                </select>
-            </div>
-    
-    
-            <div class="field" v-if="levels != null">
-                <label class="label">&nbsp;Level:&nbsp;</label>
-                <div class="is-pulled-left select">
-                    <select v-model="selectedLevel">
-                        <option v-for="n in levels">
-                            {{n}}
+        <div class="field has-addons">
+            <p class="control">
+                <span class="select">
+                    <select v-model="selected" v-on:change="selectbenefice">
+                        <option v-for="benefice in benefices" v-bind:value="benefice.id">
+                            {{benefice.name }}
                         </option>
                     </select>
-                </div>
-            </div>
-    
-            <div class="field">
-                <label class="label">Typ:</label>
-                <div class="control is-pulled-left" style="width: 200px">
-                    <input class="input" v-model="type"/>
-                </div>
-            </div>
-    
-            <button class="button is-pulled-left" v-on:click="pick()">wählen</button>
+                </span>
+            </p>
+        
+            <p v-if="levels != null" class="control">
+                <span class="select">
+                    <select v-model="selectedLevel">
+                        <option value="-">Level wählen</option>
+                        <option v-for="n in levels">
+                            Level {{n}}
+                        </option>
+                    </select>
+                </span>
+            </p>
+            <p class="control">
+                <input class="input" placeholder="Typ" v-model="type"/>
+            </p>
         </div>
+        <button class="button m-b-15" v-on:click="pick()">Bestätigen</button>
         
         <div v-for="pickedbenefice in pickedbenefices">
             <div class="box m-t-5">
@@ -57,7 +53,7 @@
             return {
                 benefices: [],
                 selected: 1,
-                selectedLevel: '',
+                selectedLevel: '-',
                 levels: null,
                 type: ''
             }
@@ -66,6 +62,7 @@
             selectbenefice(){
                 this.levels = this.benefices[this.selected - 1].level
                 this.type = ''
+                this.selectedLevel = '-'
             },
             pick(){
                 if((this.pickedbenefices.find(benefice => benefice.id == this.selected)) == null) {

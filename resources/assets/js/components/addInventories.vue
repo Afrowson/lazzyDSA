@@ -1,20 +1,24 @@
 <template>
     <div class="addInventories">
-        <h3 class="title is-3">Verwalte die Inventare deines Helden</h3>
-        <div class="is-clearfix">
-            <div v-show="this.pickedinventories != false" class="is-pulled-left select">
-                <select v-model="selected" v-on:change="selectInventory(selected)">
-                    <option v-for="inventory in pickedinventories" v-bind:value="inventory.id">
-                        {{inventory.name}}
-                    </option>
-                </select>
-            </div>
-            <div class="is-pulled-left m-l-25">
+        <h3 class="title is-4 m-t-15">Verwalte die Inventare deines Helden</h3>
+        <div class="field has-addons">
+            <div class="control">
                 <input class="input" v-model="name"/>
             </div>
-            <button class="is-pulled-left button m-l-5" v-on:click="addInventory()">Hinzufügen</button>
+            <div class="control">
+                <button class="button" v-on:click="addInventory()">Hinzufügen</button>
+            </div>
         </div>
     
+        <div v-show="this.pickedinventories != false" class="select is-large">
+            <select v-model="selected" v-on:change="selectInventory(selected)">
+                <option v-for="inventory in pickedinventories" v-bind:value="inventory.id">
+                    {{inventory.name}}
+                </option>
+            </select>
+        </div>
+    
+        <h5 class="title is-6 m-t-15">Gesamtgewicht:&nbsp;{{selectedinventory.weight}}&nbsp;Stein</h5>
     
         <div class="columns is-multiline  m-t-15 m-l-15 ">
         
@@ -33,14 +37,13 @@
                 v-show="this.pickedinventories != false"
                 v-on:click="addItem">
                 <div class="m-t-15 m-l-15">
-                    <h1 class="title is-3">Neues Item</h1>
-                    <h1 class="title is-3">Anlegen</h1>
+                    <h1 class="title is-4">Neues Item</h1>
+                    <h1 class="title is-4">Anlegen</h1>
                 </div>
             </div>
         </div>
     
     
-        <h5 class="title is-5 m-l-10">Gesamtgewicht:&nbsp;{{selectedinventory.weight}}</h5>
         <button class="button" v-on:click="removeInventory">Löschen</button>
         <additem :item="selecteditem" :items="items" :togle="togle" v-on:close="togle=0" v-on:update="updateItem">
         </additem>
@@ -107,6 +110,7 @@
                 this.selected = id
                 this.selectedinventory = this.pickedinventories.find(inventory => inventory.id === id)
                 this.selecteditems = this.selectedinventory.items
+                this.calculateWeight()
             },
     
             addInventory(){
@@ -150,6 +154,8 @@
                 this.selecteditem.amount = updated_item.amount
                 this.selecteditem.notes = updated_item.notes
     
+                this.calculateWeight()
+                
                 if(this.selecteditem.id != undefined) {
                     axios.post('/api/GameItem/' + this.selecteditem.id + '/update', this.selecteditem).then(
                         response => {
@@ -163,6 +169,14 @@
                             this.selecteditems.push(this.selecteditem)
                         })
                 }
+            },
+            calculateWeight(){
+                let weight = 0
+                this.selecteditems.forEach(item => {
+                    weight += item.weight * item.amount
+                })
+                weight = weight.toFixed(2)
+                this.selectedinventory.weight = weight
             },
             addItem(){
                 this.selecteditem = {
@@ -181,6 +195,8 @@
                 let index = this.selecteditems.findIndex(item => item.id === id)
                 this.selecteditems.splice(index, 1)
                 axios.post('/api/GameItem/' + id + '/delete')
+                this.calculateWeight()
+                
                 
             }
         },
@@ -191,7 +207,6 @@
                 if(this.character.inventories != null) {
                     this.getCharacterInventories()
                     this.getGameItems()
-            
                 }
             })
         }

@@ -22,21 +22,24 @@ can be added/updated/deleted.
 
 ## Tasks:
 
-### RoleSystem for the Databasese.
-* add a Verrified key to Users
-* only show DB Button if Verified User
+### Character Creation 
+* Styling first 3 Pages
+* revamp addItem template
+* Remove Status indicator
 
-### Middleware
-* Cookies for Auth.
 
-### Reworke Items
-* ????
+### Database 
+* Fix Table lenght styling
+
 
 ### Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
+###--- Neue Foundation? PWA?
+### Middleware
+* Cookies for Auth.
 
 ### Tagebuch
 * Diary Model/Migraation anlegen
@@ -45,9 +48,19 @@ can be added/updated/deleted.
 * Diary einzelansicht/Editor gestalten
 * Diary Save funktion
 
+
+### RoleSystem for the Databasese.
+* add a Verrified key to Users
+* only show DB Button if Verified User
+
+
 ## Planned:
 
+1. Character Bild
+
 1. Zauber anzeigen
+
+1. Charaker Gegenstände vollwärtig trennen von Schablone.
 
 1. Inventar verändern
 
@@ -65,6 +78,8 @@ Gegenstände
 
 ## Ideas: 
 
+Character-X Relations aufwärten 
+* Trenneung zwischen Spieldaten und Regelwerk Daten
 
 Talente mit Anwendungsgebieten(Talentspezialisierung) berechnen und als Hover/Dropdown anzeigen.
 

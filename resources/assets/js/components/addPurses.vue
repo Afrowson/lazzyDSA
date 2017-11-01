@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="title is-3">Verwalte die Geldbeutel deines Helden</h1>
+        <h1 class="title is-4 m-t-15">Verwalte die Geldbeutel deines Helden</h1>
         <div class="is-clearfix">
             <div v-show="pickedpurses != false" class="is-pulled-left select">
                 <select v-model="selected" v-on:change="selectPurse(selected)">
@@ -33,8 +33,10 @@
                     <input class="input is-large" v-model="selectedpurse.kreuzer"/>
                 </div>
             </div>
-            <button class="button" v-on:click="updatePurse()">Aktualisieren</button>
-            <button class="button" v-on:click="removePurse()">Löschen</button>
+            <div class="m-t-15">
+                <button class="button is-pulled-left m-r-5" v-on:click="updatePurse()">Aktualisieren</button>
+                <button class="button is-pulled-left" v-on:click="removePurse()">Löschen</button>
+            </div>
         </div>
     </div>
 </template>

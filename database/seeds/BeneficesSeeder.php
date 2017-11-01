@@ -140,15 +140,15 @@ class BeneficesSeeder extends Seeder
             'name'=>'Unscheinbar',
         ]);
         Benefice::create([
-            'name'=>'Verbesserte Regeneration der Astralenergie',
-            'level'=>'3',
+            'name'  => 'Verb. Reg. der Astralenergie',
+            'level' =>'3',
         ]);
         Benefice::create([
-            'name'=>'Verbesserte Regeneration der Karmaenergie',
-            'level'=>'3',
+            'name'  => 'Verb. Reg. der Karmaenergie',
+            'level' =>'3',
         ]);
         Benefice::create([
-            'name'=>'Verbesserte Regeneration der Lebensenergie',
+            'name' => 'Verb. Reg. der Lebensenergie',
         ]);
         Benefice::create([
             'name'=>'Verhüllte Aura',

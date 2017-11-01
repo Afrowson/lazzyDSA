@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="title is-3">Kampftechniken auswählen</h1>
+        <h1 class="title is-4">Kampftechniken auswählen</h1>
         
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
