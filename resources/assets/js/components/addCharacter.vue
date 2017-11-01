@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="title m-t-5">Erstelle deinen Character</h1>
+        <h1 class="title is-4 m-t-15">Grundinformationen des Characters</h1>
         <div class="columns is-multiline">
             <div class="column is-narrow">
                 <stringinput v-on:changevalue="changeValue" :id="'name'" :value="character.name" :lable="'Name'" :placeholder="'Max Musterheld'"></stringinput>

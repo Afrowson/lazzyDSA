@@ -170,7 +170,7 @@ class LeonardoSeeder extends Seeder
             $character->addHandicap($handicap, $handycap['options']);
         }
         $beneficees = [
-            ['name' => 'Verbesserte Regeneration der Astralenergie', 'options' => ['value' => '2']],
+            ['name' => 'Verb. Reg. der Astralenergie', 'options' => ['value' => '2']],
             ['name' => 'Zauberer', 'options' => []],
             ['name' => 'Herausragende Fertigkeit', 'options' => ['type' => 'Fulminictus']],
         ];

@@ -3,11 +3,11 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Eintrag Bearbeiten</p>
+                <p class="modal-card-title">Gegenstand Bearbeiten</p>
                 <button class="delete" aria-label="close" v-on:click="close"></button>
             </header>
             <section class="modal-card-body">
-                <div class="select">
+                <div class="select is-large">
                     <select v-model="selected" v-on:change="changeItem">
                         <option v-for="item in items" v-bind:value="item.id">
                             {{item.name}}
@@ -15,8 +15,6 @@
                     </select>
                 </div>
                 
-                
-                <h1 class="title is-3"> {{updated_item.name}}</h1>
                 <p>Beschreibung: {{updated_item.description}}</p>
                 <p>Gewicht: {{updated_item.weight}} Stein</p>
                 <p>Wert: {{updated_item.value}} Silber</p>

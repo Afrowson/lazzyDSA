@@ -1,8 +1,9 @@
 <template>
     <div class="addlanguages">
-        <h1 class="title m-t-5 "> Wähle die Sprachen deines Held.</h1>
+        <h1 class="title is-4 m-t-15 "> Wähle die Sprachen deines Held.</h1>
         <div class="select">
             <select v-model="selected">
+                <option value="-" hidden>Sprache wählen</option>
                 <option v-for="language in languages" v-bind:value="language.id">
                     {{language.name }}
                 </option>
@@ -10,14 +11,15 @@
         </div>
         <div class="select">
             <select v-model="selectedLevel">
+                <option value="-" hidden>Level wählen</option>
                 <option v-for="level in levels">
-                    {{level}}
+                    Level {{level}}
                 </option>
             </select>
         </div>
-        <button class="button" v-on:click="pick()">wählen</button>
-        
-        <div v-for="pickedlanguage in pickedlanguages">
+        <button class="button" v-on:click="pick()">Bestätigen</button>
+    
+        <div class="m-t-15" v-for="pickedlanguage in pickedlanguages">
             <div class="box m-t-5">
                 
                 <P>{{ pickedlanguage.name}}</P>
@@ -37,9 +39,9 @@
         data(){
             return {
                 languages: [],
-                selected: 1,
+                selected: '-',
                 levels: [1, 2, 3, 4],
-                selectedLevel: 1,
+                selectedLevel: '-',
             }
         },
         methods: {

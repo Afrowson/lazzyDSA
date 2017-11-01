@@ -1,6 +1,6 @@
 <template>
     <div class="addweapons">
-        <h1 class="title m-t-5 "> Wähle die Waffen deines Held.</h1>
+        <h1 class="title is-4 m-t-15 "> Wähle die Waffen deines Held.</h1>
         <div class="select">
             <select v-model="selected" v-on:change="selectweapon">
                 <option v-for="weapon in weapons" v-bind:value="weapon.id">
@@ -8,7 +8,7 @@
                 </option>
             </select>
         </div>
-        <h3 class="title is-4">Modifiziere die gewählte Waffe</h3>
+        <h3 class="title is-5 m-t-15">Modifiziere die gewählte Waffe</h3>
         <div class="columns">
             <div style="min-width: 190px" class="column ">Name
                 <input class="input" v-model="selectedweapon.name">
@@ -61,7 +61,7 @@
             </div>
         </div>
     
-        <button class="button" v-on:click="pick()">wählen</button>
+        <button class="button m-b-15" v-on:click="pick()">Bestätigen</button>
         
         
         <div v-for="pickedweapon in pickedweapons">

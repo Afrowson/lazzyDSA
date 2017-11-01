@@ -1,6 +1,6 @@
 <template>
     <div class="addmagictricks">
-        <h1 class="title m-t-5"> Wähle die Zaubertricks deines Held.</h1>
+        <h1 class="title is-4 m-t-15"> Wähle die Zaubertricks deines Held.</h1>
         <div class="select">
             <select v-model="selected">
                 <option v-for="magictrick in magictricks" v-bind:value="magictrick.id">
@@ -8,9 +8,9 @@
                 </option>
             </select>
         </div>
-        <button class="button" v-on:click="pick()">wählen</button>
-        
-        <div v-for="pickedmagictrick in pickedmagictricks">
+        <button class="button" v-on:click="pick()">Bestätigen</button>
+    
+        <div class="m-t-15" v-for="pickedmagictrick in pickedmagictricks">
             <div class="box m-t-5">
                 <P>{{ pickedmagictrick.name}}</P>
                 <P>ID: {{pickedmagictrick.id}}</P>

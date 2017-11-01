@@ -1,6 +1,6 @@
 <template>
     <div class="addarmors">
-        <h1 class="title m-t-5 "> Wähle die Rüstungen deines Held.</h1>
+        <h1 class="title is-4 m-t-15">Wähle die Rüstungen deines Held.</h1>
         <div class="select">
             <select v-model="selected" v-on:change="selectarmor">
                 <option v-for="armor in armors" v-bind:value="armor.id">
@@ -8,7 +8,7 @@
                 </option>
             </select>
         </div>
-        <h3 class="title is-4">Modifiziere die gewählte Rüstung</h3>
+        <h3 class="title is-5 m-t-15">Modifiziere die gewählte Rüstung</h3>
         <div class="columns">
             <div style="min-width: 190px" class="column ">Name
                 <input class="input" v-model="selectedarmor.name">
@@ -26,8 +26,8 @@
                 <input class="input" v-model="selectedarmor.weight">
             </div>
         </div>
-        
-        <button class="button" v-on:click="pick()">wählen</button>
+    
+        <button class="button m-t-15" v-on:click="pick()">Bestätigen</button>
         
         
         <div v-for="pickedarmor in pickedarmors">
