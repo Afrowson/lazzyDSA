@@ -12,12 +12,12 @@
     
         <div class="is-clearfix">
             <div v-show="this.pickedinventories != false" class="select is-large is-pulled-left">
-            <select v-model="selected" v-on:change="selectInventory(selected)">
-                <option v-for="inventory in pickedinventories" v-bind:value="inventory.id">
-                    {{inventory.name}}
-                </option>
-            </select>
-        </div>
+                <select v-model="selected" v-on:change="selectInventory(selected)">
+                    <option v-for="inventory in pickedinventories" v-bind:value="inventory.id">
+                        {{inventory.name}}
+                    </option>
+                </select>
+            </div>
         
             <p class="title is-6 is-pulled-left m-t-20 m-l-10">Gesamtgewicht:&nbsp;{{selectedinventory.weight}}&nbsp;Stein</p>
         </div>
@@ -74,6 +74,7 @@
         },
         
         methods: {
+//@todo use gameitems from Server and refacotor Code, than reinclude this.
 //            getItems() {
 //                axios.get('/api/Item').then(respnse => {
 //                    this.items = respnse.data

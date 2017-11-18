@@ -9,6 +9,11 @@ use JavaScript;
 
 class CharacterViewController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function create()
     {
         Javascript::put([
@@ -26,6 +31,7 @@ class CharacterViewController extends Controller
             'benefices',
             'handicaps',
             'inventories',
+            'inventories.items',
             'languages',
             'letterings',
             'magictricks',
