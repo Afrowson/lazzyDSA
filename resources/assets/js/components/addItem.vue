@@ -7,6 +7,7 @@
                 <button class="delete" aria-label="close" v-on:click="close"></button>
             </header>
             <section class="modal-card-body">
+    
                 <div class="select is-large">
                     <select v-model="selected" v-on:change="changeItem">
                         <option v-for="item in items" v-bind:value="item.id">
@@ -14,11 +15,12 @@
                         </option>
                     </select>
                 </div>
-                
-                <p>Beschreibung: {{updated_item.description}}</p>
-                <p>Gewicht: {{updated_item.weight}} Stein</p>
-                <p>Wert: {{updated_item.value}} Silber</p>
-                <p>Anzahl:</p>
+    
+                <b class="is-block">Beschreibung:</b>
+                <p>{{updated_item.description}}</p>
+                <p><b>Gewicht:</b> {{updated_item.weight}} Stein</p>
+                <p><b>Wert:</b> {{updated_item.value}} Silber</p>
+                <b>Anzahl:</b>
                 <input v-model="updated_item.amount"/>
                 <div class="field">
                     <label class="label">Message</label>
@@ -67,7 +69,7 @@
             close() {
                 this.$emit('close')
             },
-        
+    
             changeItem(){
                 let item = this.items.find(item => item.id == this.selected)
                 this.updated_item.item_id = this.selected
@@ -76,7 +78,7 @@
                 this.updated_item.value = item.value
                 this.updated_item.weight = item.weight
             },
-        
+    
             updateItem(){
                 this.$emit('update', this.updated_item)
             }

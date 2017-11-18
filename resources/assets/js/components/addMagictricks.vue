@@ -1,6 +1,6 @@
 <template>
     <div class="addmagictricks">
-        <h1 class="title is-4 m-t-15"> Wähle die Zaubertricks deines Held.</h1>
+        <h4 class="title is-4 m-t-15"> Wähle die Zaubertricks deines Held.</h4>
         <div class="select">
             <select v-model="selected">
                 <option v-for="magictrick in magictricks" v-bind:value="magictrick.id">

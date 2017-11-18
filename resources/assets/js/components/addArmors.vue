@@ -27,7 +27,7 @@
             </div>
         </div>
     
-        <button class="button m-t-15" v-on:click="pick()">Bestätigen</button>
+        <button class="button m-b-15" v-on:click="pick()">Bestätigen</button>
         
         
         <div v-for="pickedarmor in pickedarmors">

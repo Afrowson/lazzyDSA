@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h2 class="title is-4">Körper</h2>
+        <h4 class="title is-4 m-t-15">Verändere die Talente des Characters</h4>
+        <h5 class="title is-5">Körper</h5>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
@@ -13,7 +14,7 @@
                 :max="25"
             ></numberselector>
         </div>
-        <h2 class="title is-4">Gesellschaft</h2>
+        <h5 class="title is-5">Gesellschaft</h5>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
@@ -26,7 +27,7 @@
                 :max="25"
             ></numberselector>
         </div>
-        <h2 class="title is-4">Natur & Wissen</h2>
+        <h5 class="title is-5">Natur & Wissen</h5>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
@@ -39,7 +40,7 @@
                 :max="25"
             ></numberselector>
         </div>
-        <h2 class="title is-4">Handwerk</h2>
+        <h5 class="title is-5">Handwerk</h5>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"

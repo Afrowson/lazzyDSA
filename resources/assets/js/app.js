@@ -49,11 +49,20 @@ var app = new Vue({
     },
     computed: {
         character: function() {
-            if(character) {
+            if('MU' in character) {
                 return character
             }
             else {
-                return null
+                return {
+                    'MU': 8,
+                    'KL': 8,
+                    'IN': 8,
+                    'CH': 8,
+                    'FF': 8,
+                    'GE': 8,
+                    'KO': 8,
+                    'KK': 8,
+                }
             }
         }
     },
@@ -85,7 +94,7 @@ var app = new Vue({
     
     mounted(){
         if(this.character && this.character.id) {
-            this.status = 1
+            this.new_character()
         }
     }
 })

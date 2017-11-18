@@ -198,6 +198,7 @@
             },
             save(){
                 if(this.character.id == null) {
+    
                     axios.post('/fail/Character/create', this.character).then(result => {
                         console.log(result.data)
                         this.character.id = result.data

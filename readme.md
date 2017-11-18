@@ -22,22 +22,14 @@ can be added/updated/deleted.
 
 ## Tasks:
 
-### Character Creation 
-* Styling first 3 Pages
-* revamp addItem template
-* Remove Status indicator
-
-
-### Database 
-* Fix Table lenght styling
-
-
 ### Spells
 * Migration 16 Rows(QS + Probenwürfe)
 * Model (Spezialisierungen ?)
 * Seeds ( nur Leonardo und Gruppe)
 * View
+
 ###--- Neue Foundation? PWA?
+
 ### Middleware
 * Cookies for Auth.
 
@@ -63,6 +55,8 @@ can be added/updated/deleted.
 1. Charaker Gegenstände vollwärtig trennen von Schablone.
 
 1. Inventar verändern
+
+1. Erste 3 Seiten des Create Prozess redesignen.
 
 ## Nicht geplant:
 

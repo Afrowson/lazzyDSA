@@ -35,7 +35,7 @@
 @endsection
 
 @section('body')
-    <table v-show="selected_table_name !== null" class="table is-pulled-left">
+    <table v-show="selected_table_name !== null" class="table is-fullwidth is-pulled-left">
         <thead>
         <tr>
             <th>ID</th>

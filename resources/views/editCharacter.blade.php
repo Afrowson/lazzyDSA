@@ -43,15 +43,21 @@
 
 @section('content')
     <div>
-        <div v-show="status == 1 || status == 0">
-            <addcharacter v-bind:character="character" v-on:new_character="new_character"></addcharacter>
+        <div v-show="status == 1 || status == 0" class="columns">
+            <div class="column is-full">
+                <addcharacter v-bind:character="character" v-on:new_character="new_character"></addcharacter>
+            </div>
         </div>
-        <div v-show="status == 2">
-            <addtalents :pickedtalents="pickedtalents" v-bind:character="character"></addtalents>
+        <div v-show="status == 2" class="columns">
+            <div class="column is-full">
+                <addtalents :pickedtalents="pickedtalents" v-bind:character="character"></addtalents>
+            </div>
         </div>
-        <div v-show="status == 3">
-            <addfightingtalents :pickedfightingtalents="pickedfightingtalents"
-                v-bind:character="character"></addfightingtalents>
+        <div v-show="status == 3" class="columns">
+            <div class="column is-full">
+                <addfightingtalents :pickedfightingtalents="pickedfightingtalents"
+                    v-bind:character="character"></addfightingtalents>
+            </div>
         </div>
         <div v-show="status == 4" class="columns">
             <div class="column is-half">
@@ -113,7 +119,6 @@
                 <addmagictricks :pickedmagictricks="pickedmagictricks" v-bind:character="character"></addmagictricks>
             </div>
         </div>
-        @{{ status }}
     </div>
 
 @endsection

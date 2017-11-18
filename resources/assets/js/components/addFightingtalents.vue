@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1 class="title is-4">Kampftechniken auswählen</h1>
-        
+        <h4 class="title is-4 m-t-15">Kampftechniken auswählen</h4>
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedfightingtalents"
@@ -50,7 +49,7 @@
                 else {
                     let fightingtalents = this.character.fightingtalents
                     this.pickCharacterFightingtalents(fightingtalents)
-        
+    
                 }
             },
             pickCharacterFightingtalents(fightingtalents){

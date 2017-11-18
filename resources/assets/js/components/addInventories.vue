@@ -3,25 +3,25 @@
         <h3 class="title is-4 m-t-15">Verwalte die Inventare deines Helden</h3>
         <div class="field has-addons">
             <div class="control">
-                <input class="input" v-model="name"/>
+                <input class="input" placeholder="Neues Inventar" v-model="name"/>
             </div>
             <div class="control">
                 <button class="button" v-on:click="addInventory()">Hinzufügen</button>
             </div>
         </div>
     
-        <div v-show="this.pickedinventories != false" class="select is-large">
+        <div class="is-clearfix">
+            <div v-show="this.pickedinventories != false" class="select is-large is-pulled-left">
             <select v-model="selected" v-on:change="selectInventory(selected)">
                 <option v-for="inventory in pickedinventories" v-bind:value="inventory.id">
                     {{inventory.name}}
                 </option>
             </select>
         </div>
-    
-        <h5 class="title is-6 m-t-15">Gesamtgewicht:&nbsp;{{selectedinventory.weight}}&nbsp;Stein</h5>
-    
-        <div class="columns is-multiline  m-t-15 m-l-15 ">
         
+            <p class="title is-6 is-pulled-left m-t-20 m-l-10">Gesamtgewicht:&nbsp;{{selectedinventory.weight}}&nbsp;Stein</p>
+        </div>
+        <div class="columns is-multiline  m-t-15 m-l-15 ">
             <div class="column is-narrow box m-r-10" style="min-width: 300px"
                 v-for="item in selecteditems">
                 <div v-on:click="editItem(item)">
@@ -175,7 +175,7 @@
                 this.selecteditems.forEach(item => {
                     weight += item.weight * item.amount
                 })
-                weight = weight.toFixed(2)
+                weight = Number(weight.toFixed(5))
                 this.selectedinventory.weight = weight
             },
             addItem(){
