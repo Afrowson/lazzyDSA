@@ -115,14 +115,14 @@ $primary-invert: $blue-invert;
 
 //region table
 .table-cell {
-    background-color: #bcbcbc;
-    padding: 0px 3px;
-    color: black !important;
-}
-
-.table-cell-dark {
+  background-color: #bcbcbc;
+  padding: 0 3px;
+  color: black !important;
+  
+  &-dark {
     background-color: #636b6f;
     color: white !important;
+  }
 }
 
 //endregion
