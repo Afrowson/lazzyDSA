@@ -5,6 +5,7 @@
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
+                v-bind:key="talent.id"
                 v-if="talent.group == 'Körper'"
                 :value="talent.value"
                 @changevalue="changevalue"
@@ -18,6 +19,7 @@
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
+                v-bind:key="talent.id"
                 v-if="talent.group == 'Gesellschaft'"
                 :value="talent.value"
                 @changevalue="changevalue"
@@ -31,6 +33,7 @@
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
+                v-bind:key="talent.id"
                 v-if="talent.group == 'Natur' || talent.group == 'Wissen'"
                 :value="talent.value"
                 @changevalue="changevalue"
@@ -44,6 +47,7 @@
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedtalents"
+                v-bind:key="talent.id"
                 v-if="talent.group == 'Handwerk'"
                 :value="talent.value"
                 @changevalue="changevalue"

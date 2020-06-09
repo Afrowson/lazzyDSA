@@ -1,3 +1,9 @@
+@import "tailwindcss/base";
+//
+@import "tailwindcss/components";
+//
+@import "tailwindcss/utilities";
+
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 // Variables
@@ -118,7 +124,7 @@ $primary-invert: $blue-invert;
   background-color: #bcbcbc;
   padding: 0 3px;
   color: black !important;
-  
+
   &-dark {
     background-color: #636b6f;
     color: white !important;
@@ -149,7 +155,7 @@ $sides: (top, bottom, left, right);
         .m-#{str-slice($side, 0, 1)}-#{$space} {
             margin-#{$side}: #{$space}px !important;
         }
-        
+
         .p-#{str-slice($side, 0, 1)}-#{$space} {
             padding-#{$side}: #{$space}px !important;
         }
@@ -160,5 +166,5 @@ $sides: (top, bottom, left, right);
     .p-#{$space} {
         padding: #{$space}px !important;
     }
-    
 }
+

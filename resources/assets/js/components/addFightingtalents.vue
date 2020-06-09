@@ -4,6 +4,7 @@
         <div class="columns is-multiline">
             <numberselector class="column is-narrow"
                 v-for="talent in pickedfightingtalents"
+                v-bind:key="talent.id"
                 :value="talent.value"
                 @changevalue="changevalue"
                 :id="talent.id"
