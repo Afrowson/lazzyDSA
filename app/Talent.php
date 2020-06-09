@@ -8,6 +8,8 @@ class Talent extends Model
 {
     protected $fillable = ['name', 'description', 'group', 'first_skill', 'second_skill', 'third_skill', 'increase_factor'];
     protected $hidden = ['created_at', 'updated_at'];
+
+    protected $table = 'talents';
     
     public function character()
     {
