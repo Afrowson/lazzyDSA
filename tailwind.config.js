@@ -10,6 +10,9 @@ module.exports = {
                 '7xl': '5rem',
                 '8xl': '6.5rem',
             },
+            fontFamily: {
+                'sans': ['Open Sans', 'sans-serif'],
+            }
             borderRadius: {
                 xl: '37px'
             },

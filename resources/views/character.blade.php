@@ -4,18 +4,21 @@
     {{($character->name)}}
 @endsection
 
-@section('nav-left')
-    @include('character.name')
-@endsection
 @section('nav-center')
-    @include('character.energy')
-@endsection
-@section('nav-right')
-    @include('character.skills')
+    <div class="position:fixed">
+    @include('character.name')
+    </div>
+    <div>
+     {{-- @include('character.energy') --}}
+    </div>
 @endsection
 
+{{-- @section('nav-right')
+    @include('character.skills')
+@endsection --}}
+
 @section('content')
-    <div class="is-clearfix">
+    <div class="{{-- is-clearfix --}} flex flex-col items-center rounded">
         @include('character.fightingtalents')
         @include('character.benefices')
         @include('character.handicaps')
