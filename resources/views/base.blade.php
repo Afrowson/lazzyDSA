@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-screen">
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -14,8 +14,8 @@
     <title>LazzyDSA - @yield('title')</title>
 </head>
 
-<body class="bg-gray-900">
-    <div @yield('vue-id')>
+<body class="h-screen" class="bg-gray-900">
+    <div @yield('vue-id') class="h-screen">
 
         @yield('nav')
 
