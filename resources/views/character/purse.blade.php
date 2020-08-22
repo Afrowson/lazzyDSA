@@ -1,8 +1,8 @@
 @if(!is_null($character->purses->first()))
-    <div class="box is-clearfix is-pulled-left m-r-10">
-        <h3 class="title is-4">Geldbeutel:</h3>
+    <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 rounded">
+        <h3 class="text-center text-lg font-medium">Geldbeutel:</h3>
         @foreach($character->purses as $purse)
-            <div class="box is-pulled-left m-r-10">
+            <div class=" bg-gray-200 p-10 mt-5 rounded">
                 <h5 class="subtitleis-5">{{$purse->name}}</h5>
                 <div class="is-pulled-left">
                     <b class="is-block">Dukaten:&nbsp;</b>

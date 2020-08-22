@@ -1,5 +1,5 @@
-<div class="{{-- box is-pulled-right m-r-10 --}} flex flex-col bg-gray-400 px-5 py-4 mx-2 rounded">
-    <h4 class="{{-- title is-4 --}} text-center text-lg font-medium">Waffen und Rüstungen</h4>
+<div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 rounded">
+    <h4 class="text-center text-lg font-medium">Waffen und Rüstungen</h4>
     <div class="box">
         <table class="table is-narrow">
             <tr>

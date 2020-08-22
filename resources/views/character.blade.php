@@ -1,13 +1,13 @@
 @extends('app')
 
 @section('title')
-    {{ $character->name }}
+    {{($character->name)}}
 @endsection
 
 @section('nav')
     <a href="/index" class="button">Zurück</a>
     <div class="position:fixed">
-        @include('character.name')
+    @include('character.name')
     </div>
     <div>
         @include('character.energy')
@@ -31,7 +31,7 @@
         @include('character.weapons')
     </div>
     @include('character.talents',[$t='0', $e='4'])
-    @include('character.talents',[$t='3', $e='4'])
+        @include('character.talents',[$t='3', $e='4'])
     @include('character.magictricks')
 
 @endsection

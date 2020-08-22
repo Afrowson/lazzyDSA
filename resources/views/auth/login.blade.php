@@ -10,7 +10,7 @@
     <div class="bg-cover bg-top w-full h-full" style="background-image: url(images/third-eye.jpg);">
         <div class="flex flex-col w-full h-full justify-center items-center p-8">
             <div class="w-full md:max-w-screen-sm">˚
-                <form class="px-4 py-10 bg-gray-100 bg-opacity-75" role="form" method="POST" action="{{ route('login') }}">
+                <form class="px-4 pt-10 pb-2 bg-gray-100 bg-opacity-75" role="form" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
 
                     <div class="{ $errors->has('email') ? ' has-error' : '' }}">
@@ -51,21 +51,12 @@
                         </label>
                     </div>
 
-                    {{-- <div
-                        class="flex justify-center w-full h-16 sm:text-xl bg-green-200 rounded hover:opacity-75">
-                        --}}
-                        <div class="{{-- control --}}">
-                            <button type="submit"
-                                class="flex justify-center items-center w-full h-12 text-base bg-green-600 hover:opacity-75 sm:text-lg ">
+                    <button type="submit" class="flex justify-center items-center w-full h-12 text-base bg-green-600 hover:opacity-75 sm:text-lg ">
                                 Eintreten
-                            </button>
-                        </div>
+                    </button>
+            
+                    <a href="{{ route('password.request') }}" class="flex justify-center items-center w-full h-12 text-sm hover:underline">Passwort vergessen?</a>
                 </form>
-                <a href="{{ route('password.request') }}"
-                    class="flex justify-center items-center w-full h-12 text-base hover:underline">Passwort vergessen?</a>
-
-                <a href="" class="flex justify-center items-center w-full h-12 text-base hover:underline">Registrieren</a>
-
             </div>
         </div>
     </div>
