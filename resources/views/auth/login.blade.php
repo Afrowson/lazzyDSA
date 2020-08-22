@@ -51,11 +51,11 @@
                         Eintreten
                     </button>
                 </div>
+                </form>
+                <a href="{{ route('password.request') }}" class="flex justify-center items-center w-full h-12 text-base hover:underline">Passwort vergessen?</a>
 
-                <button class="flex justify-center items-center w-full h-12 text-base hover:underline">Passwort vergessen?</button>
+                <a href="" class="flex justify-center items-center w-full h-12 text-base hover:underline">Registrieren</a>
 
-                <button class="flex justify-center items-center w-full h-12 text-base hover:underline">Registrieren</button>
-            </form>
             </div>
         </div>
     </div>
