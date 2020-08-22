@@ -20,7 +20,7 @@ class CharacterViewController extends Controller
             'character' => new \stdClass(),
         ]);
     
-        return view('editCharacter');
+        return view('app.editCharacter');
     }
     
     public function editCharacter(Character $character)
@@ -49,7 +49,7 @@ class CharacterViewController extends Controller
             'character' => $character,
         ]);
     
-        return view('editCharacter');
+        return view('app.editCharacter');
     }
     
     public function single(Character $character)
@@ -57,12 +57,12 @@ class CharacterViewController extends Controller
         $talentgroups = ['Handwerk', 'Gesellschaft', 'Natur', 'Körper', 'Wissen'];
         $character->fightvalues = $character->fightingvalues();
     
-        return view('character', compact('character', 'talentgroups'));
+        return view('app.character', compact('character', 'talentgroups'));
     }
     
     public function diary(Character $character)
     {
-        return view('diary', compact('character'));
+        return view('app.diary', compact('character'));
     }
     
 }
