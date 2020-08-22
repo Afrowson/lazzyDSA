@@ -5,7 +5,7 @@
     <div class="title primary">Registrieren</div>
 
 @endsection
-@section('body')
+@section('content')
     
     <div class="columns m-t-30">
         <div class="column is-offset-4 is-one-quarter">

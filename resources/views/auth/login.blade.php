@@ -6,7 +6,7 @@
     </div>
 @endsection
 
-@section('body')
+@section('content')
     <div class="bg-cover bg-top w-full h-full" style="background-image: url(images/third-eye.jpg);">
         <div class="flex flex-col w-full h-full justify-center items-center p-8">
             <div class="w-full md:max-w-screen-sm">˚
