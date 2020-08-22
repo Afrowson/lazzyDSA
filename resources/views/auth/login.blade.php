@@ -11,7 +11,7 @@
             <form class="px-4 py-10 bg-gray-100 bg-opacity-75" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
     
-                <div class="{ $errors->has('email') ? ' has-error' : '' }}">       
+                <div class="{ $errors->has('email') ? ' has-error' : '' }}">
                     <div class="control">
                         <input id="email" type="email" class="w-full h-12 text-base sm:text-lg placeholder-black border border-gray-900 pl-4 mb-4 focus:bg-green-200" name="email" value="{{ old('email') }}"
                             required autofocus placeholder="E-Mail Addresse">
@@ -37,7 +37,7 @@
                             @endif
                     </div>
                 </div>
-        
+
                  <div class="flex flex-row justify-center text-gray-200 text-base {{-- sm:text-lg --}} w-full">
                     <label class="checkbox text-gray-800">
                         <input type="checkbox" name="remember" class="mb-6" {{ old('remember') ? 'checked' : '' }}>
