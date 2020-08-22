@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%">
+<html>
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -14,12 +14,12 @@
     <title>LazzyDSA - @yield('title')</title>
 </head>
 
-<body style="height: 100%" class="bg-gray-900">
-    <div @yield('vue-id') style="height: 100%">
+<body class="bg-gray-900">
+    <div @yield('vue-id')>
 
         @yield('nav')
 
-        @yield('body')
+        @yield('content')
     </div>
     @include('vars')
     <script src="/js/app.js"></script>

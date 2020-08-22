@@ -1,8 +1,7 @@
 @extends('base')
 
-@section('body')
+@section('content')
     
     @yield('content')
-
 
 @endsection
