@@ -12,7 +12,7 @@ module.exports = {
             },
             fontFamily: {
                 'sans': ['Open Sans', 'sans-serif'],
-            }
+            },
             borderRadius: {
                 xl: '37px'
             },
