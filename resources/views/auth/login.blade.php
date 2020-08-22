@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('nav-center')
+@section('navb')
     <div class="text-black text-base sm:text-lg md:text-xl lg:text-2xl text-center italic uppercase">Das <b>schwarze</b> Auge</div>
 @endsection
 

@@ -11,21 +11,19 @@ a logo which shows a Schwarzes Auge?
     Charaktere
 @endsection
 
-@section('nav-center')
+@section('nav')
     <div class="position:fixed">
         <h1 class="text-lg">Deine Helden</h1>
     </div>
-@endsection
 
-@section('nav-right')
     @if (Auth::guest())
         <a class="button is-danger" href="{{ route('login') }}">Login</a>
         <a class="button is-warning" href="{{ route('register') }}">Register</a>
     @else
-        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+        <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST">
             {{ csrf_field() }}
-            {{-- <button class="button" type="submit" href="{{ route('logout') }}">Logout</button> --}}
-        </form>
+             <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>
+        </form> -->
     @endif
 @endsection
 
@@ -48,7 +46,7 @@ a logo which shows a Schwarzes Auge?
 
 @endsection
 
-{{-- @section('nav-left')
+@section('nav-left')
     <a href="/index" class="button">Deine Helden</a>
     <a href="/database" class="button">Datenbank</a>
-@endsection --}}
+@endsection

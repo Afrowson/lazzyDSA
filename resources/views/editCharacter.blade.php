@@ -8,18 +8,13 @@
     id="app"
 @endsection
 
-@section('nav-left')
+@section('nav')
     <a href="/index" class="button">Deine Helden</a>
     
     <a href="/database" class="button">Datenbank</a>
-@endsection
 
-
-@section('nav-center')
     <h1 class="subtitle is-4 primary">Hier kannst du deinen Character bearbeiten.</h1>
-@endsection
 
-@section('nav-right')
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
         {{ csrf_field() }}
         <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>

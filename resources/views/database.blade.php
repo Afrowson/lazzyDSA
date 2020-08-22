@@ -8,13 +8,11 @@
     id="db"
 @endsection
 
-@section('nav-left')
+@section('nav')
     <a href="/index" class="button">Deine Helden</a>
     
     <a href="/database" class="button">Datenbank</a>
-@endsection
 
-@section('nav-center')
     <div class="select is-pulled-left">
         <select v-model="selected_table_name" v-on:change="change_table">
             <option :value="null" disabled hidden>Select a Table</option>
@@ -25,9 +23,7 @@
         </select>
     </div>
     <button v-show="selected_table_name !== null" class="button is-pulled-left m-l-5" v-on:click="create_entry">Eintrag anlegen</button>
-@endsection
 
-@section('nav-right')
     <form id="logout-form" action="{{ route('logout') }}" method="POST">
         {{ csrf_field() }}
         <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>

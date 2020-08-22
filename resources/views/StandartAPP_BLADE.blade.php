@@ -12,15 +12,7 @@
 
 @endsection
 
-@section('nav-left')
-
-@endsection
-
-@section('nav-center')
-
-@endsection
-
-@section('nav-right')
+@section('nav')
 
 @endsection
 

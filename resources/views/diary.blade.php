@@ -17,21 +17,14 @@
     {{$character->name}}'s Tagebuch
 @endsection
 
-@section('nav-left')
+@section('nav')
     @include('character.name')
-@endsection
-@section('nav-center')
+
     @include('character.energy')
-@endsection
-@section('nav-right')
+
     @include('character.skills')
 @endsection
 
-@section('sidebar')
-    <h1>SOME TEXT</h1>
-    <h1> SOME Other Text</h1>
-
-@endsection
 @section('content')
     
     <div class=" is-pulled-left">
