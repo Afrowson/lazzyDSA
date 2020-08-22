@@ -1,7 +1,9 @@
 @extends('base')
 
-@section('navb')
-    <div class="text-black text-base sm:text-lg md:text-xl lg:text-2xl text-center italic uppercase">Das <b>schwarze</b> Auge</div>
+@section('nav')
+<div class="flex justify-center items-center bg-green-200 h-12 sm:h-12 md:h-16 lg:h-16 m-0">
+    <div class="text-black text-base sm:text-lg md:text-xl lg:text-2xl italic uppercase">Das <b>schwarze</b> Auge</div>
+</div>
 @endsection
 
 @section('body')

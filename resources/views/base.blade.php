@@ -14,10 +14,8 @@
 <body style="height: 100%" class="bg-gray-900">
 <div @yield('vue-id') style="height: 100%">
 
-        <div class="flex flex-row items-center justify-center bg-green-200  h-12 sm:h-12 md:h-16 lg:h-16 m-0">
-            @yield('nav')
-        </div>
-
+        @yield('nav')
+        
     @yield('body')
 </div>
 @include('vars')
