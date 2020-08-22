@@ -17,11 +17,11 @@ class SiteController extends Controller
     {
         $characters = Character::where('user_id', Auth::user()->id)->get();
     
-        return view('characters', compact('characters'));
+        return view('app.characters', compact('characters'));
     }
     
     public function database()
     {
-        return view('database');
+        return view('app.database');
     }
 }
