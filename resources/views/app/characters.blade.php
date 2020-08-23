@@ -11,23 +11,9 @@ a logo which shows a Schwarzes Auge?
     Charaktere
 @endsection
 
-@section('nav')
-    <div class="position:fixed">
-        <h1 class="text-lg">Deine Helden</h1>
-    </div>
-
-    @if (Auth::guest())
-        <a class="button is-danger" href="{{ route('login') }}">Login</a>
-        <a class="button is-warning" href="{{ route('register') }}">Register</a>
-    @else
-        <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST">
-            {{ csrf_field() }}
-             <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>
-        </form> -->
-    @endif
-@endsection
-
 @section('content')
+<div class="bg-cover bg-top w-full min-h-screen bg-gray-900">
+    <a href="/database" class="button">Datenbank</a>
     <div class="flex flex-col justify-between w-full items-center pt-20 md:pt-32 pb-4 px-3">
         @foreach($characters as $character)
             <div href="character/{{$character->id}}" class="flex flex-col items-center bg-gray-200 pt-4 mx-2 mb-4 w-full sm:max-w-screen-sm rounded">
@@ -43,10 +29,5 @@ a logo which shows a Schwarzes Auge?
             Neuer Held
         </a>
     </div>
-
-@endsection
-
-@section('nav-left')
-    <a href="/index" class="button">Deine Helden</a>
-    <a href="/database" class="button">Datenbank</a>
+</div>
 @endsection

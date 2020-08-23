@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-screen">
+<html class="min-h-screen">
 
 <head>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -14,10 +14,10 @@
     <title>LazzyDSA - @yield('title')</title>
 </head>
 
-<body class="h-screen" class="bg-gray-900">
-    <div @yield('vue-id') class="h-screen">
+<body class="min-h-screen" class="bg-gray-900">
+    <div @yield('vue-id') class="min-h-screen">
 
-        @yield('nav')
+        @yield('nav',view('nav'))
 
         @yield('content')
     </div>
