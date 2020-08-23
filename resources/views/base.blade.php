@@ -15,7 +15,7 @@
 </head>
 
 <body class="min-h-screen" class="bg-gray-900">
-    <div @yield('vue-id') class="min-h-screen">
+    <div @yield('vue-id') class="min-h-screen bg-gray-900">
 
         @yield('nav',view('nav'))
 

@@ -47,28 +47,17 @@
                             </label>
                         </div>
 
-<<<<<<< Updated upstream
-                    <button type="submit" class="flex justify-center items-center w-full h-12 text-base bg-green-600 hover:opacity-75 sm:text-lg ">
-                                Eintreten
-                    </button>
-            
-                    <a href="{{ route('password.request') }}" class="flex justify-center items-center w-full h-12 text-sm hover:underline">Passwort vergessen?</a>
-                </form>
-=======
                         <div class="">
                             <button type="submit"
-                                class="flex justify-center items-center w-full h-12 text-base bg-green-600 hover:opacity-75 sm:text-lg ">
+                                class="flex justify-center items-center w-full h-12 text-base bg-green-600 hover:opacity-75 sm:text-lg rounded">
                                 Eintreten
                             </button>
                         </div>
                     </form>
-<div class="flex justify-around items-center mt-3">
-                    <a href="{{ route('password.request') }}" class="hover:underline">Passwortvergessen?</a>
-
-                    <a href="" class="hover:underline">Registrieren</a>
+                    <div class="flex justify-around items-center mt-3">
+                        <a href="{{ route('password.request') }}" class="h-12 hover:underline">Passwortvergessen?</a>
+                    </div>
                 </div>
-                </div>
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
