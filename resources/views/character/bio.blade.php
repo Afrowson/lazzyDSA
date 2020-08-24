@@ -1,29 +1,35 @@
-<div class="box is-clearfix is-pulled-left m-r-10">
-    <div class="is-pulled-left">
-        <b class="is-block">Alter&nbsp;</b>
-        <b class="is-block">Geburtsort&nbsp;</b>
-        <b class="is-block">Sozialstatus&nbsp;</b>
-        <b class="is-block">Titel&nbsp;</b>
-    </div>
-    <div class="is-pulled-right">
-        <p>{{$character->age}}</p>
-        <p>{{$character->place_of_birth}}</p>
-        <p>{{$character->social}}</p>
-        <p>{{$character->title}}</p>
-    </div>
-</div>
+<div class="bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
+    <h4 class="text-center text-lg font-medium">Steckbrief</h4>
+    <div class="flex flex-col md:flex-row">
+        <div class="flex flex-row bg-gray-200 p-10 mt-5 md:mx-4 rounded">
+            <div>
+                <div class="font-bold">Alter&nbsp;</div>
+                <div class="font-bold">Geburtsort&nbsp;</div>
+                <div class="font-bold">Sozialstatus&nbsp;</div>
+                <div class="font-bold">Titel&nbsp;</div>
+            </div>
+            <div>
+                <p>{{ $character->age }}</p>
+                <p>{{ $character->place_of_birth }}</p>
+                <p>{{ $character->social }}</p>
+                <p>{{ $character->title }}</p>
+            </div>
 
-<div class="box is-clearfix is-pulled-left m-r-10">
-    <div class="is-pulled-left">
-        <b class="is-block">Haarfarbe&nbsp;</b>
-        <b class="is-block">Augenfarbe&nbsp;</b>
-        <b class="is-block">Höhe&nbsp;</b>
-        <b class="is-block">Gewicht&nbsp;</b>
-    </div>
-    <div class="is-pulled-right">
-        <p>{{$character->hair}}</p>
-        <p>{{$character->eyes}}</p>
-        <p>{{$character->height}}</p>
-        <p>{{$character->weight}}</p>
+        </div>
+
+        <div class="flex flex-row bg-gray-200 p-10 mt-5 rounded">
+            <div>
+                <div class="font-bold">Haarfarbe&nbsp;</div>
+                <div class="font-bold">Augenfarbe&nbsp;</div>
+                <div class="font-bold">Höhe&nbsp;</div>
+                <div class="font-bold">Gewicht&nbsp;</div>
+            </div>
+            <div>
+                <div>{{ $character->hair }}</div>
+                <div>{{ $character->eyes }}</div>
+                <div>{{ $character->height }}</div>
+                <div>{{ $character->weight }}</div>
+            </div>
+        </div>
     </div>
 </div>

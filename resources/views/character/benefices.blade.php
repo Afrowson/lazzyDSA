@@ -1,9 +1,17 @@
-<div class="box is-pulled-left m-r-10">
-    <h4 class="title is-4">Vorteile</h4>
-    @foreach($character->benefices as $benefice)
-        <div class="is-clearfix">
-            <b class="is-pulled-left">{{$benefice->name}}&nbsp;{{$benefice->pivot->value}}</b>
-            <p class="is-pulled-right">{{$benefice->pivot->type }}</p>
-        </div>
-    @endforeach
+<div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
+    <h4 class="text-center text-lg font-medium">Vorteile</h4>
+    <div class="bg-gray-200 p-10 mt-5 rounded">
+        <table class="table-auto">
+            <tbody>
+                @foreach ($character->benefices as $benefice)
+                    <tr>
+                        <td class="px-2 py-2 border-2 font-bold">
+                            {{ $benefice->name }}&nbsp;{{ $benefice->pivot->value }}
+                        </td>
+                        <td class="px-2 py-2 border-2">{{ $benefice->pivot->type }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>

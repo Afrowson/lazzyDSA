@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-cover bg-top w-full min-h-screen" style="background-image: url(images/third-eye.jpg);">
         <div class="flex flex-col w-full h-full justify-center items-center p-8">
-            <div class="w-full md:max-w-screen-sm">˚
+            <div class="w-full md:max-w-screen-sm">
 
                 <div class="px-4 pt-10 bg-gray-100 bg-opacity-75">
                     <form role="form" method="POST" action="{{ route('login') }}">
@@ -12,7 +12,7 @@
                         <div class="{ $errors->has('email') ? ' has-error' : '' }}">
                             <div class="control">
                                 <input id="email" type="email"
-                                    class="w-full h-12 text-base sm:text-lg placeholder-black border border-gray-900 pl-4 mb-4 focus:bg-green-200"
+                                    class="w-full h-12 text-base sm:text-lg placeholder-gray-600 border border-gray-900 pl-4 mb-4 focus:bg-green-200"
                                     name="email" value="{{ old('email') }}" required autofocus
                                     placeholder="E-Mail Addresse">
 
@@ -29,7 +29,7 @@
 
                             <div class="">
                                 <input id="password" type="password"
-                                    class="w-full h-12 text-base sm:text-lg placeholder-black border border-gray-900 pl-4 mb-8 focus:bg-green-200"
+                                    class="w-full h-12 text-base sm:text-lg placeholder-gray-600 border border-gray-900 pl-4 mb-8 focus:bg-green-200"
                                     name="password" required placeholder="Passwort">
 
                                 @if ($errors->has('password'))
@@ -55,7 +55,7 @@
                         </div>
                     </form>
                     <div class="flex justify-around items-center mt-3">
-                        <a href="{{ route('password.request') }}" class="h-12 hover:underline">Passwortvergessen?</a>
+                        <a href="{{ route('password.request') }}" class="h-12 hover:underline">Passwort vergessen?</a>
                     </div>
                 </div>
             </div>
