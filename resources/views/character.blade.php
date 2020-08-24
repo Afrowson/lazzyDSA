@@ -24,9 +24,9 @@
         @include('character.bio')
         @include('character.calculateables')
         @include('character.languages')
-        @include('character.letterings')
         @include('character.inventory')
         @include('character.purse')
+        @include('character.letterings')
         @include('character.specialtalents')
         @include('character.weapons')
     </div>
