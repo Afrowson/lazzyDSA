@@ -10,9 +10,10 @@
 
 
 @section('content')
-    <div class="flex justify-center">
-        <div class="select is-pulled-left">
-            <select v-model="selected_table_name" v-on:change="change_table">
+    <div class="flex justify-center pt-3">
+        <div class="">
+            <select v-model="selected_table_name" v-on:change="change_table"
+                class="bg-green-600 p-2 outline-none border border-gray-200 rounded">
                 <option :value="null" disabled hidden>Select a Table</option>
 
                 <option v-for="table in tables">
