@@ -13,7 +13,6 @@ a logo which shows a Schwarzes Auge?
 
 @section('content')
     <div class="bg-cover bg-top w-full min-h-screen bg-gray-900">
-        <a href="/database" class="bg-green-600 p-2 mx-2 text-xs sm:text-sm md:text-base  text-black rounded">Datenbank</a>
         <div class="flex flex-col justify-between w-full items-center pt-20 md:pt-32 pb-4 px-3">
             @foreach ($characters as $character)
                 <div href="character/{{ $character->id }}"
@@ -28,10 +27,14 @@ a logo which shows a Schwarzes Auge?
                     </div>
                 </div>
             @endforeach
-            <a href="/character/create"
-                class="w-full sm:max-w-xs px-2 py-6 mx-2 mt-6 text-center bg-green-200 hover:bg-green-500 opacity-75 rounded">
-                Neuer Held
-            </a>
+            <div class="flex flex-col lg:flex-row justify-center items-center w-full">
+                <a href="/character/create"
+                    class="w-full sm:max-w-xs px-2 py-6 mx-2 mt-6 text-center bg-green-200 hover:bg-green-500 opacity-75 rounded">
+                    Neuer Held
+                </a>
+                <a href="/database"
+                    class="w-full sm:max-w-xs px-2 py-6 mx-2 mt-6 text-center bg-green-200 hover:bg-green-500 opacity-75 rounded">Datenbank</a>
+            </div>
         </div>
     </div>
 @endsection
