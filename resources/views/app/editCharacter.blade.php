@@ -8,20 +8,7 @@
     id="app"
 @endsection
 
-@section('nav')
-    <a href="/index" class="button">Deine Helden</a>
-    
-    <a href="/database" class="button">Datenbank</a>
-
-    <h1 class="subtitle is-4 primary">Hier kannst du deinen Character bearbeiten.</h1>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-        {{ csrf_field() }}
-        <button class="button" type="submit" href="{{ route('logout') }}">Logout</button>
-    </form>
-@endsection
-
-@section('sidebar')
+@section('content')
     <div>
         <button v-on:click="status = 1" class="button is-medium m-b-5 m-l-5" style="width:190px">Basics</button>
         <button v-show="status != 0" v-on:click="status = 2" class="button is-medium m-b-5 m-l-5" style="width:190px">Talente</button>
@@ -34,9 +21,7 @@
         <button v-show="status != 0" v-on:click="status = 9" class="button is-medium m-b-5 m-l-5" style="width:190px">Geldbeutel</button>
         <button v-show="status != 0" v-on:click="status = 10" class="button is-medium m-b-5 m-l-5" style="width:190px">Zaubertricks</button>
     </div>
-@endsection
 
-@section('content')
     <div>
         <div v-show="status == 1 || status == 0" class="columns">
             <div class="column is-full">
