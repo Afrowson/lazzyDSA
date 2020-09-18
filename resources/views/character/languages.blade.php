@@ -3,7 +3,7 @@
     <div class="flex flex-col bg-gray-200 p-10 mt-5 md:mx-4 rounded">
         @foreach ($character->languages as $language)
             <div class="font-bold">
-                {{ $language->name }}&nbsp;</>{{ $language->pivot->value }}
+                {{ $language->name }}&nbsp;{{ $language->pivot->value }}
             </div>
         @endforeach
     </div>

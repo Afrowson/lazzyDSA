@@ -1,6 +1,6 @@
 <div class="bg-gray-400 px-5 py-4 mx-2 rounded">
     <h4 class="text-center text-lg font-medium">Inventare</h4>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap justify-between">
         @foreach ($character->inventories as $inventory)
             @php
             $weight=0;$value=0; $amount=0;

@@ -2,10 +2,10 @@
 
     <div>
         <p>{{$character->race}}&nbsp;{{$character->culture}},&nbsp;{{$character->profession}}</p>
-        <p>{{$character->ap_total}}&nbsp;AP</p>
+        <p>{{$character->ap_total}}&nbsp;AP  <b>{{$character->name}}</b></p>
     </div>
+    @include('character.skills')
 
     @include('character.energy')
 
-    @include('character.skills')
 </div>
