@@ -10,19 +10,19 @@
                         <th class="p-5">Wert</th>
                     </thead>
                     <tbody>
-                        <tr class="hover:bg-orange-100 hover:border-l-4 hover:border-orange-500 hover:text-orange-700 hover:p-4 border-gray-300">
+                        <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                             <td class="px-5 py-2 border-2">Dukaten:&nbsp;</td>
                             <td class="px-5 py-2 border-2">{{ $purse->dukaten }}</td>
                         </tr>
-                        <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                        <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                             <td class="px-5 py-2 border-2">Silber:</td>
                             <td class="px-5 py-2 border-2">{{ $purse->silber }}</td>
                         </tr>
-                        <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                        <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                             <td class="px-5 py-2 border-2">Kreuzer:</td>
                             <td class="px-5 py-2 border-2">{{ $purse->kreuzer }}</td>
                         </tr>
-                        <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                        <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                             <td class="px-5 py-2 border-2">Heller:</td>
                             <td class="px-5 py-2 border-2">{{ $purse->heller }}</td>
                         </tr>

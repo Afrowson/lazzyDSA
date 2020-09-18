@@ -1,5 +1,5 @@
-@if(!is_null($character->magictricks->first()))
-<div class="bg-gray-400 px-5 py-4 mx-2 rounded">
+<div class="bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
+    @if(!is_null($character->magictricks->first()))
     <h4 class="text-center text-lg font-medium">Zaubertricks</h4>
         <div class="flex flex-col lg:flex-row">
             <div class="bg-gray-200 p-10 mt-5 lg:mx-3 rounded">
@@ -22,8 +22,9 @@
                             </tr>
                         @endforeach
                     </tbody>
-                </table>
+                 </table>
             </div>
         </div>
+    @endif
 </div>
-@endif
+

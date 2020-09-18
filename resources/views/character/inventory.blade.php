@@ -23,7 +23,7 @@
                             $value+=($item->item->value * $item->amount);
                             $amount+= $item->amount;
                             @endphp
-                            <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                            <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                                 <td class="px-2 py-2 border-2">{{ $item->item->name }}</td>
                                 <td class="px-5 py-2 border-2">{{ $item->item->weight }}</td>
                                 <td class="px-5 py-2 border-2">{{ $item->item->value }}</td>
@@ -32,7 +32,7 @@
                         @endforeach
                     </tbody>
                     <tfoot class="rounded">
-                        <tr class="bg-green-200 hover:bg-green-400">
+                        <tr class="bg-green-200 hover:bg-green-400 hover:border-l-4 hover:border-gray-600">
                             <td class="border-2 px-5 py-2">Gesamt</td>
                             <td class="border-2 px-5 py-2">{{ $weight }}</td>
                             <td class="border-2 px-5 py-2">{{ $value }}</td>

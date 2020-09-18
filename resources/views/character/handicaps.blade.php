@@ -4,7 +4,7 @@
         <table class="table-auto">
             <tbody>
                 @foreach ($character->handicaps as $handicap)
-                    <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                    <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                         <td class="px-2 py-2 border-2 font-bold">
                             {{ $handicap->name }}&nbsp;{{ $handicap->pivot->value }}&nbsp;</td>
                         <td class="px-2 py-2 border-2">{{ $handicap->pivot->type }}</td>

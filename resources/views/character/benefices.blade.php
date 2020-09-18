@@ -4,7 +4,7 @@
         <table class="table-auto">
             <tbody>
                 @foreach ($character->benefices as $benefice)
-                    <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
+                    <tr class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                         <td class="px-2 py-2 border-2 font-bold">
                             {{ $benefice->name }}&nbsp;{{ $benefice->pivot->value }}
                         </td>
