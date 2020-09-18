@@ -10,10 +10,10 @@
                 <table class='table-auto'>
                     <thead>
                         <tr>
-                            <th class="p-5">Name</th>
-                            <th class="p-5">Gewicht</th>
-                            <th class="p-5">Wert</th>
-                            <th class="p-5">Anzahl</th>
+                            <th class="px-2 py-2">Name</th>
+                            <th class="px-2 py-2">Gewicht</th>
+                            <th class="px-2 py-2">Wert</th>
+                            <th class="px-2 py-2">Anzahl</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,7 +23,7 @@
                             $value+=($item->item->value * $item->amount);
                             $amount+= $item->amount;
                             @endphp
-                            <tr>
+                            <tr class="hover:bg-gray-400 hover:shadow-lg border-l-4 border-gray-300">
                                 <td class="px-2 py-2 border-2">{{ $item->item->name }}</td>
                                 <td class="px-5 py-2 border-2">{{ $item->item->weight }}</td>
                                 <td class="px-5 py-2 border-2">{{ $item->item->value }}</td>
@@ -32,11 +32,11 @@
                         @endforeach
                     </tbody>
                     <tfoot class="rounded">
-                        <tr>
-                            <td class=" bg-green-200 border-2 px-5 py-2">Gesamt</td>
-                            <td class=" bg-green-200 border-2 px-5 py-2">{{ $weight }}</td>
-                            <td class=" bg-green-200 border-2 px-5 py-2">{{ $value }}</td>
-                            <td class=" bg-green-200 border-2 px-5 py-2">{{ $amount }}</td>
+                        <tr class="bg-green-200 hover:bg-green-400">
+                            <td class="border-2 px-5 py-2">Gesamt</td>
+                            <td class="border-2 px-5 py-2">{{ $weight }}</td>
+                            <td class="border-2 px-5 py-2">{{ $value }}</td>
+                            <td class="border-2 px-5 py-2">{{ $amount }}</td>
                         </tr>
                     </tfoot>
                 </table>
