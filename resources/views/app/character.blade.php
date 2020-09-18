@@ -5,11 +5,12 @@
 @endsection
 
 @section('nav')
-    @include('character.nav')
+    @include('nav')
 
 @endsection
 
 @section('content')
+    @include('character.nav')
 
     <div class="flex flex-col items-center rounded">
         {{-- @include('character.fightingtalents') --}}

@@ -50,7 +50,7 @@
                 <div class="flex">
                     <input class="appearance-none bg-transparent focus:outline-none text-gray-700 -mr-4"
                            style="width: 38px; height: 16px"
-                           max="{{$character->kap_max}}"
+                           max="3"
                            min="0"
                            type="number"
                            name="sp"
