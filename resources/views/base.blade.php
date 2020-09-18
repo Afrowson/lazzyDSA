@@ -5,10 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-
+        window.Laravel = {{ json_encode(['csrfToken' => csrf_token(),]) }}
     </script>
     @yield('head')
     <title>LazzyDSA - @yield('title')</title>

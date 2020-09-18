@@ -5,18 +5,12 @@
 @endsection
 
 @section('nav')
-    <a href="/index" class="button">Zurück</a>
-    <div class="position:fixed">
-        @include('character.name')
-    </div>
-    <div>
-        @include('character.energy')
-    </div>
+    @include('character.nav')
 
-    @include('character.skills')
 @endsection
 
 @section('content')
+
     <div class="flex flex-col items-center rounded">
         {{-- @include('character.fightingtalents') --}}
         @include('character.benefices')
@@ -33,6 +27,6 @@
     </div>
     {{-- @include('character.talents',[$t='0', $e='4']) --}}
     {{-- @include('character.talents',[$t='3', $e='4']) --}}
-    
+
 
 @endsection

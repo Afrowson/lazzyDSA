@@ -1,58 +1,65 @@
-<div class="m-t-20">
+<div>
     <form action="/character/{{$character->id}}/energy" method="POST">
         {{csrf_field()}}
-        <div class="columns is-multiline">
-            <div class="column is-half">
-                <div class="field is-horizontal">
-                    <label class="label m-r-5 primary">LeP</label>
-                    <p class="control">
-                        <input class="input is-small" style="width: 45px" name="lep" type="number"
-                               value="{{$character->lep}}">
-                    </p>
-                    <label class="label m-l-5 primary"> /{{$character->lep_max}}</label>
+        <div class="flex items-center">
+            <div class="flex flex-col ml-2" style="width: 47px">
+                <span>LeP</span>
+                <div class="flex">
+                    <input class="appearance-none bg-transparent focus:outline-none text-gray-700 -mr-4"
+                           style="width: 38px; height: 17px"
+                           max="{{$character->lep_max}}"
+                           min="-10"
+                           name="lep"
+                           type="number"
+                           value="{{$character->lep}}">
+                    <span class="-m-1"> /{{$character->lep_max}}</span>
                 </div>
             </div>
-
-            @if($character->asp_max >= 1)
-                <div class="column is-half">
-                    <div class="field is-horizontal">
-                        <label class="label m-r-5 primary">AsP</label>
-                        <p class="control ">
-                            <input class="input is-small" style="width: 45px" name="asp" type="number"
-                                   value="{{$character->asp}}">
-                        </p>
-                        <label class="label m-l-5 primary">/{{$character->asp_max}}</label>
+            @if($character->asp_max > 0)
+                <div class="flex flex-col ml-2" style="width: 47px">
+                    <span>AsP</span>
+                    <div class="flex">
+                        <input class="appearance-none bg-transparent focus:outline-none text-gray-700 -mr-4"
+                               style="width: 38px; height: 16px"
+                               max="{{$character->asp_max}}"
+                               min="0"
+                               name="asp"
+                               type="number"
+                               value="{{$character->asp}}">
+                        <span class="-m-1">/{{$character->asp_max}}</span>
                     </div>
                 </div>
             @endif
-            @if($character->kap_max >= 1)
-
-                <div class="column is-half">
-                    <div class="field is-horizontal">
-                        <label class="label m-r-5 primary">KaP</label>
-                        <p class="control ">
-                            <input class="input is-small" style="width: 45px" name="kap" type="number"
-                                   value="{{$character->kap}}">
-                        </p>
-                        <label class="label m-l-5 primary">/{{$character->kap_max}}</label>
+            @if($character->kap_max > 0)
+                <div class="flex flex-col ml-2" style="width: 47px">
+                    <span>KaP:</span>
+                    <div class="flex">
+                        <input class="appearance-none bg-transparent  focus:outline-none text-gray-700 -mr-4"
+                               style="width: 38px; height: 16px"
+                               max="{{$character->kap_max}}"
+                               min="0"
+                               name="kap"
+                               type="number"
+                               value="{{$character->kap}}">
+                        <span class="-m-1">/{{$character->kap_max}}</span>
                     </div>
                 </div>
             @endif
-
-            <div class="column is-half">
-                <div class="field is-half is-horizontal">
-                    <label class="label m-r-5 primary">SP</label>
-                    <p class="control ">
-                        <input class="input is-small" style="width: 45px" type="number" name="sp"
-                               value="{{$character->sp}}">
-                    </p>
-                    <label class="label m-l-5 primary">/3</label>
+            <div class="flex flex-col ml-2" style="width: 47px">
+                <span>SP</span>
+                <div class="flex">
+                    <input class="appearance-none bg-transparent focus:outline-none text-gray-700 -mr-4"
+                           style="width: 38px; height: 16px"
+                           max="{{$character->kap_max}}"
+                           min="0"
+                           type="number"
+                           name="sp"
+                           value="{{$character->sp}}">
+                    <span class="-m-1">/3</span>
                 </div>
             </div>
-            <div class="colum is-half">
-                <button class="button is-warning m-b-5 m-l-25 m-t-5">Update</button>
-            </div>
+            <button class="bg-yellow-600 py-2 px-4 mx-2 text-xs sm:text-sm md:text-base text-black rounded">Update
+            </button>
         </div>
-
     </form>
 </div>

@@ -17,14 +17,6 @@
     {{$character->name}}'s Tagebuch
 @endsection
 
-@section('nav')
-    @include('character.name')
-
-    @include('character.energy')
-
-    @include('character.skills')
-@endsection
-
 @section('content')
     
     <div class=" is-pulled-left">
@@ -32,7 +24,5 @@
 SOME FANCY TEXT!
     </textarea>
     </div>
-
-
 
 @endsection
