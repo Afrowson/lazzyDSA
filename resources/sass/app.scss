@@ -11,7 +11,7 @@
 // Bootstrap
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // 1. Import the initial variables
-@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
 
 $blue: #3d4c7d;
 $green: #a5bba3;
@@ -40,7 +40,7 @@ $primary-invert: $blue-invert;
 //$background: $white;
 
 // 4. Import the rest of Bulma
-@import "node_modules/bulma/bulma";
+@import "../../node_modules/bulma/bulma";
 
 //region Basics
 

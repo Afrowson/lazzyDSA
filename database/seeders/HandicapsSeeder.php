@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Handicap;
 use Illuminate\Database\Seeder;
 
 class HandicapsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

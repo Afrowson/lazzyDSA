@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders\Weapons;
+
 use App\Shield;
 use Illuminate\Database\Seeder;
 
 class ShieldsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders\Weapons;
+
 use App\Rangeweapon;
 use Illuminate\Database\Seeder;
 
 class RangeweaponsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

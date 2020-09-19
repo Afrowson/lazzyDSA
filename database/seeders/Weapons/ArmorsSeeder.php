@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders\Weapons;
+
 use App\Armor;
 use Illuminate\Database\Seeder;
 
 class ArmorsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

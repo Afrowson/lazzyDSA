@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\CharacterViewController;
+use App\Http\Controllers\SiteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,23 +14,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/index', 'SiteController@index');
-Route::get('/database', 'SiteController@database');
+Route::get('/index', [SiteController::class,'index']);
+Route::get('/database', [SiteController::class,'database']);
 
-Route::get('/character/create', 'CharacterViewController@create');
-Route::get('/character/{character}/edit', 'CharacterViewController@editCharacter');
+Route::get('/character/create', [CharacterViewController::class,'create']);
+Route::get('/character/{character}/edit', [CharacterViewController::class,'editCharacter']);
 
 
-Route::get('/character/{character}/show', 'CharacterViewController@single');
-Route::post('/character/{character}/energy', 'CharacterController@updatEenergy');
+Route::get('/character/{character}/show', [CharacterViewController::class,'single']);
+Route::post('/character/{character}/energy', [CharacterController::class,'updatEenergy']);
 
-Route::post('/fail/Character/create', 'CharacterController@store');
+Route::post('/fail/Character/create', [CharacterController::class,'store']);
 
 //Route::get('/character/{character}/diary', 'CharacterViewController@diary');
 

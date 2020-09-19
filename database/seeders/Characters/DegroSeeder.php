@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders\Characters;
+
 use App\Armor;
 use App\Benefice;
 use App\Character;
@@ -22,7 +24,7 @@ use Illuminate\Database\Seeder;
 class DegroSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

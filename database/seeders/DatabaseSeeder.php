@@ -1,11 +1,20 @@
 <?php
 
+namespace Database\Seeders;
+
+use Database\Seeders\Characters\DegroSeeder;
+use Database\Seeders\Characters\LeonardoSeeder;
+use Database\Seeders\Items\ItemsSeeder;
+use Database\Seeders\Weapons\ArmorsSeeder;
+use Database\Seeders\Weapons\RangeweaponsSeeder;
+use Database\Seeders\Weapons\ShieldsSeeder;
+use Database\Seeders\Weapons\WeaponsSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

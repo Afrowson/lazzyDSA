@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Fightingtalent;
 use Illuminate\Database\Seeder;
 
 class FightingtalentsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

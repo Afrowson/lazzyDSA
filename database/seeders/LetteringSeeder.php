@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Lettering;
 use Illuminate\Database\Seeder;
 
 class LetteringSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

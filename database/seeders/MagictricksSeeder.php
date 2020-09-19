@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Magictrick;
 use Illuminate\Database\Seeder;
 
 class MagictricksSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */

@@ -1,12 +1,14 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Language;
 use Illuminate\Database\Seeder;
 
 class LanguagesSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      *
      * @return void
      */
