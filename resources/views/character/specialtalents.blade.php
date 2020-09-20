@@ -1,9 +1,9 @@
-<div class="flex flex-col md:flex-row bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <div>
-        @if (!is_null($character->specialtalents->first()))
+@if (!is_null($character->specialtalents->first()))
+    <div class="col-span-5 m-2">
+        <div class="bg-gray-400 px-5 py-4 rounded h-full">
             <div class="flex flex-col bg-gray-200 p-10 mt-5 md:mx-4 rounded">
                 <h4 class="text-center text-lg font-medium">Spezialtalente</h4>
-                <div class="">
+                <div>
                     @foreach ($character->specialtalents as $specialtalent)
                         <div>
                             <div class="">{{ $specialtalent->name }}&nbsp;</div>
@@ -13,11 +13,13 @@
                     @endforeach
                 </div>
             </div>
-        @endif
+        </div>
     </div>
+@endif
 
-    <div>
-        @if (!is_null($character->specialmagictalents->first()))
+@if (!is_null($character->specialmagictalents->first()))
+    <div class="col-span-5 m-2">
+        <div class="bg-gray-400 px-5 py-4 rounded h-full">
             <div class="flex flex-col bg-gray-200 p-10 mt-5 md:mx-4 rounded">
                 <h4 class="text-center text-lg font-medium">Spezial Magietalente</h4>
                 <div>
@@ -30,12 +32,12 @@
                     @endforeach
                 </div>
             </div>
-        @endif
-
+        </div>
     </div>
-
-    <div>
-        @if (!is_null($character->specialfightingtalents->first()))
+@endif
+@if (!is_null($character->specialfightingtalents->first()))
+    <div class="col-span-5 m-2">
+        <div class="bg-gray-400 px-5 py-4 rounded h-full">
             <div class="flex flex-col bg-gray-200 p-10 mt-5 md:mx-4 rounded">
                 <h4 class="text-center text-lg font-medium">Spezial Kampftalente</h4>
                 <div>
@@ -48,7 +50,7 @@
                     @endforeach
                 </div>
             </div>
-        @endif
-
+        </div>
     </div>
-</div>
+@endif
+

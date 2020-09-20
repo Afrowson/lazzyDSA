@@ -207,7 +207,7 @@ class CharacterController extends Controller
     {
         $updatepurse = $request->except('_token');
         $id = $request->id;
-        $purse = $character->purses()->find($id);
+        $purse = $request->id ? $character->purses()->find($id) : new Purse();
         $purse->name = $updatepurse['name'];
         $purse->dukaten = $updatepurse['dukaten'];
         $purse->silber = $updatepurse['silber'];

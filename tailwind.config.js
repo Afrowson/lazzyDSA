@@ -45,6 +45,7 @@ module.exports = {
                 'span-18': 'span 18 / span 18',
                 'span-19': 'span 19 / span 19',
                 'span-20': 'span 20 / span 20',
+                'span-24': 'span 24 / span 24',
             },
         },
     },
