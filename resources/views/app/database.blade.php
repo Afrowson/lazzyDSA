@@ -39,7 +39,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="entry in selected_table">
+                <tr v-for="entry in selected_table" class="hover:bg-gray-400 hover:border-l-4 hover:border-gray-600 border-gray-300">
                     <div class="overflow-y-auto">
                         <td class="pl-4 pr-2 border-b-2 py-2" v-for="value in entry">@{{ value }}</td>
                     </div>
