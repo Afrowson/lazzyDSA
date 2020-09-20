@@ -6,52 +6,48 @@
 
 @section('nav')
     @include('nav')
-
 @endsection
 
 @section('content')
     @include('character.nav')
 
-    <div class="grid xl:grid-cols-12 lg:grid-cols-10 md:grid-cols-8 grid-flow-row-dense">
-        <div class="col-span-3 row-span-2">
+    <div class="grid xl:grid-cols-24 lg:grid-cols-20 md:grid-cols-16 sm:grid-cols-16 grid-flow-row-dense">
+        <div class="col-span-7 row-span-2">
             @include('character.fightingtalents')
         </div>
-        <div class="col-span-4 row-span-1">
+        <div class="col-span-8 row-span-1 ">
             @include('character.bio')
         </div>
-        <div class="col-span-2 row-span-1">
-            @include('character.calculateables')
-        </div>
-        <div class="col-span-2 row-span-1">
-            @include('character.languages')
-        </div>
-        <div class="col-span-4">
+        <div class="col-span-8">
             @include('character.specialtalents')
         </div>
-        <div class="col-span-2 row-span-1">
-            @include('character.letterings')
+        <div class="col-span-5 row-span-1">
+            @include('character.calculateables')
         </div>
-        <div class="col-span-3
-        @if(count($character->benefices) > 4) row-span-2 @endif">
+        <div class="col-span-8 row-span-1 m-2">
+            @include('character.languages')
+        </div>
+        <div class="col-span-6 @if(count($character->benefices) > 4) row-span-2 @endif">
             @include('character.benefices')
         </div>
-        <div class="col-span-7">
-            @include('character.weapons')
-        </div>
-        <div class="col-span-4">
+
+        <div class="col-span-7 @if(count($character->handicaps) > 4) row-span-2 @endif">
             @include('character.handicaps')
         </div>
-        <div class="col-span-2">
+        <div class="col-span-4">
             @include('character.purse')
         </div>
+        <div class="col-span-16">
+            @include('character.weapons')
+        </div>
         @php
-            $spans = count($character->inventories)*4;
+            $spans = count($character->inventories)*8;
         @endphp
         <div class="col-span-{{$spans}}">
             @include('character.inventory')
         </div>
         @if(!is_null($character->magictricks->first()))
-                <div class="col-span-6">@include('character.magictricks')</div>
+                <div class="col-span-15">@include('character.magictricks')</div>
         @endif
     </div>
     {{-- @include('character.talents',[$t='0', $e='4']) --}}

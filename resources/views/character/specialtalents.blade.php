@@ -19,7 +19,7 @@
     <div>
         @if (!is_null($character->specialmagictalents->first()))
             <div class="flex flex-col bg-gray-200 p-10 mt-5 md:mx-4 rounded">
-                <h4 class="text-center text-lg font-medium">Spezialtalente>Spezial Magietalente</h4>
+                <h4 class="text-center text-lg font-medium">Spezial Magietalente</h4>
                 <div>
                     @foreach ($character->specialmagictalents as $specialmagictalent)
                         <div class="flex flex-row">
