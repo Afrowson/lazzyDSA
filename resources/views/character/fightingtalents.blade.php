@@ -1,4 +1,4 @@
-<div class="bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
+<div class="bg-gray-400 px-5 py-4 rounded h-full">
     <div class="is-clearfix">
         <h4 class="title is-4 is-pulled-left">Kampftechnik</h4>
         <b class="is-pulled-right" style="margin: 5px">PA</b>

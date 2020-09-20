@@ -48,10 +48,6 @@ $primary-invert: $blue-invert;
     color: $blue-invert;
 }
 
-.primary-b {
-    background-color: $blue;
-}
-
 .MU {
     border-color: $MU !important;
 }
@@ -84,22 +80,6 @@ $primary-invert: $blue-invert;
     border-color: $KK !important;
 }
 
-.sidebar {
-    width: 200px;
-    height: 100%;
-    background-color: $primary;
-}
-
-.topbar {
-    width: 100%;
-    min-height: 78px;
-    background-color: $primary;
-}
-
-.text-center {
-    text-align: center;
-}
-
 .value-box {
     width: 25px;
     height: 25px;
@@ -107,28 +87,6 @@ $primary-invert: $blue-invert;
     border-radius: 15%;
     text-align: center;
     margin: 2px;
-}
-
-//endregion
-.character-box {
-    display: inline-block;
-    margin: 20px;
-    background-color: #8c8c8c;
-    color: black;
-    font-size: 18px;
-    padding: 40px 40px 40px 40px;
-}
-
-//region table
-.table-cell {
-  background-color: #bcbcbc;
-  padding: 0 3px;
-  color: black !important;
-
-  &-dark {
-    background-color: #636b6f;
-    color: white !important;
-  }
 }
 
 //endregion

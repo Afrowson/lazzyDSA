@@ -161,8 +161,8 @@
 
         </div>
     </div>
-    @endif
 </div>
+    @endif
 
 {{-- Rüstungen --}}
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
