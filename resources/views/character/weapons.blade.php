@@ -1,6 +1,6 @@
-{{-- Waffen und Rüstungen --}}
+{{-- Waffen --}}
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Waffen und Rüstungen</h4>
+    <h4 class="text-center text-lg font-medium">Waffen</h4>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
             @foreach($character->weapons as $weapon)
@@ -59,7 +59,6 @@
 {{-- Schilde --}}
 @if(!is_null($character->shields->first()))
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-
     <h4 class="text-center text-lg font-medium">Schilde</h4>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
@@ -110,10 +109,10 @@
 </div>
 @endif
 
-{{-- weitere Waffen --}}
+{{-- Fernkampfwaffen --}}
 @if(!is_null($character->rangeweapons->first()))
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Weitere Waffen</h4>
+    <h4 class="text-center text-lg font-medium">Fernkampfwaffen</h4>
 
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
@@ -160,7 +159,16 @@
             </div>
             @endforeach
 
+        </div>
+    </div>
+    @endif
+</div>
 
+{{-- Rüstungen --}}
+<div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
+    <h4 class="text-center text-lg font-medium">Rüstungen</h4>
+    <div class="bg-gray-200 p-10 mt-5 rounded">
+        <div class="grid grid-cols-1 md:grid-cols-2">
             @foreach($character->armors as $armor)
             <div>
                 <div class="flex flex-row">
@@ -179,9 +187,10 @@
                             <div>{{$armor->weight}}</div>
                         </div>
                     </div>
-                    @endforeach
+
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
-@endif
+</div>
