@@ -27,11 +27,11 @@
         <div class="col-span-8 row-span-1 m-2">
             @include('character.languages')
         </div>
-        <div class="col-span-6 @if(count($character->benefices) > 4) row-span-2 @endif">
+        <div class="col-span-9 @if(count($character->benefices) > 4) row-span-2 @endif">
             @include('character.benefices')
         </div>
 
-        <div class="col-span-7 @if(count($character->handicaps) > 4) row-span-2 @endif">
+        <div class="col-span-10 @if(count($character->handicaps) > 4) row-span-2 @endif">
             @include('character.handicaps')
         </div>
         <div class="col-span-4">
