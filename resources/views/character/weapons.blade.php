@@ -1,6 +1,10 @@
 {{-- Waffen --}}
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Waffen</h4>
+    <div class="flex justify-between">
+        <div></div>
+        <h4 class="text-lg font-medium mx-2 ">Waffen</h4>
+        <img src="/images/weapon.jpg" alt="" class="h-10 object-contain text-right last:justify-end">
+    </div>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
             @foreach($character->weapons as $weapon)
@@ -59,7 +63,11 @@
 {{-- Schilde --}}
 @if(!is_null($character->shields->first()))
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Schilde</h4>
+    <div class="flex justify-between">
+        <div></div>
+        <h4 class="text-center text-lg font-medium">Schilde</h4>
+        <img src="/images/shield.jpg" alt="" class="h-10 object-contain text-right last:justify-end">
+    </div>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
             @foreach($character->shields as $shield)
@@ -113,8 +121,11 @@
 {{-- Fernkampfwaffen --}}
 @if(!is_null($character->rangeweapons->first()))
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Fernkampfwaffen</h4>
-
+    <div class="flex justify-between">
+        <div></div>
+        <h4 class="text-center text-lg font-medium">Fernkampfwaffen</h4>
+        <img src="/images/arrow.jpg" alt="" class="h-10 object-contain text-right last:justify-end">
+    </div>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
 
@@ -167,7 +178,11 @@
 
 {{-- Rüstungen --}}
 <div class="flex flex-col bg-gray-400 px-5 py-4 mx-2 my-2 rounded">
-    <h4 class="text-center text-lg font-medium">Rüstungen</h4>
+    <div class="flex justify-between">
+        <div></div>
+        <h4 class="text-center text-lg font-medium">Rüstungen</h4>
+        <img src="/images/armor.jpg" alt="" class="h-10 object-contain text-right last:justify-end">
+    </div>
     <div class="bg-gray-200 p-10 mt-5 rounded">
         <div class="grid grid-cols-1 md:grid-cols-2">
             @foreach($character->armors as $armor)

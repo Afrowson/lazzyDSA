@@ -2,7 +2,7 @@
     <div style="width: 214px">
         @auth
             <a href="/index"
-                class="float-left bg-green-600 p-2 mx-2 text-xs sm:text-sm md:text-base  text-black rounded">Deine&nbsp;Helden</a>
+                class="float-left bg-green-600 p-2 mx-2 text-xs sm:text-sm md:text-base text-black rounded">Deine&nbsp;Helden</a>
         @endauth
         @guest
             <a class=" bg-green-600 py-2 px-3 mx-2 text-xs sm:text-sm md:text-base text-black rounded"
