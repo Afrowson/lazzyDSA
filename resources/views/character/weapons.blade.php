@@ -20,11 +20,11 @@
                             <div class="font-bold mx-2">TP+SS</div>
                         </div>
                         <div class="flex flex-col">
-                            <div class="mx-2">
+                            <div class="mx-2 border-gray-700 bg-yellow-300 w-8 border rounded text-center">
                                 {{$weapon->at_mod+ $character->fightvalues[$weapon->fightingtalent_id-1]['at']}}</div>
-                            <div class="mx-2">
+                            <div class="mx-2 border-gray-700 bg-red-300 w-8 border rounded text-center">
                                 {{$weapon->pa_mod+ $character->fightvalues[$weapon->fightingtalent_id-1]['pa']}}</div>
-                            <div class="mx-2">
+                            <div class="mx-2 border-gray-700 bg-orange-300 w-16 border rounded text-center">
                                 {{$weapon->dice}}W6+{{$weapon->bonus_dmg + max($character->{$weapon->skill}-$weapon->ss,0 )}}
                             </div>
                         </div>
@@ -75,9 +75,11 @@
                             <div class="font-bold mx-2">TP+SS</div>
                         </div>
                         <div class="flex flex-col">
-                            <div>{{$shield->at_mod+ $character->fightvalues[$shield->fightingtalent_id-1]['at']}}</div>
-                            <div>{{$shield->pa_mod+ $character->fightvalues[$shield->fightingtalent_id-1]['pa']}}</div>
-                            <div>
+                            <div class="border-gray-700 bg-yellow-300 w-8 border rounded text-center">
+                                {{$shield->at_mod+ $character->fightvalues[$shield->fightingtalent_id-1]['at']}}</div>
+                            <div class="border-gray-700 bg-red-300 w-8 border rounded text-center">
+                                {{$shield->pa_mod+ $character->fightvalues[$shield->fightingtalent_id-1]['pa']}}</div>
+                            <div class="border-gray-700 bg-orange-300 w-16 border rounded text-center">
                                 {{$shield->dice}}W6+{{$shield->bonus_dmg + max($character->{$shield->skill}-$shield->ss,0 )}}
                             </div>
                         </div>
@@ -131,9 +133,9 @@
                             <div class="font-bold mx-2">TP+SS</div>
                         </div>
                         <div class="flex flex-col">
-                            <div>{{$character->fightvalues[$rangeweapon->fightingtalent_id-1]['at']}}</div>
-                            <div>{{$character->fightvalues[$rangeweapon->fightingtalent_id-1]['pa']}}</div>
-                            <div>{{$rangeweapon->dice}}W6+{{$rangeweapon->bonus_dmg}}</div>
+                            <div class="border-gray-700 bg-yellow-300 w-8 border rounded text-center">{{$character->fightvalues[$rangeweapon->fightingtalent_id-1]['at']}}</div>
+                            <div class="border-gray-700 bg-red-300 w-8 border rounded text-center">{{$character->fightvalues[$rangeweapon->fightingtalent_id-1]['pa']}}</div>
+                            <div class="border-gray-700 bg-orange-300 w-16 border rounded text-center">{{$rangeweapon->dice}}W6+{{$rangeweapon->bonus_dmg}}</div>
                         </div>
                     </div>
                     <div class="bg-gray-300 flex flex-row my-2 w-1/2">
