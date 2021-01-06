@@ -23,6 +23,6 @@
     },
     "dependencies": {
         "tailwindcss": "^1.7.3",
-        "tinymce": "^4.9.11"
+        "tinymce": "^5.6.0"
     }
 }
