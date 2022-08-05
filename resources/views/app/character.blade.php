@@ -28,12 +28,9 @@
         <div class="col-span-16 lg:col-span-14 xl:col-span-14">
             @include('character.weapons')
         </div>
-        @php
-            $spans = count($character->inventories)*8;
-        @endphp
-{{--        <div class="col-span-{{$spans}}">--}}
-{{--            @include('character.inventory')--}}
-{{--        </div>--}}
+        <div class="col-span-8">
+            @include('character.inventory')
+        </div>
         @if(!is_null($character->magictricks->first()))
                 <div class="col-span-15">@include('character.magictricks')</div>
         @endif
